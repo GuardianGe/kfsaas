@@ -1,0 +1,598 @@
+@charset "utf-8";
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+form,
+input,
+textarea,
+p,
+th,
+td,
+tr,
+table,
+tbody,
+thead,
+tfoot,
+em,
+strong,
+span {
+	padding: 0;
+	margin: 0;
+	font-family: arial, "微软雅黑";
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+img {
+	border: 0 none;
+}
+
+input {
+	vertical-align: middle;
+}
+
+em {
+	font-weight: normal;
+	font-style: normal;
+}
+
+ol,
+ul {
+	list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: normal;
+	font-size: 100%;
+}
+body{
+	position: relative;
+}
+
+.clearFix:after {
+	content: ' ';
+	display: block;
+	height: 0;
+	clear: both;
+	overflow: hidden;
+	visibility: hidden;
+}
+
+.clearFix {
+	*zoom: 1;
+}
+
+.clear {
+	display: block;
+	text-indent: -9999px;
+	clear: both;
+	line-height: 0;
+	font-size: 0;
+	height: 0;
+	overflow: hidden;
+}
+
+a {
+	text-decoration: none;
+	color: #6d6a6a;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+a:focus {
+	text-decoration: none;
+	outline: none;
+}
+
+.fl {
+	float: left;
+	display: inline;
+}
+
+.fr {
+	float: right;
+	display: inline;
+}
+
+.none {
+	display: none;
+}
+
+body,
+html {
+	font-size: 12px;
+	background: #ffffff;
+	line-height: 1.5;
+	color: #6d6a6a
+}
+
+textarea,
+input {
+	font-size: 12px;
+	line-height: 1.5;
+}
+
+h1 {
+	font-size: 16px;
+}
+
+html {
+	font-size: 66.67px;
+}
+
+.h10 {
+	height: 10px;
+	clear: both;
+	font-size: 0px;
+}
+
+.h20 {
+	height: 20px;
+	clear: both;
+	font-size: 0px;
+}
+
+.h30 {
+	height: 30px;
+	clear: both;
+	font-size: 0px;
+}
+
+.h40 {
+	height: 40px;
+	clear: both;
+	font-size: 0px;
+}
+
+.h50 {
+	height: 50px;
+	clear: both;
+	font-size: 0px;
+}
+
+.container {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.header-out {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 999999;
+}
+
+.header {
+	height: 66px;
+	background: transparent;
+	position: relative;
+	z-index: 999999;
+}
+
+.sanweig {
+	display: none;
+}
+
+.head-menu {
+	float: left;
+}
+
+.head-menu .active a {
+	color: #FF782F;
+}
+
+.kf-logo {
+	margin: 0 110px 0 104px;
+	float: left;
+	background: url(../img/logo_nav.png) center no-repeat;
+	width: 144px;
+	height: 66px;
+	background-size: contain;
+}
+.head-menu ul {
+	overflow: hidden;
+}
+
+.head-menu li {
+	float: left;
+	height: 66px;
+	padding-top: 24px;
+}
+
+.head-menu li a {
+	font-size: 16px;
+	float: left;
+	color: white;
+	padding-right: 30px;
+	text-align: center;
+}
+
+.head-menu li a:hover {
+	color: #ff782f;
+}
+
+.head-right {
+	float: right;
+	height: 66px;
+	margin-right: 104px;
+}
+
+.head-right div {
+	float: right;
+	margin-left: 18px;
+}
+
+.head-right a {
+	font-size: 14px;
+	display: block;
+	width: 84px;
+	height: 31px;
+	color: white;
+	border: 1px solid #ff782f;
+	border-radius: 3px;
+	margin-top: 18px;
+	line-height: 30px;
+}
+
+.head-menu .headTip a {
+	text-decoration: none;
+}
+
+
+@media only screen and (max-width: 1440px) {
+	.head-right a {
+		font-size: 14px;
+	}
+	.head-menu li a {
+		font-size: 14px;
+	}
+}
+
+@media only screen and (min-width: 1921px) {
+	.header-out .container,
+	.abs-header .container,
+	.data-header .container,
+	.slt-header .container {
+		width: 15rem;
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+	.kf-logo {
+		margin: 0 2rem 0 0.65rem;
+	}
+	.head-menu li a {
+		padding-right: 0.8rem;
+	}
+	.head-right {
+		float: left;
+		margin-right: 0;
+		margin-left: 1.04rem;
+	}
+	.head-right div {
+		margin-left: 18px;
+	}
+	.bans-wrap {
+		min-height: 700px;
+	}
+}
+
+@media only screen and (min-width: 1440px) {
+	html {
+		font-size: 100px;
+	}
+}
+
+@media only screen and (min-width: 1280px) and (max-width: 1440px) {
+	html {
+		font-size: 76.67px;
+	}
+}
+
+
+
+
+@media only screen and (min-width: 992px) and (max-width: 1280px) {
+	html {
+		font-size: 61.88px;
+	}
+	.kf-logo {
+		margin: 0 70px 0 54px;
+	}
+	.head-right {
+		margin-right: 24px;
+	}
+}
+
+
+html,body{
+	background-color: #f5f6f8;
+}
+.ns-header{
+	height: 66px;
+	background-color: #021029;
+	box-shadow:0 2px 5px rgba(7,6,27,0.25);
+}
+.ns-banner{
+	margin-top: 10px;
+	position: relative;
+}
+.ns-modal{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 2.24rem;
+	background: -webkit-linear-gradient(bottom,#000,transparent);
+	background: -webkit-linear-gradient(bottom,rgba(0,0,0,.6),transparent);
+	background: linear-gradient(0deg,rgba(0,0,0,.6),transparent);
+}
+.ns-banner img{
+	width: 100%;
+}
+.ns-banner span{
+	position: absolute;
+	left: 0;
+	bottom: 0.58rem;
+	width: 100%;
+	display: block;
+	text-align: center;
+	font-size: 0.36rem;
+	color: #fffefe;
+	z-index: 900;
+}
+.ns-title{
+	background-color: #ffffff;
+	padding: 0 0.5rem;
+}
+.ns-title img{
+	display: none;
+}
+.ns-title .ns-modal{
+	display: none;
+}
+.ns-title span{
+	display: block;
+	font-size: 0.36rem;
+	color: #010101;
+	position: static;
+	padding: 0.5rem 0 0.08rem;
+	text-align: left;
+}
+.ns-content{
+	background-color: #fff;
+	padding: 0.2rem 0.5rem 0.8rem;
+}
+.nsc-text p{
+	color: #333;
+	margin:16px 0;
+	line-height: 28px;
+}
+.nsc-t{
+	overflow: hidden;
+	margin-bottom: 0.5rem;
+}
+.nsc-l{
+	float: left;
+}
+.nsc-l span{
+	display: inline-block;
+	margin-right: 10px;
+	font-size: 14px;
+	color: #999999;
+}
+.nsc-copy{
+	width: 40px;
+	height: 26px;
+	line-height: 26px;
+	border: 1px solid #999999;
+	border-radius: 16px;
+	text-align: center;
+	display: none;
+}
+/*.nsc-l .nsc-source{
+	color: #ff782f;
+}*/
+.nsc-r{
+	float: right;
+}
+.nsc-text{
+	font-size: 16px;
+	line-height: 32px;
+	color: #333333;
+}
+.nsc-text img{
+	max-width: 100%;
+}
+.nsc-b{
+	width: 100%;
+	height: 609px;
+	margin-top: 1.3rem;
+}
+.nsc-b img{
+	display: block;
+	width: 459px;
+	height: 609px;
+	margin: 0 auto;
+}
+.bdsharebuttonbox .bds_weixin{
+	background: url(../image/weixin.png) center no-repeat;
+	background-size: cover;
+}
+.bdsharebuttonbox .bds_tsina{
+	background: url(../image/weibo.png) center no-repeat;
+	background-size: cover;
+}
+.bdsharebuttonbox .bds_tqq{
+	background: url(../image/tqq.png) center no-repeat;
+	background-size: cover;
+}
+.bdsharebuttonbox .bds_qzone{
+	background: url(../image/qq.png) center no-repeat;
+	background-size: cover;
+}
+.bdsharebuttonbox .bds_douban{
+	background: url(../image/douban.png) center no-repeat;
+	background-size: cover;
+}
+.bdsharebuttonbox .bds_linkedin{
+	background: url(../image/in.png) center no-repeat;
+	background-size: cover;
+}
+.bdsharebuttonbox .bds_count{
+	width: auto;
+	color: #999999;
+	height: 31px;
+	line-height: 32px;
+	padding: 0 8px 0 30px;
+    border: 1px solid #999999;
+    border-radius: 16px;
+	background: url(../image/zan.png) 6px center no-repeat;
+}
+.bdsharebuttonbox a{
+	float: left;
+	width: 32px;
+	height: 32px;
+	margin-right: 10px;
+}
+#bdshare_weixin_qrcode_dialog{
+	height: 294px!important;
+}
+.nsc-b .nsc-phone{
+	display: none;
+}
+.report_title{
+	background: #f6f6f6;
+	margin: 30px 0 10px;
+	padding: 0 8px;
+}
+.report_body table tr,.report_body table td,.report_body table th{
+	font-size: 15px;
+	border: 1px solid #ddd;
+}
+
+.report_body table td,.report_body table th{
+	padding: 6px 10px;
+}
+
+
+
+
+@media only screen and (min-width: 767px) and (max-width: 1170px) {
+	.nsc-text{
+		font-size: 14px;
+		line-height: 28px;
+		color: #333333;
+	}
+	.bdsharebuttonbox a{
+		width: 24px;
+		height: 24px;
+	}
+	.bdsharebuttonbox .bds_count{
+		height: 24px;
+		line-height: 24px;
+		padding: 0 6px 0 26px;
+		background: url(../image/zan.png) 6px center no-repeat;
+		background-size: 16px 14px;
+	}
+}
+
+
+@media only screen and (max-width: 767px){
+	body{
+		overflow-x:hidden ;
+	}
+	.ns-banner {
+	    height: auto;
+	    margin: 0.23rem 0.38rem 0;
+	    padding: 0.3rem 0.4rem 0;
+	}
+	.ns-modal {
+		display: none;
+	}
+	.ns-banner{
+		background-color: #fff;
+	}
+	.ns-banner span {
+	    position: static;
+	    text-align: left;
+	    padding:  0.28rem 0 0.2rem;
+	    margin: 0 auto;
+	    background-color: #fff;
+	    color: #010101;
+	    font-size: 0.36rem;
+	    z-index: 900;
+	    border-bottom: 1px solid #e5e5e5;
+	}
+	.ns-content{
+		margin: 0 0.38rem;
+	    padding: 0.2rem 0.4rem 0.8rem;
+	}
+	.nsc-b {
+	    width: 100%;
+	    height: 6.09rem;
+	    margin-top: 1.3rem;
+	}
+	.nsc-l span {
+	    margin-right: 0.08rem;
+	    font-size: 0.14rem;
+	}
+	.bdsharebuttonbox a {
+	    width: 0.32rem;
+	    height: 0.32rem;
+	    margin-right: 0.08rem;
+	    margin-top: 0.04rem;
+	    background-size: 100% 100%;
+	}
+	.nsc-r  .bdsharebuttonbox .bds_count {
+		width: auto;
+	    height: 0.31rem;
+	    line-height: 0.32rem;
+	    padding: 0 0.08rem 0 0.30rem;
+	    background: url(../image/zan.png) 0.06rem center no-repeat;
+	    background-size: 0.23rem 0.23rem;
+	}
+	.nsc-copy {
+	    width: 0.40rem;
+	    height: 0.26rem;
+	    line-height: 0.26rem;
+	    border: 1px solid #999999;
+	    border-radius: 16px;
+	    text-align: center;
+	    display: none;
+	}
+	.nsc-b img{
+	    width: 4.59rem;
+	    height: 6.09rem;
+	    display: none;
+	}
+	.nsc-b .nsc-phone{
+		display: block;
+		width: 4.59rem;
+	    height: 6.09rem;
+	}
+	.bds_weixin{
+		display: none;
+	}
+}

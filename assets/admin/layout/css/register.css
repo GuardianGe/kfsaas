@@ -1,0 +1,66 @@
+body{font-family: "arial","microsoft yahei";}
+.stepCon{ max-width: 700px; margin: 0 auto; overflow: auto; padding: 0 20px;}
+.stepCon .active{ background: #7b7faf; color: #ffffff;}
+.stepLeft,.stepRight{ width: 50%; position: relative;}
+.stepLeft hr,.stepRight hr{ height: 3px; border: none; background: #ffffff;}
+.stepLeft span,.stepRight span{ display: block; position: absolute; display: block; background: #ffffff; width: 30px; height: 30px; border-radius: 15px; text-align: center; line-height: 30px; font-weight: bold; color: #333333;}
+.stepFirst,.stepSecond,.stepThree{ top: 6px;}
+.stepSecond{ right: -15px; z-index: 99;}
+.stepThree{ right: 0;}
+.secondFont{ letter-spacing: 14px;}
+.login .content .form-phtitle{margin-bottom: 64px;}
+.register-con1 input{margin-top: 2px;}
+.login .regi-color span{
+	color: #35395C;
+	font-size: 14px;
+	text-align: center;
+}
+.login .regi-color span a{
+	text-decoration: underline;
+}
+.register-con3{
+	margin-top: 30px;
+}
+#reg04{
+	margin-top: 20px;
+}
+.register-con2{
+		margin-top: 40px;
+	}
+#forgetPbtn{margin-top: 24px;}
+@media (max-width: 767px){
+	.login .content{
+		 margin-bottom: 20px;
+		 width:300px;
+	}
+	.eye{
+		right:2px;
+	}
+	.register-con-pw .eye{
+		right:-15px;
+	}
+	.form-verify input{
+		width:130px;
+	}
+	.page-footer{
+		padding: 8px 20px 14px 20px;
+	    font-size: 12px;
+	    height: auto;
+	    overflow: hidden;
+	}
+	.register-con1{
+		margin-top: 2px;
+	}
+	#verifyReg{
+		height:32px;
+	}
+	.register-con2{
+		margin-top: 40px;
+	}
+	.register-con3{
+		margin-top: 30px;
+	}
+	#reg04{
+		margin-top: 20px;
+	}
+}

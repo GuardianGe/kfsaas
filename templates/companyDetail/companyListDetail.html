@@ -1,0 +1,3721 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+	<!--<![endif]-->
+
+	<head>
+		<meta charset="utf-8" />
+		<title>公司详情｜三板慧｜金融大数据</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta content="width=device-width, initial-scale=1" name="viewport" />
+		<meta content="" name="description" />
+		<meta content="" name="author" />
+		<meta name="format-detection" content="telephone=no">
+		<link href="../../assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+		<link href="../../assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+		<link href="../../assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+		<link href="../../assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" />
+		<link href="../../assets/global/css/components.css" id="style_components" rel="stylesheet" type="text/css" />
+		<link href="../../assets/global/css/plugins.css" rel="stylesheet" type="text/css" />
+		<link href="../../assets/admin/layout/css/layout.css" rel="stylesheet" type="text/css" />
+		<link href="../../assets/admin/layout/css/themes/darkblue.css" rel="stylesheet" type="text/css" id="style_color" />
+		<link rel="stylesheet" type="text/css" href="../../assets/admin/layout/css/paging.css">
+		<link href="../../assets/admin/layout/css/custom.css" rel="stylesheet" type="text/css" />
+		<link href="../../assets/admin/layout/css/content.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript">
+			function softWallFun(el){
+		    	$("#privateList").html("");
+		       	var tr = '';
+		       	tr += "<tr>";
+		        tr += "<td class=''>软件全称：" + $(el).attr("fullName") + "</td>";
+		        tr += "</tr>";
+		        tr += "<tr>";
+		        tr += "<td class='' >著作权人：" + $(el).attr("copyrightOwner") + "</td>";
+		        tr += "</tr>";
+		        tr += "<tr>";
+		        tr += "<td class=''>国籍：" + $(el).attr("country") + "</td>";
+		        tr += "</tr>";
+		        tr += "<tr>";
+		        tr += "<td class=''>首次发表日期：" + $(el).attr("sday") + "</td>";
+		        tr += "</tr>";
+		        tr += "<tr>";
+		        tr += "<td class=''>登记日期：" + $(el).attr("registerTime") + "</td>";
+		        tr += "</tr>";
+		        tr += "<tr>";
+		        tr += "<td class=''>著作权登记批准日期：" + $(el).attr("successDate") + "</td>";
+		        tr += "</tr>";
+		        tr += "<tr>";
+		        tr += "<td class=''>分类号：" + $(el).attr("classificationNumber") + "</td>";
+		        tr += "</tr>";
+		        tr += "<tr>";
+		        tr += "<td class=''>版本号：" + $(el).attr("versionNumber") + "</td>";
+		        tr += "</tr>";
+		        $("#privateList").append(tr);
+		    }
+		</script>
+		<script type="text/javascript" charset="utf-8">
+		    var html = document.getElementsByTagName("html")[0];
+		    if (html.offsetWidth < 768) {
+		        html.style.fontSize = html.offsetWidth / 750 * 100 + "px";
+		        addEventListener("resize", function () {
+		            html.style.fontSize = html.offsetWidth / 750 * 100 + "px";
+		        }, false);
+		    }
+		</script>
+	</head>
+
+	<body class="page-header-fixed page-quick-sidebar-over-content page-container-bg-solid" style="min-width: 1342px;">
+		<div class="modal fade myModal01" id="mySoftWall" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+		        <h4 class="modal-title" id="myModalLabel">著作人详情信息</h4>
+		      </div>
+		      <div class="modal-body">
+		        <div class="province" id="comProvince">
+		        	<table class="table table-condensed table-hover table-team">
+						<tbody id="privateList">
+							
+						</tbody>
+					</table>
+		        </div>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-primary" data-dismiss="modal" id="">确定</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		<div class="modal fade myModal01" id="myModalCourt" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+		        <h4 class="modal-title" id="myModalLabel">开庭公告详情</h4>
+		      </div>
+		      <div class="modal-body">
+		        <div class="province" id="comProvince">
+		        	<table class="table table-condensed table-hover table-team">
+		        		<colgroup>
+							<col width="16%" />
+							<col width="84%" />
+						</colgroup>
+						<tbody id="courtTableList">
+							
+						</tbody>
+					</table>
+		        </div>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-primary" data-dismiss="modal" id="">确定</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		<div class="modal fade myModal01" id="myModal02" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h4 class="modal-title" id="myModalLabel">公告类型</h4>
+					</div>
+					<div class="modal-body">
+						<div class="province">
+							<div class="province-ul">
+				        		<ul>
+				        		</ul>
+				        	</div>
+							<div class="city-list" id="compPop">
+								<ul>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+						<button type="button" class="btn default" id="compPopspecailSave">确定</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade myModal01" id="samePop" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+		        <h4 class="modal-title" id="samePopLabel">商业模式详情</h4>
+		      </div>
+		      <div class="modal-body">
+		        <div class="province">
+		        	<div class="province-ul">
+		        		<!--<input type="text" name="" id="" value="" placeholder="可输入拼音汉字查找"/>-->
+		        	</div>
+		        	<div class="city-list indPop" id="compPopSame">
+		        		<ul>
+		        			
+		        		</ul>
+		        	</div>
+		        </div>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		<div class="modal fade myModal01" id="myModalOut" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+		        <h4 class="modal-title" id="myModalLabel">报告内容</h4>
+		      </div>
+		      <div class="modal-body">
+		        <div class="province pdt10" id="privateListutO">
+		        </div>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		<div class="modal fade myModal01" id="myModalOut2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		  <div class="modal-dialog" style="width: 700px;">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+		        <h4 class="modal-title" id="myModalLabel">报告内容</h4>
+		      </div>
+		      <div class="modal-body">
+		        <div class="province pdt10" id="privateListutO">
+		        	<div class="row">
+		        		<div class="col-md-6">
+		        			<ul class="patentList">
+		        				
+		        			</ul>
+		        		</div>
+		        		<div class="col-md-6">
+		        			<div class="patentDiv">查看大图</div>
+		        			<img id="patentImg" src="" alt="" />
+		        		</div>
+		        		<div class="col-md-12">
+		        			<div class="description"><b>摘要</b><span class="descriptionNote"></span></div>
+		        		</div>
+		        	</div>
+		        </div>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		<div class="modal fade myModal01" id="myModaladdtion" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				  <div class="modal-dialog">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				        <h4 class="modal-title" id="myModalLabel">发行对象</h4>
+				      </div>
+				      <div class="modal-body">
+				        <div class="province pdt10">
+				        	<table class="table table-condensed table-hover table-team">
+								<tbody id="additionO">
+								</tbody>
+							</table>
+				        </div>
+				      </div>
+				      <div class="modal-footer">
+				        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+		<div class="modal fade myModal01" id="myportCredit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+		        <h4 class="modal-title"></h4>
+		      </div>
+		      <div class="modal-body">
+		        <div class="province pdt10 portCreditBox" id="portCreditO">
+		        	<div class="portCredit-title"></div>
+		        	<div class="portCredit-content">
+		        		
+		        	</div>
+		        
+				</div>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		<!-- BEGIN HEADER -->
+		<div class="page-header md-shadow-z-1-i navbar navbar-fixed-top">
+			<!-- BEGIN HEADER INNER -->
+			<div class="page-header-inner">
+				<!-- BEGIN LOGO -->
+				<div class="page-logo">
+					<a href="/index.php/companylisted/index">
+						<img src="../../assets/admin/layout/img/logo.png" alt="logo" class="logo-default" />
+					</a>
+					<div class="menu-toggler sidebar-toggler hide">
+					</div>
+				</div>
+				<a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse">
+				</a>
+				<div class="top-menu">
+					<ul class="nav navbar-nav pull-right">
+						<li class="dropdown dropdown-extended dropdown-notification mgr20" id="header_notification_bar">
+							<a href="/account/buy" class="dropdown-toggle" style="height:55px">
+								<i class="fa fa-dollar"></i>
+								<span class="badge badge-default" style="right: -18px">购买</span>
+							</a>
+						</li>
+						<li class="dropdown dropdown-user">
+							<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+								<img alt="" class="img-circle" src="http://user.kaifengdata.com/man.png" />
+								<span class="username username-hide-on-mobile">
+					齐天大圣 </span>
+								<i class="fa fa-angle-down"></i>
+							</a>
+							<ul class="dropdown-menu dropdown-menu-default">
+								<li>
+									<a href="/account/info">
+										<i class="icon-user"></i>我的三板慧</a>
+								</li>
+								<li class="pay">
+									<a href="JavaScript:void(0)" id="dk">
+										<i class="fa fa-check-square-o"></i><span>每日打卡</span></a>
+								</li>
+								<li>
+									<a href="/account/modifyPassword">
+										<i class="fa fa-pencil-square-o"></i>修改密码 </a>
+								</li>
+								<li>
+									<a href="/account/version">
+										<i class="fa fa-file-o"></i>版本介绍
+									</a>
+								</li>
+								<li>
+									<a href="/account/feedback">
+										<i class="icon-envelope-open"></i>意见反馈
+									</a>
+								</li>
+								<li>
+									<a href="/user/logout">
+										<i class="fa fa-sign-out"></i>退出 </a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<!-- END TOP NAVIGATION MENU -->
+				<div class="pc-search hidden-xs hidden-sm">
+					<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+					<input type="text" name="" id="searchBlur" value="" placeholder="搜索公司，基金，资料" />
+					<div class="searchList">
+						<ul></ul>
+					</div>
+				</div>
+			</div>
+			<!-- END HEADER INNER -->
+		</div>
+		<!-- END HEADER -->
+		<div class="clearfix">
+		</div>
+		<!-- BEGIN CONTAINER -->
+		<div class="page-container">
+			<!-- BEGIN SIDEBAR -->
+			<div class="page-sidebar-wrapper">
+				<div class="page-sidebar navbar-collapse collapse">
+					<ul class="page-sidebar-menu " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
+						<li class="sidebar-toggler-wrapper">
+							<div class="sidebar-toggler">
+							</div>
+						</li>
+						<li class="sidebar-search-wrapper">
+							<form class="sidebar-search " action="extra_search.html" method="POST">
+								<a href="javascript:;" class="remove">
+									<i class="icon-close"></i>
+								</a>
+								<div class="input-group">
+									<input type="text" class="form-control" placeholder="搜索">
+									<span class="input-group-btn">
+							<a href="javascript:;" class="btn submit"><i class="icon-magnifier"></i></a>
+							</span>
+								</div>
+							</form>
+							<!-- END RESPONSIVE QUICK SEARCH FORM -->
+						</li>
+						<li class="start active open">
+							<a href="javascript:;">
+								<!--<i class="icon-home"></i>-->
+								<span class="title">新三板</span>
+								<span class="selected"></span>
+								<span class="arrow open"></span>
+							</a>
+							<ul class="sub-menu">
+								<li class="active">
+									<a href="挂牌公司列表页.html">
+										<!--<i class="icon-bar-chart"></i>-->
+										挂牌公司</a>
+								</li>
+								<li>
+									<a href="公告.html">
+										<!--<i class="icon-bulb"></i>-->
+										公告</a>
+								</li>
+								<li>
+									<a href="定增.html">
+										<!--<i class="icon-graph"></i>-->
+										定增</a>
+								</li>
+								<li>
+									<a href="交易.html">
+										<!--<i class="icon-graph"></i>-->
+										交易</a>
+								</li>
+								<li>
+									<a href="#">
+										<!--<i class="icon-graph"></i>-->
+										主办券商</a>
+								</li>
+								<li>
+									<a href="#">
+										<!--<i class="icon-graph"></i>-->
+										政策法规</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<!--<i class="icon-basket"></i>-->
+								<span class="title">投资</span>
+								<span class="arrow "></span>
+							</a>
+							<ul class="sub-menu">
+								<li>
+									<a href="投资事件.html">
+										<!--<i class="icon-home"></i>-->
+										投资事件</a>
+								</li>
+								<li>
+									<a href="投资机构列表页.html">
+										<!--<i class="icon-basket"></i>-->投资机构</a>
+								</li>
+								<li>
+									<a href="#">
+										<!--<i class="icon-tag"></i>-->
+										私募基金管理人</a>
+								</li>
+
+							</ul>
+						</li>
+						<li>
+							<a href="#">
+								<!--<i class="icon-rocket"></i>-->
+								<span class="title">新闻</span>
+								<span class="arrow "></span>
+							</a>
+
+						</li>
+						<li>
+							<a href="javascript:;">
+								<!--<i class="icon-diamond"></i>-->
+								<span class="title">研报</span>
+								<span class="arrow "></span>
+							</a>
+
+						</li>
+						<li>
+							<a href="#">
+								<!--<i class="icon-puzzle"></i>-->
+								<span class="title">关系查找</span>
+								<span class="arrow "></span>
+							</a>
+
+						</li>
+					</ul>
+					<!-- END SIDEBAR MENU -->
+				</div>
+			</div>
+			<!-- END SIDEBAR -->
+			<!-- BEGIN CONTENT -->
+			<div class="page-content-wrapper">
+				<div class="page-content">
+					<div class="page-bar">
+	                    <ul class="page-breadcrumb">
+							<li>
+								<i class="fa fa-home"></i>
+								<span id="brandOne"></span>
+								<i class="fa fa-angle-right"></i>
+							</li>
+							<li id="brandTwo">
+								
+							</li>
+							<li class='nowTimeTop'>
+								北京时间：<span id="nowDate"></span>
+							</li>
+						</ul>
+					</div>
+					<div class="page-content-par">
+						<div class="row mod-title">
+							<div class="col-md-12">挂牌公司详情</div>
+						</div>
+						<div class="page-height">
+
+						</div>
+						<div class="row mod-linetext mod-linetextIn">
+							<ul class="list-inline list-inline-title" style="overflow: hidden;">
+								<li style="cursor:default;float: left;" id='modDiLi'>
+									<span title="股票代码" id="nameCodeId"></span>
+									<span id="nameShort"></span>
+									<span class='sitColor' id="sit"></span>
+									<span id="chuyu" class='sitColors'></span>
+									<span style='display: none;' id="zhaipai" title="终止挂牌" class='sitColors'>摘</span>
+								</li>
+								<li class='liBorderTop' title='收盘价' style="color: #222222; cursor: default;float: left;margin-left:10px;">最新价&nbsp;&nbsp;<span  id="shoupan">--</span></li>
+								<li class='liBorderTop' title='涨跌' style="color: #222222;cursor: default;float: left;">涨跌&nbsp;&nbsp;<span id="zhangdie">--</span></li>
+								<li class='liBorderTop' title='涨跌幅（%）' style="color: #222222;cursor: default;float: left;">涨跌幅&nbsp;&nbsp;<span id="zhangbi">--</span></li>
+								<li class='liBorderTop' title='流通市值' style="color: #222222;cursor: default;float: left;">流通市值&nbsp;&nbsp;<span id="liushizhi">--</span></li>
+								<li class='liBorderTop' title='PE(TTM)' style="color: #222222;cursor: default;float: left;">PE(TTM)&nbsp;&nbsp;<span id="pettm">--</span>|</li>
+								<li title='' style="color: #222222;cursor: default;float: left;"><span id="zhandat"></span></li>
+								<li class='joinOptional' id="joinOptional"></li>
+							</ul>
+							<ul class="list-inline list-inline-title" style="overflow: hidden;margin-top: -15px;">
+								<li style="color: #222222;padding-right: 10px;cursor:default;">财务分析&nbsp;&nbsp;<span class="leverImg" id="lever-img"></span></li>
+								<li style="color: #222222;padding-right: 10px;cursor:default;">成长性&nbsp;&nbsp;<span class="leverSun" id="lever-1"></span></li>
+								<li style="color: #222222;padding-right: 10px;cursor:default;">回报率&nbsp;&nbsp;<span class="leverSun" id="lever-2"></span></li>
+								<li style="color: #222222;padding-right: 10px;cursor:default;">安全性&nbsp;&nbsp;<span class="leverSun" id="lever-3"></span></li>
+								<li style="padding-right: 10px;"><a id="toCwfx" href="javascript:;">查看详情>></a></li>
+							</ul>
+						</div>
+						<div class="row col-hide">
+							<div class="dropdown dropdown-select">
+								<a class="dropdown-toggle" id="drop4" role="button" data-toggle="dropdown" href="#">公告
+									<span class="input-group-btn caret2">
+								<button class="btn btn-sm  btn-icon-btn" type="button"><i class="fa fa-calendar2"></i></button>
+							</span>
+								</a>
+								<ul id="menu1" class="dropdown-menu" role="menu" aria-labelledby="drop4">
+									<li role="presentation">
+										<a role="menuitem" tabindex="-1" href="#tab_0">公告</a>
+									</li>
+									<li role="presentation">
+										<a role="menuitem" tabindex="-1" href="#tab_2">新闻</a>
+									</li>
+									<li role="presentation">
+										<a role="menuitem" tabindex="-1" href="#tab_3">基本资料</a>
+									</li>
+									<li role="presentation">
+										<a role="menuitem" tabindex="-1" href="#tab_4">财报</a>
+									</li>
+									<li role="presentation">
+										<a role="menuitem" tabindex="-1" href="#tab_5">研报</a>
+									</li>
+									<li role="presentation">
+										<a role="menuitem" tabindex="-1" href="#tab_6">十大股东</a>
+									</li>
+									<li role="presentation">
+										<a role="menuitem" tabindex="-1" href="#tab_7">投融资信息</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<div style="height: 46px; margin-bottom: 20px;">
+								<div class="comNewCss">
+									<ul class="list-inline clearfix  comNewTab">
+										<li class="">
+											<a href="#tab_1" data-toggle="tab">个股速览 </a>
+										</li>
+										<li class="">
+											<a href="#tab_6" name="gsgk1" data-toggle="tab">公司概况 </a>
+										</li>
+										<li class="">
+											<a href="#tab_3" name="jbxx1" data-toggle="tab">基本信息 </a>
+										</li>
+										<li class="">
+											<a href="#tab_10" name="syfx1"  data-toggle="tab">商业分析</a>
+										</li>
+										<li>
+											<a href="#tab_11" name="qytp1"  data-toggle="tab">企业图谱</a>
+										</li>
+										<li class="">
+											<a href="#tab_4" name="cwsj1"  data-toggle="tab">财务数据</a>
+										</li>
+										<li class="">
+											<a href="#tab_13" name="jyxx1"  data-toggle="tab">经营信息</a>
+										</li>
+										<li class="">
+											<a href="#tab_9" name="fxxx1"  data-toggle="tab">风险信息</a>
+										</li>
+										<li class="">
+											<a href="#tab_7" name="zscq1"  data-toggle="tab">知识产权 </a>
+										</li>
+										<li class="">
+											<a href="#tab_12" name="zqxx1"  data-toggle="tab">证券信息</a>
+										</li>
+										<li class="lastMenuWidUp">
+											<a href="#tab_0" name=""  data-toggle="tab">公告 </a>
+										</li>
+										<li  class="lastMenuWidUp">
+											<a href="#tab_5" name=""  data-toggle="tab">研报</a>
+										</li>
+										<li  class="overli-noborder lastMenuWidUp">
+											<a href="#tab_2" name=""  data-toggle="tab">新闻</a>
+										</li>
+									</ul>
+									<ul class="basicMenu">
+										<li></li>
+										<li>
+											<ul class="basicMenuLabel secondBasicMenuLabel active">
+												<li><a name="gsgk1" href="javascript:;">公司高管</a></li>
+												<li><a name="gsgk2" href="javascript:;">十大股东</a></li>
+												<li><a name="gsgk3" href="javascript:;">股本结构</a></li>
+												<li><a name="gsgk4" href="javascript:;">股票分红</a></li>
+												<li><a name="gsgk5" href="javascript:;">股票增发</a></li>
+												<li><a name="gsgk6" href="javascript:;">核心员工</a></li>
+											</ul>
+										</li>
+										<li>
+											<ul class="">
+												<li><a name="jbxx1" href="javascript:;">公司信息</a></li>
+												<li><a name="jbxx2" href="javascript:;">工商信息</a></li>
+												<li><a name="jbxx3" href="javascript:;">行业信息</a></li>
+												<li><a name="jbxx4" href="javascript:;">历史变更</a></li>
+												<li><a name="jbxx5" href="javascript:;">企业评级</a></li>
+												<li><a name="jbxx6" href="javascript:;">同行业企业</a></li>
+											</ul>
+										</li>
+										<li>
+											<ul class="">
+												<li><a name="syfx1" href="javascript:;">主营业务</a></li>
+												<li><a name="syfx2" href="javascript:;">营收来源</a></li>
+												<li><a name="syfx3" href="javascript:;">主要客户</a></li>
+												<li><a name="syfx4" href="javascript:;">主要供应商</a></li>
+												<li><a name="syfx5" href="javascript:;">商业模式</a></li>
+												<li><a name="syfx6" href="javascript:;">同商业模式</a></li>
+											</ul>
+										</li>
+										<li>
+											<ul>
+												<li><a name="qytp1" class="qytp" href="javascript:;">股权结构</a></li>
+												<li><a name="qytp2" class="qytp" href="javascript:;">客户关系</a></li>
+												<li><a name="qytp3" class="qytp" href="javascript:;">供应链关系</a></li>
+												<li><a name="qytp4" class="qytp" href="javascript:;">对外投资</a></li>
+												<li><a name="qytp5" class="qytp" href="javascript:;">分支机构</a></li>
+												<li><a name="qytp6" class="qytp" href="javascript:;">历史融资</a></li>
+											</ul>
+										</li>
+										<li>
+											<ul class="">
+												<li><a name="cwsj1" class="cwsj" href="javascript:;">财务分析</a></li>
+												<li><a name="cwsj2" class="cwsj"  href="javascript:;">财务摘要</a></li>
+												<li><a name="cwsj3" class="cwsj"  href="javascript:;">资产负债表</a></li>
+												<li><a name="cwsj4" class="cwsj"  href="javascript:;">利润表</a></li>
+												<li><a name="cwsj5" class="cwsj"  href="javascript:;">现金流量表</a></li>
+											</ul>
+										</li>
+										<li>
+											<ul class="basicMenuLabel">
+												<li><a name="jyxx1" href="javascript:;">招聘信息</a></li>
+												<li><a name="jyxx2" href="javascript:;">招投标</a></li>
+												<li><a name="jyxx3" href="javascript:;">进出口信用</a></li>
+												<li><a name="jyxx4" href="javascript:;">税务评级</a></li>
+												<li><a name="jyxx5" href="javascript:;">债券信息</a></li>
+												<li><a name="jyxx6" href="javascript:;">抽查检查</a></li>
+												<li><a name="jyxx7" href="javascript:;">司法拍卖</a></li>
+											</ul>
+										</li>
+										<li>
+											<ul class="basicMenuLabel">
+												<li><a name="fxxx1" href="javascript:;">风险提示</a></li>
+												<li><a name="fxxx3" href="javascript:;">法律诉讼</a></li>
+												<li><a name="fxxx2" href="javascript:;">法院公告</a></li>
+												<li><a name="fxxx4" href="javascript:;">经营异常</a></li>
+												<!--<li><a name="fxxx5" href="javascript:;">行政处罚</a></li>-->
+												<li><a name="fxxx6" href="javascript:;">动产抵押</a></li>
+												<!--<li><a name="fxxx7" href="javascript:;">司法拍卖</a></li>-->
+												<!--<li><a name="fxxx8" href="javascript:;">股权质押</a></li>
+												<li><a name="fxxx9" href="javascript:;">股权冻结</a></li>-->
+												<li><a name="fxxx10" href="javascript:;">开庭公告</a></li>
+												<!--<li><a name="fxxx11" href="javascript:;">进出口信用</a></li>
+												<li><a name="fxxx12" href="javascript:;">环保信息</a></li>-->
+												<li><a name="fxxx13" href="javascript:;">失信人</a></li>
+												<li><a name="fxxx14" href="javascript:;">被执行人</a></li>
+												<li><a name="fxxx15" href="javascript:;">欠税公告</a></li>
+												<li><a name="fxxx16" href="javascript:;">行政处罚</a></li>
+											</ul>
+										</li>
+										<li>
+											<ul>
+												<li><a name="zscq1" href="javascript:;">研发投入</a></li>
+												<li><a name="zscq2" href="javascript:;">公司专利</a></li>
+												<li><a name="zscq3" href="javascript:;">商标信息</a></li>
+												<li><a name="zscq4" href="javascript:;">作品著作权</a></li>
+												<li><a name="zscq5" href="javascript:;">软件著作权</a></li>
+												<li><a name="zscq6" href="javascript:;">域名</a></li>
+												<li><a name="zscq7" href="javascript:;">企业证书</a></li>
+												<li><a name="zscq8" href="javascript:;">特许经营权</a></li>
+											</ul>
+										</li>
+										<li>
+											<ul class="basicMenuLabel">
+												<li><a name="zqxx1" href="javascript:;">挂牌信息</a></li>
+												<li><a name="zqxx2" href="javascript:;">主办券商</a></li>
+												<li><a name="zqxx3" href="javascript:;">中介机构</a></li>
+											</ul>
+										</li>
+										<li class="lastMenuWid"></li>
+										<li class="lastMenuWid"></li>
+										<li class="lastMenuWid"></li>
+									</ul>
+								    </div>
+							</div>
+							<div class="tab-content reset-col">
+										<div class="tab-pane active" id="tab_0">
+											<div class="page-line"></div>
+											<div class="row mod-con-ipt">
+												<div class="col-sm-2 contan-search">
+													<input placeholder="关键字" type="text" id="noticeId" class="form-control form-filter input-sm" name="product_id">
+												</div>
+												<div class="col-sm-6">
+													<button class="search  btn-ipt" id="noticeBtn">查询</button>
+													<button class="search  btn-ipt btn-ipts" id="noticeBtnReset">重置</button>
+													<a href="javascript:void(0)" class="allNotice">全部公告>></a>
+												</div>
+											</div>
+											<div class="row allList" id="compQs">
+												<div class="hang-title">
+													<span>公告类型</span>
+												</div>
+												<ul class="list-inline" id="comSpecial">
+													<li class="hang-active" name="">全部</li>
+													<li name="b0201">招股挂牌</li>
+	                                                <li name="b0302">风险提示</li>
+	                                                <li name="b0402">股票增发</li>
+	                                                <li name="b0610">股权质押</li>
+	                                                <li name="b0609">人事变动</li>
+												</ul>
+											</div>
+											<div class="row allListSo" id="allListSo">
+												<div class="hang-title">
+													<span>已选条件</span>
+												</div>
+												<ul class="list-inline soList " id="soCheck">
+													<li class="soClear">
+														<button class="search  btn-ipt" id="soClear">清空条件</button>
+													</li>
+												</ul>
+											</div>
+
+											<div class="portlet box darkCyan">
+												<div class="portlet-body tab-content maskInTable">
+													<div class="portlet-body flip-scroll">
+														<table class="table  table-bordered table-striped table-condensed flip-content table-team">
+															<colgroup>
+																<col width="50%" />
+																<col width="20%" />
+																<col width="10%" />
+																<col width="20%" />
+															</colgroup>
+															<thead>
+																<tr role="row" class="tr newTr">
+																	<th scope="col">
+																		公告标题
+																	</th>
+																	<th scope="col">
+																		公告类型
+																	</th>
+																	<th scope="col">
+																		<div class="dropdown dropdown-select2" id="comSelect2">
+																			<a class="dropdown-toggle menu1" id="noteType" role="button" data-toggle="dropdown" href="javascript:void(0)" style="color: #5c5c5f;" name="">公告特征<b class="caret"></b></a>
+																			<ul id="menu1" class="dropdown-menu" role="menu" aria-labelledby="drop4">
+																				<li role="presentation">
+																					<a role="menuitem" href="javascript:void(0)" name="b1">利好</a>
+																				</li>
+																				<li role="presentation">
+																					<a role="menuitem" href="javascript:void(0)" name="b2">利空</a>
+																				</li>
+																				<li role="presentation">
+																					<a role="menuitem" tabindex="公告特征" href="javascript:void(0)" name="">全部</a>
+																				</li>
+																			</ul>
+																		</div>
+																	</th>
+																	<th scope="col">
+																		公告日期
+																	</th>
+																</tr>
+															</thead>
+
+															<tbody class="touzi-table touzi-team tableNews" id="tableOne">
+
+															</tbody>
+														</table>
+													</div>
+
+													<div id="pageTool"></div>
+												</div>
+											</div>
+										</div>
+										<div class="tab-pane" id="tab_1">
+											<div class="page-line"></div>
+											<div class="canvasTop canvasTop01">
+												<table border="0" cellspacing="0" cellpadding="0">
+													<colgroup>
+														
+													</colgroup>
+													<tr>
+														<td>
+															<span class='moneyWidth'>开盘价</span><span id="kaipan">--</span>
+														</td>
+														<td>
+															<span class='moneyWidth'>最高价</span><span id="zuigao">--</span>
+														</td>
+														<td>
+															<span class='moneyWidth'>成交量</span><span id="chengjiao">--</span>
+														</td>
+														<td>
+															<span class='moneyWidth' style="word-spacing:8px; letter-spacing: 15px;">均价</span><span style='padding-left: 4px;' id="junjia">--</span>
+														</td>
+														<td>
+															<span class='moneyWidth'>市盈率</span><span id="shiyingl">--</span>
+														</td>
+														<td>
+															<span class='moneyWidth' style="word-spacing:8px; letter-spacing: 7px;">总股本</span><span id="allMoney" style="padding-left: 14px;">--</span>
+														</td>
+													</tr>
+													<tr>
+														<td>
+															<span class='moneyWidth'>昨收价</span><span id="zuoshoujia">--</span>
+														</td>
+														<td>
+															<span class='moneyWidth'>最低价</span><span id="zuidijia">--</span>
+														</td>
+														<td>
+															<span class='moneyWidth'>成交额</span><span id="chengjiaoe">--</span>
+														</td>
+														<td>
+															<span class='moneyWidth'>换手率</span><span id="huanshoul">--</span>
+														</td>
+														<td>
+															<span class='moneyWidth'>市净率</span><span id="shijingl">--</span>
+														</td>
+														<td>
+															<span class='moneyWidth'>流通股本</span><span id="pastMoney">--</span>
+														</td>
+													</tr>
+												</table>
+											</div>
+											<div class="page-line"></div>
+											<div class="echart-wrap">
+												<div class="echart-left">
+													<div class="canvas-list" id="quotesMap">
+														<ul>
+															<li class="active">分时图</li>
+															<li>日线图</li>
+															<li>周线图</li>
+															<li>月线图</li>
+															<li class='c-list-right'>季线图</li>
+															<li class='historyDetail'>
+																<a href="javascript:;">历史行情明细>></a>
+															</li>
+														</ul>
+													</div>
+													<div class="canvas-most-wrap">
+														<div class="canvas-most canvas-most01 active">
+															<div id="" class="canvas-position">
+																<div id="sellChart" class="sellCanvas"></div>
+															</div>
+															<div id="" class="canvas-position canvas-position-bar">
+																<div id="barChart" class="sellCanvas"></div>
+															</div>
+														</div>
+														<div class="canvas-most canvas-most02">
+															<div id="" class="canvas-position">
+																<div id="dayChart" class="sellCanvas"></div>
+															</div>
+															<div id="" class="canvas-position canvas-position-bar">
+																<div id="barChartDay" class="sellCanvas"></div>
+															</div>
+														</div>
+														<div class="canvas-most canvas-most03">
+															<div id="" class="canvas-position">
+																<div id="weekChart" class="sellCanvas"></div>
+															</div>
+															<div id="" class="canvas-position canvas-position-bar">
+																<div id="barChartWeek" class="sellCanvas"></div>
+															</div>
+														</div>
+														<div class="canvas-most canvas-most04">
+															<div id="" class="canvas-position">
+																<div id="monthChart" class="sellCanvas"></div>
+															</div>
+															<div id="" class="canvas-position canvas-position-bar">
+																<div id="barChartMonth" class="sellCanvas"></div>
+															</div>
+														</div>
+														<div class="canvas-most canvas-most05">
+															<div id="" class="canvas-position">
+																<div id="quarterChart" class="sellCanvas"></div>
+															</div>
+															<div id="" class="canvas-position canvas-position-bar">
+																<div id="barChartQuarter" class="sellCanvas"></div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="echart-right">
+													<div class="echart-right-in">
+														<div id="sellTable"></div>
+														<div class="priceTableTop"></div>
+														<div id="priceTable"></div>
+													</div>
+												</div>
+											</div>
+											<div class="page-line"></div>
+											<div class="msg-wrap"><div class="msg-title">基本指标</div></div>
+											<div class="canvasTop canvasTop02">
+												<table border="0" cellspacing="0" cellpadding="0">
+													<colgroup>
+														<col width="20%" />
+														<col width="20%" />
+														<col width="20%" />
+														<col width="20%" />
+														<col width="20%" />
+													</colgroup>
+													<tr>
+														<td>
+															<span class='moneyWidth'>上年每股权益</span><span id="lastYaer">--</span>
+														</td>
+														<td>
+															<span class='moneyWidth' style="word-spacing:8px; letter-spacing: 5px;">每股营收</span><span style='padding-left: 13px;' id="erEron">--</span>
+														</td>
+														<td>
+															<span class='moneyWidth'>总资产收益率</span><span id="allSHoyi">--</span>
+														</td>
+														<td>
+															<span class='moneyWidth'>挂牌日期</span><span id="haveDate">--</span>
+														</td>
+														<td>
+															<span class='moneyWidth'>转让状态</span><span id="toStatus">--</span>
+														</td>
+													</tr>
+													<tr>
+														<td>
+															<span class='moneyWidth'>本年每股权益</span><span id="thisYaerErey">--</span>
+														</td>
+														<td>
+															<span class='moneyWidth'>每股净资产</span><span id="evNetMoney">--</span>
+														</td>
+														
+														<td>
+															<span class='moneyWidth' style="word-spacing:8px; letter-spacing: 4px;">销售毛利率</span><span  style='padding-left: 13px;' id="evMaol">--</span>
+														</td>
+														<td>
+															<span class='moneyWidth'>交易状态</span><span id="tranStatus">--</span>
+														</td>
+														<td>
+															<span class='moneyWidth'>权息标志</span><span id="instad">--</span>
+														</td>
+													</tr>
+												</table>
+											</div>
+											<div class="chartDispaly">
+												<div class="page-line" style="margin-top: 0;"></div>
+												<div class="msg-wrap"><div class="msg-title">当日统计</div></div>
+												<div class="canvasTop canvasTop02">
+													<table border="0" cellspacing="0" cellpadding="0">
+														<colgroup>
+															<col width="20%" />
+															<col width="20%" />
+															<col width="20%" />
+															<col width="20%" />
+															<col width="20%" />
+														</colgroup>
+														<tr>
+															<td>
+																<span class='moneyWidth'>报买均价</span><span id="buyPrice">--</span>
+															</td>
+															<td>
+																<span class='moneyWidth'>报买股数</span><span id="buyGu">--</span>
+															</td>
+															<td>
+																<span class='moneyWidth'>报买笔数</span><span id="buyBi">--</span>
+															</td>
+															<td>
+																<span class='moneyWidth'>最高报买</span><span id="buyTop">--</span>
+															</td>
+															<td>
+																<span class='moneyWidth'>最低报买</span><span id="buyBottom">--</span>
+															</td>
+														</tr>
+														<tr>
+															<td>
+																<span class='moneyWidth'>报卖均价</span><span id="sellPrice">--</span>
+															</td>
+															<td>
+																<span class='moneyWidth'>报卖股数</span><span id="sellGu">--</span>
+															</td>
+															<td>
+																<span class='moneyWidth'>报卖笔数</span><span id="sellBi">--</span>
+															</td>
+															<td>
+																<span class='moneyWidth'>最高报卖</span><span id="sellTop">--</span>
+															</td>
+															<td>
+																<span class='moneyWidth'>最低报卖</span><span id="sellBottom">--</span>
+															</td>	
+														</tr>
+													</table>
+												</div>
+												<div class="page-line" style="margin-top: 0;"></div>
+												<div class="msg-wrap"><div class="msg-title">成交明细</div></div>
+												<div class="portlet-body" style="margin-top: -9px;">
+													<div class="table-scrollable maskInTable maskInTableDeal">
+														<table class="table table-striped table-bordered table-hover">
+															<thead class="view-tr">
+																<tr class="tr">
+																	<th>
+																		成交价
+																	</th>
+																	<th>
+																		成交量
+																	</th>
+																	<th>
+																		成交金额
+																	</th>
+																	<th>
+																		买方券商
+																	</th>
+																	<th>
+																		卖方券商
+																	</th>
+																	<th>
+																		成交时间
+																	</th>
+																</tr>
+															</thead>
+															<tbody id="dealDetail">
+	
+															</tbody>
+														</table>
+													</div>
+													<div id="pageToolDeal" class="detailPageHeight"></div>
+												</div>
+												<div class="page-line" style="margin-top: 0;"></div>
+												<div class="msg-wrap"><div class="msg-title">报价明细</div></div>
+												<!--<div class="portlet-body maskInTable" style="margin-top: -9px;">
+													<div class="table-scrollable">
+														<table class="table table-striped table-bordered table-hover">
+															<thead class="view-tr">
+																<tr role="row" class="tr">
+																	<th scope="col" colspan="5">
+																		买入委托
+																	</th>
+																	<th scope="col" colspan="5">
+																		卖出委托
+																	</th>
+																</tr>
+																<tr role="row" class="tr">
+																	<th>买入价格</th>
+																	<th>股份数量</th>
+																	<th>报价单元</th>
+																	<th>自动约定号</th>
+																	<th>报价时间</th>
+																	<th>卖出价格</th>
+																	<th>股份数量</th>
+																	<th>报价单元</th>
+																	<th>自动约定号</th>
+																	<th>报价时间</th>
+																</tr>
+															</thead>
+															<tbody id="payDetail">
+																
+															</tbody>
+														</table>
+													</div>
+													<div id="pageToolPay"></div>
+												</div>-->
+												<div class="portlet box darkCyan">
+													<div class="portlet-body maskInTable" id="maskdata">
+														<div class="table-scrollable table-scrollMoney">
+															<table  id="tableOne_1" class="table table-striped table-bordered table-hover dataTable no-footer" id="sample_1" role="grid" aria-describedby="sample_1_info">
+																<thead>
+																	<tr role="row" class="tr">
+																		<th colspan="5">
+																			买入委托
+																		</th>
+																		<th colspan="5">
+																			卖出委托
+																		</th>
+																	</tr>
+																	<tr role="row" class="tr">
+																		<th>买入价格</th>
+																		<th>股份数量</th>
+																		<th>报价单元</th>
+																		<th>自动约定号</th>
+																		<th>报价时间</th>
+																		<th>卖出价格</th>
+																		<th>股份数量</th>
+																		<th>报价单元</th>
+																		<th>自动约定号</th>
+																		<th>报价时间</th>
+																	</tr>
+																	<tr role="row" class="tr" style="display: none;">
+																		<th>
+																			buyPrice
+																		</th>
+																		<th>
+																			buyVolume
+																		</th>
+																		<th>
+																			buyUnit
+																		</th>
+																		<th>
+																			buyNumber
+																		</th>
+																		<th>
+																			buyTime
+																		</th>
+																		<th>
+																			sellPrice
+																		</th>
+																		<th>
+																			sellVolume
+																		</th>
+																		<th>
+																			sellUnit
+																		</th>
+																		<th>
+																			sellNumber
+																		</th>
+																		<th>
+																			sellTime
+																		</th>
+																	</tr>
+																</thead>
+																<tbody>
+																	
+																</tbody>
+															</table>
+															<div id="sellAndBuy" class="detailPageHeight"></div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="tab-pane" id="tab_2">
+											<div class="page-line"></div>
+											<div class="row mod-con-ipt">
+												<div class="col-sm-2 contan-search">
+													<input placeholder="关键字" type="text" id="newsId" class="form-control form-filter input-sm" name="product_id">
+												</div>
+												<div class="col-sm-6">
+													<button class="search  btn-ipt" id="newsBtn">查询</button>
+													<button class="search  btn-ipt btn-ipts" id="newsBtnReset">重置</button>
+													<a href="javascript:void(0)" class="allNotice">全部新闻>></a>
+													<div class="typeNews">
+														<b></b>
+														<span>重要提示<img src='../../assets/admin/layout/img/tip.png' class='tip'/></span>
+													</div>
+												</div>
+											</div>
+											<div class="row ">
+												<div class="col-md-12">
+													<!--<div class="portlet box white color block">
+							
+                        </div>-->
+													<div class=" maskInTable">
+														<div class="portlet-body flip-scroll">
+															<table class="table table-condensed table-hover table-team">
+																<colgroup>
+																	<col width="60%" />
+																	<col width="20%" />
+																	<col width="20%" />
+																</colgroup>
+																<thead>
+																	<tr role="row" class="tr newTr">
+																		<th scope="col" style="text-align: left;">
+																			新闻标题
+																		</th>
+																		<th scope="col" style="text-align: left;">
+																			新闻来源
+																		</th>
+																		<th scope="col" style="text-align: left;">
+																			新闻日期
+																		</th>
+																	</tr>
+																</thead>
+																<tbody id="newsTable" class="newsTable">
+
+																</tbody>
+															</table>
+
+														</div>
+														<div id="pageToolNews"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="tab-pane" id="tab_3">
+											<div class="page-line"></div>
+											<div class="msg-wrap">
+												<div class="msg-title" id="jbxx1">公司信息</div>
+											</div>
+											<div class="portlet box darkCyan ">
+												<div class="portlet-body tableBasic  maskInAjax" style="padding-bottom: 0;">
+													<div class="table-scrollable" style="border: none;">
+														<table class="table table-striped">
+															<colgroup>
+																<col width="45%" />
+																<col width="55%" />
+															</colgroup>
+															<tbody id="comManAll" class="comLinkColor">
+																<tr>
+																	<td>
+																		公司全称：<span id="basicName2"></span>
+																	</td>
+																	<td>
+																		曾用名：<span id="onceName"></span>
+																	</td>
+																</tr>
+																<tr>
+																	<td>
+																		成立日期：<span id="foundDate"></span>
+																	</td>
+																	<td >
+																		所属地区：<span id="basicProvince"></span>
+																	</td>
+																</tr>
+																<tr>
+																	<td >
+																		所属城市：<span id="basicCity"></span>
+																	</td>
+																	<td>
+																		注册地址：<span id="basicAdress"></span>
+																	</td>
+																</tr>
+																	<td>
+																		公司网址：<span id="basciWeb"></span>
+																	</td>
+																</tr>
+																
+
+															</tbody>
+														</table>
+														<!--<div class="dataDiv"></div>-->
+													</div>
+													
+												</div>
+											</div>
+											<div class="page-line"></div>
+											<div class="msg-wrap">
+												<div class="msg-title" id="jbxx2">工商信息</div>
+											</div>
+											<div class="portlet box darkCyan ">
+												<div class="portlet-body tableBasic  maskInAjax" style="padding-bottom: 0;">
+													<div class="table-scrollable" style="border: none;">
+														<table class="table table-striped">
+															<colgroup>
+																<col width="45%" />
+																<col width="55%" />
+															</colgroup>
+															<tbody class="comLinkColor">
+																<tr>
+																	<td>
+																		工商注册号：<span id="registrationNumber"></span>
+
+																	</td>
+																	<td>
+																		组织机构代码：<span id="organizationCode"></span>
+																	</td>
+																	
+																</tr>
+																<tr>
+																	<td>
+																		统一社会信用代码：<span id="creditCode"></span>
+																	</td>
+																	<td>
+																		企业类型：<span id="company_type"></span>
+																	</td>
+																	
+																</tr>
+																<tr>
+																	<td>
+																		纳税人识别号：<span id="taxpayerNumber"></span>
+																	</td>
+
+																	<td>
+																		行业：<span id="industryName"></span>
+																	</td>
+																</tr>
+																<tr>
+																	<td>
+																		法人代表：<span id="legalRepresentative"></span>
+																	</td>
+																	<td>
+																		注册资本：<span id="registeredCapital"></span>
+																	</td>
+																</tr>
+																<tr>
+																	<td>
+                                                                    	职工人数：<span id="people"></span>
+                                                               		 </td>
+                                                               		 <td>
+                                                                		公司董秘：<span id="basciSecretaries"></span>
+                                                                	</td>
+																</tr>
+																<tr>
+																	<td>
+                                                              		  	注册电话：<span id="basicPhone"></span>
+                                                                	</td>
+																	<td>
+																		经营状态：<span id="operating_status"></span>
+																	</td>
+																</tr>
+																<tr>
+																	<td>
+                                                              		  	营业期限：<span id="operatingBeginDate"></span>
+                                                                	</td>
+																	<td>
+																		核准日期：<span id="approvedDate"></span>
+																	</td>
+																</tr>
+																<tr>
+																	<td>
+                                                                		登记机关：<span id="registrationAuthority"></span>
+                                                                	</td>
+																	<td>
+                                                              		  	公司传真：<span id="basicFax"></span>
+                                                               		</td>
+                                                               		
+																</tr>
+																<tr>
+																	<td>
+                                                                		总股本：<span id="basicEquity"></span>
+                                                                	</td>
+                                                                	<td>
+                                                                		英文名称：<span id="englishName"></span>
+                                                                	</td>
+																</tr>
+																<tr>
+																	<td>
+                                                                		注册地址：<span id="registeredAddress"></span>
+                                                                	</td>
+																</tr>
+																<tr>
+																	<td colspan="2">
+                                                                		经营范围：<span id="businessCcope" title="" style="line-height: 24px;"></span>
+                                                                		<a class="textGl-detail businessCcope-detail" data-toggle="modal" data-target="#myModalOut">查看详情</a>
+                                                                	</td>
+																</tr>
+															</tbody>
+														</table>
+													</div>
+												</div>
+											</div>
+											<div class="page-line"></div>
+											<div class="msg-wrap">
+												<div class="msg-title" id="jbxx3">行业信息</div>
+											</div>
+											<div class="portlet box darkCyan ">
+												<div class="portlet-body tableBasic  maskInAjax" style="padding-bottom: 0;">
+													<div class="table-scrollable" style="border: none;">
+														<table class="table table-striped">
+															<colgroup>
+																<col width="45%" />
+																<col width="55%" />
+															</colgroup>
+															<tbody class="comLinkColor">
+																<tr>
+																	<td>
+																		管理型行业分类：<span id="managementIndustry"></span>
+																	</td>
+																	<td>
+																		投资型行业分类：<span id="investmentIndustry"></span>
+																	</td>
+																</tr>
+																<!--<tr>
+																	<td>
+																		证监会行业分类：<span id="sfcType"></span>
+																	</td>
+																</tr>-->
+																<tr>
+																	<td>
+																		企业标签：<span id="tag"></span>
+																	</td>
+																</tr>
+															</tbody>
+														</table>
+													</div>
+												</div>
+											</div>
+											<!--变更记录开始-->
+											<div class="page-line"></div>
+											<div class="msg-wrap">
+												<div class="msg-title" id="jbxx4">历史变更<!--（<span id="changeLength"></span>条）--></div>
+												<div class="msg-detail">
+
+												</div>
+											</div>
+											<div class="row chengeReg maskInTable maskInTableStory">
+												<table class="gub-ul">
+													<colgroup>
+														<col width="50%" />
+														<col width="50%" />
+													</colgroup>
+													<tbody id="industryTable">
+
+													</tbody>
+
+												</table>
+												<div id="pageToolStoryTool"></div>
+											</div>
+											<div class="page-line"></div>
+											<div class="msg-wrap">
+												<div class="msg-title" id="jbxx5">企业评级</div>
+												<div class="msg-detail">
+												</div>
+											</div>
+											<div class="table-scrollable maskInTable maskInTablePj maskLv">
+												<table class="table table-striped table-bordered table-hover dataTable no-footer" id="sample_3" role="grid" aria-describedby="sample_3_info">
+													<colgroup>
+														<col width="10%"/>
+														<col width="10%"/>
+														<col width="11%"/>
+														<col width="10%"/>
+														<col width="10%"/>
+														<col width="41%"/>
+													</colgroup>
+													<colgroup>
+														<col width="10%"/>
+														<col width="10%"/>
+													</colgroup>
+													<thead>
+														<tr role="row" class="tr">
+															<th scope="col" rowspan="2">
+																发布时间
+															</th>
+															<th scope="col" rowspan="2">
+																研究机构
+															</th>
+															<th scope="col" rowspan="2">
+																分析师
+															</th>
+															<th scope="col" colspan="2">
+																评级内容
+															</th>
+															<th scope="col" rowspan="2" colspan="2">
+																报告标题
+															</th>
+														</tr>
+														<tr role="row" class="tr">
+															<th>本期评级</th>
+															<th>上期评级</th>
+														</tr>
+													</thead>
+													<tbody id="tableNine2">
+													</tbody>
+												</table>
+											</div>
+											<div id="pageToolNine2" class="detailPageHeight"></div>
+											<div class="page-line"></div>
+											<div class="msg-wrap">
+												<div class="msg-title" id="jbxx6">同行业企业</div>
+												<div class="msg-detail">
+												</div>
+											</div>
+											<div class="table-scrollable maskInTable maskInTableIC maskLv">
+												<table class="table table-striped table-bordered table-hover dataTable no-footer" id="sample_3" role="grid" aria-describedby="sample_3_info">
+													<thead>
+														<tr role="row" class="tr">
+															<th scope="col">
+																代码
+															</th>
+															<th scope="col">
+																简称
+															</th>
+															<th scope="col">
+																最新价
+															</th>
+															<th scope="col">
+																财务日期
+															</th>
+															<th scope="col">
+																净利润（万元）
+															</th>
+															<th scope="col">
+																每股收益（元）
+															</th>
+															<th scope="col">
+																市盈率
+															</th>
+															<th scope="col">
+																净资产收益率
+															</th>
+															<th scope="col">
+																总市值（万元）
+															</th>
+															<th scope="col">
+																主办券商
+															</th>
+															<th scope="col">
+																操作
+															</th>
+														</tr>
+													</thead>
+													<tbody id="tableCompany">
+													</tbody>
+												</table>
+											</div>
+											<div id="pageToolCompany" class="detailPageHeight"></div>
+										</div>
+										<div class="tab-pane tabCaiWu" id="tab_4">
+											<div class="row">
+												<div id="repYearFenLine" style="display: none;" class="page-line"></div>
+												<div id="repYearFen" style="margin-top: 10px;margin-bottom: 10px;padding-right: 30px; height: 26px;display: none;">
+													<div class="col-md-12">
+														<div class="pane-choose">
+															<span class="tabPane-rirle">报告期筛选</span>
+															<ul class="tabPaneList">
+																<li name="" style="margin-left: 44px;" class="tabActive">全部</li>
+																<li name="1231">年报</li>
+																<li name="0630">半年报</li>
+																<li name="1000">季报</li>
+															</ul>
+														</div>
+														<div class="" style="float:right;margin-top: 3px;">
+															货币：人民币  &nbsp;&nbsp;&nbsp; 单位：万元
+														</div>
+													</div>
+												</div>
+												<div class="page-line"></div>
+												<div class="col-md-12">
+													<div style="padding-left: 6px;">
+														<ul class="list-inline overLi-btn  col-show" id="banU" style="float: left;">
+															<li class="active" name="4">
+																<a>财务分析</a>
+															</li>
+															<li class="" name="0" style="position: relative;">
+																<a>财务摘要</a>
+																<span class="infoExplain infoExplainCw"></span>
+															</li>
+															<li class="" name="1">
+																<a>资产负债表</a>
+															</li>
+															<li class=""  name="2">
+																<a>利润表</a>
+															</li>
+															<li class=""  name="3">
+																<a>现金流量表</a>
+															</li>
+														</ul>
+														<div class="typeNews" id="typeSel" style="float:left;margin-top: 21px;margin-right: 10px;display: none;">
+		                                                    <b></b>
+		                                                    <span style="font-size: 14px;">显示同比增长率</span>
+		                                                </div>
+		                                                <div class="typeNews" id="typeSelNull" style="float:left;margin-top: 23px;margin-right: 20px;display: none;margin-left: -10px;">
+		                                                    <span style="font-size: 14px;">显示空行</span>
+		                                                </div>
+		                                                <div style="float: left;margin-top: 21px;margin-left: 20px;" class="chooseYear">
+		                                                	选择年份：
+		                                                </div>
+		                                                <div id="chooseYearSelect" class="dropdown dropdown-select" style="float: left;width:140px;margin-top:15px;">
+															<a class="dropdown-toggle" style="padding-left: 15px;" id="noteTypeO" role="button" data-toggle="dropdown" href="#">2016 
+																<span class="input-group-btn caret2">
+																	<button class="btn btn-sm  btn-icon-btn" type="button"><i class="fa fa-calendar2"></i></button>
+																</span>
+															</a>
+															<ul id="menu1" class="dropdown-menu" role="menu" aria-labelledby="drop4" style="min-width: 97px;">
+															</ul>
+														</div>
+														<a class="btn btn-sm default darkgrey" id="outExcel"  href="javascript:void(0)">导出Excel</a>
+													</div>
+												</div>
+												<div class="table-scrollable my-wrapTable maskInTable my-wrapTableEch" style="padding-bottom:0;">
+													<div class="col-md-12">
+														<div class="echWrap-par">
+															<div class="echWrap-in">
+																<div class="echWrap">
+																	<div class="bigEch"></div>
+																	<div class="smallEch smallEch1"></div>
+																	<div class="echarNum" id="echarNum" ></div>
+																</div>
+																<div class="echLine">
+																	<span class="echLine-left" id="echLine-left"></span>
+																	<span class="echLine-right" id="echLine-right"></span>
+																</div>
+															</div>
+															<div class="echWrap-in">
+																<div class="echWrap">
+																	<div class="bigEch"></div>
+																	<div class="smallEch smallEch2"></div>
+																	<div class="echarNum" id="echarNum2" ></div>
+																</div>
+																<div class="echLine">
+																	<span class="echLine-left" id="echLine-left2"></span>
+																	<span class="echLine-right" id="echLine-right2"></span>
+																</div>
+															</div>
+															<div class="echWrap-in">
+																<div class="echWrap">
+																	<div class="bigEch"></div>
+																	<div class="smallEch smallEch3"></div>
+																	<div class="echarNum" id="echarNum3" ></div>
+																</div>
+																<div class="echLine">
+																	<span class="echLine-left" id="echLine-left3"></span>
+																	<span class="echLine-right" id="echLine-right3"></span>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="page-line" style="clear: both;"></div>
+													<div class="col-md-12">
+														<div class="msg-wrap" id="msgSer02">
+															<div class="msg-title">成长性分析</div>
+														</div>
+														<div class="msg-mgr msg-business" style="overflow: hidden;">
+															<div id="businessWrap"></div>
+															<div class="revenueStreams busssWrap growTablePar" id="growTabel1" style="float: left;">
+																<div class="caiwu0 caiwu01" style="display: none;">
+																	<p>该模块为付费模块，请联系我们开通专业版用户权限</p>
+																	<a href='javascript:;' class="contactWeCaiWu">联系我们</a>
+																</div>
+																<table border="1" class="growTable">
+																	<colgroup>
+																			<col width="20%" />
+																			<col width="35%" />
+																			<col width="20%" />
+																			<col width="25%" />
+																		</colgroup>
+																		<thead>
+																			<tr role="row" class="tr">
+																				<th scope="col">成长性</th>
+																				<th scope="col">指标</th>
+																				<th scope="col">计算结果</th>
+																				<th scope="col">财务等级</th>
+																			</tr>
+																		</thead>
+																		<tbody id="growingTabel">
+																			
+																		</tbody>
+																</table>
+															</div>
+															<div class="growEch" id="growingEch" style="height: 350px;">
+																
+															</div>
+														</div>
+													</div>
+													<div class="page-line" style="clear: both;"></div>
+													<div class="col-md-12">
+														<div class="msg-wrap" id="msgSer02">
+															<div class="msg-title">回报率分析</div>
+														</div>
+														<div class="msg-mgr msg-business" style="overflow: hidden;">
+															<div id="businessWrap"></div>
+															<div class="revenueStreams busssWrap growTablePar" id="growTabel2" style="float: left;">
+																<div class="caiwu0 caiwu02" style="display: none;">
+																	<p>该模块为付费模块，请联系我们开通专业版用户权限</p>
+																	<a href='javascript:;' class="contactWeCaiWu">联系我们</a>
+																</div>
+																<table border="1" class="growTable">
+																	<colgroup>
+																			<col width="20%" />
+																			<col width="35%" />
+																			<col width="20%" />
+																			<col width="25%" />
+																		</colgroup>
+																		<thead>
+																			<tr role="row" class="tr">
+																				<th scope="col">回报率</th>
+																				<th scope="col">指标</th>
+																				<th scope="col">计算结果</th>
+																				<th scope="col">财务等级</th>
+																			</tr>
+																		</thead>
+																		<tbody id="growingTabel2">
+																			
+																		</tbody>
+																</table>
+															</div>
+															<div id="growingEch2"  class="growEch" style="margin-top: -27px;">
+																
+															</div>
+														</div>
+													</div>
+													<div class="page-line" style="clear: both;"></div>
+													<div class="col-md-12">
+														<div class="msg-wrap" id="msgSer02">
+															<div class="msg-title">安全性分析</div>
+														</div>
+														<div class="msg-mgr msg-business" style="overflow: hidden;">
+															<div id="businessWrap"></div>
+															<div class="revenueStreams busssWrap growTablePar" id="growTabel3" style="float: left;">
+																<div class="caiwu0 caiwu03" style="display: none;">
+																	<p>该模块为付费模块，请联系我们开通专业版用户权限</p>
+																	<a href='javascript:;' class="contactWeCaiWu">联系我们</a>
+																</div>
+																<table border="1" class="growTable">
+																	<colgroup>
+																			<col width="20%" />
+																			<col width="35%" />
+																			<col width="20%" />
+																			<col width="25%" />
+																		</colgroup>
+																		<thead>
+																			<tr role="row" class="tr">
+																				<th scope="col">安全率</th>
+																				<th scope="col">指标</th>
+																				<th scope="col">计算结果</th>
+																				<th scope="col">财务等级</th>
+																			</tr>
+																		</thead>
+																		<tbody id="growingTabel3">
+																			
+																		</tbody>
+																</table>
+															</div>
+															<div id="growingEch3"  class="growEch" style="height:300px;">
+																
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="table-scrollable my-wrapTable maskInTable adobeLeft" style="display: none;">
+													<div class="tableParCa tableParCa1"  >
+														<table class="table table-striped table-bordered table-hover my-table" >
+															<tbody class="view-tr view-tr2"></tbody>
+														</table>
+													</div>
+													<div class="tableParCa2Par">
+														<div class="tableParCa tableParCa2"  >
+															<table class="table table-striped table-bordered table-hover my-table" >
+																<tbody class="banTable" id="banTable"></tbody>
+															</table>
+														</div>
+													</div>
+													<div id="banPage"></div>
+												</div>
+												
+												<div class="table-scrollable my-wrapTable maskInTable adobeLeft" style="display: none;">
+													<div class="tableParCa tableParCa1"  >
+														<table class="table table-striped table-bordered table-hover my-table" >
+															<tbody class="view-tr view-tr3"></tbody>
+														</table>
+													</div>
+													<div class="tableParCa2Par">
+														<div class="tableParCa tableParCa2"  >
+															<table class="table table-striped table-bordered table-hover my-table" >
+																<tbody class="banTable" id="banTable2"></tbody>
+															</table>
+														</div>
+													</div>
+													<div id="banPage2"></div>
+												</div>
+												<div class="table-scrollable my-wrapTable maskInTable adobeLeft" style="display: none;">
+													<div class="tableParCa tableParCa1"  >
+														<table class="table table-striped table-bordered table-hover my-table" >
+															<tbody class="view-tr view-tr4"></tbody>
+														</table>
+													</div>
+													<div class="tableParCa2Par">
+														<div class="tableParCa tableParCa2"  >
+															<table class="table table-striped table-bordered table-hover my-table" >
+																<tbody class="banTable" id="banTable3"></tbody>
+															</table>
+														</div>
+													</div>
+													<div id="banPage3"></div>
+												</div>
+												<div class="table-scrollable my-wrapTable maskInTable adobeLeft" style="display: none;">
+													<div class="tableParCa tableParCa1"  >
+														<table class="table table-striped table-bordered table-hover my-table" >
+															<tbody class="view-tr view-tr5"></tbody>
+														</table>
+													</div>
+													<div class="tableParCa2Par">
+														<div class="tableParCa tableParCa2"  >
+															<table class="table table-striped table-bordered table-hover my-table" >
+																<tbody class="banTable" id="banTable4"></tbody>
+															</table>
+														</div>
+													</div>
+													<div id="banPage4"></div>
+												</div>
+											</div>
+										</div>
+										<div class="tab-pane" id="tab_5">
+											<div class="page-line"></div>
+											<div class="row ">
+												<div class="col-md-12">
+													<div class="table-scroll-par maskInTable">
+														<div class="portlet-body">
+															<table class="table table-condensed table-hover table-team">
+
+																<tbody id="reportTable" class="reportTable">
+																</tbody>
+															</table>
+															<div id="pageToolReport"> </div>
+
+														</div>
+
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="tab-pane" id="tab_6">
+											<div class="page-line"></div>
+											<div class="msg-wraps" id="wrapGg">
+												<div class="msg-title msg-timeTl" id="gsgk1">公司高管</div>
+												<div class="list_con_down list_con_time">
+													<div class="list_left_btn timelf_btn" id="timelfGg"></div>
+													<div class="list_con list_time">
+														<ul class="j_ul_list overLi-btn col-show" id="timeListGg">
+														</ul>
+													</div>
+													<div class="list_right_btn timerg_btn" id="timergGg"></div>
+												</div>
+												<div class="portlet-body maskInTable maskInTableGg" style="clear: both;">
+													<div class="table-scrollable">
+														<table style="min-width: auto;table-layout:fixed;" class="table table-striped table-bordered table-hover dataTable no-footer" id="sample_1" role="grid" aria-describedby="sample_1_info">
+															<colgroup>
+																<col width="8%"/>
+																<col width="10%"/>
+																<col width="10%"/>
+																<col width="6%"/>
+																<!--<col width="8%"/>-->
+																<col width="13%"/>
+																<col width="15%"/>
+																<col width="38%"/>
+															</colgroup>
+															<thead>
+																<tr role="row" class="tr">
+																	<th scope="col">
+																		姓名
+																	</th>
+																	<th scope="col">
+																		国籍
+																	</th>
+																	<th scope="col">
+																		职位
+																	</th>
+																	<th scope="col">
+																		性别
+																	</th>
+																	<!--<th scope="col">
+																		年龄
+																	</th>-->
+																	<th scope="col">
+																		学历
+																	</th>
+																	<th scope="col">
+																		任期
+																	</th>
+																	<th scope="col">
+																		履历
+																	</th>
+																</tr>
+															</thead>
+															<tbody id="tableGg">
+															</tbody>
+														</table>
+													</div>
+												</div>
+											</div>
+											<div id="pageGg" class="detailPageHeight"></div>
+											<div class="page-line"></div>
+											<div class="msg-wraps" id="wrapGd">
+												<div class="msg-title msg-timeTl" id="gsgk2">十大股东</div>
+												<div class="list_con_down list_con_time">
+													<div class="list_left_btn timelf_btn" id="timelfGd"></div>
+													<div class="list_con list_time">
+														<ul class="j_ul_list overLi-btn col-show" id="timeListGd">
+														</ul>
+													</div>
+													<div class="list_right_btn timerg_btn" id="timergGd"></div>
+												</div>
+												<div class="portlet-body maskInTable maskInTableGd" style="clear: both;">
+													<div class="table-scrollable">
+														<table style="min-width: auto;" class="table table-striped table-bordered table-hover dataTable no-footer" id="sample_1" role="grid" aria-describedby="sample_1_info">
+															<colgroup>
+																<col width="14%"/>
+																<col width="34%"/>
+																<col width="20%"/>
+																<col width="10%"/>
+																<col width="10%"/>
+																<col width="12%"/>
+															</colgroup>
+															<thead>
+																<tr role="row" class="tr">
+																	<th scope="col">
+																		截止时间
+																	</th>
+																	<th scope="col">
+																		股东名称
+																	</th>
+																	<th scope="col">
+																		持股数量（股）
+																	</th>
+																	<th scope="col">
+																		持股比例
+																	</th>
+																	<th scope="col">
+																		股东类型
+																	</th>
+																	<th scope="col">
+																		出资金额
+																	</th>
+																</tr>
+															</thead>
+															<tbody id="tableGd">
+															</tbody>
+														</table>
+													</div>
+												</div>
+											</div>
+											<div id="pageGd" class="detailPageHeight"></div>
+											<div class="page-line"></div>
+											<div class="msg-wraps" id="wrapGb">
+												<div class="msg-title msg-timeTl" id="gsgk3">股本结构</div>
+												<div class="list_con_down list_con_time">
+													<div class="list_left_btn timelf_btn" id="timelfGb"></div>
+													<div class="list_con list_time">
+														<ul class="j_ul_list overLi-btn col-show" id="timeListGb">
+														</ul>
+													</div>
+													<div class="list_right_btn timerg_btn" id="timergGb"></div>
+												</div>
+												<div class="portlet-body maskInTable maskInTableGb" style="clear: both;">
+													<div class="table-scrollable">
+														<table style="min-width: auto;table-layout:fixed;" class="table table-striped table-bordered table-hover dataTable no-footer" id="sample_1" role="grid" aria-describedby="sample_1_info">
+															<colgroup>
+																<col width="14%"/>
+																<col width="14%"/>
+																<col width="14%"/>
+																<col width="14%"/>
+																<col width="10%"/>
+																<col width="10%"/>
+																<col width="14%"/>
+																<col width="10%"/>
+															</colgroup>
+															<thead>
+																<tr role="row" class="tr">
+																	<th scope="col">
+																		截止时间
+																	</th>
+																	<th scope="col">
+																		股份性质
+																	</th>
+																	<th scope="col">
+																		股份分类详情
+																	</th>
+																	<th scope="col">
+																		期初数量
+																	</th>
+																	<th scope="col">
+																		期初比例
+																	</th>
+																	<th scope="col">
+																		本期变动
+																	</th>
+																	<th scope="col">
+																		期末数量
+																	</th>
+																	<th scope="col">
+																		期末比例
+																	</th>
+																</tr>
+															</thead>
+															<tbody id="tableGb">
+															</tbody>
+														</table>
+													</div>
+												</div>
+											</div>
+											<div id="pageGb" class="detailPageHeight"></div>
+											<div class="page-line"></div>
+											<div class="msg-wraps" id="wrapGp">
+												<div class="msg-title msg-timeTl" id="gsgk4">股票分红</div>
+												<div class="list_con_down list_con_time">
+													<div class="list_left_btn timelf_btn" id="timelfGp"></div>
+													<div class="list_con list_time">
+														<ul class="j_ul_list overLi-btn col-show" id="timeListGp">
+														</ul>
+													</div>
+													<div class="list_right_btn timerg_btn" id="timergGp"></div>
+												</div>
+												<div class="portlet-body maskInTable maskInTableGp" style="clear: both;">
+													<div class="table-scrollable">
+														<table style="min-width: auto;table-layout:fixed;" class="table table-striped table-bordered table-hover dataTable no-footer" id="sample_1" role="grid" aria-describedby="sample_1_info">
+															<colgroup>
+																<col width="8%"/>
+																<col width="10%"/>
+																<col width="10%"/>
+																<col width="10%"/>
+																<col width="12%"/>
+																<col width="10%"/>
+																<col width="10%"/>
+																<col width="10%"/>
+																<col width="20%"/>
+															</colgroup>
+															<thead>
+																<tr role="row" class="tr">
+																	<th scope="col">
+																		报告期
+																	</th>
+																	<th scope="col">
+																		预案公告
+																	</th>
+																	<th scope="col">
+																		股权登记
+																	</th>
+																	<th scope="col">
+																		除权除息
+																	</th>
+																	<th scope="col">
+																		实施进度
+																	</th>
+																	<th scope="col">
+																		每股派息税前
+																	</th>
+																	<th scope="col">
+																		转增比例（%）
+																	</th>
+																	<th scope="col">
+																		分红对象
+																	</th>
+																	<th scope="col">
+																		分红说明
+																	</th>
+																</tr>
+															</thead>
+															<tbody id="tableGp">
+															</tbody>
+														</table>
+													</div>
+												</div>
+											</div>
+											<div id="pageGp" class="detailPageHeight"></div>
+											<div class="page-line"></div>
+											<div class="msg-wraps" id="wrapZf">
+												<div class="msg-title msg-timeTl" id="gsgk5">股票增发</div>
+												<div class="list_con_down list_con_time">
+													<div class="list_left_btn timelf_btn" id="timelfZf"></div>
+													<div class="list_con list_time">
+														<ul class="j_ul_list overLi-btn col-show" id="timeListZf">
+														</ul>
+													</div>
+													<div class="list_right_btn timerg_btn" id="timergZf"></div>
+												</div>
+												<div class="portlet-body maskInTable maskLv maskInTableZf" style="clear: both;">
+													<div class="table-scrollable">
+														<table style="min-width: auto;" class="table table-striped table-bordered table-hover dataTable no-footer" id="sample_1" role="grid" aria-describedby="sample_1_info">
+															<colgroup>
+																<col width="10%"/>
+																<col width="10%"/>
+																<col width="8%"/>
+																<col width="8%"/>
+																<col width="12%"/>
+																<col width="12%"/>
+																<col width="8%"/>
+																<col width="11%"/>
+																<col width="11%"/>
+																<col width="10%"/>
+															</colgroup>
+															<thead>
+																<tr role="row" class="tr">
+																	<th scope="col">
+																		预案公告
+																	</th>
+																	<th scope="col">
+																		最新公告
+																	</th>
+																	<th scope="col">
+																		发行对象
+																	</th>
+																	<th scope="col">
+																		增发价格
+																	</th>
+																	<th scope="col">
+																		增发数量（万股）
+																	</th>
+																	<th scope="col">
+																		募集资金（万元）
+																	</th>
+																	<th scope="col">
+																		增发进度
+																	</th>
+																	<th scope="col">
+																		股权登记
+																	</th>
+																	<th scope="col">
+																		新股上市
+																	</th>
+																	<th scope="col">
+																		折溢价率（%）
+																	</th>
+																</tr>
+															</thead>
+															<tbody id="tableZf">
+															</tbody>
+														</table>
+													</div>
+												</div>
+											</div>
+											<div id="pageZf" class="detailPageHeight"></div>
+											<div class="page-line"></div>
+											<div class="msg-wraps" id="wrapYg">
+												<div class="msg-title msg-timeTl" id="gsgk6">核心员工</div>
+												<div class="list_con_down list_con_time">
+													<div class="list_left_btn timelf_btn" id="timelfYg"></div>
+													<div class="list_con list_time">
+														<ul class="j_ul_list overLi-btn col-show" id="timeListYg">
+														</ul>
+													</div>
+													<div class="list_right_btn timerg_btn" id="timergYg"></div>
+												</div>
+												<div class="portlet-body maskInTable maskInTableYg" style="clear: both;">
+													<div class="table-scrollable">
+														<table style="min-width: auto;table-layout:fixed;" class="table table-striped table-bordered table-hover dataTable no-footer" id="sample_1" role="grid" aria-describedby="sample_1_info">
+															<colgroup>
+																<col width="8%"/>
+																<col width="10%"/>
+																<col width="10%"/>
+																<col width="6%"/>
+																<col width="8%"/>
+																<col width="10%"/>
+																<col width="14%"/>
+																<col width="34%"/>
+															</colgroup>
+															<thead>
+																<tr role="row" class="tr">
+																	<th scope="col">
+																		姓名
+																	</th>
+																	<th scope="col">
+																		国籍
+																	</th>
+																	<th scope="col">
+																		职位
+																	</th>
+																	<th scope="col">
+																		性别
+																	</th>
+																	<th scope="col">
+																		年龄
+																	</th>
+																	<th scope="col">
+																		学历
+																	</th>
+																	<th scope="col">
+																		任期
+																	</th>
+																	<th scope="col">
+																		履历
+																	</th>
+																</tr>
+															</thead>
+															<tbody id="tableYg">
+															</tbody>
+														</table>
+													</div>
+												</div>
+											</div>
+											<div id="pageYg" class="detailPageHeight"></div>
+										</div>
+										<div class="tab-pane" id="tab_7">
+											<div class="msg-wrap">
+												<div class="msg-title" id="zscq1">研发投入</div>
+												<div class="msg-detail">
+													
+												</div>
+												<div class="table-scrollable maskInTable  maskInTableTr">
+													<table class="table table-striped table-bordered table-hover">
+														<thead class="view-tr">
+															<tr class="tr">
+																<th>
+																	报告期
+																</th>
+																<th>
+																	本期研发投入（元）
+																</th>
+																<th>
+																	本期投入占营业收入的比例（%）
+																</th>
+																<th>
+																	上期研发投入（元）
+																</th>
+																<th>
+																	上期投入占营业收入的比例（%）
+																</th>
+															</tr>
+														</thead>
+														<tbody id="productTableTr">
+															
+														</tbody>
+													</table>
+												</div>
+												<div id="productPageTr" class="detailPageHeight"></div>
+											</div>
+											<div class="page-line"></div>
+											<div class="msg-wrap">
+												<div class="msg-title" id="zscq2">公司专利</div>
+												<div class="msg-detail">
+
+												</div>
+												<div class="table-scrollable maskInTable maskInTablePatent">
+													<table class="table table-striped table-bordered table-hover">
+														<colgroup>
+															<col width="10%" />
+															<col width="15%" />
+															<col width="20%" />
+															<col width="15%" />
+															<col width="15%" />
+															<col width="15%" />
+															<col width="5%" />
+														</colgroup>
+														<thead class="view-tr">
+															<tr class="tr">
+																<!--<th>
+																	专利类别
+																</th>-->
+																<th>
+																	专利公开日
+																</th>
+																<th>
+																	专利类型
+																</th>
+																<th>
+																	专利名称
+																</th>
+																<th>
+																	专利公开号
+																</th>
+																<th>
+																	分类号
+																</th>
+																<th>
+																	发明人
+																</th>
+																<!--<th>
+																	地区
+																</th>-->
+																<th>
+																	摘要
+																</th>
+															</tr>
+														</thead>
+														<tbody id="compPatentTable">
+
+														</tbody>
+													</table>
+												</div>
+												<div id="compPatentPage" class="detailPageHeight"></div>
+											</div>
+											<div class="page-line"></div>
+											<div class="msg-wrap">
+												<div class="msg-title" id="zscq3">商标信息</div>
+												<div class="msg-detail">
+
+												</div>
+											</div>
+											<div class="row msg-pic">
+												<div class="">
+													<div class="list_con_down lists_con_down">
+														<div class="list_left_btn lists_left_btn"></div>
+														<div class="list_con lists_con">
+															<ul class="j_ul_list j_ul_lists">
+															</ul>
+														</div>
+														<div class="list_right_btn lists_right_btn"></div>
+													</div>
+													<!--<div class="dataDiv"></div>-->
+												</div>
+											</div>
+											<div class="page-line"></div>
+											<div class="msg-wrap">
+												<div class="msg-title" id="zscq4">作品著作权</div>
+												<div class="msg-detail">
+
+												</div>
+												<div class="table-scrollable maskInTable  maskInTableSoft">
+													<table class="table table-striped table-bordered table-hover">
+														<thead class="view-tr">
+															<tr class="tr">
+																<th>
+																	作品名称
+																</th>
+																<th>
+																	登记号
+																</th>
+																<th>
+																	类别
+																</th>
+																<th>
+																	创作完成日期
+																</th>
+																<th>
+																	登记日期
+																</th>
+																<th>
+																	首次发布日期
+																</th>
+															</tr>
+														</thead>
+														<tbody id="whiteTable">
+
+														</tbody>
+													</table>
+												</div>
+												<div id="whitePage" class="detailPageHeight"></div>
+											</div>
+											<div class="page-line"></div>
+											<div class="msg-wrap">
+												<div class="msg-title" id="zscq5">软件著作权</div>
+												<div class="msg-detail">
+
+												</div>
+												<div class="table-scrollable maskInTable  maskInTableProduct">
+													<table class="table table-striped table-bordered table-hover">
+														<thead class="view-tr">
+															<tr class="tr">
+																<th>
+																	批准日期
+																</th>
+																<th>
+																	软件全称
+																</th>
+																<th>
+																	软件简称
+																</th>
+																<th>
+																	登记号
+																</th>
+																<th>
+																	分类号
+																</th>
+																<th>
+																	版本号
+																</th>
+																<th>
+																	详情
+																</th>
+															</tr>
+														</thead>
+														<tbody id="productTable">
+
+														</tbody>
+													</table>
+												</div>
+												<div id="productPage" class="detailPageHeight"></div>
+											</div>
+											<div class="page-line"></div>
+											<div class="msg-wrap">
+												<div class="msg-title"  id="zscq6">域名</div>
+												<div class="msg-detail">
+												</div>
+											</div>
+											<div class="table-scrollable maskInTable maskInTableYm">
+												<table class="table table-striped table-bordered table-hover">
+													<thead class="view-tr">
+														<tr class="tr">
+															<th>
+																审核时间
+															</th>
+															<th>
+																网站名称
+															</th>
+															<th>
+																网站首页
+															</th>
+															<th>
+																域名
+															</th>
+															<th>
+																备案号
+															</th>
+															<th>
+																状态
+															</th>
+															<th>
+																单位性质
+															</th>
+														</tr>
+													</thead>
+													<tbody id="recordList">
+													</tbody>
+												</table>
+											</div>
+											<div id="recordPage" class="detailPageHeight"></div>
+											<div class="page-line"></div>
+											<div class="msg-wrap">
+												<div class="msg-title" id="zscq7">企业证书</div>
+												<div class="msg-detail">
+												</div>
+											</div>
+											<div class="table-scrollable maskInTable maskInTableZs">
+												<table class="table table-striped table-bordered table-hover">
+													<thead class="view-tr">
+														<tr class="tr">
+															<th>
+																发证日期
+															</th>
+															<th>
+																证书名称
+															</th>
+															<th>
+																证书编号
+															</th>
+															<th>
+																发证机关
+															</th>
+															<th>
+																有效截止日期
+															</th>
+														</tr>
+													</thead>
+													<tbody id="recordListZs">
+													</tbody>
+												</table>
+											</div>
+											<div id="recordPageZs" class="detailPageHeight"></div>
+											<div class="page-line"></div>
+											<div class="msg-wrap">
+												<div class="msg-title" id="zscq8">特许经营权</div>
+												<div class="msg-detail">
+												</div>
+											</div>
+											<div class="table-scrollable maskInTable maskInTableJy">
+												<table class="table table-striped table-bordered table-hover">
+													<thead class="view-tr">
+														<tr class="tr">
+															<th>
+																起始日期
+															</th>
+															<th>
+																授权机构
+															</th>
+															<th>
+																特许经营业务范围
+															</th>
+															<th>
+																特许经营权地域范围
+															</th>
+															<th>
+																截止日期
+															</th>
+															<th>
+																特许经营补充条款
+															</th>
+														</tr>
+													</thead>
+													<tbody id="recordListJy">
+													</tbody>
+												</table>
+											</div>
+											<div id="recordPageJy" class="detailPageHeight"></div>
+										</div>
+										<div class="tab-pane" id="tab_9">
+											<div class="page-line"></div>
+											<div class="msg-wraps" id="wrapTs">
+												<div class="msg-title msg-timeTl" id="fxxx1">风险提示</div>
+												<div class="list_con_down list_con_time">
+													<div class="list_left_btn timelf_btn" id="timelfTs"></div>
+													<div class="list_con list_time">
+														<ul class="j_ul_list overLi-btn col-show" id="timeListTs">
+														</ul>
+														</div>
+													<div class="list_right_btn timerg_btn" id="timergTs"></div>
+													</div>
+												<div class="portlet-body maskInTable maskInTableTs" style="clear: both;">
+													<ul class="riskWarn-box pdt10 pdb10" id="riskWarn-box">
+														
+													</ul>
+													<div class="riskWarn-choose">
+														本期风险是否变更：<span></span>
+														<div class="riskWarn-chbox">
+															<span class='riskWarn-content'></span>
+			            									<a class='textGl-detail riskWarn-text' data-toggle='modal' data-target='#myModalOut'>查看详情</a>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="page-line"></div>
+											<div class="msg-wrap">
+												<div class="msg-title" id="fxxx3">法律诉讼</div>
+												<div class="msg-detail">
+
+												</div>
+											</div>
+											<div class="table-scrollable maskInTable maskInTableGf">
+												<table class="table table-striped table-bordered table-hover">
+													<colgroup>
+														<col width="10%"/>
+														<col width="48%"/>
+														<col width="10%"/>
+														<col width="10%"/>
+														<col width="22%"/>
+													</colgroup>
+													<thead class="view-tr">
+														<tr class="tr">
+															<th>
+																日期
+															</th>
+															<th>	
+																裁判文书
+															</th>
+															<th>
+																案由
+															</th>
+															<th>
+																案件身份
+															</th>
+															<th>
+																案件号
+															</th>
+															<!--<th>
+																判决正文
+															</th>-->
+														</tr>
+													</thead>
+													<tbody id="courtList">
+
+													</tbody>
+												</table>
+											</div>
+											<div id="courtPage" class="detailPageHeight"></div>
+											<div class="page-line"></div>
+											<div class="msg-wrap">
+												<div class="msg-title" id="fxxx2">法院公告</div>
+											</div>
+											<div class="table-scrollable maskInTable maskInTableSx">
+												<table class="table table-striped table-bordered table-hover com-invest">
+													<thead class="view-tr">
+														<tr class="tr">
+															<th>
+																公告时间
+															</th>
+															<th>
+																上诉方
+															</th>
+															<th>
+																被诉方
+															</th>
+															<th>
+																公告类型
+															</th>
+															<th>
+																法院
+															</th>
+															<th>
+																操作
+															</th>
+														</tr>
+													</thead>
+													<tbody id="compDisList">
+	
+													</tbody>
+												</table>
+											</div>
+											<div id="DisListPage" class="detailPageHeight"></div>
+											<div class="page-line"></div>
+											<div class="msg-wrap">
+												<div class="msg-title" id="fxxx4">经营异常</div>
+												<div class="msg-detail">
+
+												</div>
+											</div>
+											<div class="table-scrollable maskInTable maskInTablYc">
+												<table class="table table-striped table-bordered table-hover">
+													<thead class="view-tr">
+														<tr class="tr">
+															<th>
+																列入日期
+															</th>
+															<th>
+																列入原因
+															</th>
+															<th>
+																列入机关
+															</th>
+															<th>
+																移除日期
+															</th>
+															<th>
+																移除原因
+															</th>
+															<th>
+																移除机关
+															</th>
+														</tr>
+													</thead>
+													<tbody id="courtListYc">
+
+													</tbody>
+												</table>
+											</div>
+											<div id="courtPageYc" class="detailPageHeight"></div>
+											<!--<div class="page-line"></div>-->
+											<!--<div class="msg-wrap">
+												<div class="msg-title" id="fxxx5">行政处罚</div>
+												<div class="msg-detail">
+
+												</div>
+											</div>-->
+											<!--<div class="table-scrollable maskInTable maskInTableCf">
+												<table class="table table-striped table-bordered table-hover">
+													<thead class="view-tr">
+														<tr class="tr">
+															<th>
+																公告日期
+															</th>
+															<th>
+																决定机关
+															</th>
+															<th>
+																处罚文号
+															</th>
+															<th>
+																处罚内容
+															</th>
+															<th>
+																公告
+															</th>
+														</tr>
+													</thead>
+													<tbody id="courtListCf">
+
+													</tbody>
+												</table>
+											</div>-->
+											<!--<div id="courtPageCf" class="detailPageHeight"></div>-->
+											<div class="page-line"></div>
+											<div class="msg-wrap">
+												<div class="msg-title"  id="fxxx6">动产抵押</div>
+												<div class="msg-detail">
+
+												</div>
+											</div>
+											<div class="table-scrollable maskInTable maskInTableDy">
+												<table class="table table-striped table-bordered table-hover">
+													<thead class="view-tr">
+														<tr class="tr">
+															<th>
+																登记日期
+															</th>
+															<th>
+																登记机关
+															</th>
+															<th>
+																登记编号
+															</th>
+															<th>
+																抵押权人
+															</th>
+															<th>
+																抵押品
+															</th>
+															<th>
+																债务人履行债务期限
+															</th>
+															<th>
+																被担保债权类型
+															</th>
+															<th>
+																被担保债权数据
+															</th>
+															<th>
+																状态
+															</th>
+														</tr>
+													</thead>
+													<tbody id="courtListDy">
+
+													</tbody>
+												</table>
+											</div>
+											<div id="courtPageDy" class="detailPageHeight"></div>
+
+											<div class="page-line"></div>
+											<div class="msg-wrap">
+												<div class="msg-title" id="fxxx10">开庭公告</div>
+											</div>
+											<div class="table-scrollable maskInTable maskInTableCourt">
+												<table class="table table-striped table-bordered table-hover">
+													<thead class="view-tr">
+														<tr class="tr">
+															<th>
+																开庭日期
+															</th>
+															<th>
+																案由
+															</th>
+															<th>
+																原告/上诉人
+															</th>
+															<th>
+																被告/被上诉人
+															</th>
+															<th>
+																操作
+															</th>
+														</tr>
+													</thead>
+													<tbody id="courtNoticeList">
+														
+													</tbody>
+												</table>
+											</div>
+											<div id="courtNoticePage"></div>
+											<div class="page-line"></div>
+											<div class="msg-wrap">
+												<div class="msg-title" id="fxxx13">失信人</div>
+											</div>
+											<div class="table-scrollable maskInTable maskInTableDishonest">
+												<table class="table table-striped table-bordered table-hover">
+													<thead class="view-tr">
+														<tr class="tr">
+															<th>
+																立案日期
+															</th>
+															<th>
+																案号
+															</th>
+															<th>
+																执行法院
+															</th>
+															<th>
+																履行状态
+															</th>
+															<th>
+																执行依据文号
+															</th>
+															<th>
+																操作
+															</th>
+														</tr>
+													</thead>
+													<tbody id="dishonestList">
+														
+													</tbody>
+												</table>
+											</div>
+											<div id="dishonestPage"></div>
+											<div class="page-line"></div>
+											<div class="msg-wrap">
+												<div class="msg-title" id="fxxx14">被执行人</div>
+											</div>
+											<div class="table-scrollable maskInTable maskInTableExecute">
+												<table class="table table-striped table-bordered table-hover">
+													<thead class="view-tr">
+														<tr class="tr">
+															<th>
+																立案日期
+															</th>
+															<th>
+																执行标的
+															</th>
+															<th>
+																案号
+															</th>
+															<th>
+																执行法院
+															</th>
+														</tr>
+													</thead>
+													<tbody id="executeList">
+														
+													</tbody>
+												</table>
+											</div>
+											<div id="executePage"></div>
+											<div class="page-line"></div>
+											<div class="msg-wrap">
+												<div class="msg-title" id="fxxx15">欠税公告</div>
+											</div>
+											<div class="table-scrollable maskInTable maskInTableTax">
+												<table class="table table-striped table-bordered table-hover">
+													<thead class="view-tr">
+														<tr class="tr">
+															<th>
+																发布日期
+															</th>
+															<th>
+																纳税人识别号
+															</th>
+															<th>
+																欠税税种
+															</th>
+															<th>
+																当前发生的欠税额
+															</th>
+															<th>
+																欠税余额
+															</th>
+															<th>
+																税务机关
+															</th>
+														</tr>
+													</thead>
+													<tbody id="taxList">
+														
+													</tbody>
+												</table>
+											</div>
+											<div id="taxPage"></div>
+											<div class="page-line"></div>
+											<div class="msg-wrap">
+												<div class="msg-title" id="fxxx16">行政处罚</div>
+											</div>
+											<div class="table-scrollable maskInTable maskInTablePublish">
+												<table class="table table-striped table-bordered table-hover">
+													<colgroup>
+														<col width="10%" />
+														<col width="20%" />
+														<col width="50%" />
+														<col width="10%" />
+														<col width="10%" />
+													</colgroup>
+													<thead class="view-tr">
+														<tr class="tr">
+															<th>
+																决定日期
+															</th>
+															<th>
+																决定书文号
+															</th>
+															<th>
+																类型
+															</th>
+															<th>
+																决定机关
+															</th>
+															<th>
+																操作
+															</th>
+														</tr>
+													</thead>
+													<tbody id="publishList">
+														
+													</tbody>
+												</table>
+											</div>
+											<div id="publishPage"></div>
+										</div>
+										<div class="tab-pane" id="tab_10">
+											<!--<div class="page-line"></div>
+											<div class="msg-wraps msg-wrapmar">
+												<ul class="msg-service">
+													<li><a href="javascript:;" name="msgSer01">主营业务</a></li>
+													<li><a href="javascript:;" name="msgSer02">营收来源</a></li>
+													<li><a href="javascript:;" name="msgSer03">主要客户</a></li>
+													<li><a href="javascript:;" name="msgSer04">主要供应商</a></li>
+													<li><a href="javascript:;" name="msgSer05">商业模式</a></li>
+													<li><a href="javascript:;" name="msgSer06">同商业模式企业</a></li>
+												</ul>
+											</div>-->
+											<div class="page-line"></div>
+											<div class="msg-wrap" id="msgSer01">
+												<div class="msg-title" id="syfx1">主营业务</div>
+											</div>
+											<div class="">
+												<div id="scopeWrap">
+												</div>
+											<div class="server-scope msg-mgr">
+												
+												</div>
+											</div>
+											<div class="page-line"></div>
+											<div class="msg-wrap" id="msgSer02">
+												<div class="msg-title" id="syfx2">营收来源</div>
+											</div>
+											<div class="msg-mgr msg-business" style="overflow: hidden;">
+												<div id="businessWrap"></div>
+												<div class="revenueStreams busssWrap" style="float: left;">
+													<div class="revenueStreams-date" id="revenueStreams-date">更新日期: <span></span></div>
+													<table border="1" class="businessTable">
+														<colgroup>
+																<col width="33%" />
+																<col width="33%" />
+																<col width="33%" />
+															</colgroup>
+															<thead>
+																<tr role="row" class="tr">
+																	<th scope="col">业务名称</th>
+																	<th scope="col">收入金额（万元）</th>
+																	<th scope="col">收入占比（%）</th>
+																</tr>
+															</thead>
+															<tbody id="businessTbody">
+																
+															</tbody>
+													</table>
+												</div>
+												<div id="revenueStreams" style="width: 550px; height: 260px;float: left;margin-top: 10px;">
+													
+												</div>
+											</div>
+											<div class="page-line"></div>
+											<div class="msg-wrap" id="msgSer03">
+												<div class="msg-title" id="syfx3">主要客户</div>
+												<div class="msg-detail">
+													
+												</div>
+											</div>
+											<div class="msg-mgr" style="overflow: hidden;">
+												<div id="clientWrap"></div>
+												<div class="revenueStreams majorWrap" style="float: left;">
+													<div class="revenueStreams-date" id="majorClient-data">更新日期: <span></span></div>
+													<table border="1" class="businessTable">
+														<colgroup>
+																<col width="33%" />
+																<col width="33%" />
+																<col width="33%" />
+															</colgroup>
+															<thead>
+																<tr role="row" class="tr">
+																	<th scope="col">客户名称</th>
+																	<th scope="col">销售额（万元）</th>
+																	<th scope="col">占比（%）</th>
+																</tr>
+															</thead>
+															<tbody id="majorClientTbody">
+																
+															</tbody>
+													</table>
+												</div>
+												<div id="majorClient" style="width: 550px;height:260px;float: left;">
+													
+												</div>
+											</div>
+											<div class="page-line"></div>
+											<div class="msg-wrap" id="msgSer04">
+												<div class="msg-title" id="syfx4">主要供应商</div>
+												<div class="msg-detail">
+													
+												</div>
+											</div>
+											<div class="msg-mgr" style="overflow: hidden;">
+												<div id="supplierWrap"></div>
+												<div class="revenueStreams supplierBox" style="float: left;">
+													<div class="revenueStreams-date" id="majorSupplier-data">更新日期: <span ></span></div>
+													<table border="1" class="businessTable">
+														<colgroup>
+																<col width="33%" />
+																<col width="33%" />
+																<col width="33%" />
+															</colgroup>
+															<thead>
+																<tr role="row" class="tr">
+																	<th scope="col">公司名称</th>
+																	<th scope="col">采购额（万元）</th>
+																	<th scope="col">占比（%）</th>
+																</tr>
+															</thead>
+															<tbody id="majorSupplierTbody">
+																
+															</tbody>
+													</table>
+												</div>
+												<div id="majorSupplie" style="width: 550px; height: 280px;float: left;">
+													
+												</div>
+											</div>
+											<div class="page-line"></div>
+											<div class="msg-wrap" id="msgSer05">
+												<div class="msg-title" id="syfx5">商业模式</div>
+												<div class="msg-detail">
+													
+												</div>
+											</div>
+											<div class="msg-mgr">
+												<div id="modelWrap"></div>
+												<ul class="businessModel-date overLi-btn col-show">
+													
+												</ul>
+												<div class="businessModel-content">
+													
+												</div>
+											</div>
+											<div class="page-line"></div>
+											<div class="msg-wraps" id="msgSer06">
+												<div class="msg-title"  id="syfx6">同商业模式企业</div>
+												<div class="portlet-body maskInTable maskInTableTonf">
+													<div class="table-scrollable">
+														<table style="min-width: auto;" class="table table-striped table-bordered table-hover dataTable no-footer" id="sample_1" role="grid" aria-describedby="sample_1_info">
+															<thead>
+																<tr role="row" class="tr">
+																	<th scope="col">
+																		代码
+																	</th>
+																	<th scope="col">
+																		简称
+																	</th>
+																	<th scope="col">
+																		最新价
+																	</th>
+																	<th scope="col">
+																		财务日期
+																	</th>
+																	<th scope="col">
+																		净利润
+																	</th>
+																	<th scope="col">
+																		每股收益
+																	</th>
+																	<th scope="col">
+																		市盈率
+																	</th>
+																	<th scope="col">
+																		净资产收益率
+																	</th>
+																	<th scope="col">
+																		总市值
+																	</th>
+																	<th scope="col">
+																		商业模式
+																	</th>
+																</tr>
+															</thead>
+														<tbody id="tableOneSame">
+														</tbody>
+														</table>
+													</div>
+											</div>
+											</div>
+										</div>
+										<div class="tab-pane" id="tab_11">
+											<div class="page-line"></div>
+											<div class="portlet box darkCyan">
+												<div class="portlet-body maskInTables" id="maskdata">
+													<div class="msg-wraps">
+														<div class="echart-wraps">
+															<div class="pdl">
+																<div class="canvas-list mgt">
+																	<div class="relationshipTab">
+																		<!--class="notAllowed" 禁止点击-->
+																		<a class="active" id="ownershipStructure">股权结构</a>
+																		<a  id="customerRelations">客户关系</a>
+																		<a id="supplyChainRelationship">供应链关系</a>
+																		<a id="foreignInvestment">对外投资</a>
+																		<a id="branchOffice">分支机构</a>
+																		<a id="storyFinancing">历史融资</a>
+																	</div>																
+															    </div>
+																<div class="canvas-most-wrap">
+																	<div class="canvas-most active" id="equityRelationshipCon">
+																		<div style="background: #eff2fc;">
+																			<div id="mainChart2" style="height: 400px;"></div>
+																		</div>
+																		<div class="page-line mgt20"></div>
+																		<div id="companyName"></div>
+																		<div class="msg-wrap mgb10">
+																			<div class="msg-title"><span  style="color: #9398cb;">更新日期：<b id="equityDate"></b></span>股权结构</div>
+																		</div>
+																		<div class="portlet-body maskInTable">
+																			<div class="table-scrollable">
+																				<table class="table table-striped table-bordered table-hover dataTable no-footer" id="sample_1" role="grid" aria-describedby="sample_1_info">
+																					<thead>
+																						<tr role="row" class="tr">
+																							<th scope="col" width="260">
+																								截止日期
+																							</th>
+																							<th scope="col">
+																								股东名称
+																							</th>
+																							<th scope="col">
+																								股东类型
+																							</th>
+																							<th scope="col">
+																								持股数量（股）
+																							</th>
+																							<th scope="col">
+																								出资金额（万元）
+																							</th>
+																							<th scope="col">
+																								持股比例
+																							</th>
+																						</tr>
+																					</thead>
+																					<tbody id="shareholderList2">
+																					</tbody>
+																				</table>
+																			</div>
+																			<div id="pageToolShareholder"></div>
+																	    </div>
+																	</div>
+																	<div class="canvas-most" id="updownRelationshipCon">
+																		<div style="background: #eff2fc;">
+																			<div id="updonwChart" style="height: 400px;"></div>
+																		</div>
+																		<div class="page-line mgt20"></div>
+																		<div id="companyName2"></div>
+																		<div class="equityList">
+																			<div class="msg-wrap mgb10">
+																				<div class="msg-title"><span style="color: #9398cb;">更新日期：<b id="majorClientDate"></b></span>客户关系</div>
+																			</div>
+																			<div class="portlet-body maskInTable">
+																				<div class="table-scrollable">
+																					<table class="table table-striped table-bordered table-hover dataTable no-footer" id="sample_1" role="grid" aria-describedby="sample_1_info">
+																						<thead>
+																							<tr role="row" class="tr">
+																								<th scope="col">
+																									截止日期
+																								</th>
+																								<th scope="col" width="260">
+																									客户
+																								</th>
+																								<th scope="col">
+																									销售额（万元）
+																								</th>
+																								<th scope="col">
+																									占比（%）
+																								</th>
+																							</tr>
+																						</thead>
+																						<tbody id="majorClientList">
+																						</tbody>
+																					</table>
+																	            </div>
+																			</div>
+																		</div>
+																		<div id="pageToolMajorClient"></div>
+																	</div>
+																	<div class="canvas-most" id="supplyChainRelationshipList">
+																		<div style="background: #eff2fc;">
+																			<div id="supplyChart" style="height: 400px;"></div>
+																		</div>
+																		<div class="page-line mgt20"></div>
+																		<div id="companyName2"></div>
+																		<div class="equityList">
+																			<div class="msg-wrap mgb10">
+																				<div class="msg-title"><span style="color: #9398cb;">更新日期：<b id="supplyDate"></b></span>供应链关系</div>
+																			</div>
+																			<div class="portlet-body maskInTable">
+																				<div class="table-scrollable">
+																					<table class="table table-striped table-bordered table-hover dataTable no-footer" id="sample_1" role="grid" aria-describedby="sample_1_info">
+																						<thead>
+																							<tr role="row" class="tr">
+																								<th scope="col">
+																									截止日期
+																								</th>
+																								<th scope="col" width="260">
+																									供应商
+																								</th>
+																								<th scope="col">
+																									采购额
+																								</th>
+																								<th scope="col">
+																									占比（%）
+																								</th>
+																							</tr>
+																						</thead>
+																						<tbody id="supplyList">
+																						</tbody>
+																					</table>
+																	            </div>
+																			</div>
+																		</div>
+																		<div id="pageToolSupplyClient"></div>
+																	</div>
+																	<!--对外投资-->
+																	<div class="canvas-most" id="foreignInvestmentList">
+																		<div style="background: #eff2fc;">
+																			<div id="foreignChart" style="height: 400px;"></div>
+																		</div>
+																		<div class="page-line mgt20"></div>
+																		<div id="companyName2"></div>
+																		<div class="equityList">
+																			<div class="msg-wrap mgb10">
+																				<div class="msg-title"><span style="color: #9398cb;">更新日期：<b id="foreignDate"></b></span>对外投资</div>
+																			</div>
+																			<div class="portlet-body maskInTable">
+																				<div class="table-scrollable">
+																					<table class="table table-striped table-bordered table-hover dataTable no-footer" id="sample_1" role="grid" aria-describedby="sample_1_info">
+																						<colgroup>
+																							<col width="10%" />
+																							<col width="25%" />
+																							<col width="10%" />
+																							<col width="10%" />
+																							<col width="10%" />
+																							<col width="10%" />
+																							<col width="10%" />
+																							<col width="10%" />
+																						</colgroup>
+																						<thead>
+																							<tr role="row" class="tr">
+																								<th scope="col">
+																									投资日期
+																								</th>
+																								<th scope="col">
+																									被投企业
+																								</th>
+																								<th scope="col">
+																									企业法人
+																								</th>
+																								<th scope="col">
+																									注册资本
+																								</th>
+																								<th scope="col">
+																									投资数额（万元）
+																								</th>
+																								<th scope="col">
+																									投资占比
+																								</th>
+																								<th scope="col">
+																									注册时间
+																								</th>
+																								<th scope="col">
+																									状态
+																								</th>
+																							</tr>
+																						</thead>
+																						<tbody id="foreignList">
+																						</tbody>
+																					</table>
+																	            </div>
+																			</div>
+																		</div>
+																		<div id="pageToolForeign"></div>
+																	</div>
+																	<!--分支机构-->
+																	<div class="canvas-most" id="branchOfficeList">
+																		<div style="background: #eff2fc;">
+																			<div id="branchOfficeChart" style="height: 400px;"></div>
+																		</div>
+																		<div class="page-line mgt20"></div>
+																		<div id="companyName2"></div>
+																		<div class="equityList">
+																			<div class="msg-wrap mgb10">
+																				<div class="msg-title"><span style="color: #9398cb;">更新日期：<b id="branchOfficeDate"></b></span>分支机构</div>
+																			</div>
+																			<div class="portlet-body maskInTable">
+																				<div class="table-scrollable">
+																					<table class="table table-striped table-bordered table-hover dataTable no-footer" id="sample_1" role="grid" aria-describedby="sample_1_info">
+																						<thead>
+																							<tr role="row" class="tr">
+																								<th scope="col">
+																									企业名称
+																								</th>
+																								<th scope="col" width="260">
+																									注册时间
+																								</th>
+																								<th scope="col">
+																									法人代表
+																								</th>
+																								<th scope="col">
+																									所属行业
+																								</th>
+																								<th scope="col">
+																									经营状态
+																								</th>
+																							</tr>
+																						</thead>
+																						<tbody id="branchOfficeList2">
+																						</tbody>
+																					</table>
+																	            </div>
+																		</div>
+																	</div>
+																	<div id="pageToolBranchOffice"></div>
+																</div>
+																	<div class="canvas-most" id="storyFinancingList">
+																		<div style="background: #eff2fc;">
+																			<div id="storyFinancingChart" style="height: 400px;"></div>
+																		</div>
+																		<div class="page-line mgt20"></div>
+																		<div id="companyName2"></div>
+																		<div class="equityList">
+																			<div class="msg-wrap mgb10">
+																				<div class="msg-title"><span style="color: #9398cb;">更新日期：<b id="storyFinancingDate"></b></span>历史融资</div>
+																			</div>
+																			<div class="portlet-body maskInTable">
+																				<div class="table-scrollable">
+																					<table class="table table-striped table-bordered table-hover dataTable no-footer" id="sample_1" role="grid" aria-describedby="sample_1_info">
+																						<thead class="view-tr">
+																							<tr class="tr">
+																								<th>
+																									投资机构
+																								</th>
+																								<th>
+																									投资轮次
+																								</th>
+																								<th>
+																									投资币种
+																								</th>
+																								<th>
+																									投资金额（万元）
+																								</th>
+																								<th>
+																									投资日期
+																								</th>
+																							</tr>
+																						</thead>
+																						<tbody id="storyFinancingList2">
+																						</tbody>
+																					</table>
+																	            </div>
+																		</div>
+																	</div>
+																	<div id="pageToolStoryFinancing"></div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										</div>
+										<div class="tab-pane" id="tab_12">
+											<div class="page-line"></div>
+											<div class="msg-wrap">
+												<div class="msg-title" id="zqxx1">挂牌信息</div>
+											</div>
+											<div class="portlet box darkCyan ">
+												<div class="portlet-body tableBasic  maskInAjax" style="padding-bottom: 0;">
+													<div class="table-scrollable" style="border: none;">
+														<table class="table table-striped">
+															<colgroup>
+																<col width="45%" />
+																<col width="55%" />
+															</colgroup>
+															<tbody id="comManAll" class="comLinkColor">
+																<tr>
+																	<td>
+																		证券代码：<span id="code"></span>
+																	</td>
+																	<td>
+																		证券简称：<span id="shortname"></span>
+																	</td>
+																</tr>
+																<tr>
+																	<td>
+																		挂牌日期：<span id="listing_date"></span>
+																	</td>
+																	<td >
+																		挂牌交易所：<span id="listedExchange"></span>
+																	</td>
+																</tr>
+															</tbody>
+														</table>
+													</div>
+												</div>
+											</div>
+											<div class="page-line mgt20"></div>
+											<div class="msg-wrap">
+												<div class="msg-title" id="zqxx2">主办券商</div>
+											</div>
+											<div class="portlet box darkCyan ">
+												<div class="portlet-body tableBasic  maskInAjax" style="padding-bottom: 0;">
+													<div class="table-scrollable" style="border: none;">
+														<table class="table table-striped">
+															<colgroup>
+																<col width="45%" />
+																<col width="55%" />
+															</colgroup>
+															<tbody id="comManAll" class="comLinkColor">
+																<tr>
+																	<td>
+																		主办券商：<span id="special"></span>
+																	</td>
+																	<td>
+																		转让方式：<span id="mode"></span>
+																	</td>
+																</tr>
+															</tbody>
+														</table>
+													</div>
+												</div>
+											</div>
+											<div class="page-line mgt20"></div>
+											<div class="msg-wrap">
+												<div class="msg-title" id="zqxx3">中介机构</div>
+											</div>
+											<div class="portlet box darkCyan ">
+												<div class="portlet-body tableBasic  maskInAjax" style="padding-bottom: 0;">
+													<div class="table-scrollable" style="border: none;">
+														<table class="table table-striped">
+															<colgroup>
+																<col width="45%" />
+																<col width="55%" />
+															</colgroup>
+															<tbody id="comManAll" class="comLinkColor">
+																<tr>
+																	<td>
+																		会计师事务所：<span id="accountingFirm"></span>
+																	</td>
+																	<td>
+																		律师事务所：<span id="lawOffice"></span>
+																	</td>
+																</tr>
+																<tr>
+																	<td>
+																		资产评估公司：<span id="assetCaluation"></span>
+																	</td>
+																</tr>
+															</tbody>
+														</table>
+													</div>
+												</div>
+											</div>
+												
+										</div>
+										<div class="tab-pane" id="tab_13">
+											<div class="msg-wrap">
+												<div class="msg-title" id="jyxx1">招聘信息</div>
+											</div>
+											<div class="portlet-body maskInTable">
+												<div class="table-scrollable maskInTable maskInTableAz">
+													<table class="table table-striped table-bordered table-hover dataTable no-footer com-invest" id="sample_3" role="grid" aria-describedby="sample_3_info" style="table-layout: fixed;">
+														<colgroup>
+															<col width="10%"/>
+															<col width="20%"/>
+															<col width="60%"/>
+															<col width="10%"/>
+														</colgroup>
+														<thead>
+															<tr role="row" class="tr">
+																<th scope="col">
+																	发布时间
+																</th>
+																<th scope="col">
+																	职位
+																</th>
+																<th scope="col">
+																	职位描述
+																</th>
+																<th scope="col">
+																	工作地点
+																</th>
+															</tr>
+														</thead>
+														<tbody id="operitingList">
+														</tbody>
+													</table>
+												</div>
+												<div id="operitingTool"></div>
+											</div>
+											<div class="page-line"></div>
+											<div class="portlet box darkCyan">
+												<div class="portlet-body " id="maskLv">
+													<div class="msg-wrap">
+														<div class="msg-title" id="jyxx2">招投标</div>
+														<div class="msg-detail">
+														</div>
+													</div>
+													<div class="table-scrollable maskInTable maskInTableAx">
+														<table class="table table-striped table-bordered table-hover dataTable no-footer" id="sample_3" role="grid" aria-describedby="sample_3_info">
+															<thead>
+																<tr role="row" class="tr">
+																	<th scope="col">
+																	发布时间
+																</th>
+																<th scope="col">
+																	标题
+																</th>
+																<th scope="col">
+																	采购人
+																</th>
+																</tr>
+															</thead>
+															<tbody id="biddingList">
+															</tbody>
+														</table>
+													</div>
+													<div id="biddingTool"></div>
+												</div>
+										    </div>
+											<div class="page-line"></div>
+											<div class="portlet box darkCyan">
+												<div class="portlet-body " id="maskLv">
+													<div class="msg-wrap">
+														<div class="msg-title" id="jyxx3">进出口信用</div>
+														<div class="msg-detail">
+														</div>
+													</div>
+													<div class="table-scrollable maskInTable maskInTableJc">
+														<table class="table table-striped table-bordered table-hover dataTable no-footer" id="sample_3" role="grid" aria-describedby="sample_3_info">
+															<thead>
+																<tr role="row" class="tr">
+																	<th scope="col">
+																		注册海关
+																	</th>
+																	<th scope="col">
+																		 海关编码
+																	</th>
+																	<th scope="col">
+																		经营类别
+																	</th>
+																	<th scope="col">
+																		 操作
+																	</th>
+																</tr>
+															</thead>
+															<tbody id="portCreditList">
+															</tbody>
+														</table>
+													</div>
+													<div id="portCreditTool"></div>
+												</div>
+										    </div>
+											<div class="page-line"></div>
+											<div class="portlet box darkCyan">
+												<div class="portlet-body " id="maskLv">
+													<div class="msg-wrap">
+														<div class="msg-title" id="jyxx4">税务评级</div>
+														<div class="msg-detail">
+														</div>
+													</div>
+													<div class="table-scrollable maskInTable maskInTableSw">
+														<table class="table table-striped table-bordered table-hover dataTable no-footer" id="sample_3" role="grid" aria-describedby="sample_3_info">
+															<thead>
+																<tr role="row" class="tr">
+																	<th scope="col">
+																		年份
+																	</th>
+																	<th scope="col">
+																		 纳税评级
+																	</th>
+																	<th scope="col">
+																		类型
+																	</th>
+																	<th scope="col">
+																		 纳税人识别号
+																	</th>
+																	<th scope="col">
+																		 评价单位
+																	</th>
+																</tr>
+															</thead>
+															<tbody id="taxRatingList">
+																
+															</tbody>
+														</table>
+													</div>
+													<div id="taxRatingTool"></div>
+												</div>
+										    </div>
+											<div class="page-line"></div>
+											<div class="portlet box darkCyan">
+												<div class="portlet-body " id="maskLv">
+													<div class="msg-wrap">
+														<div class="msg-title" id="jyxx5">债券信息</div>
+														<div class="msg-detail">
+														</div>
+													</div>
+													<div class="table-scrollable maskInTable maskInTableZq">
+														<table class="table table-striped table-bordered table-hover dataTable no-footer" id="sample_3" role="grid" aria-describedby="sample_3_info">
+															<thead>
+																<tr role="row" class="tr">
+																	<th scope="col">
+																		发行日期
+																	</th>
+																	<th scope="col">
+																		 债券名称
+																	</th>
+																	<th scope="col">
+																		债券代码
+																	</th>
+																	<th scope="col">
+																		 债券类型
+																	</th>
+																	<th scope="col">
+																		 最新评级
+																	</th>
+																	<th scope="col">
+																		 操作
+																	</th>
+																</tr>
+															</thead>
+															<tbody id="bondInfoList">
+																
+															</tbody>
+														</table>
+													</div>
+													<div id="bondInfoTool"></div>
+												</div>
+										    </div>
+											<div class="page-line"></div>
+											<div class="portlet box darkCyan">
+												<div class="portlet-body " id="maskLv">
+													<div class="msg-wrap">
+														<div class="msg-title" id="jyxx6">抽查检查</div>
+														<div class="msg-detail">
+														</div>
+													</div>
+													<div class="table-scrollable maskInTable maskInTableCc">
+														<table class="table table-striped table-bordered table-hover dataTable no-footer">
+															<thead>
+																<tr role="row" class="tr">
+																	<th scope="col">
+																		日期
+																	</th>
+																	<th scope="col">
+																		 类型
+																	</th>
+																	<th scope="col">
+																		结果
+																	</th>
+																	<th scope="col">
+																		 检查实施机关
+																	</th>
+																</tr>
+															</thead>
+															<tbody id="spotCheckList">
+																
+															</tbody>
+														</table>
+													</div>
+													<div id="spotCheckTool"></div>
+												</div>
+										    </div>
+											<div class="page-line"></div>
+											<div class="portlet box darkCyan">
+												<div class="portlet-body " id="maskLv">
+													<div class="msg-wrap">
+														<div class="msg-title" id="jyxx7">司法拍卖</div>
+													</div>
+													<div class="table-scrollable maskInTable maskInTablePm">
+														<table class="table table-striped table-bordered table-hover">
+															<thead class="view-tr">
+																<tr class="tr">
+																	<th>
+																		发布日期
+																	</th>
+																	<th>
+																		法院
+																	</th>
+																	<th>
+																		公告标题
+																	</th>
+																	<th>
+																		公告正文
+																	</th>
+																</tr>
+															</thead>
+															<tbody id="courtListPm">
+		
+															</tbody>
+														</table>
+													</div>
+													<div id="courtPagePm" class="detailPageHeight"></div>
+												</div>
+											</div>
+										
+										</div>
+									</div>
+								</div>
+						</div>
+					</div>
+					<!-- END PAGE CONTENT-->
+				</div>
+			</div>
+
+		</div>
+		<!-- END QUICK SIDEBAR -->
+		</div>
+		<!-- END CONTAINER -->
+		<!-- BEGIN FOOTER -->
+		<div class="page-footer">
+			<div class="page-footer-inner">
+				&copy;&nbsp;2016&nbsp;北京凯峰数据科技有限公司&nbsp;版权所有&nbsp;|&nbsp;京ICP备16037008号-1
+			</div>
+			<div class="scroll-to-top">
+				<i class="icon-arrow-up"></i>
+			</div>
+		</div>
+		<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+		<!-- BEGIN CORE PLUGINS -->
+		<!--[if lte IE 8]><script src="js/libs/selectivizr.js"></script><![endif]-->
+		<!--[if lt IE 9]>
+				<script src="../../assets/global/plugins/respond.min.js"></script>
+				<script src="../../assets/global/plugins/excanvas.min.js"></script> 
+				<![endif]-->
+		<script src="../../assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+		<script src="../../assets/global/plugins/jquery-migrate.min.js" type="text/javascript"></script>
+		<!-- IMPORTANT! Load jquery-ui.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+		<script src="../../assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+		<script src="../../assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+		<script src="../../assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+		<script type="text/javascript" src="../../assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+		<script type="text/javascript" src="../../assets/global/plugins/bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min.js"></script>
+		<!-- BEGIN PAGE LEVEL SCRIPTS -->
+		<script type="text/javascript" src="../../assets/global/plugins/query.js"></script>
+		<script type="text/javascript" src="../../assets/global/plugins/paging.js"></script>
+		<script src="../../assets/global/scripts/kfStyle.js" type="text/javascript"></script>
+		<script src="../../assets/admin/layout/scripts/layout.js" type="text/javascript"></script>
+		<script src="../../assets/admin/layout/scripts/demo.js" type="text/javascript"></script>
+		<script src="../../assets/global/plugins/jquery.cookie.js" type="text/javascript"></script>
+		<script src="../../assets/global/plugins/datatables/media/js/jquery.dataTables.min.js" type="text/javascript"></script>
+		<script src="../../assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js" type="text/javascript"></script>
+		<script src="../../assets/global/plugins/sockjs-0.3.min.js" type="text/javascript"></script>
+		<script src="../../assets/global/plugins/stomp.js" type="text/javascript"></script>
+		<script src="../../assets/global/plugins/layer.js" type="text/javascript"></script>
+		<script src="../../assets/global/plugins/echarts/build/dist/echarts.js"></script>
+		<script src="../../assets/global/scripts/application.js" type="text/javascript"></script>
+		<script src="../../assets/global/scripts/getTable.js" type="text/javascript"></script>
+		<script src="../../assets/global/scripts/companyDetail/businessAnalysis.js" type="text/javascript"></script>
+		<script src="../../assets/global/scripts/companyDetail/commonDetail.js" type="text/javascript"></script>
+		<script src="../../assets/global/scripts/companyDetail/companyDetail.js" type="text/javascript"></script>
+		<script src="../../assets/global/scripts/companyDetail/realTimeQuotes.js" type="text/javascript"></script>
+		<script src="../../assets/global/scripts/companyDetail/relationshipMap.js" type="text/javascript"></script>
+		<script type="text/javascript" src="../../assets/global/plugins/select2.js"></script>
+		
+		<script>
+			$(function() {
+				CompanyDetail.init();
+				KfStyle.init(); 
+				Layout.init();
+				//图片预览
+				$(".patentDiv").click(function(){
+					var imgSrc = $("#patentImg").attr("src");
+					var _height,_width;
+					var image = new Image();
+				  	image.src = imgSrc;
+				  	image.onload = function() {
+					   　	_width = Number(this.width);
+			    		_height = Number(this.height);
+						var wid = $(window).width()-100;
+						var heg = $(window).height()-50;
+						if(_height>heg){
+							_width = (1-(_height-heg)/_height)*_width;
+							_height = heg;
+							 if(_width>wid){
+							 	_width = wid;
+							 }
+						}
+					   if(!isNullOrEmpty(imgSrc)){
+							layer.open({
+							  type: 1,
+							  title: false,
+							  closeBtn: true,
+							  shade: 0.7,
+							  //area: "auto",
+							  area:[_width+"px",_height+"px"],
+							  skin: 'layui-layer-nobg', //没有背景色
+							  shadeClose: true,
+							  content: "<img src='"+ imgSrc +"'/>"
+							});
+						}
+				   };
+				})
+			});
+		</script>
+		<!-- END JAVASCRIPTS -->
+	</body>
+	<!-- END BODY -->
+
+</html>

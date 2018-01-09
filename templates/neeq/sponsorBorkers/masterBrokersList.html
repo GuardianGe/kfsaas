@@ -1,0 +1,157 @@
+<div class="row mod-con-ipt">
+	<div class="col-sm-2 contan-search">
+		<input placeholder="名称" type="text" class="form-control form-filter input-sm securities">
+	</div>
+	<div class="compBtn">
+		<button class="search btn-ipt" id="securitiesSer">搜索</button>
+		<button class="search  btn-ipt btn-ipts" id="securitiesReset">重置</button>
+	</div>
+</div>
+<div class="row allList" id="compQs">
+	<div class="hang-title">
+		<span style="word-spacing:8px; letter-spacing: 8px;">净资本</span>
+	</div>
+	<ul class="list-inline list-inline-mmbile" id="comSpecial" style="margin-left: 3px;">
+		<li name="" class="hang-active">全部</li>
+		<li name="b1">大于30亿</li>
+		<li name="b2">10~30亿</li>
+		<li name="b3">1~10亿</li>
+		<li name="b4">低于1亿</li>
+	</ul>
+</div>
+<div class="row allList" id="compHy">
+	<div class="hang-title">
+		<span>办公地址</span>
+	</div>
+	<ul class="list-inline" id="compIndustry">
+		<li class="hang-active" name="">全部</li>
+		<li name="province001">北京</li>
+		<li name="province002">天津</li>
+		<li name="province003">上海</li>
+		<li name="province004">重庆</li>
+		<li name="province005">河北</li>
+		<li name="province006">山西</li>
+		<li name="province007">陕西</li>
+		<li name="province008">山东</li>
+		<li name="province009">河南</li>
+		<li class="hang-more" data-toggle="modal" data-target="#myModal">更多>></li>
+	</ul>
+</div>
+<div class="row allList" id="compSf">
+	<div class="hang-title">
+		<span>成立时间</span>
+	</div>
+	<ul class="list-inline">
+		<li name="" class="hang-active">全部</li>
+		<li name="b1">10年以上</li>
+		<li name="b2">5~10年</li>
+		<li name="b3">5年以下</li>
+	</ul>
+</div>
+<div class="row allListSo" id="allListSo">
+	<div class="hang-title">
+		<span>已选条件</span>
+	</div>
+	<ul class="list-inline soList" id="soCheck">
+		<li class="soClear">
+			<button class="search  btn-ipt" id="soClear">清空条件</button>
+		</li>
+	</ul>
+</div>
+<div class="page-line">
+	
+</div>
+<!--下面表单开始-->
+<div class="portlet">
+	<div class="portlet-body maskInTable">
+		<div class="table-scrollable">
+			<table class="table table-striped table-bordered table-hover dataTable no-footer" id="sample_1" role="grid" aria-describedby="sample_1_info">
+				<colgroup>
+					<col width="10%" />
+					<col width="30%" />
+					<col width="13%" />
+					<col width="10%" />
+					<col width="10%" />
+					<col width="7%" />
+					<col width="10%" />
+					<col width="10%" />
+				</colgroup>
+				<thead>
+					<tr role="row" class="tr" id="sortNew">
+						<th>
+							券商名称
+						</th>
+						<th>
+							注册地
+						</th>
+						<th name="net_capital">
+							<span>净资本（万元）</span>
+							<span class="sort">
+								 <a href="javascript:void(0)" name="ASC" class="sort-up"></a>
+                                <a href="javascript:void(0)" name="DESC" class="sort-down"></a>
+							</span>
+						</th>
+						<th name="establishment_date">
+							<span>成立日期</span>
+							<span class="sort">
+								 <a href="javascript:void(0)" name="ASC" class="sort-up"></a>
+                                <a href="javascript:void(0)" name="DESC" class="sort-down"></a>
+							</span>
+						</th>
+						<th name="recommend">
+							<span>推荐挂牌</span>
+							<span class="sort">
+								 <a href="javascript:void(0)" name="ASC" class="sort-up"></a>
+                                <a href="javascript:void(0)" name="DESC" class="sort-down"></a>
+							</span>
+						</th>
+						<th name="maker">
+							<span>做市</span>
+							<span class="sort">
+								 <a href="javascript:void(0)" name="ASC" class="sort-up"></a>
+                                <a href="javascript:void(0)" name="DESC" class="sort-down"></a>
+							</span>
+						</th>
+						<th name="recommendedmarket">
+							<span>推荐且做市</span>
+							<span class="sort">
+								 <a href="javascript:void(0)" name="ASC" class="sort-up"></a>
+                                <a href="javascript:void(0)" name="DESC" class="sort-down"></a>
+							</span>
+						</th>
+						<th>
+							<div class="dropdown dropdown-select2">
+								<a class="dropdown-toggle" id="noteType" role="button" data-toggle="dropdown" href="javascript:void(0)">受罚情况 <b class="caret"></b></a>
+								<ul id="menu1" class="dropdown-menu" role="menu" aria-labelledby="drop4">
+									<li role="presentation">
+										<a role="menuitem" tabindex="1" href="javascript:void(0)">处罚</a>
+									</li>
+									<li role="presentation">
+										<a role="menuitem" tabindex="0" href="javascript:void(0)">未处罚</a>
+									</li>
+									<li role="presentation">
+										<a role="menuitem" tabindex="2" href="javascript:void(0)">全部</a>
+									</li>
+								</ul>
+							</div>
+						</th>
+					</tr>
+				</thead>
+				<tbody id="securitiesList">
+					
+				</tbody>
+				</table>
+			</div>
+			<!--分页开始-->
+			<div id="pageTool"></div>
+			<!--分页结束-->
+		</div>
+	</div>
+	
+<script type="text/javascript">
+	$(function(){
+		$.getScript("../../assets/global/scripts/neeq/masterBrokers/masterBrokers.js").done(function(){
+			securitiesCompany.securities();
+		})
+	})
+</script>

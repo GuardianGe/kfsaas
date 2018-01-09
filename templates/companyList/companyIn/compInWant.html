@@ -1,0 +1,218 @@
+<div class="row mod-con-ipt">
+	<div class="col-sm-2 contan-search" style="display: none;">
+		<input placeholder="名称/代码" id="comSearch" type="text" class="form-control form-filter input-sm" name="product_id">
+	</div>
+	<div class="col-sm-2 contan-search">
+		<input placeholder="全称" id="comKeyWord" type="text" class="form-control form-filter input-sm" name="product_id">
+	</div>
+	<div class="col-sm-3 col-md-3 datePar">
+		<div class="input-group date date-picker" id="datetimeStart" data-date-viewmode="years" data-date-format="dd/mm/yyyy">
+			<input type="text" id="compStartTime" class="form-control form-filter input-sm date-ipt" readonly="" name="product_created_from" placeholder="受理开始日期">
+			<span class="input-group-btn">
+				<button  class="btn btn-sm btn-icon-btn" type="button"><i class="fa fa-calendar"></i></button>
+			</span>
+		</div>
+	</div>
+	<div class="arrive">至</div>
+	<div class="col-sm-3 col-md-3 select_box2_father datePar">
+		<div class="input-group date date-picker" id="datetimeEnd" data-date-format="dd/mm/yyyy">
+			<input type="text" id="compEndTime" class="form-control form-filter input-sm date-ipt" readonly="" name="product_created_from" placeholder="受理截止日期">
+			<span class="input-group-btn">
+				<button class="btn btn-sm  btn-icon-btn" type="button"><i class="fa fa-calendar"></i></button>
+			</span>
+		</div>
+	</div>
+	<div class="compBtn">
+		<button class="search  btn-ipt" id="compBtn">查询</button>
+		<button class="search  btn-ipt btn-ipts" id="compReset">重置</button>
+	</div>
+</div>
+<div class="row allList" id="compQs">
+	<div class="hang-title" style="width:88px">
+		<span>主办券商</span>
+	</div>
+	<ul class="list-inline" id="comSpecial">
+		<li class="hang-active" name="">全部</li>
+		<li name="101001830899000000000000">联讯证券</li>
+		<li name="3a3d97138af9e9324d1602c09a8a3a">山西证券</li>
+		<li name="04c6024f2e8fbb0775ea36f103aefe">财达证券</li>
+		<li name="2990ec52e07e89122e9c151291e377">东北证券</li>
+		<li name="95b212c0fc5a35f7b7956f4717f8f3">华融证券</li>
+		<li id="trPop" class="hang-more" data-toggle="modal" data-target="#myModal02">更多&gt;&gt;</li>
+	</ul>
+</div>
+<div class="row allList" id="compHy">
+	<div class="hang-title" style="width:88px">
+		<span>所属行业</span>
+	</div>
+	<ul class="list-inline" id="compIndustry">
+		<li class="hang-active" name="">全部</li>
+		<li name="5a2fcfe678">互联网和相关服务</li>
+		<li name="f3afed3025">软件和信息技术服务业</li>
+		<li name="4af3e0c021">专用设备制造业</li>
+		<li name="e617da4639">零售业</li>
+		<li name="7ee1034249">商务服务业</li>
+		<li id="trPop2" class="hang-more" data-toggle="modal" data-target="#myModal03">更多&gt;&gt;</li>
+	</ul>
+</div>
+<div class="row allList" id="compSf">
+	<div class="hang-title" style="width:88px">
+		<span>省&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;份</span>
+	</div>
+	<ul class="list-inline">
+		<li class="hang-active">全部</li>
+		<li name="province001">北京</li>
+		<li name="province002">天津</li>
+		<li name="province003">上海</li>
+		<li name="province004">重庆</li>
+		<li name="province005">河北</li>
+		<li name="province006">山西</li>
+		<li name="province007">陕西</li>
+		<li name="province008">山东</li>
+		<li name="province009">河南</li>
+		<li class="hang-more" data-toggle="modal" data-target="#myModal">更多>></li>
+	</ul>
+</div>
+<div class="row allList" id="compCw">
+	<div class="hang-title" style="width:88px">
+		<span>律师事务所</span>
+	</div>
+	<ul class="list-inline">
+		<li name="" class="hang-active">全部</li>
+		<li name="de3e1bbe-657b-461b-b64f-35425b902a43">广东志润</li>
+		<li name="ef35c865-7408-4d40-8bd0-7e06fb292dfd">天册（上海）</li>
+		<li name="c315ae5f-8f57-47c1-9888-4cc81a4036cc">北京金诚同达</li>
+		<li name="5dbbfffa-c139-000f-55c1-5819cf05b872">国浩（上海）</li>
+		<li name="bb4f5a4c-e763-4a16-8e4a-114452dbbb0f">江苏新苏</li>
+		<li class="hang-more" data-toggle="modal" data-target="#myModalLaw">更多>></li>
+	</ul>
+</div>
+<div class="row allList" id="compKj">
+	<div class="hang-title" style="width:88px">
+		<span>会计师事务所</span>
+	</div>
+	<ul class="list-inline">
+		<li name='' class="hang-active">全部</li>
+		<li name="29d4caef-f137-9e88-9da1-5819cf83c589">瑞华</li>
+		<li name="7449eea1-4f12-4e36-a2e4-7a99ebc4b902">中兴财光华</li>
+		<li name="c361bb15-f078-4198-af5f-ab4612e18ca6">北京兴华</li>
+		<li name="8cb73958-82dd-47a3-a555-4eabf8fe398f">立信</li>
+		<li name="58fb4a89-8ebb-293a-1d91-5819cfb308e3">大华</li>
+		<li class="hang-more" data-toggle="modal" data-target="#myModalAccount">更多>></li>
+	</ul>
+</div>
+<div class="row allListSo" id="allListSo">
+	<div class="hang-title" style="width:88px">
+		<span>已选条件</span>
+	</div>
+	<ul class="list-inline soList " id="soCheck">
+		<li class="soClear">
+			<button class="search  btn-ipt" id="soClear">清空选项</button>
+		</li>
+	</ul>
+</div>
+<div class="page-line"></div>
+<!--下面表单开始-->
+<div class="portlet box darkCyan">
+	<div class="portlet-body maskInTable" id="maskdata">
+		<div class="table-scrollable">
+			<table class="table table-striped table-bordered table-hover dataTable no-footer" id="sample_1" role="grid" aria-describedby="sample_1_info">
+				<colgroup>
+					<col width="15%" />
+					<col width="10%" />
+					<col width="15%" />
+					<col width="10%" />
+					<col width="10%" />
+					<col width="10%" />
+					<col width="10%" />
+					<col width="10%" />
+					<col width="10%" />
+				</colgroup>
+				<thead>
+					<tr role="row" class="tr">
+						<th scope="col">
+							全称
+						</th>
+						<th scope="col">
+							主办券商
+						</th>
+						<th scope="col">
+							律师事务所
+						</th>
+						<th scope="col">
+							会计师事务所
+						</th>
+						<th scope="col">
+							地区
+						</th>
+						<th scope="col">
+							所属行业
+						</th>
+						<th scope="col">
+							<div class="dropdown dropdown-select2" id="comSelect2s">
+								<a class="dropdown-toggle menu1" id="noteType" role="button" data-toggle="dropdown" href="javascript:void(0)">挂牌同时发行<b class="caret"></b></a>
+								<ul id="menu1" class="dropdown-menu" role="menu" aria-labelledby="drop4">
+									<li role="presentation">
+										<a role="menuitem" href="javascript:void(0)" name="2">是</a>
+									</li>
+									<li role="presentation">
+										<a role="menuitem" href="javascript:void(0)" name="1">否</a>
+									</li>
+									<li role="presentation">
+										<a role="menuitem" tabindex="挂牌同时发行" name=" " href="javascript:void(0)">全部</a>
+									</li>
+								</ul>
+							</div>
+						</th>
+						<th scope="col">
+							<div class="dropdown dropdown-select3" id="comSelect1s">
+								<a class="dropdown-toggle menu2" id="noteType" role="button" data-toggle="dropdown" href="javascript:void(0)">审查进度<b class="caret"></b></a>
+								<ul id="menu2" class="dropdown-menu" role="menu" aria-labelledby="drop4">
+									<li role="presentation">
+										<a role="menuitem" name="3" href="javascript:void(0)">落实反馈</a>
+									</li>
+									<li role="presentation">
+										<a role="menuitem" name="4" href="javascript:void(0)">回复审查</a>
+									</li>
+									<li role="presentation">
+										<a role="menuitem" name="4" href="javascript:void(0)">待反馈</a>
+									</li>
+									<li role="presentation">
+										<a role="menuitem" tabindex="审查进度" name=" " href="javascript:void(0)">全部</a>
+									</li>
+								</ul>
+							</div>
+						</th>
+						<th scope="col">
+							受理日期
+						</th>
+						<!--<th>操作</th>-->
+					</tr>
+				</thead>
+				<tbody id="tableWant">
+
+				</tbody>
+			</table>
+		</div>
+		<!--表单结束-->
+		<div id="pageTool"></div>
+	</div>
+	<!-- END QUICK SIDEBAR -->
+</div>
+<script type="text/javascript">
+	$.getScript("../../assets/global/scripts/companyList/wantCompList.js").done(function() {
+		WantComp.init();
+	});
+	//日期时间选择器
+	$(".date-picker").datepicker({
+		format: "yyyy-mm-dd",
+		autoclose: true,
+		minView: "month",
+		maxView: "decade",
+		todayBtn: "linked",
+		language: 'zh-CN',
+		todayHighlight: true,
+		endDate: new Date(),
+		pickerPosition: "bottom-left"
+	});
+</script>

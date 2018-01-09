@@ -1,0 +1,1536 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en" class="no-js">
+	<!--<![endif]-->
+	<!-- BEGIN HEAD -->
+
+	<head>
+		<head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/></head>
+		<title>公司列表｜三板慧｜金融大数据</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta content="width=device-width, initial-scale=1" name="viewport" />
+		<meta content="" name="description" />
+		<meta content="" name="author" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,minimum-scale=1,user-scalable=no">
+		<link href="../assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+		<link href="../assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+		<link href="../assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+		<link href="../assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" />
+		<link href="../assets/global/css/components.css" id="style_components" rel="stylesheet" type="text/css" />
+		<link href="../assets/global/css/plugins.css" rel="stylesheet" type="text/css" />
+		<link href="../assets/admin/layout/css/layout.css" rel="stylesheet" type="text/css" />
+		<link href="../assets/admin/layout/css/themes/darkblue.css" rel="stylesheet" type="text/css" id="style_color" />
+		<link href="../assets/admin/layout/css/custom.css" rel="stylesheet" type="text/css" />
+		<link href="../assets/admin/layout/css/content.css" rel="stylesheet" type="text/css" />
+		<link href="../assets/admin/layout/css/animate.css" rel="stylesheet" type="text/css" />
+		<link href="../assets/global/plugins/swiper/css/swiper.css" rel="stylesheet" type="text/css" />
+		<link href="../assets/admin/layout/css/index.css" rel="stylesheet" type="text/css" />
+		<script src="../assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+		<script src="../assets/global/plugins/jquery.cookie.js" type="text/javascript"></script>
+		<!-- END THEME STYLES -->
+	</head>
+
+	<body class="page-header-fixed page-quick-sidebar-over-content page-container-bg-solid">
+		
+		<!-- BEGIN HEADER -->
+		<div class="page-header navbar navbar-fixed-top" id="noMAR-jiao">
+			<!-- BEGIN HEADER INNER -->
+			<div class="page-header-inner">
+				<!-- BEGIN LOGO -->
+				<div class="page-logo">
+					<a href="/index.php/companylisted/index">
+						<img src="../assets/admin/layout/img/logo.png">
+					</a>
+					<div class="menu-toggler sidebar-toggler hide">
+					</div>
+				</div>
+				<!-- END LOGO -->
+
+				<!-- BEGIN RESPONSIVE MENU TOGGLER -->
+				<div class="top-menu hidden-xs">
+                    <ul class="nav navbar-nav pull-right">
+                    	<li class="dropdown dropdown-extended dropdown-inbox hidden-sm hidden-xs" id="header_contrast_bar" style="position: static;">
+							<a href="javascript:;" class="dropdown-toggle myMails"  data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+								<span class="myCompared"></span>
+								<span class="badge badge-default letterN"></span>
+							</a>
+							<ul class="dropdown-menu contrastModal" style="width:950px; max-width: 152px; min-width: 900px; height: 152px; left: 50%;margin-left: -475px; overflow: visible;">
+								<li class="external">
+									<h3 style="color: #333333; font-size: 16px; font-weight: 400;">对比栏</h3>
+									<span class="tipContrast"></span>
+								</li>
+								<li>
+									<ul class="comparedModelList">
+										<li class="add liList">
+											<div class="addContrast">
+												<input type="text" id="contrastInput" maxlength="6"/><br />
+												<div class="codeList2">
+				                       		 		<ul></ul>
+				                    			</div>
+				                    			<span class="newAddContrast">新增</span>
+											</div>
+										</li>
+										<li class="liList">
+											<div class="clearContrast">
+												<button class="search btn-ipt btn-ipts" id="columnContrast" style="line-height: 22px; margin-left: 10px; padding-left: 22px;">对比</button>
+												<span class="clearContrastr">清空对比栏</span>
+											</div>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+                        <li class="dropdown dropdown-extended dropdown-notification mgr20 hidden-sm hidden-xs" id="header_notification_bar">
+                            <a href="/account/buy" class="dropdown-toggle" style="height:55px">
+                                <i class="fa fa-dollar"></i>
+                                <span class="badge badge-default" style="right: -18px">购买</span>
+                            </a>
+                        </li>
+                        <li class="dropdown dropdown-user">
+                            <a href="javascript:;" class="dropdown-toggle hidden-xs" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                <img alt="" class="img-circle" src="../assets/admin/layout/img/person.png" />
+                                <span class="username username-hide-on-mobile"></span>
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                             <ul class="dropdown-menu dropdown-menu-default">
+                                <li>
+                                    <a href="/account/info">
+                                        <i class="icon-user"></i>我的三板慧</a>
+                                </li>
+                                <li class="pay">
+                                    <a href="JavaScript:void(0)" id="dk">
+                                        <i class="fa fa-check-square-o"></i><span>每日打卡</span></a>
+                                </li>
+                                <li>
+                                    <a href="/account/modifyPassword">
+                                        <i class="fa fa-pencil-square-o"></i>修改密码 </a>
+                                </li>
+                                <li>
+                                    <a href="/account/version">
+                                        <i class="fa fa-file-o"></i>版本介绍 
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/account/feedback">
+                                        <i class="icon-envelope-open"></i>意见反馈
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/user/logout">
+                                        <i class="fa fa-sign-out"></i>退出 </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+				<!-- END TOP NAVIGATION MENU -->
+				
+				<div class="headerIcon hidden-md hidden-lg">
+					<a href="javascript:;" class="dropdown-toggle hidden-sm hidden-lg">
+	                    <img alt="" class="img-circle" width="35" src="../assets/admin/layout/img/person.png" />
+	                    <span class="username username-hide-on-mobile"></span>
+	                </a>
+	                <a href="javascript:;" class="menu-toggler responsive-toggler">
+        			</a>
+        			
+        			<div class="pc-search mobileSearch hidden-sm hidden-lg">
+	                    <span class="searchEvent imgPos" aria-hidden="true"><img src="../assets/admin/layout/img/index/sousuo.png" width="16"></span>
+	                    <input type="text" class="mobileInput" placeholder="搜索 股票/公司/标签/公告/资讯/研报/法规/事件">
+	                    <div class="searchList" style="display: none;">
+	                        <ul><li><a href="http://192.168.1.24:8020/kfsaas/templates/companyList/companyList.html?sid=73yeud7w6uy3hs898dr57ff8ui3dt49&amp;r=s25&amp;currentTab=tab1&amp;bqCode=68f58510-40ec-11e7-a764-00163e03bdf1&amp;page=1"><span class="searchSlide">[标签]</span><span class="searchSlide">K12</span></a></li><li><a href="http://192.168.1.24:8020/kfsaas/templates/formsList/formDetail.html?sid=73yeud7w6uy3hs898dr57ff8ui3dt49&amp;r=s25&amp;id=d914f470-7e7f-11e7-a7e9-00163e2e7a8b&amp;page=1"><span class="searchSlide">[报表]</span><span class="searchSlide">2016年利润超2000万的浙江企业</span></a></li><li><a href="http://192.168.1.24:8020/kfsaas/templates/formsList/formDetail.html?sid=73yeud7w6uy3hs898dr57ff8ui3dt49&amp;r=s25&amp;id=b26be588-78be-11e7-b6cd-00163e2e7a8b&amp;page=1"><span class="searchSlide">[报表]</span><span class="searchSlide">2015年以来，已经完成定增的新三板公司中，外部投资者VS内部认购情况</span></a></li><li><a href="http://192.168.1.24:8020/kfsaas/templates/formsList/formDetail.html?sid=73yeud7w6uy3hs898dr57ff8ui3dt49&amp;r=s25&amp;id=b26be3a2-78be-11e7-b6cd-00163e2e7a8b&amp;page=1"><span class="searchSlide">[报表]</span><span class="searchSlide">2015年以来，在已经完成定增的新三板公司中，个人及机构的认购情况（次数、金额）</span></a></li><li><a href="http://192.168.1.24:8020/kfsaas/templates/formsList/formDetail.html?sid=73yeud7w6uy3hs898dr57ff8ui3dt49&amp;r=s25&amp;id=b26bdf64-78be-11e7-b6cd-00163e2e7a8b&amp;page=1"><span class="searchSlide">[报表]</span><span class="searchSlide">2015年以来定增完成度（分季度）</span></a></li><li><a href="http://192.168.1.24:8020/kfsaas/templates/companyDetail/companyListDetail.html?sid=73yeud7w6uy3hs898dr57ff8ui3dt49&amp;r=s25&amp;id=22222222"><span class="searchSlide">[新三板]</span><span class="searchSlide">12121212</span><b class="searchSlide">333333</b><span> </span></a></li><li><a href="http://192.168.1.24:8020/kfsaas/templates/companyDetail/companyListDetail.html?sid=73yeud7w6uy3hs898dr57ff8ui3dt49&amp;r=s25&amp;id=5465679a-4123-1308-3d58-581a9cf27cbe"><span class="searchSlide">[新三板]</span><span class="searchSlide">430001</span><b class="searchSlide">世纪瑞尔</b><span>北京世纪瑞尔技术股份有限公司</span></a></li><li><a href="http://192.168.1.24:8020/kfsaas/templates/companyDetail/companyListDetail.html?sid=73yeud7w6uy3hs898dr57ff8ui3dt49&amp;r=s25&amp;id=101001430010000000000000"><span class="searchSlide">[新三板]</span><span class="searchSlide">430010</span><b class="searchSlide">ST现代</b><span>现代农装科技股份有限公司</span></a></li><li><a href="http://192.168.1.24:8020/kfsaas/templates/companyDetail/companyListDetail.html?sid=73yeud7w6uy3hs898dr57ff8ui3dt49&amp;r=s25&amp;id=101001430011000000000000"><span class="searchSlide">[新三板]</span><span class="searchSlide">430011</span><b class="searchSlide">指南针</b><span>北京指南针科技发展股份有限公司</span></a></li><li><a href="http://192.168.1.24:8020/kfsaas/templates/companyDetail/companyListDetail.html?sid=73yeud7w6uy3hs898dr57ff8ui3dt49&amp;r=s25&amp;id=181aebb6-bb83-11e6-9859-80fa5b154e2d"><span class="searchSlide">[新三板]</span><span class="searchSlide">430012</span><b class="searchSlide">博晖创新</b><span>北京博晖创新光电技术股份有限公司</span></a></li><li><a href="http://192.168.1.24:8020/kfsaas/templates/companyDetail/companyListDetail.html?sid=73yeud7w6uy3hs898dr57ff8ui3dt49&amp;r=s25&amp;id=181af197-bb83-11e6-9859-80fa5b154e2d"><span class="searchSlide">[新三板]</span><span class="searchSlide">430013</span><b class="searchSlide">中农羊业</b><span>北京中农立民羊业科技股份有限公司</span></a></li><li><a href="http://192.168.1.24:8020/kfsaas/templates/companyDetail/companyListDetail.html?sid=73yeud7w6uy3hs898dr57ff8ui3dt49&amp;r=s25&amp;id=101001430014000000000000"><span class="searchSlide">[新三板]</span><span class="searchSlide">430014</span><b class="searchSlide">恒业世纪</b><span>北京恒业世纪科技股份有限公司</span></a></li><li><a href="http://192.168.1.24:8020/kfsaas/templates/companyDetail/companyListDetail.html?sid=73yeud7w6uy3hs898dr57ff8ui3dt49&amp;r=s25&amp;id=101001430015000000000000"><span class="searchSlide">[新三板]</span><span class="searchSlide">430015</span><b class="searchSlide">盖特佳</b><span>北京盖特佳信息科技股份有限公司</span></a></li><li><a href="http://192.168.1.24:8020/kfsaas/templates/companyDetail/companyListDetail.html?sid=73yeud7w6uy3hs898dr57ff8ui3dt49&amp;r=s25&amp;id=101001430016000000000000"><span class="searchSlide">[新三板]</span><span class="searchSlide">430016</span><b class="searchSlide">胜龙科技</b><span>北京胜龙科技股份有限公司</span></a></li></ul>
+	                    </div>
+	                </div>
+				</div>
+				
+				
+				
+				 <!--PC端搜索框-->
+	            <div class="pc-search hidden-xs hidden-sm">
+                    <span class="glyphicon glyphicon-search searchEvent" aria-hidden="true"></span>
+                    <input type="text" class="pcInput" placeholder="搜索 股票/公司/标签/公告/资讯/研报/法规/事件" />
+                    <div class="searchList">
+                        <ul></ul>
+                    </div>
+                </div>
+			</div>
+			<!-- END HEADER INNER -->
+		</div>
+		<!-- END HEADER -->
+		<div class="clearfix">
+		</div>
+		<!-- BEGIN CONTAINER -->
+		<div class="page-container">
+			<!-- BEGIN SIDEBAR -->
+			<div class="page-sidebar-wrapper">
+				<div class="page-sidebar navbar-collapse collapse">
+					<ul class="page-sidebar-menu " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
+			            <li class="sidebar-toggler-wrapper">
+			                <div class="sidebar-toggler">
+			                </div>
+			            </li>
+			            <!--mobile搜索框-->
+			            <li class="active">
+			                <a class="menuTwo01" href="/companylisted/index?sid=e878977d0ab941ce42322645ff6a640b&amp;r=s2" style="position:relative">
+			                    <span class="menuOne menuOne01"></span>
+			                    <span class="title newNew twoFontSpacing">首页</span>
+			                </a>
+			            </li>
+			            <li class="start ">
+			                <a href="javascript:;">
+			                    <span class="menuOne newThreeIcon"></span>
+			                    <span class="title newThree threeFont">新三板</span>
+			                    <span class="selected"></span>
+			                    <span class="arrow"></span>
+			                </a>
+			                <ul class="sub-menu" style="">
+			                    <li class="">
+			                        <a href="/companylisted/list?sid=e878977d0ab941ce42322645ff6a640b&amp;r=s3" class="menuTwo02">
+			                            <span class="neeqText">挂牌公司</span>
+			                        </a>
+			                    </li>
+			
+			                    <li class="">
+			                        <a href="/quotation/realtime?sid=e878977d0ab941ce42322645ff6a640b&amp;r=s6" class="menuTwo-real">
+			                            <span class="neeqText">实时行情</span>
+			                        </a>
+			                    </li>
+			
+			                    <li class="">
+			                        <a href="/quotation/index?sid=e878977d0ab941ce42322645ff6a640b&amp;r=s24" class="menuTwo04"><span class="neeqText">历史行情</span></a>
+			                    </li>
+			
+			
+			                    <li class="">
+			                        <a href="/dividends/index?sid=e878977d0ab941ce42322645ff6a640b&amp;r=s6" class="menuTwo-shareMoney">
+			                            <span class="neeqText twoFontSpacing">分红</span>
+			                        </a>
+			                    </li>
+			
+			
+			                    <li class="">
+			                        <a href="/stockdilution/index?sid=e878977d0ab941ce42322645ff6a640b&amp;r=s7" class="menuTwo05">
+			                            <span class="neeqText twoFontSpacing">定增</span>
+			                        </a>
+			                    </li>
+			
+			                    <li class="">
+			                        <a href="/news/latestnews?sid=e878977d0ab941ce42322645ff6a640b&amp;r=s8" class="menuTwo05-1">
+			                            <span class="neeqText">最新动态</span></a>
+			                    </li>
+			
+			
+			                    <li class="">
+			                        <a href="/notice/index?sid=e878977d0ab941ce42322645ff6a640b&amp;r=s9" class="menuTwo06"><span class="neeqText">信息披露</span>
+			                        </a>
+			                    </li>
+			                    <li class="">
+			                        <a href="/law/index?sid=e878977d0ab941ce42322645ff6a640b&amp;r=s10" class="menuTwo07">
+			                            <span class="neeqText">政策法规</span>
+			                        </a>
+			                    </li>
+			                </ul>
+			            </li>
+			
+			            <li class="start ">
+			                <a href="#">
+			                    <span class="menuOne menuOne-invesGov"></span>
+			                    <span class="title newtz">投资机构</span>
+			                    <span class="selected"></span>
+			                    <span class="arrow"></span>
+			                </a>
+			                <ul class="sub-menu">
+			                    <li class="">
+			                        <a href="/investment/investmentAgency?sid=e878977d0ab941ce42322645ff6a640b&amp;r=s14" class="menuTwo09"><span class="neeqText">投资机构</span></a>
+			                    </li>
+			                    
+			                    <li class="">
+			                        <a href="/investment/fundManager?sid=e878977d0ab941ce42322645ff6a640b&amp;r=s15" class="menuTwo10"><span class="neeqText">私募基金</span></a>
+			                    </li>
+			
+			                    <li class="">
+			                        <a href="/investment/investor?sid=e878977d0ab941ce42322645ff6a640b&amp;r=s16" class="menuTwo11-1"><span class="neeqText threeFont">投资人</span>
+			                        </a>
+			                    </li>
+			                </ul>
+			            </li>
+			
+			            <li class="start ">
+			                <a href="#">
+			                    <span class="menuOne menuOne-masterBrokes"></span>
+			                    <span class="title newtz">主办券商</span>
+			                    <span class="selected"></span>
+			                    <span class="arrow"></span>
+			                </a>
+			                <ul class="sub-menu">
+			                    <li class="">
+			                        <a href="/securities/index?sid=e878977d0ab941ce42322645ff6a640b&amp;r=s4" class="menuTwo-brokerOver">
+			                            <span class="neeqText">券商概览</span>
+			                        </a>
+			                    </li>
+			                </ul>
+			            </li>
+			
+			            <li class="start ">
+			                <a href="#">
+			                    <span class="menuOne zhongjiejigou"></span>
+			                    <span class="title newtz">中介机构</span>
+			                    <span class="selected"></span>
+			                    <span class="arrow"></span>
+			                </a>
+			                <ul class="sub-menu">
+			
+			                    <li class="">
+			                        <a href="/agency/accounting?sid=e878977d0ab941ce42322645ff6a640b&amp;r=s5" class="menuTwo-accountingOffive">
+			                            <span class="neeqText">会计师事务所</span>
+			                        </a>
+			                    </li>
+			                    <li class="">
+			                        <a href="/agency/law?sid=e878977d0ab941ce42322645ff6a640b&amp;r=s5" class="menuTwo-lawOffce">
+			                            <span class="neeqText">律师事务所</span>
+			                        </a>
+			                    </li>
+			                </ul>
+			            </li>
+			
+			            <li class="start ">
+			                <a href="javascript:;">
+			                    <span class="menuOne menuOne02"></span>
+			                    <span class="title newtz">场外市场</span>
+			                    <span class="selected"></span>
+			                    <span class="arrow"></span>
+			                </a>
+			                <ul class="sub-menu">
+			                    <li class="">
+			                        <a href="/investment/overview?sid=e878977d0ab941ce42322645ff6a640b&amp;r=s12" class="menuTwo01">
+			                            <span class="neeqText">市场概览</span>
+			                        </a>
+			                    </li>
+			
+			                    <li class="">
+			                        <a href="/investment/index?sid=e878977d0ab941ce42322645ff6a640b&amp;r=s12" class="menuTwo08">
+			                            <span class="neeqText">投资事件</span>
+			                        </a>
+			                    </li>
+			                    <li class="">
+			                        <a href="/investment/company?sid=e878977d0ab941ce42322645ff6a640b&amp;r=s13" class="menuTwo12-1"><span class="neeqText">被投企业</span>
+			                        </a>
+			                    </li>
+			                   
+			                </ul>
+			            </li>
+			            <li class="start ">
+			                <a href="#">
+			                    <span class="menuOne menuOne03"></span>
+			                    <span class="title newNew twoFontSpacing">资讯</span>
+			                    <span class="selected"></span>
+			                    <span class="arrow"></span>
+			                </a>
+			                <ul class="sub-menu">
+			                    <li class="">
+			                        <a href="/news/index?sid=e878977d0ab941ce42322645ff6a640b&amp;r=s17" class="menuTwo11">
+			                            <span class="neeqText">市场新闻</span>
+			                        </a>
+			                    </li>
+			                    <li class="">
+			                        <a href="/news/supervision?sid=e878977d0ab941ce42322645ff6a640b&amp;r=s17" class="menuNewsJg">
+			                            <span class="badge badge-danger marktingView badgeOver">新</span>
+			                            <span class="neeqText">监管要闻</span>
+			                        </a>
+			                    </li>
+			                    <li class="">
+			                        <a href="/news/timepolicy?sid=e878977d0ab941ce42322645ff6a640b&amp;r=s17" class="menuNewsSz">
+			                            <span class="badge badge-danger marktingView badgeOver">新</span>
+			                            <span class="neeqText">时政新闻</span>
+			                        </a>
+			                    </li>
+			                    <li class="">
+			                        <a href="/news/scrollalerts?sid=e878977d0ab941ce42322645ff6a640b&amp;r=s17" class="menuNewsGd">
+			                            <span class="badge badge-danger marktingView badgeOver">新</span>
+			                            <span class="neeqText">滚动快讯</span>
+			                        </a>
+			                    </li>
+			                </ul>
+			
+			            </li>
+			            <li class="start ">
+			                <a href="javascript:;">
+			                    <span class="menuOne menuOne04"></span>
+			                    <span class="title newyb twoFontSpacing">研报</span>
+			                    <span class="selected"></span>
+			                    <span class="arrow"></span>
+			                </a>
+			                <ul class="sub-menu">
+			                    <li class="">
+			                        <a href="/report/index?sid=e878977d0ab941ce42322645ff6a640b&amp;r=20" class="menuTwo12"><span class="neeqText">研报列表</span></a>
+			                    </li>
+			                </ul>
+			            </li>
+			            
+			                        <li class="start ">
+			                <a href="javascript:;">
+			                    <span class="menuOne menuOne-vip"></span>
+			                    <span class="badge badge-danger marktingView badgeOver badgeOverBlue">限</span>
+			                    <span class="title newyb threeFont">慧分析</span>
+			                    <span class="selected"></span>
+			                    <span class="arrow"></span>
+			                </a>
+			                <ul class="sub-menu">
+			                    <li class="">
+			                        <a class="menuTwo-iopOver toPay">
+			                            <span class="badge badge-danger marktingView badgeOver badgeOverBlue">限</span>
+			                            <span class="neeqText">企业分析概览</span>
+			                        </a>
+			                    </li>
+			
+			                    <li class="">
+			                        <a class="menuTwo-vip toPay">
+			                            <span class="badge badge-danger marktingView badgeOver badgeOverBlue">限</span>
+			                            <span class="neeqText">三板IPO监控</span>
+			                        </a>
+			                    </li>
+			
+			                    <li class="">
+			                        <a class="menuTwo-ipoIndex toPay">
+			                            <span class="badge badge-danger marktingView badgeOver badgeOverBlue">限</span>
+			                            <span class="neeqText">三板IPO指数</span>
+			                        </a>
+			                    </li>
+			                </ul>
+			            </li>
+			            <li class="start ">
+			                <a href="javascript:;">
+			                    <span class="menuOne menuOne-huiTools"></span>
+			                    <span class="badge badge-danger marktingView badgeOver badgeOverBlue">限</span>
+			                    <span class="title newyb threeFont">慧工具</span>
+			                    <span class="selected"></span>
+			                    <span class="arrow"></span>
+			                </a>
+			                <ul class="sub-menu">
+			                    <li class="">
+			                        <a class="menuTwo-searchCase toPay">
+			                            <span class="badge badge-danger marktingView badgeOver badgeOverBlue">限</span>
+			                            <span class="neeqText threeFont">公告搜索</span>
+			                        </a>
+			                    </li>
+			
+			                    <li class="">
+			                        <a class="menuTwo-comparison toPay">
+			                            <span class="badge badge-danger marktingView badgeOver badgeOverBlue">限</span>
+			                            <span class="neeqText">企业对比</span>
+			                        </a>
+			                    </li>
+			
+			                    <li class="">
+			                        <a class="menuTwo-formsList toPay">
+			                            <span class="badge badge-danger marktingView badgeOver badgeOverBlue">限</span>
+			                            <span class="neeqText">报表大全</span>
+			                        </a>
+			                    </li>
+			
+			                    <li class="">
+			                        <a class="menuTwo-comSurvry toPay">
+			                            <span class="badge badge-danger marktingView badgeOver badgeOverBlue">限</span>
+			                            <span class="neeqText">一键报告</span>
+			                        </a>
+			                    </li>
+			
+			                    <li class="">
+		                            <a href="/search/indexSearch?sid=e878977d0ab941ce42322645ff6a640b&amp;r=39-1" class="menuTwo-inteSearch">
+		                                <span class="badge badge-danger marktingView badgeOver badgeOverBlue">限</span>
+		                                <span class="neeqText">综合筛选</span>
+		                            </a>
+			                    </li>
+			                </ul>
+			                </li>
+			                        
+			
+			        </ul>
+					<!-- END SIDEBAR MENU -->
+				</div>
+			</div>
+			<!-- END SIDEBAR -->
+			
+			<div class="mobileMenu animated slideInLeft page-sidebar hide">
+				<ul class="page-sidebar-menu " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
+		            <li class="sidebar-toggler-wrapper">
+		                <div class="sidebar-toggler">
+		                </div>
+		            </li>
+		            <!--mobile搜索框-->
+		            <li class="active">
+		                <a class="menuTwo01" href="/companylisted/index?sid=e878977d0ab941ce42322645ff6a640b&amp;r=s2" style="position:relative">
+		                    <span class="menuOne menuOne01"></span>
+		                    <span class="title newNew twoFontSpacing">首&nbsp;页</span>
+		                </a>
+		            </li>
+		            <li class="start ">
+		                <a href="javascript:;">
+		                    <span class="menuOne newThreeIcon"></span>
+		                    <span class="title newThree threeFont">新三板</span>
+		                    <span class="selected"></span>
+		                    <span class="arrow"></span>
+		                </a>
+		                <ul class="sub-menu" style="">
+		                    <li class="">
+		                        <a href="/companylisted/list?sid=e878977d0ab941ce42322645ff6a640b&amp;r=s3" class="menuTwo02">
+		                            <span class="neeqText">挂牌公司</span>
+		                        </a>
+		                    </li>
+		
+		                    <li class="">
+		                        <a href="/quotation/realtime?sid=e878977d0ab941ce42322645ff6a640b&amp;r=s6" class="menuTwo-real">
+		                            <span class="neeqText">实时行情</span>
+		                        </a>
+		                    </li>
+		
+		                    <li class="">
+		                        <a href="/quotation/index?sid=e878977d0ab941ce42322645ff6a640b&amp;r=s24" class="menuTwo04"><span class="neeqText">历史行情</span></a>
+		                    </li>
+		
+		
+		                    <li class="">
+		                        <a href="/dividends/index?sid=e878977d0ab941ce42322645ff6a640b&amp;r=s6" class="menuTwo-shareMoney">
+		                            <span class="neeqText twoFontSpacing">分&nbsp;红</span>
+		                        </a>
+		                    </li>
+		
+		
+		                    <li class="">
+		                        <a href="/stockdilution/index?sid=e878977d0ab941ce42322645ff6a640b&amp;r=s7" class="menuTwo05">
+		                            <span class="neeqText twoFontSpacing">定&nbsp;增</span>
+		                        </a>
+		                    </li>
+		
+		                    <li class="">
+		                        <a href="/news/latestnews?sid=e878977d0ab941ce42322645ff6a640b&amp;r=s8" class="menuTwo05-1">
+		                            <span class="neeqText">最新动态</span></a>
+		                    </li>
+		
+		
+		                    <li class="">
+		                        <a href="/notice/index?sid=e878977d0ab941ce42322645ff6a640b&amp;r=s9" class="menuTwo06"><span class="neeqText">信息披露</span>
+		                        </a>
+		                    </li>
+		                    <li class="">
+		                        <a href="/law/index?sid=e878977d0ab941ce42322645ff6a640b&amp;r=s10" class="menuTwo07">
+		                            <span class="neeqText">政策法规</span>
+		                        </a>
+		                    </li>
+		                </ul>
+		            </li>
+		
+		            <li class="start ">
+		                <a href="#">
+		                    <span class="menuOne menuOne-invesGov"></span>
+		                    <span class="title newtz">投资机构</span>
+		                    <span class="selected"></span>
+		                    <span class="arrow"></span>
+		                </a>
+		                <ul class="sub-menu">
+		                    <li class="">
+		                        <a href="/investment/investmentAgency?sid=e878977d0ab941ce42322645ff6a640b&amp;r=s14" class="menuTwo09"><span class="neeqText">投资机构</span></a>
+		                    </li>
+		                    
+		                    <li class="">
+		                        <a href="/investment/fundManager?sid=e878977d0ab941ce42322645ff6a640b&amp;r=s15" class="menuTwo10"><span class="neeqText">私募基金</span></a>
+		                    </li>
+		
+		                    <li class="">
+		                        <a href="/investment/investor?sid=e878977d0ab941ce42322645ff6a640b&amp;r=s16" class="menuTwo11-1"><span class="neeqText threeFont">投资人</span>
+		                        </a>
+		                    </li>
+		                </ul>
+		            </li>
+		
+		            <li class="start ">
+		                <a href="#">
+		                    <span class="menuOne menuOne-masterBrokes"></span>
+		                    <span class="title newtz">主办券商</span>
+		                    <span class="selected"></span>
+		                    <span class="arrow"></span>
+		                </a>
+		                <ul class="sub-menu">
+		                    <li class="">
+		                        <a href="/securities/index?sid=e878977d0ab941ce42322645ff6a640b&amp;r=s4" class="menuTwo-brokerOver">
+		                            <span class="neeqText">券商概览</span>
+		                        </a>
+		                    </li>
+		                </ul>
+		            </li>
+		
+		            <li class="start ">
+		                <a href="#">
+		                    <span class="menuOne zhongjiejigou"></span>
+		                    <span class="title newtz">中介机构</span>
+		                    <span class="selected"></span>
+		                    <span class="arrow"></span>
+		                </a>
+		                <ul class="sub-menu">
+		
+		                    <li class="">
+		                        <a href="/agency/accounting?sid=e878977d0ab941ce42322645ff6a640b&amp;r=s5" class="menuTwo-accountingOffive">
+		                            <span class="neeqText">会计师事务所</span>
+		                        </a>
+		                    </li>
+		                    <li class="">
+		                        <a href="/agency/law?sid=e878977d0ab941ce42322645ff6a640b&amp;r=s5" class="menuTwo-lawOffce">
+		                            <span class="neeqText">律师事务所</span>
+		                        </a>
+		                    </li>
+		                </ul>
+		            </li>
+		
+		            <li class="start ">
+		                <a href="javascript:;">
+		                    <span class="menuOne menuOne02"></span>
+		                    <span class="title newtz">场外市场</span>
+		                    <span class="selected"></span>
+		                    <span class="arrow"></span>
+		                </a>
+		                <ul class="sub-menu">
+		                    <li class="">
+		                        <a href="/investment/overview?sid=e878977d0ab941ce42322645ff6a640b&amp;r=s12" class="menuTwo01">
+		                            <span class="neeqText">市场概览</span>
+		                        </a>
+		                    </li>
+		
+		                    <li class="">
+		                        <a href="/investment/index?sid=e878977d0ab941ce42322645ff6a640b&amp;r=s12" class="menuTwo08">
+		                            <span class="neeqText">投资事件</span>
+		                        </a>
+		                    </li>
+		                    <li class="">
+		                        <a href="/investment/company?sid=e878977d0ab941ce42322645ff6a640b&amp;r=s13" class="menuTwo12-1"><span class="neeqText">被投企业</span>
+		                        </a>
+		                    </li>
+		                   
+		                </ul>
+		            </li>
+		            <li class="start ">
+		                <a href="#">
+		                    <span class="menuOne menuOne03"></span>
+		                    <span class="title newNew twoFontSpacing">资&nbsp;讯</span>
+		                    <span class="selected"></span>
+		                    <span class="arrow"></span>
+		                </a>
+		                <ul class="sub-menu">
+		                    <li class="">
+		                        <a href="/news/index?sid=e878977d0ab941ce42322645ff6a640b&amp;r=s17" class="menuTwo11">
+		                            <span class="neeqText">市场新闻</span>
+		                        </a>
+		                    </li>
+		                    <li class="">
+		                        <a href="/news/supervision?sid=e878977d0ab941ce42322645ff6a640b&amp;r=s17" class="menuNewsJg">
+		                            <span class="badge badge-danger marktingView badgeOver">新</span>
+		                            <span class="neeqText">监管要闻</span>
+		                        </a>
+		                    </li>
+		                    <li class="">
+		                        <a href="/news/timepolicy?sid=e878977d0ab941ce42322645ff6a640b&amp;r=s17" class="menuNewsSz">
+		                            <span class="badge badge-danger marktingView badgeOver">新</span>
+		                            <span class="neeqText">时政新闻</span>
+		                        </a>
+		                    </li>
+		                    <li class="">
+		                        <a href="/news/scrollalerts?sid=e878977d0ab941ce42322645ff6a640b&amp;r=s17" class="menuNewsGd">
+		                            <span class="badge badge-danger marktingView badgeOver">新</span>
+		                            <span class="neeqText">滚动快讯</span>
+		                        </a>
+		                    </li>
+		                </ul>
+		
+		            </li>
+		            <li class="start ">
+		                <a href="javascript:;">
+		                    <span class="menuOne menuOne04"></span>
+		                    <span class="title newyb twoFontSpacing">研&nbsp;报</span>
+		                    <span class="selected"></span>
+		                    <span class="arrow"></span>
+		                </a>
+		                <ul class="sub-menu">
+		                    <li class="">
+		                        <a href="/report/index?sid=e878977d0ab941ce42322645ff6a640b&amp;r=20" class="menuTwo12"><span class="neeqText">研报列表</span></a>
+		                    </li>
+		                </ul>
+		            </li>
+		            
+		                        <li class="start ">
+		                <a href="javascript:;">
+		                    <span class="menuOne menuOne-vip"></span>
+		                    <span class="badge badge-danger marktingView badgeOver badgeOverBlue">限</span>
+		                    <span class="title newyb threeFont">慧分析</span>
+		                    <span class="selected"></span>
+		                    <span class="arrow"></span>
+		                </a>
+		                <ul class="sub-menu">
+		                    <li class="">
+		                        <a class="menuTwo-iopOver toPay">
+		                            <span class="badge badge-danger marktingView badgeOver badgeOverBlue">限</span>
+		                            <span class="neeqText">企业分析概览</span>
+		                        </a>
+		                    </li>
+		
+		                    <li class="">
+		                        <a class="menuTwo-vip toPay">
+		                            <span class="badge badge-danger marktingView badgeOver badgeOverBlue">限</span>
+		                            <span class="neeqText">三板IPO监控</span>
+		                        </a>
+		                    </li>
+		
+		                    <li class="">
+		                        <a class="menuTwo-ipoIndex toPay">
+		                            <span class="badge badge-danger marktingView badgeOver badgeOverBlue">限</span>
+		                            <span class="neeqText">三板IPO指数</span>
+		                        </a>
+		                    </li>
+		                </ul>
+		            </li>
+		            <li class="start ">
+		                <a href="javascript:;">
+		                    <span class="menuOne menuOne-huiTools"></span>
+		                    <span class="badge badge-danger marktingView badgeOver badgeOverBlue">限</span>
+		                    <span class="title newyb threeFont">慧工具</span>
+		                    <span class="selected"></span>
+		                    <span class="arrow"></span>
+		                </a>
+		                <ul class="sub-menu">
+		                    <li class="">
+		                        <a class="menuTwo-searchCase toPay">
+		                            <span class="badge badge-danger marktingView badgeOver badgeOverBlue">限</span>
+		                            <span class="neeqText threeFont">公告搜索</span>
+		                        </a>
+		                    </li>
+		
+		                    <li class="">
+		                        <a class="menuTwo-comparison toPay">
+		                            <span class="badge badge-danger marktingView badgeOver badgeOverBlue">限</span>
+		                            <span class="neeqText">企业对比</span>
+		                        </a>
+		                    </li>
+		
+		                    <li class="">
+		                        <a class="menuTwo-formsList toPay">
+		                            <span class="badge badge-danger marktingView badgeOver badgeOverBlue">限</span>
+		                            <span class="neeqText">报表大全</span>
+		                        </a>
+		                    </li>
+		
+		                    <li class="">
+		                        <a class="menuTwo-comSurvry toPay">
+		                            <span class="badge badge-danger marktingView badgeOver badgeOverBlue">限</span>
+		                            <span class="neeqText">一键报告</span>
+		                        </a>
+		                    </li>
+		
+		                    <li class="">
+		                            <a href="/search/indexSearch?sid=e878977d0ab941ce42322645ff6a640b&amp;r=39-1" class="menuTwo-inteSearch">
+		                                <span class="badge badge-danger marktingView badgeOver badgeOverBlue">限</span>
+		                                <span class="neeqText">综合筛选</span>
+		                            </a>
+		                    </li>
+		                </ul>
+		                </li>
+		                        
+		
+		        </ul>
+			</div>
+			
+			
+			<!-- BEGIN CONTENT -->
+			<div class="page-content-wrapper">
+				<div class="page-content">
+					<div class="page-bar">
+						<ul class="page-breadcrumb">
+							<li>
+								<i class="fa fa-home"></i>
+								<span id="brandOne">首页</span>
+							</li>
+							<li class='nowTimeTop'>
+								北京时间：<span id="nowDate"></span>
+							</li>
+						</ul>
+					</div>
+					<div class="page-content-par pdb">
+					<div class="row mod-title">
+						<div class="col-md-12">首页</div>
+					</div>
+					<div class="page-height"></div>
+					<div class="row topOne mgt10">
+						<div class="topBlock tapActive">
+							<div class="navBlock bgOrange">
+								<div class="bgContent bgContentpad">
+									投资人 <span class="arrow2"></span>
+								</div>
+								<div class="bgNav animated fadeInLeft">
+									<ul>
+										<li><a get_href="../../companylisted/list?sid=b222654d772a3e825976a880202d15ed&r=s3&currentTab=tab0">挂牌企业</a></li>
+										<li><a get_href="../../stockdilution/index?sid=b222654d772a3e825976a880202d15ed&r=s7&currentTab=tab1">定增事件</a></li>
+										<li><a get_href="../../investment/index?sid=b222654d772a3e825976a880202d15ed&r=s12">融资事件</a></li>
+										<li><a class="toPay" get_href="../../reportproduction/template?sid=b222654d772a3e825976a880202d15ed&r=31">一键报告</a></li>
+										<li><a class="toPay" get_href="../../privilege/index?sid=b222654d772a3e825976a880202d15ed&r=s23&from=privilege&currentTab=tab1&page=1">IPO预测</a></li>
+										<li><a class="toPay" get_href="../../privilege/index?sid=b222654d772a3e825976a880202d15ed&r=s23&currentTab=tab0">IPO监控</a></li>
+										<li><a class="toPay" get_href="../../privilege/index?sid=b222654d772a3e825976a880202d15ed&r=s23&currentTab=tab2">精选企业</a></li>
+										<li><a get_href="../../news/index?sid=b222654d772a3e825976a880202d15ed&r=s17">市场新闻</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="topBlock">
+							<div class="navBlock bgpurple">
+								<div class="bgContent">
+									企业 <span class="arrow2"></span>
+								</div>
+								<div class="bgNav animated fadeInLeft" style="">
+									<ul>
+										<li><a get_href="../../investment/investmentAgency">投资机构</a></li>
+										<li><a get_href="../../companylisted/list">挂牌企业</a></li>
+										<li><a class="toPay" get_href="../../case/index">案例搜索</a></li>
+										<li><a class="toPay" get_href="../../privilege/index?currentTab=tab0">IPO监测</a></li>
+										<li><a class="toPay" get_href="../../privilege/overview">企业分析</a></li>
+										<li><a get_href="../../news/index">市场新闻</a></li>
+										<li><a get_href="../../news/supervision">监管要闻</a></li>
+										<!--<li><a get_href="../../news/latestnews">最新动态</a></li>-->
+										<li><a get_href="../../notice/index">信息披露</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="topBlock">
+							<div class="navBlock bgYellow">
+								<div class="bgContent">
+									银行 <span class="arrow2"></span>
+								</div>
+								<div class="bgNav animated fadeInLeft">
+									<ul>
+										<li><a get_href="../../investment/investmentAgency?sid=b222654d772a3e825976a880202d15ed&r=s14">投资机构</a></li>
+										<li><a get_href="../../investment/company?sid=b222654d772a3e825976a880202d15ed&r=s13">非上市企业</a></li>
+										<li><a get_href="../../investment/index?sid=b222654d772a3e825976a880202d15e">融资事件</a></li>
+										<li><a get_href="../../companylisted/list?sid=b222654d772a3e825976a880202d1">挂牌企业</a></li>
+										<li><a get_href="../../stockdilution/index?sid=b222654d772a3e825976a880202d">定增事件</a></li>
+										<li><a class="toPay" get_href="../../reportproduction/template?sid=b222654d772a3e825976a880202d15ed&r=31">企业报告</a></li>
+										<li><a class="toPay" get_href="../../privilege/index?sid=b222654d772a3e825976a880202d15ed&r=23&currentTab=tab1">IPO预测</a></li>
+										<li><a class="toPay" get_href="../../privilege/index?sid=b222654d772a3e825976a880202d15ed&r=23&currentTab=tab2">精选企业</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="topBlock">
+							<div class="navBlock bgGreen">
+								<div class="bgContent">
+									券商 <span class="arrow2"></span>
+								</div>
+								<div class="bgNav animated fadeInLeft" style="">
+									<ul>
+										<li><a get_href="../../companylisted/list">挂牌企业</a></li>
+										<li><a get_href="../../investment/company">非上市企业</a></li>
+										<!--<li><a class="toPay" get_href="../../reportproduction/template">企业报告</a></li>-->
+										<li><a get_href="../../news/supervision">监管要闻</a></li>
+										<li><a get_href="../../news/index?sid=b222654d772a3e825976a880202d15ed&r=s17">市场动态</a></li>
+										<li><a class="toPay" get_href="../../reportproduction/template?sid=b222654d772a3e825976a880202d15ed&r=31">一键报告</a></li>
+										<li><a get_href="../../case/index?sid=b222654d772a3e825976a880202d15ed&r=22">公告搜索</a></li>
+										<li><a get_href="../../investment/index?sid=b222654d772a3e825976a880202d15ed&r=s12">投资事件</a></li>
+										<li><a class="toPay" get_href="../../compared/peer?sid=b222654d772a3e825976a880202d15ed&r=26-4">企业对比</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row topOne">
+						<div class="topBlock">
+							<div class="navBlock bgRed">
+								<div class="bgContent">
+									投资银行 <span class="arrow2"></span>
+								</div>
+								<div class="bgNav animated fadeInLeft">
+									<ul>
+										<li><a get_href="../../companylisted/list?sid=b222654d772a3e825976a880202d1">挂牌企业</a></li>
+										<li><a get_href="../../investment/company?sid=b222654d772a3e825976a880202d15ed&r=s13">非上市企业</a></li>
+										<li><a class="toPay" get_href="../../case/index?sid=b222654d772a3e825976a880202d15ed&r=22">案例搜索</a></li>
+										<li><a get_href="../../investment/index?sid=b222654d772a3e825976a880202d15e">融资事件</a></li>
+										<li><a get_href="../../investment/investmentAgency?sid=b222654d772a3e825976a880202d15ed&r=s14">投资机构</a></li>
+										<li><a get_href="../../news/index?sid=b222654d772a3e825976a880202d15ed&r=s17">市场动态</a></li>
+										<li><a class="toPay" get_href="../../reportproduction/template?sid=b222654d772a3e825976a880202d15ed&r=31">一键报告</a></li>
+										<li><a class="toPay" get_href="../../compared/peer?sid=b222654d772a3e825976a880202d15ed&r=26-4">企业对比</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="topBlock">
+							<div class="navBlock bgDarkRed">
+								<div class="bgContent">
+									律师 <span class="arrow2"></span>
+								</div>
+								<div class="bgNav animated fadeInLeft">
+									<ul>
+										<li><a get_href="../../companylisted/list?sid=b222654d772a3e825976a880202d1">挂牌企业</a></li>
+										<li><a class="toPay" get_href="../../case/index?sid=b222654d772a3e825976a880202d15ed&r=22">案例搜索	</a></li>
+										<li><a get_href="../../investment/company?sid=b222654d772a3e825976a880202d15ed&r=s13">非上市企业</a></li>
+										<li><a get_href="../../investment/investmentAgency?sid=b222654d772a3e825976a880202d15ed&r=s14">投资机构</a></li>
+										<li><a class="toPay" get_href="../../reportproduction/template?sid=b222654d772a3e825976a880202d15ed&r=31">企业报告</a></li>
+										<li><a get_href="../../investment/index?sid=b222654d772a3e825976a880202d15e">融资事件</a></li>
+										<li><a get_href="../../news/supervision?sid=b222654d772a3e825976a880202d15ed&r=s17">监管要闻</a></li>
+										<li><a get_href="../../news/index?sid=b222654d772a3e825976a880202d15ed&r=s17">市场动态</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="topBlock topBlockme">
+							<div class="navBlock bgDarkBlue">
+								<div class="bgContent">
+									会计师 <span class="arrow2"></span>
+								</div>
+								<div class="bgNav animated fadeInLeft">
+									<ul>
+										<li><a get_href="../../companylisted/list?sid=b222654d772a3e825976a880202d1">挂牌企业</a></li>
+										<li><a class="toPay" get_href="../../case/index?sid=b222654d772a3e825976a880202d15ed&r=22">案例搜索</a></li>
+										<li><a get_href="../../investment/company?sid=b222654d772a3e825976a880202d15ed&r=s13">非上市企业</a></li>
+										<li><a get_href="../../investment/investmentAgency?sid=b222654d772a3e825976a880202d15ed&r=s14">投资机构</a></li>
+										<li><a class="toPay" get_href="../../reportproduction/template?sid=b222654d772a3e825976a880202d15ed&r=31">企业报告</a></li>
+										<li><a get_href="../../investment/index?sid=b222654d772a3e825976a880202d15e">融资事件</a></li>
+										<li><a get_href="../../news/supervision?sid=b222654d772a3e825976a880202d15ed&r=s17">监管要闻</a></li>
+										<li><a get_href="../../news/index?sid=b222654d772a3e825976a880202d15ed&r=s17">市场动态</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="topBlock">
+							<div class="navBlock bgBlue">
+								<div class="bgContent">
+									慧分析 <span class="arrow2"></span>
+								</div>
+								<div class="bgNav animated fadeInLeft">
+									<ul>
+										<li><a class="toPay" get_href="../../privilege/overview?sid=b222654d772a3e825976a880202d15ed&r=s17">企业分析</a></li>
+										<li><a class="toPay" get_href="../../privilege/index?sid=e878977d0ab941ce42322645ff6a640b&r=23&currentTab=tab0">IPO监测</a></li>
+										<li><a class="toPay" get_href="../../privilege/index?sid=e878977d0ab941ce42322645ff6a640b&r=23&currentTab=tab1">IPO预测</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row mgb20">
+						<div class="col-md-12">
+							<ul class="topTwo">
+								<li>
+									<a href="../../companylisted/list?sid=b222654d772a3e825976a880202d15ed&r=s3&currentTab=tab1">
+										<div><img src="../assets/admin/layout/img/index/2.1.png"/></div>
+										<span>新三板 </span>
+									</a>
+								</li>
+								<li>
+									<a href="../../investment/company?sid=b222654d772a3e825976a880202d15ed&r=s13">
+										<div><img src="../assets/admin/layout/img/index/2.2.png"/></div>
+										<span>非上市<br/>企业</span>
+									</a>
+								</li>
+								<li>
+									<a href="../../investment/index?sid=b222654d772a3e825976a880202d15ed&r=s12">
+										<div><img src="../assets/admin/layout/img/index/2.3.png"/></div>
+										<span>融资</span>
+									</a>
+								</li>
+								<li>
+									<a href="../../stockdilution/index?sid=b222654d772a3e825976a880202d15ed&r=s7&currentTab=tab1">
+										<div><img src="../assets/admin/layout/img/index/2.4.png"/></div>
+										<span>定增</span>
+									</a>
+								</li>
+								<li>
+									<a href="../../investment/investmentAgency?sid=b222654d772a3e825976a880202d15ed&r=s14">
+										<div><img src="../assets/admin/layout/img/index/2.5.png"/></div>
+										<span>投资机构</span>
+									</a>
+								</li>
+								<li>
+									<a href="../../investment/fundManager?sid=b222654d772a3e825976a880202d15ed&r=s16">
+										<div><img src="../assets/admin/layout/img/index/2.6.png"/></div>
+										<span>基金</span>
+									</a>
+								</li>
+								<li>
+									<a class="toPay" get_href="../../privilege/index?sid=b222654d772a3e825976a880202d15ed&r=23&currentTab=tab1">
+										<div><img src="../assets/admin/layout/img/index/2.7.png"/></div>
+										<span>IPO监控</span>
+									</a>
+								</li>
+								<li>
+									<a class="toPay" get_href="../../reportproduction/template?sid=b222654d772a3e825976a880202d15ed&r=31">
+										<div><img src="../assets/admin/layout/img/index/2.8.png"/></div>
+										<span>一键报告</span>
+									</a>
+								</li>
+								<li>
+                                    <a get_href="../../news/index">
+                                        <div><img src="../assets/admin/layout/img/index/2.9.png"/></div>
+                                        <span>重要新闻提示</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="toPay" get_href="../../search/indexSearch">
+                                        <div><img src="../assets/admin/layout/img/index/2.10.png"/></div>
+                                        <span>综合筛选</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="toPay" get_href="../../compared/peer">
+                                        <div><img src="../assets/admin/layout/img/index/2.11.png"/></div>
+                                        <span>企业对比</span>
+                                    </a>
+                                </li>
+							</ul>
+						</div>
+					</div>
+					<div class="page-height"></div>
+					<div class="row realDate">
+						<div class="indexTit realDataTime">实时数据 <span></span></div>
+						<div class="col-md-12">
+							<div class="swiper-container">
+							    <div class="swiper-wrapper">
+							        <div class="col-md-2 col-sm-3 col-xs-4 realCon swiper-slide">
+										<div id="realData" style="height: 140px;"></div>
+										<a href="companylisted/list?currentTab=tab1">
+											<span class="realDataText">总数<br/>
+												<b id="realDataNum">-</b>
+											</span>
+										</a>
+									</div>
+									<div class="col-md-2 col-sm-3 col-xs-4 realCon swiper-slide">
+										<div id="realData2" style="height: 140px;"></div>
+										<a href="investment/company">
+											<span class="realDataText2">总数<br/>
+												<b id="realDataNum2">-</b>
+											</span>
+										</a>
+									</div>
+									<div class="col-md-2 col-sm-3 col-xs-4 realCon swiper-slide">
+										<div id="realData3" style="height: 140px;"></div>
+										<a href="stockdilution/index">
+											<span class="realDataText3">总数<br/>
+												<b id="realDataNum3">-</b>
+											</span>
+										</a>
+									</div>
+									<div class="col-md-2 col-sm-3 col-xs-4 realCon swiper-slide">
+										<div id="realData4" style="height: 140px;"></div>
+										<a href="investment/index">
+											<span class="realDataText4">总数<br/>
+												<b id="realDataNum4">-</b>
+											</span>
+										</a>
+									</div>
+									<div class="col-md-2 col-sm-3 col-xs-4 realCon swiper-slide">
+										<div id="realData5" style="height: 140px;"></div>
+										<a href="investment/investmentAgency">
+											<span class="realDataText5">总数<br/>
+												<b id="realDataNum5">-</b>
+											</span>
+										</a>
+									</div>
+									<div class="col-md-2 col-sm-3 col-xs-4 realCon swiper-slide">
+										<div id="realData6" style="height: 140px;"></div>
+										<a href="securities/index?currentTab=tab1">
+											<span class="realDataText6">总数<br/>
+												<b id="realDataNum6">-</b>
+											</span>
+										</a>
+									</div>
+									<div class="col-md-2 col-sm-3 col-xs-4 realCon swiper-slide">
+										<div id="realData7" style="height: 140px;"></div>
+										<a href="notice/index">
+											<span class="realDataText7">总数<br/>
+												<b id="realDataNum7">-</b>
+											</span>
+										</a>
+									</div>
+									<div class="col-md-2 col-sm-3 col-xs-4 realCon swiper-slide">
+										<div id="realData8" style="height: 140px;"></div>
+										<a href="news/index">
+											<span class="realDataText8">总数<br/>
+												<b id="realDataNum8">-</b>
+											</span>
+										</a>
+									</div>
+									<div class="col-md-2 col-sm-3 col-xs-4 realCon swiper-slide">
+										<div id="realData9" style="height: 140px;"></div>
+										<a href="report/index">
+											<span class="realDataText9">总数<br/>
+												<b id="realDataNum9">-</b>
+											</span>
+										</a>
+									</div>
+									<div class="col-md-2 col-sm-3 col-xs-4 realCon swiper-slide">
+										<div id="realData10" style="height: 140px;"></div>
+										<a href="agency/accounting">
+											<span class="realDataText10">总数<br/>
+												<b id="realDataNum10">-</b>
+											</span>
+										</a>
+									</div>
+									<div class="col-md-2 col-sm-3 col-xs-4 realCon swiper-slide">
+										<div id="realData11" style="height: 140px;"></div>
+										<a href="agency/law">
+											<span class="realDataText11">总数<br/>
+												<b id="realDataNum11">-</b>
+											</span>
+										</a>
+									</div>
+									
+									<!--<div class="col-md-2 col-sm-3 col-xs-4 realCon swiper-slide" id="realData2">
+										<span id="realNum2">0</span><hr /><b>非上市企业</b>
+									</div>
+									<div class="col-md-2 col-sm-3 col-xs-4 realCon swiper-slide" id="realData3">
+										<span id="realNum3">0</span><hr /><b>定增事件</b>
+									</div>
+									<div class="col-md-2 col-sm-3 col-xs-4 realCon swiper-slide" id="realData4">
+										<span id="realNum4">0</span><hr /><b>投资事件</b>
+									</div>
+									<div class="col-md-2 col-sm-3 col-xs-4 realCon swiper-slide" id="realData5">
+										<span id="realNum5">0</span><hr /><b>投资机构</b>
+									</div>
+									<div class="col-md-2 col-sm-3 col-xs-4 realCon swiper-slide" id="realData6">
+										<span id="realNum6">0</span><hr /><b>券商</b>
+									</div>
+									<div class="col-md-2 col-sm-3 col-xs-4 realCon swiper-slide" id="realData7">
+										<span id="realNum7">0</span><hr /><b>公告</b>
+									</div>
+									<div class="col-md-2 col-sm-3 col-xs-4 realCon swiper-slide" id="realData8">
+										<span id="realNum8">0</span><hr /><b>资讯</b>
+									</div>
+									<div class="col-md-2 col-sm-3 col-xs-4 realCon swiper-slide" id="realData9">
+										<span id="realNum9">0</span><hr /><b>研报</b>
+									</div>
+									<div class="col-md-2 col-sm-3 col-xs-4 realCon swiper-slide" id="realData10">
+										<span id="realNum10">0</span><hr /><b>会计师事务所</b>
+									</div>
+									<div class="col-md-2 col-sm-3 col-xs-4 realCon swiper-slide" id="realData11">
+										<span id="realNum11">0</span><hr /><b>律师事务所</b>
+									</div>-->
+							    </div>
+							    <div class="swiper-button-next hide"></div>
+							    <div class="swiper-button-prev hide"></div>
+							</div>
+						</div>
+					</div>
+					<div class="page-height"></div>
+					<div class="row">
+						<div class="col-md-8">
+							<div class="row">
+								<div class="col-md-4 borderBottom">
+									<div class="indexTit mgl">投资热词云图</div>
+									<div id="main" style="height:430px; padding-top: 10px;"></div>
+								</div>
+								<div class="col-md-8 borderBottom">
+									<div class="indexTit mgl mgr"><a id="activeRanking" class="pull-right">更多&gt;</a>活跃机构排行</div>
+									<div class="tabTit" id="tabClick">
+										<a class="active mgr20">活跃机构</a>
+										<a>投资新三板机构</a>
+									</div>
+									<div class="tabCon">
+										<div>
+											<table class="table table-condensed table-hover table-team table-blue">
+	                                            <colgroup>
+	                                                <col width="20%">
+	                                                <col width="18%">
+	                                                <col width="20%">
+	                                                <col width="24%">
+	                                                <col width="18%">
+	                                            </colgroup>
+	                                            <thead class="tr newTr">
+	                                                <tr>
+	                                                    <th style="text-align: center;">机构名称</th>
+	                                                    <th style="text-align: center;"><span title="投资企业数">投资企..</span> 
+	                                                    	<a href="javascript:void(0)" class="sort activeInven" name="investment_num">
+			                                                    <span name="ASC" class="sort-up"></span>
+			                                                    <span name="DESC" class="sort-down bgredB"></span>
+			                                                </a>
+	                                                    </th>
+	                                                    <th style="text-align: center;">最新投资</th>
+	                                                    <th style="text-align: center;" class="hidden-xs invesmentTime">投资时间</th>
+	                                                    <th style="text-align: center;" class="hidden-xs invesmentCont">投资金额</th>
+	                                                </tr>
+	                                            </thead>
+	                                            <tbody id="activeBody">
+	                                            	
+	                                            </tbody>
+	                                        </table>
+										</div>
+										<div class="hide">
+											<table class="table table-condensed table-hover table-team table-blue">
+	                                            <colgroup>
+	                                                <col width="20%">
+	                                                <col width="18%">
+	                                                <col width="20%">
+	                                                <col width="24%">
+	                                                <col width="18%">
+	                                            </colgroup>
+	                                            <thead class="tr newTr">
+	                                                <tr>
+	                                                    <th style="text-align: center;">投资机构</th>
+	                                                    <th style="text-align: center;"><span title="投资新三板企业数">投资新..
+	                                                    	<a href="javascript:void(0)" class="sort investBoard" name="investment_neeq_num">
+			                                                    <span name="ASC" class="sort-up"></span>
+			                                                    <span name="DESC" class="sort-down bgredB"></span>
+			                                                </a>
+	                                                    </th>
+	                                                    <th style="text-align: center;">最新定增</th>
+	                                                    <th style="text-align: center;" class="hidden-xs invesmentTime">投资时间</th>
+	                                                    <th style="text-align: center;" class="hidden-xs invesmentCont">投资金额</th>
+	                                                </tr>
+	                                            </thead>
+	                                            <tbody id="activeBody2">
+	                                            	
+	                                            </tbody>
+	                                        </table>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 newsBoder" style="border-left: 10px solid #f1f3fa; height: 485px;">
+							<div class="row">
+								<div class="indexTit"><a href="../../news/latestnews?sid=e878977d0ab941ce42322645ff6a640b&r=s8" class="pull-right" id="newsMore">更多&gt;</a>最新动态</div>
+								<div class="latestNews newsOne">
+									<ul id="latestNewsList">
+										
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="page-height"></div>
+					<div class="row">
+						<div class="col-md-8">
+							<div class="row">
+								<div class="col-md-5 companyHig borderBottom">
+									<div class="indexTit mgl">挂牌企业财务分析</div>
+									<div class="indexClass">
+										<div class="moneyGarde"><span class="companyName pull-right"></span>2016年财务等级 <img src="" /></div>
+									</div>
+									<div class="tabTit" id="tabClick2">
+										<a class="active mgr20">成长性</a>
+										<a class="mgr20">回报率</a>
+										<a>安全率</a>
+									</div>
+									<div class="echWrap">
+										<div class="bigEch"></div>
+										<div class="smallEch smallEch1"></div>
+										<div class="echarNum" id="echarNum" style="height:350px;"></div>
+									</div>
+								</div>
+								<div class="col-md-7 borderBottom">
+									<div class="indexTit mgl mgr"><a id="companyMore" class="pull-right">更多&gt;</a>挂牌企业推荐</div>
+									<table class="table table-condensed table-hover table-team table-blue">
+                                        <thead class="tr newTr">
+                                            <tr>
+                                                <th style="text-align: center;">简称</th>
+                                                <th style="text-align: center;">营业收入
+                                                	<a href="javascript:void(0)" class="sort companyC" name="operating_income">
+	                                                    <span name="ASC" class="sort-up"></span>
+	                                                    <span name="DESC" class="sort-down bgredB"></span>
+	                                                </a>
+                                                </th>
+                                                <th style="text-align: center;">净利润
+                                                	<a href="javascript:void(0)" class="sort companyC" name="net_profit">
+	                                                    <span name="ASC" class="sort-up"></span>
+	                                                    <span name="DESC" class="sort-down"></span>
+	                                                </a>
+                                                </th>
+                                                <th style="text-align: center;" class="hidden-xs">挂牌日期</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="companyCommend">
+                                        	
+                                        </tbody>
+                                    </table>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 newsBoder" style="border-left: 10px solid #f1f3fa; height: 450px;">
+							<div class="row">
+								<div class="indexTit"><a href="../../notice/index?sid=e878977d0ab941ce42322645ff6a640b&r=s9&currentTab=tab1" class="pull-right">更多&gt;</a>公司公告监测</div>
+								<div class="latestNews newsTwo">
+									<ul id="companyNotice">
+										
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="page-height"></div>
+					<div class="row">
+						<div class="col-md-8">
+							<div class="row">
+								<div class="col-md-5 borderBottom">
+									<div class="indexTit mgl"><span class="companyName2 pull-right"></span>挂牌企业分布</div>
+									<div class="tabTit" id="privateTab">
+										<a class="active mgr20">按行业</a>
+										<a>按地区</a>
+									</div>
+									<div id="barChart2" style="height:350px;margin-top: 10px;"></div>
+								</div>
+								<div class="col-md-7 borderBottom">
+									<div class="indexTit mgl mgr"><a id="brokersMore" class="pull-right">更多&gt;</a>券商推荐挂牌排行</div>
+									<table class="table table-condensed table-hover table-team table-blue">
+                                        <thead class="tr newTr">
+                                            <tr>
+                                                <th style="text-align: center;">券商名称</th>
+                                                <th style="text-align: center;">推荐挂牌
+                                                	<a href="javascript:void(0)" class="sort brokers" name="recommend">
+	                                                    <span name="ASC" class="sort-up"></span>
+	                                                    <span name="DESC" class="sort-down bgredB"></span>
+	                                                </a>
+                                                </th>
+                                                <th style="text-align: center;">挂牌且做
+                                                	<a href="javascript:void(0)" class="sort brokers" name="recommendedmarket">
+	                                                    <span name="ASC" class="sort-up"></span>
+	                                                    <span name="DESC" class="sort-down"></span>
+	                                                </a>
+                                                </th>
+                                                <th style="text-align: center;" class="hidden-xs">净资本
+                                                	<a href="javascript:void(0)" class="sort brokers" name="net_capital">
+	                                                    <span name="ASC" class="sort-up"></span>
+	                                                    <span name="DESC" class="sort-down"></span>
+	                                                </a>
+                                                </th>
+                                                <th style="text-align: center;" class="hidden-xs">
+                                                	<div class="dropdown dropdown-select2">
+														<a class="dropdown-toggle" id="noteType" role="button" data-toggle="dropdown" href="javascript:void(0)">是否受罚 <b class="caret"></b></a>
+														<ul id="menu1" class="dropdown-menu" role="menu" aria-labelledby="drop4">
+															<li role="presentation">
+																<a role="menuitem" tabindex="1" href="javascript:void(0)">是</a>
+															</li>
+															<li role="presentation">
+																<a role="menuitem" tabindex="0" href="javascript:void(0)">否</a>
+															</li>
+															<li role="presentation">
+																<a role="menuitem" tabindex="2" href="javascript:void(0)">全部</a>
+															</li>
+														</ul>
+													</div>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="securitiesList">
+                                        </tbody>
+                                    </table>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 newsBoder" style="border-left: 10px solid #f1f3fa; height: 450px;">
+							<div class="row">
+								<div class="indexTit"><a id="ipoMore" class="pull-right toPay">更多&gt;</a>十大IPO预测</div>
+								<div class="col-md-12">
+									<table class="table table-condensed table-hover table-team table-blue">
+										<colgroup>
+                                            <col width="35%">
+                                            <col width="35%">
+                                            <col width="30%">
+                                        </colgroup>
+	                                    <thead class="tr newTr">
+	                                        <tr>
+	                                            <th style="text-align: center;">代表企业</th>
+	                                            <th style="text-align: center;">市盈率
+	                                            	<a href="javascript:void(0)" class="sort ipoTen" name="pe_rate">
+	                                                    <span name="ASC" class="sort-up"></span>
+	                                                    <span name="DESC" class="sort-down"></span>
+	                                                </a>
+	                                            </th>
+	                                            <th style="text-align: center;">市值
+	                                            	<a href="javascript:void(0)" class="sort ipoTen" name="total_value">
+	                                                    <span name="ASC" class="sort-up"></span>
+	                                                    <span name="DESC" class="sort-down bgredB"></span>
+	                                                </a>
+	                                            </th>
+	                                        </tr>
+	                                    </thead>
+	                                    <tbody id="ipoPrediction">
+	                                    	
+	                                    </tbody>
+	                                </table>
+                                </div>
+							</div>
+						</div>
+					</div>
+					<div class="page-height"></div>
+					<div class="row">
+						<div class="col-md-8">
+							<div class="row">
+								<div class="col-md-5 borderBottom">
+									<div class="indexTit mgl">案例热词分布</div>
+									<div id="caseHot" style="height:416px; padding-top: 40px;"></div>
+								</div>
+								<div class="col-md-7 borderBottom">
+									<div class="indexTit mgl mgr"><a id="activeFirm" class="pull-right">更多&gt;</a>活跃事务所排行</div>
+									<div class="tabTit" id="tabClick3">
+										<a class="active mgr20">会计师事务所</a>
+										<a>律师事务所</a>
+									</div>
+									<div class="tabCon" id="tabCon3">
+										<div>
+											<table class="table table-condensed table-hover table-team table-blue">
+	                                            <colgroup>
+	                                                <col width="30%">
+	                                                <col width="35%">
+	                                                <col width="35%">
+	                                            </colgroup>
+	                                            <thead class="tr newTr">
+	                                                <tr style="background: #edeffd;">
+	                                                	<th style="text-align: center;">事务所名称 </th>
+	                                                    <th style="text-align: center;">
+	                                                    	服务企业数量
+	                                                    	<a href="javascript:void(0)" class="sort tableOne" name="service_number">
+			                                                    <span name="ASC" class="sort-up"></span>
+			                                                    <span name="DESC" class="sort-down bgredB"></span>
+			                                                </a>
+	                                                    </th>
+	                                                    <th style="text-align: center;">成立日期</th>
+	                                                </tr>
+	                                            </thead>
+	                                            <tbody id="tableOne">
+	                                            	
+	                                            </tbody>
+	                                        </table>
+										</div>
+										<div class="hide">
+											<table class="table table-condensed table-hover table-team table-blue">
+	                                            <colgroup>
+	                                                <col width="30%">
+	                                                <col width="35%">
+	                                                <col width="35%">
+	                                            </colgroup>
+	                                            <thead class="tr newTr">
+	                                                <tr style="background: #edeffd;">
+	                                                    <th style="text-align: center;">事务所名称 </th>
+	                                                    <th style="text-align: center;">服务企业数量
+	                                                    	<a href="javascript:void(0)" class="sort tableTwo" name="service_number">
+			                                                    <span name="ASC" class="sort-up"></span>
+			                                                    <span name="DESC" class="sort-down bgredB"></span>
+			                                                </a>
+	                                                    </th>
+	                                                    <th style="text-align: center;">成立日期</th>
+	                                                </tr>
+	                                            </thead>
+	                                            <tbody id="tableTwo">
+	                                            	
+	                                            </tbody>
+	                                        </table>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 newsBoder" style="border-left: 10px solid #f1f3fa; height: 485px;">
+							<div class="row">
+								<div class="indexTit"><a id="watchMore" class="pull-right">更多&gt;</a>定增事件监测</div>
+								<div class="col-md-12">
+									<table class="table table-condensed table-hover table-team table-blue">
+	                                    <thead class="tr newTr">
+	                                        <tr>
+	                                            <th style="text-align: center;">企业简称</th>
+	                                            <th style="text-align: center;">进度</th>
+	                                            <th style="text-align: center;">融资金额
+	                                            	<a href="javascript:void(0)" class="sort addEvent" name="fund_max">
+	                                                    <span name="ASC" class="sort-up"></span>
+	                                                    <span name="DESC" class="sort-down bgredB"></span>
+	                                                </a>
+	                                            </th>
+	                                        </tr>
+	                                    </thead>
+	                                    <tbody id="addEventWatch">
+	                                    	
+	                                    </tbody>
+	                                </table>
+	                            </div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			</div>
+			</div>
+			<!-- END CONTAINER -->
+			<!-- BEGIN FOOTER -->
+			<div class="page-footer">
+				<div class="page-footer-inner">
+					&copy;&nbsp;2016&nbsp;北京凯峰数据科技有限公司&nbsp;版权所有&nbsp;|&nbsp;京ICP备16037008号-1
+				</div>
+				<div class="scroll-to-top">
+					<i class="icon-arrow-up"></i>
+				</div>
+			</div>
+			<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+			<!-- BEGIN CORE PLUGINS -->
+			<!--[if lte IE 8]><script src="js/libs/selectivizr.js"></script><![endif]-->
+			<!--[if lt IE 9]>
+			<script src="../assets/global/plugins/respond.min.js"></script>
+			<script src="../assets/global/plugins/excanvas.min.js"></script> 
+			<![endif]-->
+			<script src="../assets/global/plugins/jquery-migrate.min.js" type="text/javascript"></script>
+			<!-- IMPORTANT! Load jquery-ui.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+			<script src="../assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+			<script src="../assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+			<script src="../assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+			<script type="text/javascript" src="../assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+			<script type="text/javascript" src="../assets/global/plugins/bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min.js"></script>
+			<!-- BEGIN PAGE LEVEL SCRIPTS -->
+			<script src="../assets/global/plugins/enCodeAndDecode.js"></script>
+			<script type="text/javascript" src="../assets/global/plugins/query.js"></script>
+			<script type="text/javascript" src="../assets/global/plugins/paging.js"></script>
+			<script src="../assets/global/scripts/kfStyle.js" type="text/javascript"></script>
+			<script src="../assets/admin/layout/scripts/layout.js" type="text/javascript"></script>
+			<script src="../assets/admin/layout/scripts/demo.js" type="text/javascript"></script>
+			<script type="text/javascript" src="../assets/global/plugins/swiper/js/swiper.js"></script>
+			<script src="../assets/global/plugins/echarts/build/dist/echarts3.0.min.js"></script>
+			<script src="../assets/global/plugins/echarts/build/dist/echarts.js"></script>
+			<script src="../assets/global/scripts/application.js" type="text/javascript"></script>
+			<script src="../assets/global/scripts/getTable.js" type="text/javascript"></script>
+			<script type="text/javascript" src="../assets/global/plugins/select2.js"></script>
+			<script type="text/javascript" src="../assets/global/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+			<script src="../assets/global/scripts/index.js" type="text/javascript"></script>
+			<script type="text/javascript">
+				KfStyle.init();
+                Layout.init();
+			    var swiper = new Swiper('.swiper-container', { //实时数据滚动
+			    	slidesPerView: 6,
+				    navigation: {
+				      nextEl: '.swiper-button-next',
+				      prevEl: '.swiper-button-prev',
+				    },
+		            autoplay: {
+				      delay: 30000,
+				      disableOnInteraction: false,
+				    },
+				    breakpoints: {
+				        768: {
+				          slidesPerView: 3,
+				          spaceBetween: 30,
+				        },
+				        640: {
+				          slidesPerView: 2,
+				          spaceBetween: 20,
+				        },
+				        320: {
+				          slidesPerView: 2,
+				          spaceBetween: 10,
+				        }
+				      }
+			    });
+			    
+			    $(".newsOne").slimScroll({ //新闻美化滚动条
+			        height: 410,  
+			        distance: '10px',
+			        color: '#fb8e54', //滚动条颜色  
+			        alwaysVisible: true,  
+			    });  
+			    $(".newsTwo").slimScroll({ //新闻美化滚动条
+			        height: 370,  
+			        distance: '10px',
+			        color: '#fb8e54', //滚动条颜色  
+			        alwaysVisible: true,  
+			    });  
+			</script>
+	</body>
+	<!-- END BODY -->
+</html>

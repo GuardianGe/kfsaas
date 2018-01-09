@@ -1,0 +1,54 @@
+<div class="portlet box darkCyan mgt">
+	<div class="row">
+		<div class="col-md-12 pdt10 pdl20 pdr20">
+			<div class="title_tit" style="color: #205ea7; border-left: 2px solid #205ea7;">券商地区分布</div>
+			<div class="barChartH mgt20" style="height: 400px; background: #f7f7f7;">
+				<div id="barChart" style="height: 400px;"></div>
+			</div>
+		</div>
+	</div>
+	<div class="page-line"></div>
+	<div class="row">
+		<div class="col-md-12 pdt10 pdl20 pdr20">
+			<div class="title_tit" style="color: #3788c7; border-left: 2px solid #3788c7;">推荐挂牌分布<a class="trPop" set-value="1" data-toggle="modal" data-target="#myModal02">选择券商</a> &gt; <b id="brokerageName" name="6d5262d955c9f9bf7a8020900726a9">申万宏源</b></div>
+			<div class="privateTab">
+				<a class="active" id="listedIndustry">按行业</a>
+				<a id="listedArea">按地区</a>
+			</div>
+			<div class="barChartH" style="height: 450px; background: #f7f7f7; margin-top: 30px;">
+				<div id="barChart2" style="height: 450px;"></div>
+				<!--<div id="barChart3" class="hide" style="height: 450px;"></div>-->
+			</div>
+		</div>
+	</div>
+	<div class="page-line"></div>
+	<div class="row">
+		<div class="col-md-12 pdt10 pdl20 pdr20">
+			<div class="title_tit" style="color: #F57D4B; border-left: 2px solid #F57D4B;">做市企业分布<a class="trPop" set-value="2" data-toggle="modal" data-target="#myModal02">选择券商</a> &gt; <b id="brokerageName2" name="6d5262d955c9f9bf7a8020900726a9">申万宏源</b></div>
+			<div class="privateTab">
+				<a class="active" id="listedIndustry2">按行业</a>
+				<a id="listedArea2">按地区</a>
+			</div>
+			<div class="barChartH" style="height: 450px; background: #f7f7f7; margin-top: 30px;">
+				<div id="barChart3" style="height: 450px;"></div>
+			</div>
+		</div>
+	</div>
+	<div class="page-line"></div>
+	<div class="row">
+		<div class="col-md-12 pdt10 pdl20 pdr20">
+			<div class="title_tit" style="color: #39c6c7; border-left: 2px solid #39c6c7;">增发企业分布<a class="trPop" set-value="3" data-toggle="modal" data-target="#myModal02">选择券商</a> &gt; <b id="brokerageName3" name="6d5262d955c9f9bf7a8020900726a9">申万宏源</b></div>
+			<div class="privateTab">
+				<a class="active" id="listedIndustry3">按行业</a>
+				<a id="listedArea3">按地区</a>
+			</div>
+			<div class="barChartH" style="height: 450px; background: #f7f7f7;margin-top: 30px;">
+				<div id="barChart4" style="height: 450px;"></div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="../../assets/global/scripts/neeq/masterBrokers/overviewBrokers.js" type="text/javascript"></script>
+<script type="text/javascript">
+	OverviewBrokers.init();
+</script>

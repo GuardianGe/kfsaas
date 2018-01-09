@@ -1,0 +1,127 @@
+<style>
+	.company_tit{ font-size: 16px; color: #205ea7; border-left: 2px solid #205ea7; padding-left: 10px; font-weight: bold; height: 17px; line-height: 1; margin-top: 10px;}
+	.company_tit span{ color: #666666; font-weight: normal; margin-left: 10px; padding: 2px 0; width: 120px; text-align: center;}
+	@media only screen and (min-width: 320px) and (max-width: 768px) {
+		.company_tit{
+			margin-bottom: 15px;
+		}
+	}
+</style>
+<!--<div class="page-line"></div>-->
+<!--下面表单开始-->
+<div class="portlet box darkCyan mgt">
+	<div class="row">
+		<div class="col-md-12 borRig pdt10 pdl20">
+			<div class="company_tit">季度增发统计<span class="yeara" id="year"></span></div>
+			<div class="privateTab">
+				<a class="active">总家数</a>
+				<a>总金额</a>
+			</div>
+			<div class="barChartH" style="height: 320px; padding-top: 30px;">
+				<div id="barChart" style="height: 320px;"></div>
+				<div class="col-md-12 borRig pdt10 pdl10 mgb20">
+					<div class="privateTab2 clearfix">
+						<div><span>按行业</span><input id="industryArea1" type="radio" checked="checked" name="radio1"/></div>
+						<div><span>按地区</span><input id="industryArea2" type="radio" name="radio1"/></div>
+					</div>
+					<div class="barChartH mgt10" style="height: 450px; background: #f7f7f7;">
+						<div id="barChart3" style="height: 450px;"></div>
+					</div>
+				</div>
+			</div>
+			<div class="barChartH hide" style="height: 320px; padding-top: 30px;">
+				<div id="barChart2" style="height: 320px;"></div>
+				<div class="col-md-12 borRig pdt10 pdl10 mgb20">
+					<div class="privateTab2 clearfix">
+						<div><span>按行业</span><input id="industryArea3" type="radio" checked="checked" name="radio2"/></div>
+						<div><span>按地区</span><input id="industryArea4" type="radio" name="radio2"/></div>
+					</div>
+					<div class="barChartH mgt10" style="height: 450px; background: #f7f7f7;">
+						<div id="barChart4" style="height: 450px;"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="page-line"></div>
+	<div class="row">
+		<div class="col-md-12 pdt10 pdl20 pdb20">
+			<div class="company_tit">增发排行榜<span class="yeara" id="year2"></span></div>
+			<div class="col-md-6 pdl mobileAutoWidth" style="border-right: 1px solid #f1f1f1;">
+				<table width="100%" class="tableBlue">
+					<colgroup>
+						<col width="25%" />
+						<col width="25%" />
+						<col width="25%" />
+						<col width="25%" />
+					</colgroup>
+					<caption style="text-align: center;">增发金额价格排名</caption>
+					<thead>
+						<tr>
+							<th>简称</th>
+							<th>预案公告日</th>
+							<th>最新状态</th>
+							<th>增发金额（万元）</th>
+						</tr>
+					</thead>
+					<tbody id="privateMoney">
+					</tbody>
+				</table>
+			</div>
+			<div class="col-md-6 pdr5 mobileAutoWidth">
+				<table width="100%" class="tableBlue">
+					<colgroup>
+						<col width="25%" />
+						<col width="25%" />
+						<col width="25%" />
+						<col width="25%" />
+					</colgroup>
+					<caption style="text-align: center;">增发PE排名</caption>
+					<thead>
+						<tr>
+							<th>简称</th>
+							<th>预案公告日</th>
+							<th>最新状态</th>
+							<th>增发PE</th>
+						</tr>
+					</thead>
+					<tbody id="privatePE">
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	<div class="page-line"></div>
+	<div class="row">
+		<div class="col-md-12 pdt10 pdl20 pdr20">
+			<div class="company_tit" style="color: #8678A5; border-left: 2px solid #8678A5;">增发成功率<span class="yeara" id="year3"></span></div>
+			<div class="privateTab">
+				<a class="active" id="successIndustry">按行业</a>
+				<a id="successArea">按地区</a>
+			</div>
+			<div class="barChartH mgt20" style="height: 450px; background: #f7f7f7;">
+				<div id="barChart5" style="height: 450px;"></div>
+				<div id="barChart6" class="hide" style="height: 450px;"></div>
+			</div>
+		</div>
+	</div>
+	<div class="page-line"></div>
+	<div class="row">
+		<div class="col-md-12 pdt10 pdl20 pdr20">
+			<div class="company_tit" style="color: #2CA3A4; border-left: 2px solid #2CA3A4;">增发所需时间<span class="yeara" id="year4"></span></div>
+			<div class="privateTab">
+				<a class="active" id="dataIndustry">按行业</a>
+				<a id="dataArea">按地区</a>
+			</div>
+			<div class="barChartH mgt20" style="height: 450px; background: #f7f7f7;">
+				<div id="barChart7" style="height: 450px;"></div>
+				<div id="barChart8" class="hide" style="height: 450px;"></div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		$.getScript("../../assets/global/scripts/neeq/privateAdd/overviewPrivateList.js").done(function(){OverviewPrivate.init();});
+	})
+</script>

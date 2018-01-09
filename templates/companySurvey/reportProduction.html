@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en" class="no-js">
+	<!--<![endif]-->
+	<!-- BEGIN HEAD -->
+
+	<head>
+		<meta charset="utf-8" />
+		<title>公告｜三板慧｜金融大数据</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta content="width=device-width, initial-scale=1" name="viewport" />
+		<meta content="" name="description" />
+		<meta content="" name="author" />
+		<link href="../../assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+		<link href="../../assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+		<link href="../../assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+		<link href="../../assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" />
+		<link href="../../assets/global/css/components.css" id="style_components" rel="stylesheet" type="text/css" />
+		<link href="../../assets/global/css/plugins.css" rel="stylesheet" type="text/css" />
+		<link href="../../assets/admin/layout/css/layout.css" rel="stylesheet" type="text/css" />
+		<link href="../../assets/admin/layout/css/themes/darkblue.css" rel="stylesheet" type="text/css" id="style_color" />
+		<link rel="stylesheet" type="text/css" href="../../assets/admin/layout/css/paging.css">
+		<link href="../../assets/admin/layout/css/custom.css" rel="stylesheet" type="text/css" />
+		<style type="text/css">
+			.edui-editor-iframeholder {
+				height:300px !important;
+			}
+			.edui-editor-iframeholder .view{
+				overflow: scroll !important;
+			}
+			.edui-editor-bottomContainer.edui-default{
+				display: none;
+			}
+			.edui-default .edui-editor{
+				overflow: scroll;
+			}
+		</style>
+		<!-- END THEME STYLES -->
+		<!-- <link rel="shortcut icon" href="favicon.ico"/> -->
+	</head>
+
+	<body class="page-header-fixed page-quick-sidebar-over-content page-container-bg-solid">
+		<!-- BEGIN HEADER -->
+		<div class="page-header navbar navbar-fixed-top">
+			<!-- BEGIN HEADER INNER -->
+			<div class="page-header-inner">
+				<!-- BEGIN LOGO -->
+				<div class="page-logo">
+					<a href="/index.php/companylisted/index">
+						<img src="../../assets/admin/layout/img/logo.png" alt="logo" class="logo-default" />
+					</a>
+					<div class="menu-toggler sidebar-toggler hide">
+					</div>
+				</div>
+				<!-- END LOGO -->
+				<!-- BEGIN RESPONSIVE MENU TOGGLER -->
+				<a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse">
+				</a>
+				<!-- END RESPONSIVE MENU TOGGLER -->
+				<!-- BEGIN TOP NAVIGATION MENU -->
+				<div class="top-menu">
+				<ul class="nav navbar-nav pull-right">
+					<li class="dropdown dropdown-extended dropdown-notification mgr20" id="header_notification_bar">
+						<a href="/account/buy" class="dropdown-toggle" style="height:55px">
+							<i class="fa fa-dollar"></i>
+							<span class="badge badge-default" style="right: -18px">购买</span>
+						</a>
+					</li>
+					<li class="dropdown dropdown-user">
+						<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+							<img alt="" class="img-circle" src="" />
+							<span class="username username-hide-on-mobile"></span>
+							<i class="fa fa-angle-down"></i>
+						</a>
+						 <ul class="dropdown-menu dropdown-menu-default">
+                                <li>
+                                    <a href="/account/info">
+                                        <i class="icon-user"></i>我的三板慧</a>
+                                </li>
+                                <li class="pay">
+                                    <a href="JavaScript:void(0)" id="dk">
+                                        <i class="fa fa-check-square-o"></i><span>每日打卡</span></a>
+                                </li>
+                                <li>
+                                    <a href="/account/modifyPassword">
+                                        <i class="fa fa-pencil-square-o"></i>修改密码 </a>
+                                </li>
+                                <li>
+                                    <a href="/account/version">
+                                        <i class="fa fa-file-o"></i>版本介绍 
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/account/feedback">
+                                        <i class="icon-envelope-open"></i>意见反馈
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/user/logout">
+                                        <i class="fa fa-sign-out"></i>退出 </a>
+                                </li>
+                            </ul>
+					</li>
+				</ul>
+			</div>
+				<!-- END TOP NAVIGATION MENU -->
+				 <!--PC端搜索框-->
+               <div class="pc-search hidden-xs hidden-sm">
+                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                    <input type="text" name="" id="searchBlur" value="" placeholder="搜索 公司/基金/资料" />
+                    <div class="searchList">
+                        <ul></ul>
+                    </div>
+                </div>
+			</div>
+			<!-- END HEADER INNER -->
+		</div>
+		<!-- END HEADER -->
+		<div class="clearfix">
+		</div>
+		<!-- BEGIN CONTAINER -->
+		<div class="page-container">
+			<!-- BEGIN SIDEBAR -->
+			<div class="page-sidebar-wrapper">
+				<div class="page-sidebar navbar-collapse collapse">
+					<ul class="page-sidebar-menu " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
+						<!-- DOC: To remove the sidebar toggler from the sidebar you just need to completely remove the below "sidebar-toggler-wrapper" LI element -->
+						<li class="sidebar-toggler-wrapper">
+							<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+							<div class="sidebar-toggler">
+							</div>
+							<!-- END SIDEBAR TOGGLER BUTTON -->
+						</li>
+						<!-- DOC: To remove the search box from the sidebar you just need to completely remove the below "sidebar-search-wrapper" LI element -->
+						<li class="sidebar-search-wrapper">
+							<form class="sidebar-search " action="extra_search.html" method="POST">
+								<a href="javascript:;" class="remove">
+									<i class="icon-close"></i>
+								</a>
+								<div class="input-group">
+									<input type="text" class="form-control" placeholder="搜索">
+									<span class="input-group-btn">
+							<a href="javascript:;" class="btn submit"><i class="icon-magnifier"></i></a>
+							</span>
+								</div>
+							</form>
+							<!-- END RESPONSIVE QUICK SEARCH FORM -->
+						</li>
+						<li class="start active open">
+							<a href="javascript:;">
+								<!--<i class="icon-home"></i>-->
+								<span class="title">新三板</span>
+								<span class="selected"></span>
+								<span class="arrow open"></span>
+							</a>
+							<ul class="sub-menu">
+								<li>
+									<a href="挂牌公司列表页.html">
+										<!--<i class="icon-bar-chart"></i>-->
+										挂牌公司</a>
+								</li>
+								<li>
+									<a href="公告.html">
+										<!--<i class="icon-bulb"></i>-->
+										公告</a>
+								</li>
+								<li class="active">
+									<a href="定增.html">
+										<!--<i class="icon-graph"></i>-->定增</a>
+								</li>
+								<li>
+									<a href="交易.html">
+										<!--<i class="icon-graph"></i>-->
+										交易</a>
+								</li>
+								<li>
+									<a href="#">
+										<!--<i class="icon-graph"></i>-->
+										主办券商</a>
+								</li>
+								<li>
+									<a href="#">
+										<!--<i class="icon-graph"></i>-->
+										政策法规</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<!--<i class="icon-basket"></i>-->
+								<span class="title">投资</span>
+								<span class="arrow "></span>
+							</a>
+							<ul class="sub-menu">
+								<li>
+									<a href="投资事件.html">
+										<!--<i class="icon-home"></i>-->
+										投资事件</a>
+								</li>
+								<li>
+									<a href="投资机构列表页.html">
+										<!--<i class="icon-basket"></i>-->
+										投资机构</a>
+								</li>
+								<li>
+									<a href="#">
+										<!--<i class="icon-tag"></i>-->
+										私募基金管理人</a>
+								</li>
+
+							</ul>
+						</li>
+						<li>
+							<a href="#">
+								<!--<i class="icon-rocket"></i>-->
+								<span class="title">新闻</span>
+								<span class="arrow "></span>
+							</a>
+
+						</li>
+						<li>
+							<a href="javascript:;">
+								<!--<i class="icon-diamond"></i>-->
+								<span class="title">研报</span>
+								<span class="arrow "></span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<!--<i class="icon-puzzle"></i>-->
+								<span class="title">关系查找</span>
+								<span class="arrow "></span>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<!--<i class="icon-basket"></i>-->
+								<span class="title">登录和注册</span>
+								<span class="arrow "></span>
+							</a>
+							<ul class="sub-menu">
+								<li>
+									<a href="登录.html">
+										<!--<i class="icon-home"></i>-->
+										登录</a>
+								</li>
+								<li>
+									<a href="用户注册1.html">
+										<!--<i class="icon-basket"></i>-->用户注册1</a>
+								</li>
+								<li>
+									<a href="用户注册2.html">
+										<!--<i class="icon-tag"></i>-->用户注册2</a>
+								</li>
+								<li>
+									<a href="注册成功3.html">
+										<!--<i class="icon-tag"></i>-->注册成功3</a>
+								</li>
+
+							</ul>
+						</li>
+					</ul>
+					<!-- END SIDEBAR MENU -->
+				</div>
+			</div>
+			<!-- END SIDEBAR -->
+			<!-- BEGIN CONTENT -->
+			<div class="page-content-wrapper">
+				<div class="page-content" style="background:#FFFFFF;">
+					<!-- BEGIN PAGE HEADER-->
+					<div class="page-bar">
+						<ul class="page-breadcrumb">
+							<li>
+								<i class="fa fa-home"></i>
+								企业调查
+								<i class="fa fa-angle-right"></i>
+							</li>
+							<li>
+								报告制作
+							</li>
+						</ul>
+					</div>
+					<div class="page-content-par">
+					<div class="row mod-title">
+						<div class="col-md-12">报告制作</div>
+					</div>
+					<div class="page-line mgt"></div>
+					<!--下面表单开始-->
+					<div class="row tab-content mgt10">
+						<div class="col-md-12">
+							<div class="btnList clearfix mgb10">
+								<div class="addMode-ipt" style="float: left;margin-top: 4px;">
+									<span class="pull-left mgt5">报告名称</span>
+									<input type="text" class="pull-left" id="tempName" maxlength="30">
+									<div id="errorTip" class="pull-left" style="font-size: 14px; color: red; margin: 5px;"></div>
+									<span id="tempNameErr" class="modeNameErr"></span>
+								</div>
+								<button class="search  btn-ipt pull-right" style="background: #CCCCCC;" id="seeTemplate" disabled="disabled">预览</button>
+								<button class="search  btn-ipt pull-right" id="createTemplate" style="background: #CCCCCC;" disabled="disabled">导出</button>
+								<button class="search  btn-ipt pull-right" id="notCreateTemplate">放弃</button>
+								<button class="search  btn-ipt pull-right" id="saveTemplate2">保存</button>
+								<button class="search  btn-ipt pull-right hide" id="hideOut"></button>
+							</div>
+								<div class="portlet-body" id="reportAll">
+									<div class="productionTab">
+										<ul class="clearfix tabLi">
+										</ul>
+										
+										<!--基本信息-->
+										<div class="productionCon hide NotextR" conName="基本信息">
+											<div class="mode-title">基本信息</div>
+											<div class="basicMes">
+												<div class="msg-wrap">
+									                <div class="msg-title mgt20">公司基本信息</div>
+									            </div>
+									            <div class="detaTit mgb10">更新日期：<span class="basicDate" current-code="b01010100"></span></div>
+									            <table width="100%">
+									            	<colgroup>
+									            		<col width="15%" />
+									            		<col width="35%" />
+									            		<col width="25%" />
+									            		<col width="25%" />
+									            	</colgroup>
+									            	<tbody>
+									            		<tr>
+									            			<td><b>证券代码</b></td>
+									            			<td class="re1"></td>
+									            			<td><b>有限公司成立日期</b></td>
+									            			<td><input class="re1 valTxt" current-code="b01010800" type="text" /></td>
+									            		</tr>
+									            		<tr>
+									            			<td><b>股票简称</b></td>
+									            			<td><input class="re1 valTxt" current-code="b01010300" type="text" /></td>
+									            			<td><b>股份公司成立日期</b></td>
+									            			<td><input class="re1 valTxt" current-code="b01010900" type="text" /></td>
+									            		</tr>
+									            		<tr>
+									            			<td><b>交易方式</b></td>
+									            			<td><input class="re1 valTxt" current-code="b01010400" type="text" /></td>
+									            			<td><b>所在分层</b></td>
+									            			<td><input class="re1 valTxt" current-code="b01011000" type="text" /></td>
+									            		</tr>
+									            		<tr>
+									            			<td><b>做市转让起始日</b></td>
+									            			<td><input class="re1 valTxt" current-code="b01010500" type="text" /></td>
+									            			<td><b>所属指数</b></td>
+									            			<td><input class="re1 valTxt" current-code="b01011100" type="text" /></td>
+									            		</tr>
+									            		<tr>
+									            			<td><b>总股本</b></td>
+									            			<td><input class="re1 valTxt" current-code="b01010600" type="text" /></td>
+									            			<td><b>最新财报日期</b></td>
+									            			<td><input class="re1 valTxt" current-code="b01011200" type="text" /></td>
+									            		</tr>
+									            		<tr>
+									            			<td><b>公司全称</b></td>
+									            			<td colspan="3"><input class="re1 valTxt" current-code="b01010700" type="text" /></td>
+									            		</tr>
+									            		<tr>
+									            			<td><b>主营业务</b></td>
+									            			<td colspan="3"><textarea class="re1 re1Textarea valTxt" current-code="b01011300"></textarea></td>
+									            		</tr>
+									            		<tr>
+									            			<td><b>经营范围</b></td>
+									            			<td colspan="3"><textarea rows="4" class="re1 re1Textarea valTxt" type="text" current-code="b01011400" /></textarea></td>
+									            		</tr>
+									            		<tr>
+									            			<td><b>所属行业</b></td>
+									            			<td><input class="re1 valTxt" type="text" current-code="b01011500" /></td>
+									            			<td><b>行业代码</b></td>
+									            			<td><input class="re1 valTxt" type="text" current-code="b01011600" /></td>
+									            		</tr>
+									            		<tr>
+									            			<td><b>员工人数</b></td>
+									            			<td><input class="re1 valTxt" type="text" current-code="b01011700" /></td>
+									            			<td><b>挂牌日期</b></td>
+									            			<td><input class="re1 valTxt" type="text" current-code="b01011800" /></td>
+									            		</tr>
+									            		<tr>
+									            			<td><b>办公地址</b></td>
+									            			<td colspan="3"><input class="re1 valTxt" current-code="b01011900" type="text" /></td>
+									            		</tr>
+									            		<tr>
+									            			<td><b>注册地址</b></td>
+									            			<td colspan="3"><input class="re1 valTxt" current-code="b01012000" type="text" /></td>
+									            		</tr>
+									            	</tbody>
+									            </table>
+									            <div class="reportRemarks mgt20 mgb20"><span>备注： </span><textarea type="text" current-code="b01019900" class="aboutmeOne0 re1 widthN valTxt" placeholder="未填写"/></textarea></div>
+								            </div>
+								            
+								            <div class="basicMes2">
+									            <div class="msg-wrap" style="margin-top: 40px;">
+									                <div class="msg-title mgt20">中介机构信息</div>
+									            </div>
+									            <div class="detaTit mgb10">更新日期：<span class="basicDate2 valTxt" current-code="b01020100"></span></div>
+									            <table width="100%">
+									            	<colgroup>
+									            		<col width="15%" />
+									            		<col width="35%" />
+									            		<col width="25%" />
+									            		<col width="25%" />
+									            	</colgroup>
+									            	<tbody>
+									            		<tr>
+									            			<td><b>主办券商</b></td>
+									            			<td><input class="re01 valTxt" type="text" current-code="b01020200"/></td>
+									            			<td><b>主办券商项目组人员</b></td>
+									            			<td><input class="re01 valTxt" type="text" current-code="b01020300" /></td>
+									            		</tr>
+									            		<tr>
+									            			<td><b>会计师事务所</b></td>
+									            			<td><input class="re01 valTxt" type="text" current-code="b01020400" /></td>
+									            			<td><b>会计师事务所项目组人员</b></td>
+									            			<td><input class="re01 valTxt" type="text" current-code="b01020500" /></td>
+									            		</tr>
+									            		<tr>
+									            			<td><b>律师事务所</b></td>
+									            			<td><input class="re01 valTxt" type="text" current-code="b01020600" /></td>
+									            			<td><b>律师事务所项目组人员</b></td>
+									            			<td><input class="re01 valTxt" type="text" current-code="b01020700" /></td>
+									            		</tr>
+									            	</tbody>
+									            </table>
+								             	<div class="reportRemarks mgt20 mgb20"><span>备注： </span><textarea type="text" current-code="b01029900" class="aboutmeOne1 widthN valTxt" placeholder="未填写"/></textarea></div>
+								            </div>
+								            
+								            <div class="basicMes3">
+									            <div class="msg-wrap" style="margin-top: 40px;">
+									                <div class="msg-title mgt20">资质/专利信息</div>
+									            </div>
+									            <div class="detaTit mgb10">更新日期：<span class="basicDate3 valTxt" current-code="b01030100"></span></div>
+									            <table width="100%">
+									            	<colgroup>
+									            		<col width="10%" />
+									            		<col width="10%" />
+									            		<col width="10%" />
+									            		<col width="10%" />
+									            		<col width="10%" />
+									            	</colgroup>
+									            	<tbody>
+									            		<tr>
+									            			<td rowspan="3"><b>专利技术</b></td>
+									            			<td><b>发明专利数</b></td>
+									            			<td><input class="re001 valTxt" current-code="b01030200" type="text" /></td>
+									            			<td><b>软件著作权数</b></td>
+									            			<td><input class="re001 valTxt" current-code="b01030500" type="text" /></td>
+									            		</tr>
+									            		<tr>
+									            			<td><b>实用新型专利数</b></td>
+									            			<td><input class="re001 valTxt" current-code="b01030300" type="text" /></td>
+									            			<td><b>相关认证和资质数</b></td>
+									            			<td><input class="re001 valTxt" current-code="b01030600" type="text" /></td>
+									            		</tr>
+									            		<tr>
+									            			<td><b>外观设计专利数</b></td>
+									            			<td><input class="re001 valTxt" current-code="b01030400" type="text" /></td>
+									            			<td><b>是否高新技术企业</b></td>
+									            			<td><input class="re001 valTxt" current-code="b01030700" type="text" /></td>
+									            		</tr>
+									            	</tbody>
+									            </table>
+								            	<div class="reportRemarks mgt20 mgb20"><span>备注： </span><textarea type="text" current-code="b01039900" class="re001 widthN valTxt" placeholder="未填写"/></textarea></div>
+								            </div>
+								            
+								            <div class="basicMes4 mgb20">
+									            <div class="msg-wrap" style="margin-top: 40px;">
+									                <div class="msg-title mgt20">联系情况</div>
+									            </div>
+									            <table width="100%" class="notBorder">
+									            	<tbody>
+									            		<tr>
+									            			<td colspan="2" style="line-height: normal!important;" class="pdl">
+									            				<div class="form-group">
+																	<label class="pull-left" style="width: 80px; padding-top: 2px;">接洽场景</label>
+																	<div class="radio-list" id="concatRadio" current-code="b01040100" style="margin-left: 110px;">
+																		<label class="radio-inline mgr20">
+																		<input type="radio" checked="checked" name="optionsRadios" current-code="0"> 陌拜 </label>
+																		<label class="radio-inline mgr20">
+																		<input type="radio" name="optionsRadios" current-code="1"> 活动 </label>
+																		<label class="radio-inline mgr20">
+																		<input type="radio" name="optionsRadios" current-code="2"> 转介绍 </label>
+																		<label class="radio-inline mgr20">
+																		<input type="radio" name="optionsRadios" current-code="3"> 微信 </label>
+																		<label class="radio-inline mgr20">
+																		<input type="radio" name="optionsRadios" current-code="4"> 其他 </label>
+																	</div>
+																</div>
+									            			</td>
+									            		</tr>
+									            		<tr class="inputPd">
+									            			<td style="line-height: normal!important;" class="pdl">
+									            				企业联系人 <input type="text" current-code="b01040200" class="re0001 valTxt" placeholder="人名" style="width: 25%; margin-left: 10px; border:1px solid #CCCCCC;" value=""/> <input type="text" class="re0002 valTxt" current-code="b01040300" placeholder="职位" style="width: 25%; border:1px solid #CCCCCC;" value=""/>
+									            			</td>
+									            			<td style="line-height: normal!important;">
+									            				联系电话 <input type="text" current-code="b01040400" class="re0003 mgl10 valTxt" placeholder="电话" value="" style="width: 65%; border:1px solid #CCCCCC;"/>
+									            			</td>
+									            		</tr>
+									            	</tbody>
+									            </table>
+								            </div>
+										</div>
+										
+										<!--风险信息-->
+										<div class="productionCon hide" conName="风险提示">
+											<div class="mode-title">风险信息</div>
+											<div class="riskTip">
+												<div class="msg-wrap">
+		                                            <div class="msg-title mgt20">风险提示</div>
+		                                        </div>
+		                                        <div class="detaTit mgb10">更新日期：<span class="basicDate4" current-code="b02010100"></span></div>
+		                                        <div style="overflow: auto;height:310px;">
+													<script id="editor" type="text/plain" style="width:100%;height:310px;"></script>
+												</div>
+												<div id="editorDiv"></div>
+		                                        <table width="100%" class="notBorder">
+		                                        	<tbody>
+		                                        		<tr>
+		                                        			<td class="pdl">
+		                                        				<!--<textarea rows="4" class="ae1 valTxt" current-code="b02010000">
+		                                        				</textarea>-->
+		                                        				
+		                                        			</td>
+		                                        		</tr>
+		                                        	</tbody>
+		                                        </table>
+		                                        <div class="reportRemarks mgt10 mgb20"><span>备注： </span><textarea type="text" current-code="b02019900" class="ae2 widthN valTxt" placeholder="未填写"/></textarea></div>
+	                                        </div>
+	                                        
+	                                        <div class="riskTip2">
+		                                        <div class="msg-wrap" style="margin-top: 40px;">
+		                                            <div class="msg-title mgt20">过往处罚情况</div>
+		                                        </div>
+		                                        <div class="detaTit mgb10">更新日期：<span class="basicDate5"></span></div>
+		                                        <table width="100%">
+		                                        	<colgroup>
+		                                        		<col width="50%" />
+		                                        		<col width="25%" />
+		                                        		<col width="25%" />
+		                                        	</colgroup>
+		                                        	<thead>
+		                                        		<tr>
+		                                        			<th>处罚公告标题</th>
+		                                        			<th>公告类型</th>
+		                                        			<th>公告日期</th>
+		                                        		</tr>
+		                                        	</thead>
+		                                        	<tbody id="pastPenaltiesList" current-code="b02020000">
+		                                        	</tbody>
+		                                        </table>
+		                                        <div class="reportRemarks mgt20 mgb20"><span>备注： </span><textarea type="text" current-code="b02029900" class="widthN remarksC valTxt" placeholder="未填写"/></textarea></div>
+	                                        </div>
+										</div>
+										
+										<!--人员信息-->
+										<div class="productionCon hide" conName="人员信息">
+											<div class="mode-title">人员信息</div>
+											<div class="perInformation">
+		                                        <div class="msg-wrap">
+		                                            <div class="msg-title mgt20">管理层信息</div>
+		                                        </div>
+		                                        <div class="detaTit mgb10">更新日期：<span class="rb"></span></div>
+		                                        <table width="100%">
+		                                        	<colgroup>
+		                                        		<col width="10%" />
+		                                        		<col width="40%" />
+		                                        		<col width="10%" />
+		                                        		<col width="15%" />
+		                                        		<col width="25%" />
+		                                        	</colgroup>
+		                                        	<thead>
+		                                        		<tr>
+		                                        			<th>名字</th>
+		                                        			<th>职务</th>
+		                                        			<th>性别</th>
+		                                        			<th>高管任期</th>
+		                                        			<th>人物备注</th>
+		                                        		</tr>
+		                                        	</thead>
+		                                        	<tbody id="reportInformation" current-code="b03010000">
+		                                        		
+		                                        	</tbody>
+		                                        </table>
+		                                        <div class="reportRemarks mgt20 mgb20"><span>备注： </span><textarea class="widthN remarksDC valTxt" type="text" current-code="b03019900" placeholder="未填写"/></textarea></div>
+	                                        </div>
+	                                        
+	                                        <div class="perInformation2">
+		                                        <div class="msg-wrap" style="margin-top: 40px;">
+		                                            <div class="msg-title mgt20">高管简介</div>
+		                                        </div>
+		                                        <div class="detaTit mgb10">更新日期：<span class="rb3"></span></div>
+		                                        <table width="100%">
+		                                        	<colgroup>
+		                                        		<col width="10%" />
+		                                        		<col width="90%" />
+		                                        	</colgroup>
+		                                        	<thead>
+		                                        		<tr>
+		                                        			<th>名字</th>
+		                                        			<th>简介</th>
+		                                        		</tr>
+		                                        	</thead>
+		                                        	<tbody id="executiveInfor" current-code="b03020000">
+		                                        		
+		                                        	</tbody>
+		                                        </table>
+		                                        <div class="reportRemarks mgt20 mgb20"><span>备注： </span><textarea type="text" class="widthN remarksD2 valTxt" current-code="b03029900" placeholder="未填写"></textarea></div>
+	                                        </div>
+										</div>
+										
+										<!--财务数据-->
+										<div class="productionCon hide NotextR" conName="财务数据">
+											<div class="mode-title">财务数据</div>
+											<div class="finDate">
+												<div class="msg-wrap">
+		                                            <div class="msg-title mgt20">财务指标</div>
+		                                        </div>
+		                                        <div class="detaTit mgb10">更新日期：<span class="rbb3"></span></div>
+                                    			单位（<span class="unit"></span>）
+                                    			<div class="data-cwsj">
+                                    				<table  id="caiData" border="0" cellpadding="0" cellspacing="0">
+			                                        	<thead>
+															<tr>
+																<th>
+																	 报告期
+																</th>
+																<th>
+																	 股东权益
+																</th>
+																<th class="numeric">
+																	 总股本
+																</th>
+																<th class="numeric">
+																	 营业总收入
+																</th>
+																<th class="numeric">
+																	 净利润
+																</th>
+																<th class="numeric">
+																	 净利润同比增长率（%）
+																</th>
+																<th class="numeric">
+																	 扣除非经常性损益后净利润
+																</th>
+																<th class="numeric">
+																	 资产负债比率（%）
+																</th>
+																<th class="numeric">
+																	销售毛利率（%）
+																</th>
+																<th class="numeric">
+																	 基本每股收益（元）
+																</th>
+																<th class="numeric">
+																	 每股净资产（元）
+																</th>
+																<th class="numeric">
+																	 每股资本公积金（元）
+																</th>
+																<th class="numeric">
+																	 每股未分配利润（元）
+																</th>
+																<th class="numeric">
+																	 存货
+																</th>
+																<th class="numeric">
+																	 货币资金
+																</th>
+																<th class="numeric">
+																	 应收账款
+																</th>
+																<th class="numeric">
+																	 经营活动产生的现金流净额
+																</th>
+																<th class="numeric">
+																	 投资活动产生的现金流净额
+																</th>
+																<th class="numeric">
+																	 筹资活动产生的现金流净额
+																</th>
+															</tr>
+														</thead>
+			                                        	<tbody id="financialData">
+			                                        		
+			                                        	</tbody>
+			                                        </table>
+                                    			</div>
+		                                        <div class="reportRemarks mgt20 mgb20"><span>备注： </span><textarea type="text" current-code="b04019900" class="remarksF widthN" placeholder="未填写"></textarea></div>
+		                                    </div>
+										</div>
+										<!--股权信息-->
+										<div class="productionCon hide" conName="股权信息">
+											<div class="mode-title">股权信息</div>
+											<div class="equInformation">
+												<div class="msg-wrap">
+		                                            <div class="msg-title mgt20">股权结构分析</div>
+		                                        </div>
+		                                        <div class="detaTit mgb10">更新日期：<span class="datN"></span></div>
+		                                        <table width="100%">
+		                                        	<colgroup>
+		                                        		<col width="30%" />
+									            		<col width="15%" />
+									            		<col width="20%" />
+									            		<col width="15%" />
+									            		<col width="20%" />
+		                                        	</colgroup>
+		                                        	<thead>
+		                                        		<tr>
+		                                        			<th><b>股东名称</b></th>
+		                                        			<th><b>期初持股</b></th>
+		                                        			<th><b>期末持股</b></th>
+		                                        			<th><b>期末持股比例（%）</b></th>
+		                                        			<th><b>期末流通股</b></th>
+		                                        			<!--<th><b>股份类型</b></th>
+		                                        			<th><b>买入成本</b></th>-->
+		                                        		</tr>
+		                                        	</thead>
+		                                        	<tbody id="equityAnalysisList">
+		                                        		
+		                                        	</tbody>
+		                                        </table>
+		                                        <div class="reportRemarks mgt20 mgb20"><span>备注： </span><textarea type="text" current-code="b09019900" class="remarksN widthN" placeholder="未填写"></textarea></div>
+		                                    </div>
+	                                        
+	                                        <div class="equInformation2">
+		                                        <div class="msg-wrap">
+		                                            <div class="msg-title mgt20">历史定增</div>
+		                                        </div>
+		                                        <div class="detaTit mgb10">更新日期：<span class="distoryDate"></span></div>
+		                                        <table width="100%">
+		                                        	<colgroup>
+									            		<col width="13%" />
+									            		<col width="10%" />
+									            		<col width="13%" />
+									            		<col width="13%" />
+									            		<col width="25%" />
+									            		<col width="16%" />
+									            		<col width="10%" />
+									            	</colgroup>
+		                                        	<thead>
+		                                        		<tr>
+		                                        			<th><b>发行公告日期</b></th>
+		                                        			<th><b>发行价格</b></th>
+		                                        			<th><b>发行数量</b></th>
+		                                        			<th><b>募集资金</b></th>
+		                                        			<th><b>发行对象</b></th>
+		                                        			<th><b>发行目的</b></th>
+		                                        			<th><b>发行结果</b></th>
+		                                        		</tr>
+		                                        	</thead>
+		                                        	<tbody id="historyAddList">
+		                                        		
+		                                        	</tbody>
+		                                        </table>
+		                                        <div class="reportRemarks mgt20 mgb20"><span>备注： </span><textarea type="text" class="distoryRmark widthN" current-code="b09029900" placeholder="未填写"></textarea></div>
+	                                        </div>
+	                                        
+	                                        <div class="equInformation3">
+		                                        <div class="msg-wrap">
+		                                            <div class="msg-title mgt20">分红</div>
+		                                        </div>
+		                                        <div class="detaTit mgb10">更新日期：<span class="dividendsDate"></span></div>
+		                                        <table width="100%">
+		                                        	<colgroup>
+		                                        		<col width="20%" />
+									            		<col width="28%" />
+									            		<col width="12%" />
+									            		<col width="20%" />
+									            		<col width="20%" />
+		                                        	</colgroup>
+		                                        	<thead>
+		                                        		<tr>
+		                                        			<th><b>报告期</b></th>
+		                                        			<th><b>分红说明</b></th>
+		                                        			<th><b>股权登记日</b></th>
+		                                        			<th><b>分红前股本</b></th>
+		                                        			<th><b>分红后股本</b></th>
+		                                        		</tr>
+		                                        	</thead>
+		                                        	<tbody id="dividendsList">
+		                                        		
+		                                        	</tbody>
+		                                        </table>
+		                                        <div class="reportRemarks mgt20 mgb20"><span>备注： </span><textarea type="text" class="dividendsRemarks widthN" current-code="b09039900" placeholder="未填写"></textarea></div>
+		                                    </div>
+										</div>
+										<!--股权质押-->
+										<div class="productionCon hide" conName="股权质押">
+											<div class="mode-title">股权质押</div>
+											<div class="crePledg">
+												<div class="msg-wrap">
+		                                            <div class="msg-title mgt20">股权质押</div>
+		                                        </div>
+		                                        <div class="detaTit mgb10">更新日期：<span class="equityPledgeDate"></span></div>
+		                                        <table width="100%">
+		                                        	<colgroup>
+		                                        		<col width="13%" />
+									            		<col width="14%" />
+									            		<col width="12%" />
+									            		<col width="12%" />
+									            		<col width="11%" />
+									            		<col width="10%" />
+									            		<col width="18%" />
+									            		<col width="10%" />
+		                                        	</colgroup>
+		                                        	<thead>
+		                                        		<tr>
+		                                        			<th><b>质押日期</b></th>
+		                                        			<th><b>质押人</b></th>
+		                                        			<th><b>质押股份</b></th>
+		                                        			<th><b>累计质押股份</b></th>
+		                                        			<th><b>借款对象</b></th>
+		                                        			<th><b>借款金额</b></th>
+		                                        			<th><b>质押期限</b></th>
+		                                        			<th><b>担保人</b></th>
+		                                        		</tr>
+		                                        	</thead>
+		                                        	<tbody id="equityPledgeList">
+		                                        		
+		                                        	</tbody>
+		                                        </table>
+		                                        <div class="reportRemarks mgt20 mgb20"><span>备注： </span><textarea type="text" class="equityPledgeRemarks widthN" current-code="b10019900" placeholder="未填写"></textarea></div>
+		                                    </div>
+										</div>
+										<!--投融信息-->
+										<div class="productionCon hide" conName="投融信息">
+											<div class="mode-title">投融信息</div>
+											<div class="invInformation">
+												<div class="msg-wrap">
+		                                            <div class="msg-title mgt20">关联公司情况</div>
+		                                        </div>
+		                                        <div class="detaTit mgb10">更新日期：<span class="companyHappeningDate"></span></div>
+		                                        <table width="100%">
+		                                        	<colgroup>
+		                                        		<col width="28%" />
+		                                        		<col width="19%" />
+		                                        		<col width="18%" />
+		                                        		<col width="20%" />
+		                                        		<col width="15%" />
+		                                        	
+		                                        	</colgroup>
+		                                        	<thead>
+		                                        		<tr>
+		                                        			<th><b>子公司名称</b></th>
+		                                        			<th><b>注册资本</b></th>
+		                                        			<th><b>注册时间</b></th>
+		                                        			<th><b>对外投资子公司持股比例</b></th>
+		                                        			<th><b>法人代表</b></th>
+		                                        		</tr>
+		                                        	</thead>
+		                                        	<tbody id="companyHappeningList">
+		                                        		
+		                                        	</tbody>
+		                                        </table>
+		                                        <div class="reportRemarks mgt20 mgb20"><span>备注： </span><textarea type="text" current-code="b11019900" class="companyHappeningRemarks widthN" placeholder="未填写"></textarea></div>
+		                                    </div>
+										</div>
+										<!--商业分析-->
+										<div class="productionCon hide"  conName="商业分析">
+											<div class="mode-title">商业分析</div>
+											<div class="busAnalysis">
+												<div class="msg-wrap">
+		                                            <div class="msg-title mgt20">营收情况</div>
+		                                        </div>
+		                                        <div class="detaTit mgb10">更新日期：<span class="rbbb"></span></div>
+		                                        <table width="100%">
+		                                        	<thead>
+		                                        		<tr>
+		                                        			<th><b>主要产品</b></th>
+		                                        			<th><b class="businessTime">--</b></th>
+		                                        			<th><b>产品收入占比（%）</b></th>
+		                                        			<th><b class="businessTime2">--</b></th>
+		                                        			<th><b>产品收入占比（%）</b></th>
+		                                        		</tr>
+		                                        	</thead>
+		                                        	<tbody id="revenueSituationList">
+		                                        		
+		                                        	</tbody>
+		                                        </table>
+		                                        <div class="reportRemarks mgt20 mgb20"><span>备注： </span><textarea class="remarksG widthN" current-code="b05019900" type="text" placeholder="未填写"></textarea></div>
+	                                        </div>
+	                                       	
+	                                       	<div class="busAnalysis2">
+		                                        <div class="msg-wrap">
+		                                            <div class="msg-title mgt20">前五名客户情况</div>
+		                                        </div>
+		                                        <div class="detaTit mgb10">更新日期：<span class="rbbb2"></span></div>
+		                                        <table width="100%">
+		                                        	<thead>
+		                                        		<tr>
+		                                        			<th><b>报告期</b></th>
+		                                        			<th><b>客户名称</b></th>
+		                                        			<th><b>销售金额（万元）</b></th>
+		                                        			<th><b>占比（%）</b></th>
+		                                        		</tr>
+		                                        	</thead>
+		                                        	<tbody id="firstFiveHappeningList">
+		                                        		
+		                                        	</tbody>
+		                                        </table>
+		                                        <div class="reportRemarks mgt20 mgb20"><span>备注：  </span><textarea class="remarksH widthN" current-code="b05029900" type="text" placeholder="未填写"></textarea></div>
+	                                        </div>
+	                                        
+	                                        <div class="busAnalysis3">
+		                                        <div class="msg-wrap">
+		                                            <div class="msg-title mgt20">前五名供应商情况</div>
+		                                        </div>
+		                                        <div class="detaTit mgb10">更新日期：<span class="rbbb3"></span></div>
+		                                        <table width="100%">
+		                                        	<thead>
+		                                        		<tr>
+		                                        			<th><b>报告期</b></th>
+		                                        			<th><b>供应商名称</b></th>
+		                                        			<th><b>采购金额（万元）</b></th>
+		                                        			<th><b>占比（%）</b></th>
+		                                        		</tr>
+		                                        	</thead>
+		                                        	<tbody id="firstFiveSupplierList">
+		                                        		
+		                                        	</tbody>
+		                                        </table>
+		                                        <div class="reportRemarks mgt20 mgb20"><span>备注： </span><textarea type="text" class="remarksI widthN" current-code="b05039900" placeholder="未填写"></textarea></div>
+											</div>
+											
+											<div class="busAnalysis4">
+												<div class="msg-wrap">
+		                                            <div class="msg-title mgt20">商业模式</div>
+		                                        </div>
+		                                        <div class="detaTit mgb10">更新日期：<span class="datJ">2016-4-11</span></div>
+		                                        <table width="100%" class="notBorder">
+		                                        	<tbody>
+		                                        		<tr>
+		                                        			<td class="pdl">
+		                                        				<div style="overflow: hidden;height:310px;">
+																	<script id="editor2" type="text/plain" style="width:100%;height:310px;"></script>
+																</div>
+																<div id="editor2Div"></div>
+		                                        			</td>
+		                                        		</tr>
+		                                        	</tbody>
+		                                        </table>
+		                                        <div class="reportRemarks mgt10 mgb20"><span>备注： </span><textarea type="text" class="remarksJ widthN" current-code="b05049900" placeholder="未填写"></textarea></div>
+	                                        </div>
+	                                        
+	                                        <div class="busAnalysis5">
+		                                        <div class="msg-wrap">
+		                                            <div class="msg-title mgt20">同商业模式企业</div>
+		                                        </div>
+		                                        <div class="detaTit mgb10">更新日期：<span class="datK"></span></div>
+		                                        <table width="100%">
+		                                        	<thead>
+		                                        		<tr>
+		                                        			<th><b>证券代码</b></th>
+		                                        			<th><b>企业名称</b></th>
+		                                        		</tr>
+		                                        	</thead>
+		                                        	<tbody id="businessModelCompany">
+	
+		                                        	</tbody>
+		                                        </table>
+		                                        <div class="reportRemarks mgt20 mgb20"><span>备注： </span><textarea type="text" class="remarksK widthN" current-code="b05059900" placeholder="未填写"></textarea></div>
+		                                    </div>
+										</div>
+										
+										<!--行情做市-->
+										<div class="productionCon hide" conName="行情做市">
+											<div class="mode-title">行情做市</div>
+											<div class="hqMaket">
+							                    <div class="msg-wrap">
+		                                            <div class="msg-title mgt20">行情信息</div>
+		                                        </div>
+		                                        <div class="msg-update mgb10">更新日期：<span class="hqMes">--</span></div>
+												<div class="reportQutes hide">
+													<div class="canvas-most02">
+														<p class='canvasTitle' style="">日线图</p>
+														<div id="dayChart" class='bigCanvasHeight'></div>
+														<div id="barChartDay" class='smallCanvasHeight'></div>
+														<div id="img001" style="display: none;"></div>
+														<div id="img002" style="display: none;"></div>
+													</div>
+												</div>
+												<div class="reportQutes2 hide" style="display: none;">
+													<div class="canvas-most03">
+														<p class='canvasTitle' style="">周线图</p>
+														<div id="weekChart" class='bigCanvasHeight'></div>
+														<div id="barChartWeek" class='smallCanvasHeight'></div>
+													</div>
+												</div>
+												<div class="reportQutes3 hide" style="display: none;">
+													<div class="canvas-most04">
+														<p class='canvasTitle' style="">月线图</p>
+														<div id="monthChart" class='bigCanvasHeight'></div>
+														<div id="barChartMonth" class='smallCanvasHeight'></div>
+													</div>
+												</div>
+												<div class="reportRemarks mgt20 mgb20"><span>备注： </span><textarea type="text" class="remarksJ widthN" current-code="b06019900" placeholder="未填写"></textarea></div>
+											</div>
+											<div class="reportQutes4">
+												<div class="msg-wrap">
+							                        <div class="msg-title">做市信息</div>
+							                    </div>
+							                    <div class="msg-update" style="">更新日期：<span class="hqMes2"></span></div>
+							                    <div class="med-msg-table">
+							                    	<table border="1" cellspacing="0" cellpadding="0">
+							                    		<thead id="removePad">
+							                    			<tr>
+								                    			<th>做市商名称</th>
+								                    			<th>买入日期</th>
+								                    			<th>买入方式</th>
+								                    			<th>买入成本（元）</th>
+								                    			<th>买入数量（股）</th>
+								                    		</tr>	
+							                    		</thead>
+							                    		<tbody id="marketInformation">
+								                    		
+							                    		</tbody>
+							                    	</table>
+							                    </div>
+												<div class="reportRemarks mgt20 mgb20">
+													<span>备注： </span>
+													<textarea type="text" class="remarksJJ widthN" current-code="b06029900" placeholder="未填写"></textarea>
+												</div>
+											</div>
+										</div>
+										
+										<!--媒体报道-->
+										<div class="productionCon hide" conName="媒体报道">
+											<div class="mode-title">媒体报道</div>
+											<div class="medReport">
+												<div class="msg-wrap">
+		                                            <div class="msg-title mgt20">媒体报道</div>
+		                                        </div>
+		                                        <div class="msg-update" style="">更新日期：<span class="mediaDate"></span></div>
+		                                        <div class="maskInTable maskInTableMedia">
+		                                        	 <table border="1" cellpadding="0" cellspacing="0" width="100%">
+			                                        	<thead>
+			                                        		<tr>
+			                                        			<th><b>新闻标题</b></th>
+			                                        			<th><b>新闻来源</b></th>
+			                                        			<th><b>发布日期</b></th>
+			                                        		</tr>
+			                                        	</thead>
+			                                        	<tbody id="mediaReportList">
+			                                        		
+			                                        	</tbody>
+			                                        </table>
+		                                        </div>
+		                                       <div id="pageMedia" style="margin-top: 15px;"></div>
+		                                        <div class="reportRemarks mgt20 mgb20">
+													<span>备注： </span>
+													<textarea type="text" class="remarksL widthN" current-code="b07019900" placeholder="未填写"></textarea>
+												</div>
+		                                    </div>
+										</div>
+										
+										<!--公告信息-->
+										<div class="productionCon hide" conName="公告信息">
+											<div class="mode-title">公告信息</div>
+											<div class="notMessage">
+												<div class="msg-wrap">
+		                                            <div class="msg-title mgt20">公告信息</div>
+		                                        </div>
+		                                        <div class="msg-update" style="">更新日期：<span class="noticeDate"></span></div>
+		                                        <div class="maskInTable maskInTableNote">
+		                                        	<table border="1" cellpadding="0" cellspacing="0" width="100%">
+			                                        	<colgroup>
+			                                        		<col width="60%" />
+			                                        		<col width="20%" />
+			                                        		<col width="20%" />
+			                                        	</colgroup>
+			                                        	<thead>
+			                                        		<tr>
+			                                        			<th><b>公告标题</b></th>
+			                                        			<th><b>公告类型</b></th>
+			                                        			<th><b>公告日期</b></th>
+			                                        		</tr>
+			                                        	</thead>
+			                                        	<tbody id="noticeNewsList">
+			                                        	</tbody>
+			                                        </table>
+		                                        </div>
+		                                        <div id="pageNotice" style="margin-top: 15px;"></div>
+		                                        <div class="reportRemarks mgt20 mgb20"><span>备注： </span><textarea type="text" current-code="b08019900" class="remarksM widthN" placeholder="未填写"></textarea></div>
+		                                    </div>
+										</div>
+										
+										<!--企业交流-->
+										<div class="productionCon hide" conName="企业交流">
+											<div class="mode-title">企业交流</div>
+											<div class="busCommunication">
+												<div class="msg-wrap">
+		                                            <div class="msg-title mgt20">问题沟通</div>
+		                                        </div>
+		                                        <div class="reportRemarks mgt20 mgb20"><textarea placeholder="未填写" current-code="b12010000" cols="140"></textarea></div>
+	                                        </div>
+	                                        <div class="busCommunication2">
+		                                        <div class="msg-wrap">
+		                                            <div class="msg-title mgt20">企业需求</div>
+		                                        </div>
+		                                        <div class="reportRemarks mgt20 mgb20"><textarea placeholder="未填写" current-code="b12020000" cols="140"></textarea></div>
+	                                        </div>
+	                                        <div class="busCommunication3">
+		                                        <div class="msg-wrap">
+		                                            <div class="msg-title mgt20">合作备忘</div>
+		                                        </div>
+		                                        <div class="reportRemarks mgt20 mgb20"><textarea placeholder="未填写" current-code="b12030000" cols="140"></textarea></div>
+	                                        </div>
+	                                    </div>
+									</div>
+					            </div>
+							</div>
+						</div>
+					</div>
+					<!--下边分页开始-->
+					
+					</div>
+					<!-- END QUICK SIDEBAR -->
+				</div>
+				<!-- END CONTAINER -->
+				<!-- BEGIN FOOTER -->
+				<div class="page-footer">
+					<div class="page-footer-inner">
+						&copy;&nbsp;2016&nbsp;北京凯峰数据科技有限公司&nbsp;版权所有&nbsp;|&nbsp;京ICP备16037008号-1
+					</div>
+					<div class="scroll-to-top">
+						<i class="icon-arrow-up"></i>
+					</div>
+				</div>
+				<!-- END FOOTER -->
+				<div class="modal fade myModal01" id="myModal02" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				  <div class="modal-dialog">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				        <h4 class="modal-title" id="myModalLabel">使用模板</h4>
+				      </div>
+				      <div class="modal-body" style="height: 100px;">
+				        <div class="useInput" style="padding: 30px 0 0 70px;">
+				        	<span class="pull-left pdt5">请输入挂牌公司代码：</span>
+				        	<input id="comKeyWord" class="form-control input-sm pull-left" type="text" style="width: 50%;"/>
+				        </div>
+				      </div>
+				      <div class="modal-footer">
+				        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+				        <button type="button" class="btn btn-primary" id="getCodeTem">确定</button>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+				<div class="page-mask"></div>
+				<div class="page-pop page-addMode">
+					<div class="addMode-content">
+						<div class="sup-top">
+							<div class="sup-top-text">预览报告</div>
+							<div class="btnList clearfix mgb10">
+								<div class="sup-close"></div>
+								<!--<button style='margin-top: 11px;' class="search  btn-ipt pull-right" id="cancelTemplate">取消</button>-->
+								<button style='margin-top: 11px;' class="search  btn-ipt pull-right" id="outTemplate">导出</button>
+								<!--<button style='margin-top: 11px;' class="search  btn-ipt pull-right" id="saveTemplate">保存</button>-->
+							</div>
+						</div>
+						<div class="addMode-center">
+							<div class="row tab-content">
+								<div class="col-md-12">
+									<div class="portlet-body">
+										<div class="text-center">
+											<h2 class="templateName mgb" style="color: #333333; font-size: 16px;"></h2>
+										</div>
+										<div class="productionTab" id="seeTmpPop">
+											
+										</div>
+						            </div>
+								</div>
+							</div>		
+						</div>
+					</div>
+				</div>
+				<div class="modal fade myModal01" id="comModalLoad" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				  <div class="modal-dialog">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <h4 class="modal-title" id="myModalLabel">提示</h4>
+				      </div>
+				      <div class="modal-body" style="height: 100px;overflow: visible;">
+				        <div class="useInput mySamePop" style="padding: 30px 0 0 70px;">
+				        	<div style="position: relative;">
+				        		<span class="pull-left pdt10">请稍候：</span>
+				        		<img src="../../assets/admin/layout/img/exportOut.gif"/>
+				        	</div>
+				        	<div class="pull-left" style="padding-left: 5px; color: red;">为了保证格式显示正确，请使用Word打开</div>
+				        </div>
+				      </div>
+				      <div class="modal-footer">
+				      	<button type="button" style="visibility: hidden;" class="btn btn-primary comSureSave" name="export" id="">确定</button>
+				        <button type="button" style="visibility: hidden;" class="btn btn-default" data-dismiss="modal">关闭</button>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+				<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+				<!-- BEGIN CORE PLUGINS -->
+				<!--[if lt IE 9]>
+<script src="../../assets/global/plugins/respond.min.js"></script>
+<script src="../../assets/global/plugins/excanvas.min.js"></script> 
+<![endif]-->
+				<script src="../../assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+				<script src="../../assets/global/plugins/jquery-migrate.min.js" type="text/javascript"></script>
+				<!-- IMPORTANT! Load jquery-ui.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+				<script src="../../assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+				<script src="../../assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+				<script src="../../assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+				<script type="text/javascript" src="../../assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+				<script type="text/javascript" src="../../assets/global/plugins/bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min.js"></script>
+				<!-- BEGIN PAGE LEVEL SCRIPTS -->
+				<script type="text/javascript" src="../../assets/global/plugins/query.js"></script>
+				<script type="text/javascript" src="../../assets/global/plugins/paging.js"></script>
+				<script src="../../assets/global/scripts/kfStyle.js" type="text/javascript"></script>
+				<script src="../../assets/admin/layout/scripts/layout.js" type="text/javascript"></script>
+				<script src="../../assets/admin/layout/scripts/demo.js" type="text/javascript"></script>
+				<script src="../../assets/global/plugins/jquery.cookie.js" type="text/javascript"></script>
+				<script src="../../assets/global/plugins/sockjs-0.3.min.js" type="text/javascript"></script>
+				<script src="../../assets/global/plugins/stomp.js" type="text/javascript"></script>
+				<script src="../../assets/global/plugins/echarts/build/dist/echarts.js"></script>
+				<script src="../../assets/global/scripts/application.js" type="text/javascript"></script>
+				<script src="../../assets/global/scripts/getTable.js" type="text/javascript"></script>
+				<script src="../../assets/global/scripts/companySurvey/reportQutes.js" type="text/javascript"></script>
+				<script src="../../assets/global/scripts/companySurvey/reportProduction.js" type="text/javascript"></script>
+				<script type="text/javascript" charset="utf-8" src="../../assets/global/plugins/ueditor/ueditor.config.js"></script>
+	    		<script type="text/javascript" charset="utf-8" src="../../assets/global/plugins/ueditor/ueditor.all.min.js"> </script>
+	    		<script type="text/javascript" charset="utf-8" src="../../assets/global/plugins/ueditor/lang/zh-cn/zh-cn.js"></script>
+				<!-- END PAGE LEVEL SCRIPTS -->
+				<script>
+					jQuery(document).ready(function() {
+						KfStyle.init();
+						Layout.init(); 
+						reportProduction.basicInformation();
+					});
+				</script>
+	</body>
+	<!-- END BODY -->
+
+</html>

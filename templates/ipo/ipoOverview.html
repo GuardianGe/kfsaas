@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en" class="no-js">
+	<!--<![endif]-->
+	<!-- BEGIN HEAD -->
+
+	<head>
+		<head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/></head>
+		<title>VIP特权｜三板慧｜金融大数据</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta content="width=device-width, initial-scale=1" name="viewport" />
+		<meta content="" name="description" />
+		<meta content="" name="author" />
+		<link href="../../assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+		<link href="../../assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+		<link href="../../assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+		<link href="../../assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" />
+		<link href="../../assets/global/css/components.css" id="style_components" rel="stylesheet" type="text/css" />
+		<link href="../../assets/global/css/plugins.css" rel="stylesheet" type="text/css" />
+		<link href="../../assets/admin/layout/css/layout.css" rel="stylesheet" type="text/css" />
+		<link href="../../assets/admin/layout/css/themes/darkblue.css" rel="stylesheet" type="text/css" id="style_color" />
+		<link rel="stylesheet" type="text/css" href="../../assets/admin/layout/css/paging.css">
+		<link href="../../assets/admin/layout/css/custom.css" rel="stylesheet" type="text/css" />
+		<!-- END THEME STYLES -->
+		<style>
+			.table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th{ border: none;;}
+			.tr{ margin: 0; height: 30px; line-height: 20px;}
+			.tr div{ float: left; text-align: center;}
+			.table-scrollable table td{ padding: 10px 0px;}
+			.table-scrollable{ margin-bottom: 10px!important;}
+			table thead tr th{ text-align: center;}
+			.table-scrollable table .tr th{ background: #e1f8f6;}
+			#ipoAlert tr:nth-child(odd),#ipoPrediction tr:nth-child(odd){background:#fbfbfb;}
+			#ipoAlert tr:nth-child(even),#ipoPrediction tr:nth-child(even){background:#f7f7f7;}
+			.Along{ color: #F57D4B;}
+		</style>
+	</head>
+
+	<body class="page-header-fixed page-quick-sidebar-over-content page-container-bg-solid">
+		<!-- BEGIN HEADER -->
+		<div class="page-header navbar navbar-fixed-top">
+			<!-- BEGIN HEADER INNER -->
+			<div class="page-header-inner">
+				<!-- BEGIN LOGO -->
+				<div class="page-logo">
+					<a href="/index.php/companylisted/index">
+						
+					</a>
+					<div class="menu-toggler sidebar-toggler hide">
+					</div>
+				</div>
+				<!-- END LOGO -->
+
+				<!-- BEGIN RESPONSIVE MENU TOGGLER -->
+				<a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse">
+				</a>
+				
+
+				<div class="top-menu">
+                    <ul class="nav navbar-nav pull-right">
+                        <li class="dropdown dropdown-extended dropdown-notification mgr20" id="header_notification_bar">
+                            <a href="/account/buy" class="dropdown-toggle" style="height:55px">
+                                <i class="fa fa-dollar"></i>
+                                <span class="badge badge-default" style="right: -18px">购买</span>
+                            </a>
+                        </li>
+                        <li class="dropdown dropdown-user">
+                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                <img alt="" class="img-circle" src="" />
+                                <span class="username username-hide-on-mobile"></span>
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                             <ul class="dropdown-menu dropdown-menu-default">
+                                <li>
+                                    <a href="/account/info">
+                                        <i class="icon-user"></i>我的三板慧</a>
+                                </li>
+                                <li class="pay">
+                                    <a href="JavaScript:void(0)" id="dk">
+                                        <i class="fa fa-check-square-o"></i><span>每日打卡</span></a>
+                                </li>
+                                <li>
+                                    <a href="/account/modifyPassword">
+                                        <i class="fa fa-pencil-square-o"></i>修改密码 </a>
+                                </li>
+                                <li>
+                                    <a href="/account/version">
+                                        <i class="fa fa-file-o"></i>版本介绍 
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/account/feedback">
+                                        <i class="icon-envelope-open"></i>意见反馈
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/user/logout">
+                                        <i class="fa fa-sign-out"></i>退出 </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+				<!-- END TOP NAVIGATION MENU -->
+				 <!--PC端搜索框-->
+	           <div class="pc-search hidden-xs hidden-sm">
+                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                    <input type="text" name="" id="searchBlur" value="" placeholder="搜索公司，基金，资料" />
+                    <div class="searchList">
+                        <ul></ul>
+                    </div>
+                </div>
+			</div>
+			<!-- END HEADER INNER -->
+		</div>
+		<!-- END HEADER -->
+		<div class="clearfix">
+		</div>
+		<!-- BEGIN CONTAINER -->
+		<div class="page-container">
+			<!-- BEGIN SIDEBAR -->
+			<div class="page-sidebar-wrapper">
+				<div class="page-sidebar navbar-collapse collapse">
+					<ul class="page-sidebar-menu " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
+						<li class="sidebar-toggler-wrapper">
+							<div class="sidebar-toggler">
+							</div>
+						</li>
+						<li class="sidebar-search-wrapper">
+							<form class="sidebar-search " action="extra_search.html" method="POST">
+								<a href="javascript:;" class="remove">
+									<i class="icon-close"></i>
+								</a>
+								<div class="input-group">
+									<input type="text" class="form-control" placeholder="搜索">
+									<span class="input-group-btn">
+							<a href="javascript:;" class="btn submit"><i class="icon-magnifier"></i></a>
+							</span>
+								</div>
+							</form>
+							<!-- END RESPONSIVE QUICK SEARCH FORM -->
+						</li>
+						<li class="start active open">
+							<a href="javascript:;">
+								<i class="icon-home"></i>
+								<span class="title">新三板</span>
+								<span class="selected"></span>
+								<span class="arrow open"></span>
+							</a>
+							<ul class="sub-menu">
+								<li class="active">
+									<a href="挂牌公司列表页.html">挂牌公司</a>
+								</li>
+								<li>
+									<a href="公告.html">公告</a>
+								</li>
+								<li>
+									<a href="定增.html">定增</a>
+								</li>
+								<li>
+									<a href="交易.html">交易</a>
+								</li>
+								<li>
+									<a href="#">主办券商</a>
+								</li>
+								<li>
+									<a href="#">政策法规</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<!--<i class="icon-basket"></i>-->
+								<span class="title">投资</span>
+								<span class="arrow "></span>
+							</a>
+							<ul class="sub-menu">
+								<li>
+									<a href="投资事件.html">投资事件</a>
+								</li>
+								<li>
+									<a href="投资机构列表页.html">投资机构</a>
+								</li>
+								<li>
+									<a href="#">私募基金管理人</a>
+								</li>
+
+							</ul>
+						</li>
+						<li>
+							<a href="#">
+								<!--<i class="icon-rocket"></i>-->
+								<span class="title">新闻</span>
+								<span class="arrow "></span>
+							</a>
+
+						</li>
+						<li>
+							<a href="javascript:;">
+								<!--<i class="icon-diamond"></i>-->
+								<span class="title">研报</span>
+								<span class="arrow "></span>
+							</a>
+
+						</li>
+						<li>
+							<a href="#">
+								<!--<i class="icon-puzzle"></i>-->
+								<span class="title">关系查找</span>
+								<span class="arrow "></span>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<!--<i class="icon-basket"></i>-->
+								<span class="title">登录和注册</span>
+								<span class="arrow "></span>
+							</a>
+							<ul class="sub-menu">
+								<li>
+									<a href="登录.html">
+										<!--<i class="icon-home"></i>-->
+										登录</a>
+								</li>
+								<li>
+									<a href="用户注册1.html">
+										<!--<i class="icon-basket"></i>-->用户注册1</a>
+								</li>
+								<li>
+									<a href="用户注册2.html">
+										<!--<i class="icon-tag"></i>-->用户注册2</a>
+								</li>
+								<li>
+									<a href="注册成功3.html">
+										<!--<i class="icon-tag"></i>-->注册成功3</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<!-- END SIDEBAR MENU -->
+				</div>
+			</div>
+			<!-- END SIDEBAR -->
+			<!-- BEGIN CONTENT -->
+			<div class="page-content-wrapper">
+				<div class="page-content">
+					<div class="page-bar">
+						<ul class="page-breadcrumb">
+							<li>
+								<i class="fa fa-home"></i>
+								慧分析
+								<i class="fa fa-angle-right"></i>
+							</li>
+							<li>
+								企业分析概览
+							</li>
+							<li class='nowTimeTop'>
+								北京时间：<span id="nowDate"></span>
+							</li>
+						</ul>
+					</div>
+					<div class="page-content-par">
+					<div class="row mod-title">
+						<div class="col-md-12">企业分析概览</div>
+					</div>
+					<div class="page-height"></div>
+					
+					<div class="msg-wrap">
+						<div class="msg-title" style="font-size: 16px;color: #333333;">三板慧色谱</div>
+					</div>
+					<div class="row">
+						<div class="col-md-7" id="wrap-can" style="overflow: hidden; height: 350px;">
+							<div id="sellChart" style="height: 350px; "></div>
+						</div>
+						<div class="col-md-5" style=" border-left: 1px solid #eeeeee;">
+							<div class="ipoView">
+								<h1>三板慧色谱说明</h1>
+								<p>
+									三板慧色谱是基于三板慧的数据分析能力，针对新三板企业进行的分层次整理。我们提供最可靠的筛选标准，帮您优中选优，完成对新三板企业的详尽分析。
+								</p>
+								<ul>
+									<li>
+										<span>IPO辅导：</span>实时监控权威数据，第一时间整理上市辅导中的企业。
+									</li>
+									<li>
+										<span>IPO预测：</span>综合测算各项指标，抽取IPO信号，为你找到准IPO企业。
+									</li>
+									<li>
+										<span>精选层：</span>对新三板企业优中选优，综合考虑企业规模、盈利、增长，企业质量高于创业板标准。
+									</li>
+									<li>
+										<span>创新层：</span>股转系统官方分类，遴选优质企业。
+									</li>
+									<li>
+										<span>基础层：</span>网罗股转全部企业。
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="page-height" style="margin-top: 40px;"></div>
+					<div class="row">
+						<div class="col-md-6">
+							<div class="msg-wrap">
+								<div class="msg-title">本月IPO辅导提示</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="msg-wrap">
+								<div class="msg-title">十大IPO预测</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6" style=" border-right: 1px solid #eeeeee;">
+							<div class="table-scrollable mgt" style="border:none; margin-bottom: 0 !important;">
+                                <div style="">
+                                <table class="table table-striped mgb">
+                                	<colgroup>
+                                    	<col width="16%" />
+										<col width="16%" />
+										<col width="16%" />
+										<col width="16%" />
+										<col width="36%" />
+                                    </colgroup>
+                                    <thead class="tr">
+                                    	<tr>
+                                    		<th style="color: #4AB6AD;">代表企业</th>
+                                    		<th style="color: #DEB953;">市盈率</th>
+                                    		<th style="color: #F37D52;">市值</th>
+                                    		<th style="color: #4BA9DD;">辅导阶段</th>
+                                    		<th style="color: #DEB953;">行业</th>
+                                    	</tr>
+                                    </thead>
+                                </table>
+                                </div>
+								<div class="moneyTable moneyTable01" style="overflow: hidden; min-height: 400px;">
+									<table class="table" id="sample_1" role="grid" aria-describedby="sample_1_info">
+	                                    <colgroup>
+	                                    	<col width="16%" />
+											<col width="16%" />
+											<col width="16%" />
+											<col width="16%" />
+											<col width="36%" />
+	                                    </colgroup>
+	                                    <tbody id="ipoAlert" class="moneyTable1">
+	                                    </tbody>
+	                                </table>
+                                </div>
+							</div>
+							<a id="alertHref" class="pull-right Along">更多&gt;&gt;</a>
+						</div>
+						<div class="col-md-6">
+							<div class="table-scrollable mgt" style="border:none;margin-bottom: 0 !important;">
+                                <div style="">
+                                <table class="table table-striped mgb">
+                                	<colgroup>
+                                    	<col width="18%" />
+										<col width="18%" />
+										<col width="18%" />
+										<col width="46%" />
+                                    </colgroup>
+                                    <thead class="tr">
+                                    	<tr>
+                                    		<th style="color: #4AB6AD;">代表企业</th>
+											<th style="color: #DEB953;">市盈率</th>
+											<th style="color: #F37D52;">市值</th>
+											<th style="color: #4BA9DD;">行业</th>
+                                    	</tr>
+                                    </thead>
+                                </table>
+                                </div>
+								<div class="moneyTable moneyTable02" style="overflow: hidden;min-height: 400px; ">
+									<table class="table" id="sample_1" role="grid" aria-describedby="sample_1_info">
+	                                    <colgroup>
+	                                    	<col width="18%" />
+											<col width="18%" />
+											<col width="18%" />
+											<col width="46%" />
+	                                    </colgroup>
+	                                    <tbody id="ipoPrediction" class="moneyTable1">
+	                                    </tbody>
+	                                </table>
+                                </div>
+							</div>
+							<a id="predictionHref" class="pull-right Along">更多&gt;&gt;</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- END CONTAINER -->
+			<!-- BEGIN FOOTER -->
+			<div class="page-footer">
+				<div class="page-footer-inner">
+					&copy;&nbsp;2016&nbsp;北京凯峰数据科技有限公司&nbsp;版权所有&nbsp;|&nbsp;京ICP备16037008号-1
+				</div>
+				<div class="scroll-to-top">
+					<i class="icon-arrow-up"></i>
+				</div>
+			</div>
+			<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+			<!-- BEGIN CORE PLUGINS -->
+			<!--[if lte IE 8]><script src="js/libs/selectivizr.js"></script><![endif]-->
+			<!--[if lt IE 9]>
+			<script src="../../assets/global/plugins/respond.min.js"></script>
+			<script src="../../assets/global/plugins/excanvas.min.js"></script> 
+			<![endif]-->
+			<script src="../../assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+			<script src="../../assets/global/plugins/jquery-migrate.min.js" type="text/javascript"></script>
+			<!-- IMPORTANT! Load jquery-ui.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+			<script src="../../assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+			<script src="../../assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+			<script src="../../assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+			<script type="text/javascript" src="../../assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+			<script type="text/javascript" src="../../assets/global/plugins/bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min.js"></script>
+			<!-- BEGIN PAGE LEVEL SCRIPTS -->
+			<script type="text/javascript" src="../../assets/global/plugins/query.js"></script>
+			<script type="text/javascript" src="../../assets/global/plugins/paging.js"></script>
+			<script src="../../assets/global/plugins/jquery.cookie.js" type="text/javascript"></script>
+			<script src="../../assets/global/plugins/echarts/build/dist/echarts.js"></script>
+			<script src="../../assets/global/scripts/kfStyle.js" type="text/javascript"></script>
+			<script src="../../assets/admin/layout/scripts/layout.js" type="text/javascript"></script>
+			<script src="../../assets/admin/layout/scripts/demo.js" type="text/javascript"></script>
+			<script src="../../assets/global/scripts/application.js" type="text/javascript"></script>
+			<script src="../../assets/global/scripts/ipo/privilegeOverview.js" type="text/javascript"></script>
+			<!-- END PAGE LEVEL SCRIPTS -->
+			<script>
+				jQuery(document).ready(function() {
+					//律师事务所执行list按钮；
+					KfStyle.init(); 
+					Layout.init();
+					/*$('.moneyTable').slimScroll({
+						size: '0px', //组件宽度
+					    color: '#89c4f4',
+					    opacity: .9, //滚动条透明度
+					    height: '425px',
+					    size: '0px',
+					    //position: 'left',
+					    allowPageScroll:true,
+					    disableFadeOut: false,
+					    railVisible: true, //是否 显示轨道
+                        railColor: 'transparent', //轨道颜色
+					    alwaysVisible: true
+					});*/
+				});
+			</script>
+	</body>
+	<!-- END BODY -->
+
+</html>

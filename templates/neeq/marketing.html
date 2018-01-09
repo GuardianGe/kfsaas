@@ -1,0 +1,1536 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en" class="no-js">
+	<!--<![endif]-->
+	<!-- BEGIN HEAD -->
+
+	<head>
+		<meta charset="utf-8" />
+		<title>公告｜三板慧｜金融大数据</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta content="width=device-width, initial-scale=1" name="viewport" />
+		<meta content="" name="description" />
+		<meta content="" name="author" />
+		<link href="../../assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+		<link href="../../assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+		<link href="../../assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+		<link href="../../assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" />
+		<link href="../../assets/global/css/components.css" id="style_components" rel="stylesheet" type="text/css" />
+		<link href="../../assets/global/css/plugins.css" rel="stylesheet" type="text/css" />
+		<link href="../../assets/admin/layout/css/layout.css" rel="stylesheet" type="text/css" />
+		<link href="../../assets/admin/layout/css/themes/darkblue.css" rel="stylesheet" type="text/css" id="style_color" />
+		<link rel="stylesheet" type="text/css" href="../../assets/admin/layout/css/paging.css">
+		<link href="../../assets/admin/layout/css/custom.css" rel="stylesheet" type="text/css" />
+		<link href="../../assets/global/plugins/select2/select2.css" rel="stylesheet" type="text/css" />
+		<style>
+			.marketing_tit{ font-size: 16px; color: #205ea7; border-left: 2px solid #205ea7; padding-left: 10px; font-weight: bold; margin-left: 10px; height: 17px; line-height: 1;}
+			.marketing_tit span{ color: #666666; font-weight: normal; margin-left: 10px; padding: 2px 0; width: 120px; text-align: center;}
+			.mapGrid{ margin: -15px 0 0 -9.5%;}
+			.table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th{ border: none;;}
+			.tr{ margin: 0; height: 30px; line-height: 20px;}
+			.tr div{ float: left; text-align: center;}
+			.table-scrollable table td{ padding: 10px 0px;}
+			table thead tr th{ text-align: center;}
+			.table-scrollable table .tr th{ background: #e1f8f6;}
+			.tabTit{ position: relative;}
+			.tabTit span{ position: absolute; right: 0;}
+			table tr{ background: #fbfbfb; }
+			#ChartTable tr:nth-child(odd){background:#fbfbfb;}
+			#ChartTable tr:nth-child(even){background:#f7f7f7;}
+			.creentBg{ background: #44b6ae!important;}
+			.creentBg td{ color: #FFFFFF;}
+			.crrentTip{ border-radius: 2px; border: 1px solid #eeeded; background: #f7f7f7; color: #000000; padding: 0 5px; font-size: 14px;}
+			.sort-up{ margin-top: 1px; display: block; border-bottom: 6px solid #44b6ae;}
+			.sortActive{ opacity: 0.5;}
+			.sort-down{ border-top: 6px solid #44b6ae;}
+			.mgT20{ margin-top: 20px;}
+			.select2-container .select2-choice > .select2-chosen { text-align: center;}
+			#moneyChart div{ top:-20px}
+			#sample_1{ position: relative;}
+			.invest2{position: absolute; right: 30px; z-index: 10; top: -5px!important;}
+			.text-right{ text-align: right!important;}
+			.select2-results .select2-result-label,.select2-results .select2-result-label:hover{ padding-left: 18px;}
+			.select2-results .select2-highlighted,.select2-results .select2-result-label:hover{ background: #44b6ae;}
+			.select2-container .select2-choice .select2-arrow b{ margin-top:-2px}
+			.companyDB{ width: 32%;}
+			.companyTable{ overflow: auto; width: 68%; border-left: 1px solid #f7f7f7;}
+			@media screen and (min-width: 1535px) {
+			    .mgT20{ margin-top: 0;}
+			    .modal1 .col-md-7{ width: 40%!important;}
+			    .modal1 .col-md-5{ width: 20%!important;}
+			    .modal1 .height1{ display: none;}
+			    .modal1 .col-md-12{ width: 36%!important; margin-left: 4%;}
+			    .lineVe{ position: absolute; width: 10px; background: #f1f3fa; height: 330px; top: -21px; left: -25px;}
+			}
+			@media (max-width: 1325px) and (min-width: 1002px) {
+			    .select2-container{ right: 20px!important;}
+			}
+			@media (min-width: 3700px){
+			    .mapGrid{ margin: -15px 0 0 -10.5%;}
+			}
+			@media screen and (max-width: 660px) {
+			    .companyDB{ width: 100%;}
+				.companyTable{ overflow: auto; width: 100%; border-left: 1px solid #f7f7f7;}
+			}
+		</style>
+		<!-- END THEME STYLES -->
+		<!-- <link rel="shortcut icon" href="favicon.ico"/> -->
+	</head>
+
+	<body class="page-header-fixed page-quick-sidebar-over-content page-container-bg-solid">
+		<!-- BEGIN HEADER -->
+		<div class="page-header navbar navbar-fixed-top">
+			<!-- BEGIN HEADER INNER -->
+			<div class="page-header-inner">
+				<!-- BEGIN LOGO -->
+				<div class="page-logo">
+					<a href="/index.php/companylisted/index">
+						<img src="../../assets/admin/layout/img/logo.png" alt="logo" class="logo-default" />
+					</a>
+					<div class="menu-toggler sidebar-toggler hide">
+					</div>
+				</div>
+				<!-- END LOGO -->
+				<!-- BEGIN RESPONSIVE MENU TOGGLER -->
+				<a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse">
+				</a>
+				<!-- END RESPONSIVE MENU TOGGLER -->
+				<!-- BEGIN TOP NAVIGATION MENU -->
+				<div class="top-menu">
+				<ul class="nav navbar-nav pull-right">
+					<li class="dropdown dropdown-extended dropdown-notification mgr20" id="header_notification_bar">
+						<a href="/account/buy" class="dropdown-toggle" style="height:55px">
+							<i class="fa fa-dollar"></i>
+							<span class="badge badge-default" style="right: -18px">购买</span>
+						</a>
+					</li>
+					<li class="dropdown dropdown-user">
+						<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+							<img alt="" class="img-circle" src="" />
+							<span class="username username-hide-on-mobile"></span>
+							<i class="fa fa-angle-down"></i>
+						</a>
+						<ul class="dropdown-menu dropdown-menu-default">
+                            <li>
+                                <a href="/account/info">
+                                    <i class="icon-user"></i>我的三板慧</a>
+                            </li>
+                            <li class="pay">
+                                <a href="JavaScript:void(0)" id="dk">
+                                    <i class="fa fa-check-square-o"></i><span>每日打卡</span></a>
+                            </li>
+                            <li>
+                                <a href="/account/modifyPassword">
+                                    <i class="fa fa-pencil-square-o"></i>修改密码 </a>
+                            </li>
+                            <li>
+                                <a href="/account/version">
+                                    <i class="fa fa-file-o"></i>版本介绍 
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/account/feedback">
+                                    <i class="icon-envelope-open"></i>意见反馈
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/user/logout">
+                                    <i class="fa fa-sign-out"></i>退出 </a>
+                            </li>
+                        </ul>
+					</li>
+				</ul>
+			</div>
+				<!-- END TOP NAVIGATION MENU -->
+				<!--PC端搜索框-->
+                <div class="pc-search hidden-xs hidden-sm">
+                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                    <input type="text" name="" id="searchBlur" value="" placeholder="搜索 公司/基金/资料" />
+                    <div class="searchList">
+                        <ul></ul>
+                    </div>
+                </div>
+			</div>
+			<!-- END HEADER INNER -->
+		</div>
+		<!-- END HEADER -->
+		<div class="clearfix">
+		</div>
+		<!-- BEGIN CONTAINER -->
+		<div class="page-container">
+			<div class="page-content-wrapper">
+				<div class="page-content" style="background:#FFFFFF;">
+					<div class="page-bar">
+						<ul class="page-breadcrumb">
+							<li>
+								<i class="fa fa-home"></i>
+								新三板
+								<i class="fa fa-angle-right"></i>
+							</li>
+							<li>
+								市场概览
+							</li>
+							<li class='nowTimeTop'>
+								北京时间：<span id="nowDate"></span>
+							</li>
+						</ul>
+					</div>
+					<div class="page-content-par">
+						<div class="row mod-title">
+							<div class="col-md-12">市场概览</div>
+						</div>
+						<div class="page-height"></div>
+						<div class="row pdt20 modal1">
+							<div class="col-md-7" style="overflow: hidden;">
+								<div class="marketing_tit">新增挂牌企业分布<span class="yeara"></span></div>
+								<div id="mainChart" class="mapGrid" style="height:300px;"></div>
+							</div>
+							<div class="col-md-5">
+								<div id="mapChart" style="height:260px; margin:10px 0 0 -40px"></div>
+							</div>
+							<div class="col-md-12 height1" style="height: 10px; background: #f1f3fa;"></div>
+							<div class="col-md-12 mgT20 mgb20" style="position: relative;">
+								<div class="lineVe"></div>
+								<div class="marketing_tit mgb20" style="color: #f57d4b; border-left:2px solid #f57d4b;">交易提示<span class="yearb"></span></div>
+								<div style="overflow: hidden; height: 300px;" class="slimtest">
+									<div class="barChartH" style="height: 300px;">
+									<div id="barChart" style="height:100%; margin-top: -40px;"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="page-height"></div>
+						<div class="row mgt20">
+							<div class="col-md-4 companyDB">
+								<div class="marketing_tit" style="color: #44b6ae; border-left:2px solid #44b6ae;"><span class="crrentTip pull-right"></span>新挂牌企业财务对比</div>
+								<div id="moneyChart" style="height:280px;"></div>
+							</div>
+							<div class="col-md-8 companyTable">
+								<div id="moneyChartTable" class="table-scrollable mgt" style="border:none;">
+                                    <div style="padding-right: 15px;">
+                                    <table class="table table-striped mgb">
+                                    	<colgroup>
+	                                    	<col width="9%" />
+	                                    	<col width="9%" />
+	                                    	<col width="8%" />
+	                                    	<col width="11%" />
+	                                    	<col width="11%" />
+	                                    	<col width="11%" />
+	                                    	<col width="11%" />
+	                                    	<col width="11%" />
+	                                    	<col width="14%" />
+	                                    </colgroup>
+	                                    <thead class="tr">
+	                                    	<tr>
+	                                    		<th style="color: #44b6ae;">代码</th>
+	                                    		<th style="color: #46a8df;">简称</th>
+	                                    		<th title="财务期" class="statsYear pdl" style="color: #dfba49;">
+	                                    			<span class="tabTit">
+	                                    				财务期 
+	                                    				<span class="sort pull-left">
+			                                        		<a href="javascript:void(0)" name="asc" class="sort-up"></a>
+			                                        		<a href="javascript:void(0)" name="desc" class="sort-down "></a>
+			                                        	</span>
+	                                    			</span>
+	                                    		</th>
+	                                    		<th title="营业收入" class="operating text-right" name="operating_income" style="color:#46a8df">
+	                                    			<span class="tabTit">
+	                                    				营业收入 
+	                                    				<span class="sort pull-left">
+			                                        		<a href="javascript:void(0)" name="asc" class="sort-up"></a>
+			                                        		<a href="javascript:void(0)" name="desc" class="sort-down "></a>
+			                                        	</span>
+	                                    			</span>
+	                                    		</th>
+	                                    		<th title="净利润" class="profit text-right" style="color: #f57d4b;" name="net_profit">
+	                                    			<span class="tabTit">
+	                                    				净利润 
+	                                    				<span class="sort pull-left">
+			                                        		<a href="javascript:void(0)" name="asc" class="sort-up"></a>
+			                                        		<a href="javascript:void(0)" name="desc" class="sort-down "></a>
+			                                        	</span>
+	                                    			</span>
+	                                    		</th>
+	                                    		<th title="资产负债率" class="liability text-right" style="color:#44b6ae" name="assets_yield">
+	                                    			<span class="tabTit">
+	                                    				资产负...
+	                                    				<span class="sort pull-left">
+			                                        		<a href="javascript:void(0)" name="asc" class="sort-up"></a>
+			                                        		<a href="javascript:void(0)" name="desc" class="sort-down "></a>
+			                                        	</span>
+	                                    			</span>
+	                                    		</th>
+	                                    		<th title="净资产收益率" class="assets text-right" style="color: #46a8df;" name="liability_ratio">
+	                                    			<span class="tabTit">
+	                                    				净资产...
+	                                    				<span class="sort pull-left">
+			                                        		<a href="javascript:void(0)" name="asc" class="sort-up"></a>
+			                                        		<a href="javascript:void(0)" name="desc" class="sort-down "></a>
+			                                        	</span>
+	                                    			</span>
+	                                    		</th>
+	                                    		<th title="每股现金流" class="cash text-right" style="color: #dfba49" name="cash_for_stock_equity">
+	                                    			<span class="tabTit">
+	                                    				每股现...
+	                                    				<span class="sort pull-left">
+			                                        		<a href="javascript:void(0)" name="asc" class="sort-up"></a>
+			                                        		<a href="javascript:void(0)" name="desc" class="sort-down "></a>
+			                                        	</span>
+	                                    			</span>
+	                                    		</th>
+	                                    		<th title="所属行业" class="industry" style="color: #89c4f4;" name="industryname">
+	                                    			<span class="tabTit">
+	                                    				所属行业
+	                                    				<span class="sort pull-left">
+			                                        		<a href="javascript:void(0)" name="asc" class="sort-up"></a>
+			                                        		<a href="javascript:void(0)" name="desc" class="sort-down "></a>
+			                                        	</span>
+	                                    			</span>
+	                                    		</th>
+	                                    	</tr>
+	                                    </thead>
+	                                </table>
+	                                </div>
+									<div class="moneyTable" style="overflow: hidden; padding-right: 15px;">
+										<table class="table" id="sample_1" role="grid" aria-describedby="sample_1_info">
+		                                    <colgroup>
+		                                    	<col width="9%" />
+		                                    	<col width="9%" />
+		                                    	<col width="8%" />
+		                                    	<col width="11%" />
+		                                    	<col width="11%" />
+		                                    	<col width="11%" />
+		                                    	<col width="11%" />
+		                                    	<col width="11%" />
+		                                    	<col width="14%" />
+		                                    </colgroup>
+		                                    <tbody id="ChartTable" class="moneyTable1">
+		                                    </tbody>
+		                                </table>
+	                                </div>
+								</div>
+							</div>
+						</div>
+						<div class="page-height"></div>
+						<div class="row mgt20">
+							<div class="col-md-6">
+								<div class="marketing_tit mgb20" style="color: #dfba49; border-left:2px solid #dfba49;">投融偏好</div>
+								<select class="invest pull-right" style="position: absolute; right: 30px; z-index: 10; top: -5px;">
+								  <option value="201709">2017 Q3</option>
+								  <option value="201706">2017 Q2</option>
+								  <option value="201703">2017 Q1</option>
+								  <option value="201612">2016 Q4</option>
+								  <option value="201609">2016 Q3</option>
+								  <option value="201606">2016 Q2</option>
+								  <option value="201603">2016 Q1</option>
+								</select>
+								<div id="rainChart" style="height:400px; border-right: 1px solid #f7f7f7; margin-top: -42px;"></div>
+							</div>
+							<div class="col-md-6 investBox">
+								<select class="invest2">
+								  <option value="201709">2017 Q3</option>
+								  <option value="201706">2017 Q2</option>
+								  <option value="201703">2017 Q1</option>
+								  <option value="201612">2016 Q4</option>
+								  <option value="201609">2016 Q3</option>
+								  <option value="201606">2016 Q2</option>
+								  <option value="201603">2016 Q1</option>
+								</select>
+								<div id="proChart" style="height:400px; margin-top: -5px;"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="page-footer">
+					<div class="page-footer-inner">
+						&copy;&nbsp;2016&nbsp;北京凯峰数据科技有限公司&nbsp;版权所有&nbsp;|&nbsp;京ICP备16037008号-1
+					</div>
+					<div class="scroll-to-top">
+						<i class="icon-arrow-up"></i>
+					</div>
+				</div>
+				<!--[if lt IE 9]>
+				<script src="../../assets/global/plugins/respond.min.js"></script>
+				<script src="../../assets/global/plugins/excanvas.min.js"></script> 
+				<![endif]-->
+				<script src="../../assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+				<script src="../../assets/global/plugins/jquery-migrate.min.js" type="text/javascript"></script>
+				<!-- IMPORTANT! Load jquery-ui.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+				<script src="../../assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+				<script src="../../assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+				<script src="../../assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+				<script type="text/javascript" src="../../assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+				<script type="text/javascript" src="../../assets/global/plugins/bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min.js"></script>
+				<!-- BEGIN PAGE LEVEL SCRIPTS -->
+				<script type="text/javascript" src="../../assets/global/plugins/query.js"></script>
+				<script type="text/javascript" src="../../assets/global/plugins/paging.js"></script>
+				<script src="../../assets/global/scripts/kfStyle.js" type="text/javascript"></script>
+				<script src="../../assets/admin/layout/scripts/layout.js" type="text/javascript"></script>
+				<script src="../../assets/admin/layout/scripts/demo.js" type="text/javascript"></script>
+				<script src="../../assets/global/plugins/jquery.cookie.js" type="text/javascript"></script>
+				<script src="../../assets/global/scripts/application.js" type="text/javascript"></script>
+				<script src="../../assets/global/plugins/echarts/build/dist/echarts.js"></script>
+				<!--<script src="../../assets/global/plugins/echarts/build/dist/macarons.js"></script>-->
+				<script src="../../assets/global/plugins/select2/select2.js" type="text/javascript"></script>
+				<script type="text/javascript">
+				
+					//交易提醒给外层div添加高度
+					$.kf.ajax({
+			            type: "get",
+			            async: false,
+			            url: $.kf.TRADINGTIPS,
+			            dataType: "json",
+			            data: "",
+			            processResponse: function(result) {
+			                if (result.data.tips_num) {
+			                	var barHeight = 40;
+			                	var barLen = result.data.tips_num.length;
+			                	if(barLen == 1){
+			                		var barNum = 100 * barLen;
+			                	}else if(barLen < 4){
+			                		var barNum = 70 * barLen;
+			                	}else{
+			                		var barNum = 48 * barLen;
+			                	}
+			                	
+								$(".barChartH").css({'height':barNum})	
+			                }
+			            }
+			        });
+			        
+			        // 路径配置
+			        require.config({
+			            paths: {
+			                echarts: '../../assets/global/plugins/echarts/build/dist'
+			            }
+			        });
+			        
+			        // 使用
+			        require(
+			            [
+			                'echarts',
+			                'echarts/chart/treemap', 
+			                'echarts/chart/map',
+			                'echarts/chart/bar',
+			                'echarts/chart/radar',
+			                'echarts/chart/line'
+			            ],
+			            function (ec) {
+			                // 基于准备好的dom，初始化echarts图表
+			                var myChart = ec.init(document.getElementById('mainChart'));
+			                var myChartMap = ec.init(document.getElementById('mapChart')); 
+			                var myChartBar = ec.init(document.getElementById('barChart')); 
+			                var myChartMoney = ec.init(document.getElementById('moneyChart')); 
+			                var myChartPro = ec.init(document.getElementById('proChart')); 
+			                var myChartRain = ec.init(document.getElementById('rainChart'),'macarons');
+			                
+							
+							//图表自适应
+							window.addEventListener("resize",function(){
+					        	myChart.resize();
+					        	myChartMap.resize();
+					        	myChartBar.resize();
+					        	myChartMoney.resize();
+					        	myChartPro.resize();
+					        	myChartRain.resize();
+					        })
+							
+							optionComp = {
+							    tooltip : {
+							        trigger: 'item',
+							        formatter: "{b}: {c}家",
+							        backgroundColor: "#ffffff",
+							        textStyle: {
+							        	color:"#000000"
+							        },
+							        borderColor: "#999999",
+							        borderWidth: 1
+							    },
+							    toolbox: {
+							        show : true,
+							        feature : {
+							            saveAsImage : {
+							            	show: true,
+							            	name:"三板慧-新增挂牌企业分布",
+							            	icon:'../../assets/admin/layout/img/saveAsPic.png',
+							            	color:"#f57d4b"
+							            }
+							        }
+							    },
+							    calculable : false,
+							    series : [
+							        {
+							            name:'',
+							            type:'treemap',
+							            itemStyle: {
+							                normal: {
+							                    label: {
+							                        show: true,
+							                        //formatter: "{b}",
+							                        formatter: function (params) {
+											           	var name = params.slice(0,4);
+											           	if(params.length > 4){
+											           		return name + '...';	
+											           	}else{
+											           		return name;
+											           	}
+											            
+											        },
+							                        textStyle: {
+														fontFamily: '微软雅黑',
+														baseline:'middle',
+														fontSize: '16',
+														color:'white'
+													}
+							                    },
+							                    borderColor: "#FFFFFF",
+							                    borderWidth: 1
+							                },
+							                emphasis: {
+							                    label: {
+							                        show: true
+							                    }
+							                }
+							            },
+							            data:[]
+							        }
+							    ]
+							};
+							
+							//挂牌公司分布
+                    		$.kf.ajax({
+					            type: "get",
+					            async: false,
+					            url: $.kf.COMPANYINDUSTRY,
+					            dataType: "json",
+					            data: "",
+					            processResponse: function(result) {
+					                if (!isNullOrEmpty(result.data)) {
+					                    optionComp.series[0].data = result.data;
+					                    myChart.setOption(optionComp);
+					                    $(".yeara").text(result.date)
+					                }else{
+			                        	$("#mainChart > div").append("<div class='currentNoData' style='top:140px;'>暂无数据</div>");
+			                        }
+					            }
+					        });
+					        
+					        
+					        //新增挂牌企业地区分布 -->map
+							optionMap = {
+								toolbox: {
+									y:0,
+							        show : true,
+							        feature : {
+							            saveAsImage : {
+							            	show: true,
+							            	name:"三板慧-新增挂牌企业地区分布",
+							            	icon:'../../assets/admin/layout/img/saveAsPic.png',
+							            	color:"#f57d4b"
+							            }
+							        }
+							    },
+								title : {
+							        text: '新增挂牌企业地区分布 '+ ' '+ ' '+ ' '+ ' '+ ' '+ ' ',
+							        textStyle: {
+										fontFamily: '微软雅黑',
+										fontSize: 16,
+										fontStyle: 'normal',
+										fontWeight: 'normal',
+										color: '#205ea7'
+									},
+									x:'center'
+							    },
+							    tooltip : {
+							        trigger: 'item',
+					            	formatter: function (params,ticket,callback) {
+							           	var name = params.name;
+							            for(var i=0;i<mapArry.length;i++){
+							            	if(name == mapName[i]){
+							            		name = name +":"+ mapArry[i] + "家"
+							            	}
+							            }
+							            return name;	
+							        },
+							        backgroundColor: "#ffffff",
+							        textStyle: {
+							        	color:"#000000"
+							        },
+							        borderColor: "#999999",
+							        borderWidth: 1
+							    },
+							    dataRange: {
+							    	show:false,
+							        x: 'left',
+							        y: 'bottom',
+							        splitList: [
+							            {start: 1, end: 1,color:"#8ac4f4"}
+							        ]
+							    },
+							    clickable:false,
+							    hoverable:false,
+							    series : [
+							        {
+							            name: '中国',
+							            type: 'map',
+							            mapType: 'china',
+							            itemStyle:{
+		              						normal:{
+												label:{show:false},
+												borderWidth:1,
+							                    borderColor:'#ececec',
+									            color:'#a9a9a9'
+											},
+											emphasis:{
+												areaStyle:{
+													color:'transparent'
+												},
+												label:{
+													show:false
+												}
+											}
+										},
+							            data:[ ]
+							        }
+							    ]
+							};
+							//地图数据
+					        var mapArry = [];
+					        var mapName = [];
+			                $.kf.ajax({
+					            type: "get",
+					            async: false,
+					            url: $.kf.COMPANYAREA,
+					            dataType: "json",
+					            data: "",
+					            processResponse: function(result) {
+					                if (!isNullOrEmpty(result.data)) {
+					                    optionMap.series[0].data = result.data;
+					                    var leng = result.data.length;
+					                	for(var i=0;i<leng;i++){
+					                		mapArry.push(result.data[i].num);
+					                		mapName.push(result.data[i].name);
+					                	}
+					                    myChartMap.setOption(optionMap);//地图
+					                    window.onresize = myChartMap.resize;
+					                }else{
+					                	$("#mapChart > div").append("<div class='currentNoData' style='top:140px;'>暂无数据</div>");
+					                }
+					            }
+					        });
+					        
+					        //交易提醒/////////////////////////////////////////////////
+					        var mgh = $(".barChartH").height();
+					        var _w4 = $("#barChart").width();
+					        _w4 = _w4 - 30,
+							optionBar = {
+							    tooltip : {
+							        backgroundColor: "#ffffff",
+							        textStyle: {
+							        	color:"#000000"
+							        },
+							        borderColor: "#999999",
+							        borderWidth: 1
+							    },
+							    toolbox: {
+							    	x:_w4,
+							    	y:50,
+							        show : true,
+							        feature : {
+							            saveAsImage : {
+							            	show: true,
+							            	name:"三板慧-交易提示",
+							            	icon:'../../assets/admin/layout/img/saveAsPic.png',
+							            	color:"#f57d4b"
+							            }
+							        }
+							    },
+							    calculable : true,
+							    grid :{ borderWidth :'0px',height:mgh - 50,y:'40'},
+							    xAxis : [
+							        {
+							            type : 'value',
+							            show: false,
+							            splitLine:{
+									　　　　show:false
+									　　},
+							            axisLabel:{
+						                     textStyle:{
+						                         color:"#f57d4b"
+						                     }
+						               }
+							        }
+							    ],
+							    yAxis : [
+							        {
+							            type : 'category',
+							            splitLine:{
+									　　　　show:false
+									　　},
+										axisLine:false,
+										axisTick:false,
+							            axisLabel:{
+						                     textStyle:{
+						                     	fontFamily: '微软雅黑',
+						                         color:"#f57d4b"
+						                     },
+						                     margin:20,
+						                     formatter:function(params){
+									           var newParamsName = "";// 最终拼接成的字符串
+											   var paramsNameNumber = params.length;// 实际标签的个数
+											   var provideNumber = 4;// 每行能显示的字的个数
+											   var rowNumber = Math.ceil(paramsNameNumber / provideNumber);// 换行的话，需要显示几行，向上取整
+											    /**
+											     * 判断标签的个数是否大于规定的个数， 如果大于，则进行换行处理 如果不大于，即等于或小于，就返回原标签
+											     */
+											    // 条件等同于rowNumber>1
+											    if (paramsNameNumber > provideNumber) {
+											        /** 循环每一行,p表示行 */
+											        for (var p = 0; p < rowNumber; p++) {
+											            var tempStr = "";// 表示每一次截取的字符串
+											            var start = p * provideNumber;// 开始截取的位置
+											            var end = start + provideNumber;// 结束截取的位置
+											            // 此处特殊处理最后一行的索引值
+											            if (p == rowNumber - 1) {
+											                // 最后一次不换行
+											                tempStr = params.substring(start, paramsNameNumber);
+											            } else {
+											                // 每一次拼接字符串并换行
+											                tempStr = params.substring(start, end) + "\n";
+											            }
+											            newParamsName += tempStr;// 最终拼成的字符串
+											        }
+											
+											    } else {
+											        // 将旧标签的值赋给新标签
+											        newParamsName = params;
+											    }
+											    //将最终的字符串返回
+											    return newParamsName
+									        }
+						                },
+							            data : []
+							        }
+							    ],
+							    series : [
+							        {
+							            name:'当前数量',
+							            type:'bar',
+							            stack: '总量',
+							            barGap: '1',
+							            
+							            itemStyle: {
+						                    normal: {
+						                        color: function(params) {
+						                            // build a color map as your need.
+						                            var colorList = [
+						                              '#89c4f4','#46a8df','#89c4f4','#46a8df','#89c4f4','#46a8df','#89c4f4','#46a8df','#89c4f4','#46a8df','#89c4f4','#46a8df','#89c4f4','#46a8df'
+						                            ];
+						                            return colorList[params.dataIndex]
+						                        },
+						　　　　　　　　　　　　　//以下为是否显示，显示位置和显示格式的设置了
+							                    label: {
+							                        show: true,
+							                        position: 'right',
+							                        formatter: '{c}'+' 家'
+							                    },
+						                        //label : {show: true, position: 'insideRight'},
+						                        barBorderRadius: 5
+						                    },
+						                    emphasis: {
+								                barBorderRadius: 5
+								            }
+						                },
+						                barWidth : 35,
+						                barCategoryGap:'20',
+							            data:[]
+							        }
+							    ]
+							};
+							//myChartBar.setOption(optionBar);//交易提示
+							//交易提醒
+                    		$.kf.ajax({
+					            type: "get",
+					            async: false,
+					            url: $.kf.TRADINGTIPS,
+					            dataType: "json",
+					            data: "",
+					            processResponse: function(result) {
+					                if (!isNullOrEmpty(result.data)) {
+										optionBar.yAxis[0].data = result.data.tips_type;
+					                    optionBar.series[0].data = result.data.tips_num;
+					                    myChartBar.setOption(optionBar);
+					                    $(".yearb").text(result.date);
+					                }else{
+					                	$("#barChart > div").append("<div class='currentNoData' style='top:140px;'>暂无数据</div>");
+					                }
+					            }
+					        });
+					        var _w3 = $("#moneyChart").width();
+                    		_w3 = _w3 - 16;
+							//企业财务对比//////////////////////////////////////////////////
+							optionMoney = {
+								toolbox: {
+									y:40,
+									x:_w3,
+							        show : true,
+							        feature : {
+							            saveAsImage : {
+							            	show: true,
+							            	name:"三板慧-新增挂牌企业财务对比",
+							            	icon:'../../assets/admin/layout/img/saveAsPic.png',
+							            	color:"#f57d4b"
+							            }
+							        }
+							    },
+							    tooltip : {
+							        trigger: 'item',
+							        backgroundColor: "#ffffff",
+							        textStyle: {
+							        	color:"#000000"
+							        },
+							        borderColor: "#999999",
+							        borderWidth: 1
+							    },
+							    legend: {
+							    	orient : 'vertical',
+							    	x : 'left',
+							    	y : '40px',
+							    	textStyle: {
+							        	fontFamily: '微软雅黑',
+							        	color:"#000000"
+							        },
+							        data: []
+							    },
+							    polar : [
+							       {
+							           indicator : [
+							               { text: '营业收入', max: 200},
+							               { text: '净利润', max: 200},
+							               { text: '资产负债率', max: 200},
+							               { text: '应收周转率', max: 200},
+							               { text: '每股现金流', max: 200}
+							            ],
+							            center : ['48%', 170],
+							            radius : 90,
+							            name: {
+										    show: true,
+										    formatter: '{value}',
+										    textStyle:{
+										        color:"#ff7f50",
+										        fontFamily: '微软雅黑',
+										        fontSize : 14
+										    }
+										}
+							        }
+							    ],
+							    calculable : false,
+							    series: [
+							    	{
+							    		type:'radar',
+						                symbol:'none',
+						                itemStyle: {
+						                    normal: {
+						                        lineStyle: {
+						                          width:1
+						                        }
+						                    },
+						                    emphasis : {
+						                        areaStyle: {color:'rgba(0,250,0,0.3)'}
+						                    }
+						                },
+						                data:[]
+							    	},
+							    	{
+							    		type:'radar',
+						                symbol:'none',
+						                itemStyle: {
+						                    normal: {
+						                        lineStyle: {
+						                          width:1
+						                        }
+						                    },
+						                    emphasis : {
+						                        areaStyle: {color:'rgba(0,250,0,0.3)'}
+						                    }
+						                },
+						                data:[]
+							    	}
+							    ]
+//							    series : (function (){
+//							        var series = [];
+//							            series.push({
+//							                type:'radar',
+//							                symbol:'none',
+//							                itemStyle: {
+//							                    normal: {
+//							                        lineStyle: {
+//							                          width:1
+//							                        }
+//							                    },
+//							                    emphasis : {
+//							                        areaStyle: {color:'rgba(0,250,0,0.3)'}
+//							                    }
+//							                },
+//							                data:[
+//							                	{
+//							                		value:[29,29,29,29,29],
+//							                		name:'2014'
+//							                	}
+//							                ]
+//							            })
+//							        return series;
+//							    })()
+							};
+							
+							//报表初始化
+							$.kf.ajax({
+					            type: "get",
+					            url: $.kf.COMPANYFINANCE,
+					            data: "",
+					            dataType: "json",
+					            processResponse: function(result){
+					            	if(!isNullOrEmpty(result.data)){
+					            		var arr = [];
+					            		var arr2 = [];
+						            	for(var i =0;i<result.data[0].finance_compare.length;i++){
+						            		arr.push(result.data[0].finance_compare[i].name);
+						            		arr2.push(result.data[0].finance_compare[i]);
+						            	}
+						            	optionMoney.legend.data =  arr;
+						            	optionMoney.series[0].data = arr2;
+								    	$(".crrentTip").show().text(result.data[0].shortname);
+						            	myChartMoney.setOption(optionMoney);//地图
+						            	getList(result);
+					            	}else{
+					            		$("#moneyChart > div").append("<div class='currentNoData' style='top:140px;'>暂无数据</div>");
+					            		getListData();
+					            		$(".crrentTip").hide();
+					            	}
+					            	
+					            }
+					        });
+			                var getListData = function(){
+			                	$("#ChartTable").parent("table").find("colgroup").hide();
+			                	$("#ChartTable").html("<div class='textNoData' style='margin-top:100px;'>暂无数据</div>");
+			                };
+							var getList = function (data) {
+						        var list = data.data;
+						        var tr = "";
+						        $("#ChartTable").html("");
+						        $(list).each(function (i) {
+						            tr += "<tr>";
+						            tr += "<td>" + list[i].code + "</td>";
+						            tr += "<td class='creentCom'><a href='" + $.url.companyListUrl() + "id=" + list[i].company_id + "&nameCodeId=" + list[i].code + "&position=markert"+"'>" + list[i].shortname + "</a></td>";
+						            tr += "<td>" + list[i].stats_year + "</td>";
+									tr += "<td title='" + list[i].operating_income +"' class='text-right'>" + list[i].operating_income_m + "&nbsp;&nbsp;</td>";
+						            tr += "<td title='" + list[i].net_profit +"' class='text-right'>" + list[i].net_profit_m + "&nbsp;&nbsp;</td>";
+						            tr += "<td class='text-right'>" + list[i].liability_ratio + "&nbsp;&nbsp;</td>";
+						            tr += "<td class='text-right'>" + list[i].assets_yield + "&nbsp;&nbsp;</td>";
+						            tr += "<td class='text-right'>" + list[i].cash_for_stock_equity + "&nbsp;&nbsp;</td>";
+						            tr += "<td title='" + list[i].industryname + "'>" + list[i].industryname.substring(0,3) + "...</td>";
+						            tr += "</tr>";
+						        });
+						        $("#ChartTable").append(tr);
+						        mouseoverA();
+						        //判断是否为1920
+						        if(document.documentElement.clientWidth >= 1920){
+						        	$(".spiltA").text("资产负债率")
+						        	$(".spiltB").text("净资产收益率")
+						        	$(".spiltC").text("每股现金流")
+						        }
+						    };
+						    
+						    function mouseoverA(){
+						    	//鼠标放上刷新图表
+						        $("#ChartTable tr").on("mouseenter",function(){
+							    	$(this).addClass("creentBg").siblings("tr").removeClass("creentBg");
+							    	var creentCom = $(this).find(".creentCom").text();
+							    	$(".crrentTip").text(creentCom);
+							    	
+							    	var Cindex = $(this).index();
+							    	$.kf.ajax({
+							            type: "get",
+							            url: $.kf.COMPANYFINANCE,
+							            data: "",
+							            dataType: "json",
+							            processResponse: function(result){
+					            			var arr = [];
+						            		var arr2 = [];
+							            	for(var i =0;i<result.data[Cindex].finance_compare.length;i++){
+							            		arr.push(result.data[Cindex].finance_compare[i].name);
+							            		arr2.push(result.data[Cindex].finance_compare[i]);
+							            	}
+							            	optionMoney.legend.data.splice(0,optionMoney.legend.data.length);
+							            	optionMoney.legend.data =  arr;
+							            	optionMoney.series[0].data = arr2;
+							            	//optionMoney.series[0].data = result.data[Cindex].finance_compare;
+							            	myChartMoney.setOption(optionMoney,true);//地图
+							            }
+							        });
+							    })
+						    }
+						    
+						    $(".sort a").on("click",function(){
+						    	$(".tr").find("a").removeClass("sortActive");
+						    	$(this).addClass("sortActive");
+						    	$("#ChartTable").empty();
+						    	var keyword = $(this).parents("th").attr("name");
+						    	var sort = $(this).attr("name");
+						        $.kf.ajax({
+						            type: "get",
+						            url: $.kf.COMPANYFINANCE + '?orderByName='+ keyword +"&orderByType="+ sort,
+						            data: "",
+						            dataType: "json",
+						            processResponse: function(data){
+						            	var list = data.data;
+								        var tr = "";
+								        if(!isNullOrEmpty(list)){
+								        	$("#ChartTable").html("");
+									        $(list).each(function (i) {
+									            tr += "<tr>";
+									            tr += "<td>" + list[i].code + "</td>";
+									            tr += "<td class='creentCom'><a href='" + $.url.companyListUrl() + "id=" + list[i].company_id + "&nameCodeId=" + list[i].code + "&position=markert"+"'>" + list[i].shortname + "</a></td>";
+									            tr += "<td>" + list[i].stats_year + "</td>";
+												tr += "<td title='" + list[i].operating_income +"' class='text-right'>" + list[i].operating_income_m + "&nbsp;&nbsp;</td>";
+									            tr += "<td title='" + list[i].net_profit +"' class='text-right'>" + list[i].net_profit_m + "&nbsp;&nbsp;</td>";
+									            tr += "<td class='text-right'>" + list[i].assets_yield + "&nbsp;&nbsp;</td>";
+									            tr += "<td class='text-right'>" + list[i].liability_ratio + "&nbsp;&nbsp;</td>";
+									            tr += "<td class='text-right'>" + list[i].cash_for_stock_equity + "&nbsp;&nbsp;</td>";
+									            tr += "<td title='" + list[i].industryname + "'>" + list[i].industryname.substring(0,3) + "...</td>";
+									            tr += "</tr>";
+									        });
+									        $("#ChartTable").append(tr);
+									        mouseoverA()
+								        }else{
+								        	getListData();
+								        }
+								        
+						            }
+						        });
+						    })
+						    
+						    var _w2 = $("#rainChart").width();
+                    		_w2 = _w2 - 31;
+							//投融偏好/////////////////////////////////////////////////////////////////////
+							optionRain = {
+								toolbox: {
+									y:40,
+									x:_w2,
+							        show : true,
+							        feature : {
+							            saveAsImage : {
+							            	show: true,
+							            	name:"三板慧-投融偏好",
+							            	icon:'../../assets/admin/layout/img/saveAsPic.png',
+							            	color:"#f57d4b"
+							            }
+							        }
+							    },
+							    tooltip : {
+							        trigger: 'axis',
+							        formatter: function(params) {
+							            return params[0].name + '<br/>'
+							                   + params[0].seriesName + ' : ' + params[0].value + '<br/>'
+							                   + params[1].seriesName + ' : ' + -params[1].value;
+							        },
+							        backgroundColor: "#ffffff",
+							        textStyle: {
+							        	color:"#000000"
+							        },
+							        borderColor: "#999999",
+							        borderWidth: 1
+							    },
+							    legend: {
+							        data:['投资机构','挂牌企业'],
+							        textStyle:{
+							        	fontSize: 14
+							        },
+							        itemGap: 20,
+							        itemWidth: 40,
+							        itemHeight: 15,
+							        x: 'center'
+							    },
+							    categoryAxis :{
+							    	getCoordByIndex:3
+							    },
+							    noDataLoadingOption: {
+			                        text: '暂无数据',
+			                        effect: 'bubble',
+			                        effectOption: {
+			                            effect: {
+			                                n: 0
+			                            }
+			                        }
+			                    },
+			                    grid :{ borderWidth :'0px'},
+			                    axis : {
+			                    	boundaryGap: true
+			                    },
+							    xAxis : [
+							        {
+							            type : 'category',
+							            boundaryGap : false,
+						                axisLine:{
+						                	onZero: false,
+						                	lineStyle:{
+						                		color:"#89c4f4"
+						                	}
+						                },
+							            axisLabel : {
+							                interval: 0,//标签设置为全部显示
+							                textStyle:{
+						                         color:"#46a8df"
+						                    },
+									        formatter:function(params){
+									           var newParamsName = "";// 最终拼接成的字符串
+											   var paramsNameNumber = params.length;// 实际标签的个数
+											   var provideNumber = 6;// 每行能显示的字的个数
+											   var rowNumber = Math.ceil(paramsNameNumber / provideNumber);// 换行的话，需要显示几行，向上取整
+											    /**
+											     * 判断标签的个数是否大于规定的个数， 如果大于，则进行换行处理 如果不大于，即等于或小于，就返回原标签
+											     */
+											    // 条件等同于rowNumber>1
+											    if (paramsNameNumber > provideNumber) {
+											        /** 循环每一行,p表示行 */
+											        for (var p = 0; p < rowNumber; p++) {
+											            var tempStr = "";// 表示每一次截取的字符串
+											            var start = p * provideNumber;// 开始截取的位置
+											            var end = start + provideNumber;// 结束截取的位置
+											            // 此处特殊处理最后一行的索引值
+											            if (p == rowNumber - 1) {
+											                // 最后一次不换行
+											                tempStr = params.substring(start, paramsNameNumber);
+											            } else {
+											                // 每一次拼接字符串并换行
+											                tempStr = params.substring(start, end) + "\n";
+											            }
+											            newParamsName += tempStr;// 最终拼成的字符串
+											        }
+											
+											    } else {
+											        // 将旧标签的值赋给新标签
+											        newParamsName = params;
+											    }
+											    //将最终的字符串返回
+											    return newParamsName
+									        }
+							            },
+							            data : []
+							        }
+							    ],
+							    yAxis : [
+							        {
+							            name : '投资机构',
+							            type : 'value',
+							            axisLine:{
+						                	onZero: false,
+						                	lineStyle:{
+						                		color:"#89c4f4"
+						                	}
+						                },
+							            axisLabel : {
+							            	textStyle:{
+						                         color:"#71a7d3",
+						                         fontSize:14
+						                    },
+							                formatter: function(v){
+							                    return - v;
+							                }
+							            }
+							        },
+							        {
+							            name : '挂牌企业',
+							            type : 'value',
+							            axisLine:{
+						                	onZero: false,
+						                	lineStyle:{
+						                		color:"#89c4f4"
+						                	}
+						                },
+						                axisLabel:{
+						                     textStyle:{
+						                         color:"#46a8df",
+						                         fontSize:14
+						                     }
+						                },
+							            max : 500
+							        }
+							    ],
+							    series : [
+							    	{
+							            name:'挂牌企业',
+							            type:'bar',
+							            yAxisIndex:1,
+							            itemStyle: {
+							            	normal: {
+							            		color:'#46a8df',
+							            		barBorderRadius: 0
+							            	},
+							            	emphasis: {
+							            		color:'#0277bd',
+								                barBorderRadius: 0
+								            }
+							            },
+							            data: []
+							        },
+							        {
+							            name:'投资机构',
+							            type:'bar',
+							            itemStyle: {
+							            	normal: {
+							            		color:'#dfba49',
+							            		barBorderRadius: 0
+							            	},
+							            	emphasis: {
+							            		color:'#bd951b',
+								                barBorderRadius: 0
+								            }
+							            },
+							            animationEasing:'ExponentialInOut',
+							            data:[]
+							        }
+							    ]
+							};
+							
+							
+							//默认初始化投融偏好图表
+							$.kf.ajax({
+					            type: "get",
+					            async: false,
+					            url: $.kf.EVENTINVESTINDUSTRY+"?date=201703",
+					            dataType: "json",
+					            data: "",
+					            processResponse: function(result) {
+					            	if(!isNullOrEmpty(result.data)){
+					            		if(result.data.companynum == ""){
+						            		optionRain.xAxis[0].data = result.data.industryname;
+						                    optionRain.series[1].data = result.data.agencynum;
+						                    myChartRain.setOption(optionRain);//投融偏好
+						            	}else if(result.data.agencynum == ""){
+						            		optionRain.xAxis[0].data = result.data.industryname;
+						                    optionRain.series[0].data = result.data.companynum;
+						                    myChartRain.setOption(optionRain);//投融偏好
+						            	}else{
+						            		optionRain.xAxis[0].data = result.data.industryname;
+						                    optionRain.series[0].data = result.data.companynum;
+						                    optionRain.series[1].data = result.data.agencynum;
+						                    myChartRain.setOption(optionRain);//投融偏好
+						            	}
+					            	}else{
+					            		$("#rainChart > div").append("<div class='currentNoData' style='top:180px;'>暂无数据</div>");
+					            	}
+					            	
+					            }
+					        });
+							
+							
+							$(".invest").on("click",function(){
+								var selectOption = $(".page-content-par").find("#select2-chosen-3").text();
+								var investSele = $(".invest").find("option");
+								$("#rainChart > div").find(".currentNoData").remove();
+								for(var i=0;i<investSele.length;i++){
+									if(investSele[i].innerHTML == selectOption){
+										var selectVal = investSele[i].value;
+										$.kf.ajax({
+								            type: "get",
+								            async: false,
+								            url: $.kf.EVENTINVESTINDUSTRY+"?date="+ selectVal,
+								            dataType: "json",
+								            data: "",
+								            processResponse: function(result) {
+								                if (result.data != "") {
+								                	$("#rainChart").show();
+								                	$("#rainChart canvas").each(function(){
+								                		if($(this).attr("data-zr-dom-id") == "_zrender_hover_"){
+								                			$(this).hide()
+								                		}
+								                	})
+								            		if(result.data.companynum == ""){
+									            		optionRain.xAxis[0].data = result.data.industryname;
+									            		optionRain.series[0].data = [0,0,0,0,0];
+									                    optionRain.series[1].data = result.data.agencynum;
+									                    myChartRain.setOption(optionRain);//投融偏好
+									            	}else if(result.data.agencynum == ""){
+									            		optionRain.xAxis[0].data = result.data.industryname;
+									                    optionRain.series[0].data = result.data.companynum;
+									                    optionRain.series[1].data = [0,0,0,0,0];
+									                    myChartRain.setOption(optionRain,true);//投融偏好
+									            	}else{
+									            		optionRain.xAxis[0].data = result.data.industryname;
+									                    optionRain.series[0].data = result.data.companynum;
+									                    optionRain.series[1].data = result.data.agencynum;
+									                    myChartRain.setOption(optionRain);//投融偏好
+									            	}
+								                }else{
+								                	$("#rainChart > div").append("<div class='currentNoData' style='top:180px;'>暂无数据</div>");
+								                }
+								            }
+								        });
+									}
+								}
+							})
+                    		
+                    		var _w = $("#proChart").width();
+                    		_w = _w - 31;
+                    		//投资机构
+							optionPro = {
+								toolbox: {
+									y:40,
+									x:_w,
+							        show : true,
+							        feature : {
+							            saveAsImage : {
+							            	show: true,
+							            	name:"三板慧-投资机构",
+							            	icon:'../../assets/admin/layout/img/saveAsPic.png',
+							            	color:"#f57d4b"
+							            }
+							        }
+							    },
+								title: {
+								    text: "地区机构数量占比",
+								    textStyle: {
+										fontFamily: '微软雅黑',
+										fontSize: 14,
+										fontStyle: 'normal',
+										fontWeight: 'normal',
+										color: '#46a8df'
+									},
+								    x: "center",
+								    y: "bottom"
+								},
+							    tooltip : {
+							        trigger: 'axis',
+							        axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+							            type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+							        },
+							        backgroundColor: "#ffffff",
+							        textStyle: {
+							        	color:"#000000"
+							        },
+							        borderColor: "#999999",
+							        borderWidth: 1
+							    },
+							    grid :{ borderWidth :'0px' },
+							    dataZoom : {
+							    	width: '10%'
+							    },
+							    legend: {
+							        data:['投资机构', '挂牌企业', '百分比差'],
+							        textStyle:{
+							        	fontSize: 14,
+							        	fontFamily: '微软雅黑'
+							        },
+							        itemGap: 20,
+							        itemWidth: 40,
+							        itemHeight: 15,
+							        x: 'left'
+							    },
+							    calculable : true,
+							    xAxis : [
+							        {
+							            type : 'value',
+							            splitLine:{
+									　　　　show:false
+									　　},
+							            axisLabel:{
+						                     textStyle:{
+						                         color:"#46a8df"
+						                     }
+						                },
+						                axisLine:{
+						                	lineStyle:{
+						                		color:"#89c4f4"
+						                	}
+						                },
+						                max: 50,
+						                min:-50
+							        }
+							    ],
+							    yAxis : [
+							        {
+							            type : 'category',
+							            axisTick : {show: false},
+							            splitLine:{
+									　　　　show:false
+									　　},
+							            axisLabel:{
+						                     textStyle:{
+						                     	 fontFamily: '微软雅黑',
+						                         color:"#46a8df",
+						                         fontSize:14
+						                     }
+						                },
+						                axisLine:{
+						                	lineStyle:{
+						                		color:"#89c4f4"
+						                	}
+						                },
+							            data : []
+							        }
+							    ],
+//							    noDataLoadingOption: {
+//			                        text: '暂无数据',
+//			                        effect: 'bubble',
+//			                        effectOption: {
+//			                            effect: {
+//			                                n: 0
+//			                            }
+//			                        }
+//			                    },
+							    series : [
+							        {
+							            name:'百分比差',
+							            type:'bar',
+							            barWidth : 14,
+							            itemStyle: {
+							            	normal: {
+							            		label : {
+							            			show: true,
+							            			color:'#dfba49'
+							            		},
+							            		color:'#89c4f4',
+							            		barBorderRadius: 5
+							            	},
+							            	emphasis: {
+							            		color:'#2196f3',
+								                barBorderRadius: 5
+								            }
+							            },
+							            data:[]
+							        },
+							        {
+							            name:'挂牌企业',
+							            type:'bar',
+							            stack: '总量',
+							            barWidth : 6,
+							            itemStyle: {normal: {
+							                label : {show: true},
+							                color:'#46a8df',
+							                barBorderRadius: [0,5,5,0]
+							            },
+							            emphasis: {
+							            	color:'#0277bd',
+								            barBorderRadius: [0,5,5,0]
+								            }
+							           	},
+							            data:[]
+							        },
+							        {
+							            name:'投资机构',
+							            type:'bar',
+							            stack: '总量',
+							            barWidth : 6,
+							            itemStyle: {normal: {
+							                label : {show: true, position: 'left'},
+							                color:'#dfba49',
+							                barBorderRadius: [5,0,0,5]
+							            },
+							            emphasis: {
+							            		color:'#bd951b',
+								                barBorderRadius: [5,0,0,5]
+								            }
+							            },
+							            data:[]
+							        }
+							    ]
+							};
+							
+							//投资机构
+							$.kf.ajax({
+					            type: "get",
+					            async: false,
+					            url: $.kf.EVENTINVESTAREA+"?date=201703",
+					            dataType: "json",
+					            data: "",
+					            processResponse: function(result) {
+					            	if(!isNullOrEmpty(result.data)){
+					            		optionPro.yAxis[0].data = result.data.areaname;
+					                    optionPro.series[2].data = result.data.agency;
+					                    optionPro.series[1].data = result.data.company;
+					                    optionPro.series[0].data = result.data.chazhi;
+					                    myChartPro.setOption(optionPro);//投资机构
+					            	}else{
+					            		$("#proChart > div").append("<div class='currentNoData' style='top:180px;'>暂无数据</div>");
+					            	}
+				            		
+					            }
+					        });
+					        
+							$(".invest2").on("click",function(){
+								$("#proChart > div").find(".currentNoData").remove();
+								var selectOption = $("#select2-chosen-5").text();
+								var investSele = $(".invest2").find("option");
+								for(var i=0;i<investSele.length;i++){
+									
+									if(investSele[i].innerHTML == selectOption){
+										var selectVal = investSele[i].value;
+										$.kf.ajax({
+								            type: "get",
+								            async: false,
+								            url: $.kf.EVENTINVESTAREA+"?date=" + selectVal,
+								            dataType: "json",
+								            data: "",
+								            processResponse: function(result) {
+								                if (result.data != "") {
+								                	$("#proChart").show();
+								                	$("#proChart canvas").each(function(){
+								                		if($(this).attr("data-zr-dom-id") == "_zrender_hover_"){
+								                			$(this).hide()
+								                		}
+								                	})
+								                    optionPro.yAxis[0].data = result.data.areaname;
+								                    optionPro.series[2].data = result.data.agency;
+								                    optionPro.series[1].data = result.data.company;
+								                    optionPro.series[0].data = result.data.chazhi;
+								                    myChartPro.setOption(optionPro); 
+								                }else{
+								                	$("#proChart > div").append("<div class='currentNoData' style='top:180px;'>暂无数据</div>");
+								                }
+								            }
+								        });
+									}
+								}
+							})
+			            }
+			        );
+					jQuery(document).ready(function() {
+						KfStyle.init(); 
+						Layout.init(); 
+						$('.slimtest').slimScroll({
+							size: '5px', //组件宽度
+						    color: '#89c4f4',
+						    opacity: .9, //滚动条透明度
+						    size: '10px',
+						    //height:'290px',
+						    alwaysVisible: true,
+						    disableFadeOut: false,
+						    railVisible: true, //是否 显示轨道
+                            railColor: '#dbdbdb', //轨道颜色
+						    allowPageScroll:true
+						});
+						$('.moneyTable').slimScroll({
+							size: '5px', //组件宽度
+						    color: '#89c4f4',
+						    opacity: .9, //滚动条透明度
+						    height: '230px',
+						    size: '10px',
+						    //position: 'left',
+						    allowPageScroll:true,
+						    disableFadeOut: false,
+						    railVisible: true, //是否 显示轨道
+                            railColor: '#dbdbdb', //轨道颜色
+						    alwaysVisible: true
+						});
+						$('.invest option:eq(0),.invest2 option:eq(0)').prop('selected',true);
+						$(".invest,.invest2").select2({
+							minimumResultsForSearch: -1,
+							width:'120px'
+						});
+					});
+				</script>
+	</body>
+</html>

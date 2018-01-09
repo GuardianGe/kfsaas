@@ -1,0 +1,206 @@
+<div class="row mod-con-ipt">
+						<div class="col-sm-2 contan-search" style="display: none;">
+							<input placeholder="名称/代码" id="comSearch" type="text" class="form-control form-filter input-sm" name="product_id">
+						</div>
+						<div class="col-sm-2 contan-search">
+							<input placeholder="简称/代码" id="comKeyWord" type="text" class="form-control form-filter input-sm" name="product_id">
+						</div>
+						<div class="col-sm-3 col-md-3 datePar">
+							<div class="input-group date date-picker" id="datetimeStart"  data-date-viewmode="years" data-date-format="dd/mm/yyyy">
+								<input type="text" id="compStartTime" class="form-control form-filter input-sm date-ipt" readonly="" name="product_created_from" placeholder="请选择开始日期">
+								<span class="input-group-btn">
+							<button  class="btn btn-sm btn-icon-btn" type="button"><i class="fa fa-calendar"></i></button>
+							</span>
+							</div>
+						</div>
+						<div class="arrive">至</div>
+						<div class="col-sm-3 col-md-3 select_box2_father datePar">
+							<div class="input-group date date-picker" id="datetimeEnd" data-date-format="dd/mm/yyyy">
+								<input type="text" id="compEndTime" class="form-control form-filter input-sm date-ipt" readonly="" name="product_created_from" placeholder="请选择截止日期">
+								<span class="input-group-btn">
+							<button class="btn btn-sm  btn-icon-btn" type="button"><i class="fa fa-calendar"></i></button>
+							</span>
+							</div>
+						</div>
+						<div class="compBtn">
+							<button class="search  btn-ipt" id="compBtn">查询</button>
+							<button class="search  btn-ipt btn-ipts" id="compReset">重置</button>
+						</div>
+					</div>
+					<div class="row allList" id="compJd">
+						<div class="hang-title">
+							<span>辅导阶段</span>
+						</div>
+						<ul class="list-inline" id="comStage">
+							<li class="hang-active">全部</li>
+							<li name='fd1'>辅导提示</li>
+                            <li name='fd2'>辅导备案</li>
+                            <li name='fd3'>辅导进展中</li>
+                            <li name='fd6'>辅导变更</li>
+                            <li name='fd7'>辅导中止</li>
+                            <li name='fd4'>辅导总结</li>
+                            <li name='fd5'>辅导终止</li>
+						</ul>
+					</div>
+					<div class="row allList" id="compQs">
+						<div class="hang-title">
+							<span>辅导券商</span>
+						</div>
+						<ul class="list-inline" id="comSpecial">
+							<li class="hang-active">全部</li>
+							<li name="312e91da07049931ca410ee4e5bbfb">中信建投证券</li>
+                            <li name="aed55ea166c2e62531ffd383cc45f5">安信证券</li>
+                            <li name="4b8ce3d256c9f965f0e786e70dfedf">天风证券</li>
+                            <li name="6d5262d955c9f9bf7a8020900726a9" title="申万宏源">申万宏源</li>
+                            <li name="822dad93fd0d491721f2d2be655cd3">国泰君安</li>
+                            <li id = "trPop"  class="hang-more" data-toggle="modal" data-target="#myModal02">更多>></li>
+						</ul>
+					</div>
+					<div class="row allList" id="compHy">
+						<div class="hang-title">
+							<span>所属行业</span>
+						</div>
+						<ul class="list-inline" id="compIndustry">
+							<li class="hang-active">全部</li>
+							<li name="5a2fcfe678">互联网和相关服务</li>
+							<li name="f3afed3025">软件和信息技术服务业</li>
+							<li name="4af3e0c021">专用设备制造业</li>
+							<li name="e617da4639">零售业</li>
+							<li name="7ee1034249">商务服务业</li>
+							<li id="trPop2" class="hang-more" data-toggle="modal" data-target="#myModal03">更多&gt;&gt;</li>
+							<!--<li class="hang-more" data-toggle="modal" data-target="#myModal03">更多</li>-->
+						</ul>
+					</div>
+					<div class="row allList" id="compSf">
+						<div class="hang-title">
+							<span>所属地区</span>
+						</div>
+						<ul class="list-inline">
+							<li class="hang-active" >全部</li>
+							<li name="province001">北京</li>
+		        			<li name="province002">天津</li>
+		        			<li name="province003">上海</li>
+		        			<li name="province004">重庆</li>
+		        			<li name="province005">河北</li>
+		        			<li name="province006">山西</li>
+		        			<li name="province007">陕西</li>
+		        			<li name="province008">山东</li>
+		        			<li name="province009">河南</li>
+							<li class="hang-more" data-toggle="modal" data-target="#myModal">更多>></li>
+						</ul>
+					</div>
+					<div class="row allList" id="compBq">
+						<div class="hang-title">
+							<span>公司标签</span>
+						</div>
+						<ul class="list-inline" id="compLb">
+							<li class="hang-active">全部</li>
+							<li name='68ef60fe-40ec-11e7-a764-00163e03bdf1'>新能源</li>
+							<li name='68e58d54-40ec-11e7-a764-00163e03bdf1'>电池</li>
+							<li name='68ee9156-40ec-11e7-a764-00163e03bdf1'>文创</li>
+							<li name='68ebdcb8-40ec-11e7-a764-00163e03bdf1'>人工智能</li>
+							<li name='68e49d4a-40ec-11e7-a764-00163e03bdf1'>SaaS</li>
+							<li name='68f4c79c-40ec-11e7-a764-00163e03bdf1'>智能制造</li>
+							<li name='68e7abb6-40ec-11e7-a764-00163e03bdf1'>共享经济</li>
+							<li name='9bb646d4-4c12-11e7-b098-00163e03bdf1'>区块链</li>
+							<li name='50dc8566-4c16-11e7-9eef-00163e03bdf1'>生物医药</li>
+							<li class="hang-more" data-toggle="modal" data-target="#myModalBq">更多>></li>
+						</ul>
+					</div>
+					<div class="row allListSo" id="allListSo">
+						<div class="hang-title">
+							<span>已选条件</span>
+						</div>
+						<ul class="list-inline soList " id="soCheck">
+							<li class="soClear">
+								<button class="search  btn-ipt" id="soClear">清空选项</button>
+							</li>
+						</ul>
+					</div>
+					<div class="page-line"></div>
+					<!--下面表单开始-->
+					<div class="portlet box darkCyan">
+						<div class="portlet-body maskInTable" id="maskdata">
+							<div class="table-scrollable table-privateList table-scroll-auto">
+								<table class="table table-striped table-bordered table-hover dataTable no-footer" id="sample_1" role="grid" aria-describedby="sample_1_info">
+									<colgroup>
+										<col width="8%" />
+										<col width="8%" />
+										<col width="7%" />
+										<col width="8%" />
+										<col width="10%" />
+										<col width="13%" />
+										<col width="9%" />
+										<col width="7%" />
+										<col width="13%" />
+										<col width="12%" />
+										<col width="5%" />
+									</colgroup>
+									<thead>
+										<tr role="row" class="tr">
+											<th scope="col">
+												代码
+											</th>
+											<th scope="col">
+												简称
+											</th>
+											<th scope="col">
+												市盈率
+											</th>
+											<th scope="col">
+												市值
+											</th>
+											<th scope="col">
+												披露机构
+											</th>
+											<th scope="col">
+												辅导券商
+											</th>
+											<th scope="col">
+												辅导阶段
+											</th>
+											<th scope="col">
+												地区
+											</th>
+											<th scope="col">
+												所属行业
+											</th>
+											<th>
+												披露日期
+											</th>
+											<th>
+												附件
+											</th>
+										</tr>
+									</thead>
+									<tbody id="tableTwo">
+										
+									</tbody>
+								</table>
+						</div>
+					<!--表单结束-->
+					<div id="pageToolForcast"></div>
+					</div>
+					<!-- END QUICK SIDEBAR -->
+					</div>
+					<script>
+						jQuery(document).ready(function() {
+							$.getScript("../../assets/global/scripts/ipo/ipoForecaste.js").done(function(){
+								//挂牌公司执行list按钮；
+								Vip.init();
+							});
+							//日期时间选择器
+							$(".date-picker").datepicker({
+			                    format: "yyyy-mm-dd",
+			                    autoclose: true,
+			                    minView: "month",
+			                    maxView: "decade",
+			                    todayBtn: "linked",
+			                    language: 'zh-CN',
+			                    todayHighlight: true,
+			                    endDate:new Date(),
+			                    pickerPosition: "bottom-left"
+			                });
+							
+						});
+					</script>

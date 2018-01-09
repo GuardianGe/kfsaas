@@ -1,0 +1,225 @@
+body{
+  min-width: auto;
+}
+.table thead tr{ background: #ebf1fc!important;}
+.table thead tr th{ font-weight: normal;}
+.topOne{ overflow: auto; padding: 0 8px;}
+.topBlock{ width: 23%; float: left; padding:0 8px; margin-bottom: 10px;}
+.navBlock{ width: 100%; height: 75px; overflow: hidden;}
+.bgOrange{ background: #f7a923;}
+.bgOrange .bgContent{ background:url(../img/index/indexTopBg01.png) no-repeat bottom left; float: left;}
+.bgpurple{ background: #6c6ec1;}
+.bgpurple .bgContent{ background: url(../img/index/indexTopBg02.png) no-repeat bottom left; float: left;}
+.bgYellow{ background: #f88d54;}
+.bgYellow .bgContent{ background: url(../img/index/indexTopBg03.png) no-repeat bottom left; float: left;}
+.bgGreen{ background: #04b9a6;}
+.bgGreen .bgContent{ background: url(../img/index/indexTopBg04.png) no-repeat bottom left; float: left;}
+.bgRed{ background: #f05461;}
+.bgRed .bgContent{ background: url(../img/index/indexTopBg05.png) no-repeat bottom left; float: left;}
+.bgDarkRed{ background: #cd947f;}
+.bgDarkRed .bgContent{ background: url(../img/index/indexTopBg06.png) no-repeat bottom left; float: left;}
+.bgDarkBlue{ background: #6780a9;}
+.bgDarkBlue .bgContent{ background: url(../img/index/indexTopBg07.png) no-repeat bottom left; float: left;}
+.bgBlue{ background: #3795db;}
+.bgBlue .bgContent{ background: url(../img/index/indexTopBg09.png) no-repeat bottom left; float: left;}
+.bgBlue .bgContentpad{line-height:24px;padding: 15px 8px 0;}
+.arrow2:before{
+	position: relative;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    font-size: 12px;
+    content: "\e251";
+    transform:rotate(-90deg);
+	-ms-transform:rotate(-90deg); 	/* IE 9 */
+	-moz-transform:rotate(-90deg); 	/* Firefox */
+	-webkit-transform:rotate(-90deg); /* Safari 和 Chrome */
+	-o-transform:rotate(-90deg); 	/* Opera */
+	display: none;
+}
+.tapActive{ width: 31%;}
+.bgContent{ height: 75px; width: 100%; font-size: 16px; font-weight: bold; color: #FFFFFF; text-align: center; line-height: 76px;}
+.bgNav{ display: none; float: left; height: 75px; width: 80%; padding: 15px 0 0 5px;}
+.bgNav ul li{ float: left; width: 25%; text-align: center;}
+.bgNav ul li a{ color: #FFFFFF; font-size: 12px; font-weight: bold;}
+.tapActive .bgContent{ width: 20%;}
+.tapActive .bgpurple .bgNav > ul{
+		overflow: hidden;
+}
+.bgNav > ul{
+		overflow: hidden;
+}
+.swiper-slide> div{
+	margin: 0 auto;
+}
+.swiper-slide {
+	text-align: center;
+	padding:0;
+}
+.tapActive .bgOrange .bgNav{ background: #f9bd57; display: block;}
+.tapActive .bgpurple .bgNav{ background: #8282c8; display: block;}
+.tapActive .bgYellow .bgNav{ background: #f7a478; display: block;}
+.tapActive .bgGreen .bgNav{ background: #2ad0bf; display: block;}
+.tapActive .bgRed .bgNav{ background: #f17b85; display: block;}
+.tapActive .bgDarkRed .bgNav{ background: #dfa995; display: block;}
+.tapActive .bgDarkBlue .bgNav{ background: #7d96c0; display: block;}
+.tapActive .bgBlue .bgNav{ background: #72b4e6; display: block;}
+.topTwo{ margin-top: 30px;}
+.topTwo li{ float: left; text-align: center; margin-right: 3.4%; width: 6%; height: 95px;}
+.topTwo li:last-child{ margin-right: 0;}
+.topTwo li div{ height: 50px;}
+.topTwo li span{ display: block; color: #F57D4B;}
+
+/*实时数据*/
+.indexTit{ font-size: 16px; font-weight: bold; border-left: 3px solid #f57d4b; padding-left: 10px; margin:15px; color: #525252;}
+.indexTit a{ font-size: 14px; color: #666666; font-weight: normal;}
+.realCon{ text-align: center; margin-bottom: 20px; height: 175px;}
+.realCon span{ font-size: 14px; color: #999999; }
+.realCon span b{ font-size:16px; color: #666666;}
+
+.tabTit{ text-align: center;}
+.table>thead>tr>th,.table-blue .newTr{ border: none;}
+.tabTit a{ font-size: 14px; color: #999999; padding-bottom: 5px; text-decoration: none;}
+.tabTit a:hover,.tabTit .active{ color: #F57D4B; border-bottom: 2px solid #F57D4B;}
+.tabCon{ margin-top: 20px;}
+.table-blue tbody{ border:none}
+.table-team>tbody>tr,.table-team>thead>tr{ height: 34px;}
+.table-team>tbody>tr td{ border-bottom: none;}
+.table-team>tbody>tr:nth-child(odd){ background: #fafafa;}
+.table-team>tbody>tr:nth-child(even){ background: #F7F7F7;}
+.table-team>tbody>tr:hover{ background: #feeee5;}
+.sort-up{ margin-top:2px;}
+
+.latestNews{ padding: 15px; height: 414px;}
+.latestNews ul{ border-left: 1px solid #E5E5E5;}
+.latestNews ul li{ padding-left: 14px; margin-bottom: 20px; position: relative; top: -5px;}
+.latestNews ul li a{ font-size: 14px; color: #333333; position: relative; top: -5px; display: block; margin-bottom: 10px;}
+.latestNews ul li a:hover{ color: #F57D4B;}
+.latestNews ul li a b{ position: absolute; width: 9px; height: 9px; top: 5px; border-radius: 9px; background: #FFFFFF; border: 3px solid #F57D4B; left: -19px;}
+.latestNews ul li span{ color: #999999; font-size: 12px;}
+.moneyGarde{ overflow: auto;}
+.indexClass{ margin-bottom: 40px;}
+.companyName,.companyName2{ display: block; border: 1px solid #F57D4B; border-radius: 3px; padding: 3px 10px; color: #F57D4B; font-size: 14px; font-weight: normal;}
+.bigEch,.smallEch{ top: 75%;}
+.swiper-button-prev{ background: url(../img/index/imgLeft.png) no-repeat; width: 33px;}
+.swiper-button-next{ background: url(../img/index/imgRight.png) no-repeat; width: 33px;}
+.text-right{ text-align: right!important; padding-right: 5%!important;}
+.realDataTime span{ font-size: 14px; color: #666666; font-weight: normal;}
+.swiper-wrapper{ }
+.swiper-slide b{
+	cursor: pointer;
+}
+.swiper-slide a:hover{
+	text-decoration: none;
+}
+.swiper-slide a:hover b
+{
+	color: #F57D4B;
+}
+.swiper-slide a:hover span
+{
+	color: #F57D4B;
+}
+/*测试*/
+
+@media(min-width: 1920px) {
+	.bgNav ul li a{ font-size: 16px;}
+
+}
+@media(max-width: 1366px) {
+
+}
+@media(max-width: 1280px) {
+	.bgNav{ padding-top: 8px;}
+	.bgNav ul li{ width: 30%;}
+
+}
+@media(max-width: 768px) {
+	table .sort{
+		display: inline-block;
+		top:-13px;
+	}
+	.imgPos{
+		margin: 2px 0 0 22px;
+	}
+	/*.textEllipsis{
+		width:80px;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		white-space: nowrap;
+		display: inline-block;
+		padding-top: 4px;
+	}
+	.textEllipsis + .sort{
+		top:-18px;
+	}*/
+	.topBlock{ width: 50%;}
+	.navBlock{ overflow: inherit;}
+	.tapActive .bgContent{ width: 100%;}
+	.bgNav{ width: 100%; padding: 0; height: auto;}
+	.bgNav ul li{ width: 50%; border: 1px solid #ffffff; padding: 11px 0;border-left: 0;border-bottom: 0;}
+	/*.bgNav ul li:nth-child(even){ border-right: none;}*/
+	/*.bgNav ul li:nth-child(odd){ border-left: none; border-right: none;}*/
+	
+	.topTwo li{ width: 10.8%;}
+	.arrow2:before{
+		display: inline-block;
+	}
+	.tapActive .arrow2:before{
+		transform:rotate(90deg);
+		-ms-transform:rotate(90deg); 	/* IE 9 */
+		-moz-transform:rotate(90deg); 	/* Firefox */
+		-webkit-transform:rotate(90deg); /* Safari 和 Chrome */
+		-o-transform:rotate(90deg); 	/* Opera */
+	}
+	.borderBottom{ border-bottom: 10px solid #f1f3fa; padding-bottom: 20px;}
+	.companyHig{ height: 400px;}
+	.newsBoder{ border-left:none!important;}
+	.page-header.navbar{ padding: 0;}
+	
+	
+
+	.tapActive .bgOrange .bgNav{ background: #fff; display: block;}
+	.tapActive .bgpurple .bgNav{ background: #fff; display: block;}
+	.tapActive .bgYellow .bgNav{ background: #fff; display: block;}
+	.tapActive .bgGreen .bgNav{ background: #fff; display: block;}
+	.tapActive .bgRed .bgNav{ background: #fff; display: block;}
+	.tapActive .bgDarkRed .bgNav{ background: #fff; display: block;}
+	.tapActive .bgDarkBlue .bgNav{ background: #fff; display: block;}
+	.tapActive .bgBlue .bgNav{ background: #fff; display: block;}
+	.tapActive .bgOrange .bgNav  ul li{
+		background: #f9bd57; 
+	}
+	.tapActive .bgpurple .bgNav  ul li{
+		background: #6c6ec1; 
+	}
+	.tapActive .bgYellow .bgNav  ul li{
+		background: #f7a478; 
+	}
+	.tapActive .bgGreen .bgNav  ul li{
+		background: #2ad0bf; 
+	}
+	.tapActive .bgRed .bgNav  ul li{
+		background: #f17b85; 
+	}
+	.tapActive .bgDarkRed .bgNav  ul li{
+		background: #dfa995; 
+	}
+	.tapActive .bgDarkBlue .bgNav  ul li{
+		background: #7d96c0; 
+	}
+	.tapActive .bgBlue .bgNav  ul li{
+		background: #72b4e6; 
+	}
+	/*.echWrap{ height: auto;}*/
+}
+@media(max-width: 414px) {
+	.topTwo li{ width: 21.6%;}
+	
+}
+@media(max-width: 320px) {
+	.mobileSearch input{ width: 75%;}
+}

@@ -1,0 +1,131 @@
+@media only screen and (max-width: 767px) {
+	/*暂无数据*/
+	.noOutData{
+		width: 100%;
+		min-width: auto;
+		margin-top:0.3rem ;
+		margin-bottom: 0.4rem;
+	}
+	.noOutData p{
+		padding: 0.24rem 0;
+		font-size: 0.24rem;
+	}
+	.noOutData span{
+		font-size: 0.24rem;
+	}
+	
+	/*基金管理人*/
+	.mod-cus{
+		padding-left: 0;
+		padding-bottom: 0.2rem;
+	}
+	.compName-wrap{
+		float: none;
+		text-align: center;
+		margin-left: 0;
+	}
+	.compName-wrap span{
+		font-size: 0.34rem;
+		color:#7b7faf;
+	}
+	.list-inline .compName{
+		float: none;
+		padding: 0.16rem 0;
+	}
+	.updateTime{
+		float: none;
+		margin: 0;
+		text-align: center;
+		font-size: 0.28rem;
+		color: #999;
+	}
+	.maskInTableFund .msg-wrap{
+		height: 0.7rem;
+		padding-left: 0.1rem;
+		background-color: #f9f9f9;
+		margin: 0;
+		border-top: 1px solid #dcdcdc;
+		border-bottom: 1px solid #dcdcdc;
+	}
+	.maskInTableFund .msg-title{
+		margin-top: 0.14rem;
+		font-size: 0.30rem;
+	}
+	.fundinColor{
+		margin: 0;
+	}
+	.fundinColor span{
+		display: block;
+		margin-top: 0.16rem;
+		line-height: 1.5;
+	}
+	.fundinColor>div{
+		padding: 0.24rem 0.2rem 0.12rem;
+		line-height: 1;
+		font-size: 0.28rem;
+		border-bottom: 1px solid #dcdcdc;
+	}
+	.fundinColor .fundHalf{
+		width: 100%;
+		float: none;
+	}
+	.fundinColor div:last-child{
+		border-bottom: 0;
+	}
+	
+	.fundTableBox{
+		display: block;
+		margin: 0!important;
+	}
+	.fundinTh{
+		display: block;
+		width: 100%;
+		color: #999;
+		font-size:0.28rem;
+		text-align: left;
+		border: 0;
+		border-top: 1px solid #dcdcdc;
+		background: white;
+		padding: 0.22rem 0.2rem;
+	}
+	.table-scroll-par > div{
+		min-width: auto;
+	}
+	.maskInTableTh{
+		width: 100%;
+	}
+	.maskInTableTh table{
+		margin-bottom: 0.26rem;
+	}
+	.maskInTableTh th{
+		display: none;
+	}
+	.maskInTableTh table,.maskInTableTh table tr,.maskInTableTh table td{
+		border: none;
+		background-color: white;
+	}
+	.maskInTableTh table tr td{
+		display: block;
+		border: none;
+		font-size:0.28rem;
+		background: white;
+		text-align: left;
+		padding: 0.1rem 0.2rem;
+	}
+	.fundPhtxt{
+		display: inline;
+	}
+	.maskInTableJj .fundPhcolor{
+		display: inline;
+		color: #333;
+	}
+	.maskInTableJj td span{
+		margin-bottom: 0.12rem;
+	}
+	.maskInTableJj td a{
+		color: #7b7faf;
+	}
+	.portlet.box > .portlet-body{
+		padding-bottom: 0;	
+	}
+}		

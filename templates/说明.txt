@@ -1,0 +1,82 @@
+company
+companyList.html 挂牌公司
+companyListDetail.html 挂牌公司详情
+industryCommerce.html 工商信息
+intermediary.html 中介结构
+realQuotes.html 实时行情
+
+companySurvey
+reportGuide.html 报告向导
+reportList.html 报告列表
+reportProduction.html 报告制作
+
+details
+laws.html 政策法规
+lawsDetail.html 政策法规详情
+news.html 市场新闻
+newsDetail.html 公司新闻详情
+policyNews.html 政策新闻
+reportDetail.html 研报详情
+researchReport.html 研报列表
+
+fundMsg
+fundManager.html 私募基金管理人
+fundMgdetail.html 私募基金管理人详情
+
+investment
+investCompany.html 被投企业
+investFigureDetail.html 人物详情
+investInvestors.html 投资人
+investInvestorsDetail.html 投资人详情
+investList.html 投资机构
+investListDetail.html 投资机构详情
+investThing.html 投资事件
+otcOverview.html 产外市场概览
+
+neeq
+messageDisplay.html 信息披露
+marketing.html 市场概览
+masterBrokers.html 主办券商
+masterHold.html 券商详情
+realTimeQuotesDemo.html 行情
+recentNews.html 最新动态
+shareBonus.html 分红
+transaction.html 行情
+historyQuotes.html 历史行情
+privateAdd.html 定增
+
+
+
+privilege
+privilege.html 拟IPO探测雷达
+privilegeOverview.html 企业分析概览
+
+searchCase
+collectionList.html 我的关注
+searchDetail.html 公众号详情
+searchList.html 搜案例
+wechaSearch.html 搜索案例
+
+supervisor
+specIden.html 券商认证
+supNotice.html 公告管理
+supNoticeSecurities.html公告管理
+
+user
+buy.html 购买
+feedback.html 意见反馈
+forgetPassword01.html 忘记密码 1
+forgetPassword02.html 忘记密码 2
+forgetPassword03.html 忘记密码 3
+letterDetail.html 站内信详情
+login.html 登录
+modifyPassword.html 修改密码
+notPhone.html 联系信息
+permissionsCon.html 点数详情
+personInfo.html 个人信息
+register01.html 注册1
+register02.html 注册2
+register03.html 注册3
+searchResult.html 搜索列表
+standLetter.html 站内搜索
+version.html 版本详情

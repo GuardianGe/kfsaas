@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en" class="no-js">
+	<!--<![endif]-->
+	<!-- BEGIN HEAD -->
+	<head>
+		<meta charset="utf-8" />
+		<title>投资机构｜三板慧｜金融大数据</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta content="width=device-width, initial-scale=1" name="viewport" />
+		<meta content="" name="description" />
+		<meta content="" name="author" />
+		<link href="../../assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+		<link href="../../assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+		<link href="../../assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+		<link href="../../assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" />
+		<link href="../../assets/global/css/components.css" id="style_components" rel="stylesheet" type="text/css" />
+		<link href="../../assets/global/css/plugins.css" rel="stylesheet" type="text/css" />
+		<link href="../../assets/admin/layout/css/layout.css" rel="stylesheet" type="text/css" />
+		<link href="../../assets/admin/layout/css/themes/darkblue.css" rel="stylesheet" type="text/css" id="style_color" />
+		<link href="../../assets/admin/layout/css/paging.css" rel="stylesheet" type="text/css">
+		<link href="../../assets/admin/layout/css/custom.css" rel="stylesheet" type="text/css" />
+		<!-- END THEME STYLES -->
+	</head>
+
+	<body class="page-header-fixed page-quick-sidebar-over-content page-container-bg-solid">
+		<div class="modal fade myModal01" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+		        <h4 class="modal-title" id="myModalLabel">省份选择</h4>
+		      </div>
+		      <div class="modal-body">
+		        <div class="province" id="comProvince">
+		        	<div class="province-ul">
+		        		<!--<input type="text" name="" id="" value="" placeholder="可输入拼音汉字查找"/>-->
+		        	</div>
+		        	<div class="city-list">
+		        		<ul>
+		        			<li name="province010">辽宁</li>
+		        			<li name="province011">吉林</li>
+		        			<li name="province012">黑龙江</li>
+		        			<li name="province013">陕西</li>
+		        			<li name="province014">河北</li>
+		        			<li name="province015">安徽</li>
+		        			<li name="province016">江西</li>
+		        			<li name="province017">河南</li>
+		        			<li name="province018">湖北</li>
+		        			<li name="province019">湖南</li>
+		        			<li name="province020">山西</li>
+		        			<li name="province021">贵州</li>
+		        			<li name="province022">云南</li>
+		        			<li name="province023">天津</li>
+		        			<li name="province024">海南</li>
+		        			<li name="province025">甘肃</li>
+		        			<li name="province026">青海</li>
+		        			<li name="province027">台湾</li>
+		        			<li name="province028">内蒙古</li>
+		        			<li name="province029">新疆</li>
+		        			<li name="province030">西藏</li>
+		        			<li name="province031">广西</li>
+		        			<li name="province032">宁夏</li>
+		        			<li name="province033">香港</li>
+		        			<li name="province034">澳门</li>
+		        		</ul>
+		        	</div>
+		        </div>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+		        <button type="button" class="btn default" id="compProvSave">确定</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		<div class="modal fade myModal01" id="myModal03" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+		        <h4 class="modal-title" id="myModalLabel">所属行业</h4>
+		      </div>
+		      <div class="modal-body">
+		        <div class="province">
+		        	<div class="province-ul">
+		        		<ul>
+		        			<li>A</li>
+		        			<li>B</li>
+		        			<li>C</li>
+		        			<li>D</li>
+		        			<li>E</li>
+		        			<li>F</li>
+		        			<li>G</li>
+		        			<li>H</li>
+		        			<li>I</li>
+		        			<li>J</li>
+		        			<li>K</li>
+		        			<li>L</li>
+		        			<li>M</li>
+		        			<li>N</li>
+		        			<li>O</li>
+		        			<li>P</li>
+		        			<li>Q</li>
+		        			<li>R</li>
+		        			<li>S</li>
+		        			<li>T</li>
+		        			<li>U</li>
+		        			<li>V</li>
+		        			<li>W</li>
+		        			<li>X</li>
+		        			<li>Y</li>
+		        			<li>Z</li>
+		        			<li class="provinceLi">全部</li>
+		        		</ul>
+		        		<!--<input type="text" name="" id="" value="" placeholder="可输入拼音汉字查找"/>-->
+		        	</div>
+		        	<div class="city-list indPop" id="compPop2">
+		        		<ul>
+		        			
+		        		</ul>
+		        	</div>
+		        </div>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+		        <button type="button" class="btn default" id="industrySave">确定</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		<!-- BEGIN HEADER -->
+		<div class="page-header navbar navbar-fixed-top">
+			<!-- BEGIN HEADER INNER -->
+			<div class="page-header-inner">
+				<!-- BEGIN LOGO -->
+				<div class="page-logo">
+					<a href="/index.php/companylisted/index">
+						<img src="../../assets/admin/layout/img/logo.png" alt="logo" class="logo-default" />
+					</a>
+					<div class="menu-toggler sidebar-toggler hide">
+					</div>
+				</div>
+				<!-- END LOGO -->
+
+				<!-- BEGIN RESPONSIVE MENU TOGGLER -->
+				<a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse">
+				</a>
+
+				<div class="top-menu">
+				<ul class="nav navbar-nav pull-right">
+					<li class="dropdown dropdown-extended dropdown-notification mgr20" id="header_notification_bar">
+						<a href="javascript:void(0)" class="dropdown-toggle" style="height:55px">
+							<i class="fa fa-dollar"></i>
+							<span class="badge badge-default" style="right: -18px">购买</span>
+						</a>
+					</li>
+					<li class="dropdown dropdown-user">
+						<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+							<img alt="" class="img-circle" src="" />
+							<span class="username username-hide-on-mobile"></span>
+							<i class="fa fa-angle-down"></i>
+						</a>
+						 <ul class="dropdown-menu dropdown-menu-default">
+                                <li>
+                                    <a href="/account/info">
+                                        <i class="icon-user"></i>我的三板慧</a>
+                                </li>
+                                <li class="pay">
+                                    <a href="JavaScript:void(0)" id="dk">
+                                        <i class="fa fa-check-square-o"></i><span>每日打卡</span></a>
+                                </li>
+                                <li>
+                                    <a href="/account/modifyPassword">
+                                        <i class="fa fa-pencil-square-o"></i>修改密码 </a>
+                                </li>
+                                <li>
+                                    <a href="/account/version">
+                                        <i class="fa fa-file-o"></i>版本介绍 
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/account/feedback">
+                                        <i class="icon-envelope-open"></i>意见反馈
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/user/logout">
+                                        <i class="fa fa-sign-out"></i>退出 </a>
+                                </li>
+                            </ul>
+					</li>
+				</ul>
+			</div>
+				<!-- END TOP NAVIGATION MENU -->
+				 <!--PC端搜索框-->
+                <div class="pc-search hidden-xs hidden-sm">
+                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                    <input type="text" name="" id="searchBlur" value="" placeholder="搜索公司，基金，资料" />
+                    <div class="searchList">
+                        <ul></ul>
+                    </div>
+                </div>
+			</div>
+			<!-- END HEADER INNER -->
+		</div>
+		<!-- END HEADER -->
+		<div class="clearfix">
+		</div>
+		<!-- BEGIN CONTAINER -->
+		<div class="page-container">
+			<!-- BEGIN SIDEBAR -->
+			<div class="page-sidebar-wrapper">
+				<div class="page-sidebar navbar-collapse collapse">
+					<ul class="page-sidebar-menu " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
+						<li class="sidebar-toggler-wrapper">
+							<div class="sidebar-toggler">
+							</div>
+						</li>
+						<li class="sidebar-search-wrapper">
+							<form class="sidebar-search " action="extra_search.html" method="POST">
+								<a href="javascript:;" class="remove">
+									<i class="icon-close"></i>
+								</a>
+								<div class="input-group">
+									<input type="text" class="form-control" placeholder="搜索">
+									<span class="input-group-btn">
+							<a href="javascript:;" class="btn submit"><i class="icon-magnifier"></i></a>
+							</span>
+								</div>
+							</form>
+							<!-- END RESPONSIVE QUICK SEARCH FORM -->
+						</li>
+						<li class="start active open">
+							<a href="javascript:;">
+								<i class="icon-home"></i>
+								<span class="title">新三板</span>
+								<span class="selected"></span>
+								<span class="arrow open"></span>
+							</a>
+							<ul class="sub-menu">
+								<li class="active">
+									<a href="挂牌公司列表页.html">挂牌公司</a>
+								</li>
+								<li>
+									<a href="公告.html">公告</a>
+								</li>
+								<li>
+									<a href="定增.html">定增</a>
+								</li>
+								<li>
+									<a href="交易.html">交易</a>
+								</li>
+								<li>
+									<a href="#">主办券商</a>
+								</li>
+								<li>
+									<a href="#">政策法规</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<!--<i class="icon-basket"></i>-->
+								<span class="title">投资</span>
+								<span class="arrow "></span>
+							</a>
+							<ul class="sub-menu">
+								<li>
+									<a href="投资事件.html">投资事件</a>
+								</li>
+								<li>
+									<a href="投资机构列表页.html">投资机构</a>
+								</li>
+								<li>
+									<a href="#">私募基金管理人</a>
+								</li>
+
+							</ul>
+						</li>
+						<li>
+							<a href="#">
+								<!--<i class="icon-rocket"></i>-->
+								<span class="title">新闻</span>
+								<span class="arrow "></span>
+							</a>
+
+						</li>
+						<li>
+							<a href="javascript:;">
+								<!--<i class="icon-diamond"></i>-->
+								<span class="title">研报</span>
+								<span class="arrow "></span>
+							</a>
+
+						</li>
+						<li>
+							<a href="#">
+								<!--<i class="icon-puzzle"></i>-->
+								<span class="title">关系查找</span>
+								<span class="arrow "></span>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<!--<i class="icon-basket"></i>-->
+								<span class="title">登录和注册</span>
+								<span class="arrow "></span>
+							</a>
+							<ul class="sub-menu">
+								<li>
+									<a href="登录.html">
+										<!--<i class="icon-home"></i>-->
+										登录</a>
+								</li>
+								<li>
+									<a href="用户注册1.html">
+										<!--<i class="icon-basket"></i>-->用户注册1</a>
+								</li>
+								<li>
+									<a href="用户注册2.html">
+										<!--<i class="icon-tag"></i>-->用户注册2</a>
+								</li>
+								<li>
+									<a href="注册成功3.html">
+										<!--<i class="icon-tag"></i>-->注册成功3</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<!-- END SIDEBAR MENU -->
+				</div>
+			</div>
+			<!-- END SIDEBAR -->
+			<!-- BEGIN CONTENT -->
+			<div class="page-content-wrapper">
+				<div class="page-content">
+					<!-- BEGIN PAGE HEADER-->
+					<div class="page-bar">
+						<ul class="page-breadcrumb">
+							<li>
+								<i class="fa fa-home"></i>
+								新三板
+								<i class="fa fa-angle-right"></i>
+							</li>
+							<li>
+								投资人
+							</li>
+							<li class='nowTimeTop'>
+								北京时间：<span id="nowDate"></span>
+							</li>
+						</ul>
+					</div>
+					<div class="page-content-par">
+					<div class="row mod-title">
+						<div class="col-md-12">投资人</div>
+					</div>
+					<div class="page-height"></div>
+					<div class="row mod-con-ipt">
+						<div class="col-sm-2 contan-search">
+							<input placeholder="姓名/机构名称" type="text" id="comKeyWord" class="form-control form-filter input-sm investSname">
+						</div>
+						<div class="col-sm-4 compBtn">
+							<button class="search btn-ipt" id="investSer">搜索</button>
+							<button class="search btn-ipt btn-ipts" id="investSerReset">重置</button>
+						</div>
+					</div>
+					<div class="row allList" id="compQs">
+						<div class="hang-title">
+							<span>投资领域</span>
+						</div>
+						<ul class="list-inline" id="comSpecial">
+							<li name="" class="hang-active">全部</li>
+							<li name="585e321e">消费互联网</li>
+							<li name="585e3ef3">文创</li>
+							<li name="585e4199">医疗健康</li>
+							<li name="585e426d">吃喝玩乐</li>
+							<li name="585e4330">教育培训</li>
+							<li id="trPop2" class="hang-more" data-toggle="modal" data-target="#myModal03">更多&gt;&gt;</li>
+						</ul>
+					</div>
+					<div class="row allList" id="compHy">
+						<div class="hang-title">
+							<span>投资轮次</span>
+						</div>
+						<ul class="list-inline" id="compIndustry">
+							<li name="" class="hang-active">全部</li>
+							<li name="001">种子轮/天使轮</li>
+							<li name="002">pre-A轮</li>
+							<li name="003">A轮</li>
+							<li name="004">B轮</li>
+							<li name="005">C轮</li>
+							<li name="006">D轮及以上</li>
+							<li name="007">三板挂牌</li>
+							<li name="008">未明确</li>
+						</ul>
+					</div>
+					<div class="row allList" id="compSf">
+						<div class="hang-title">
+							<span>常驻城市</span>
+						</div>
+						<ul class="list-inline">
+							<li name="" class="hang-active">全部</li>
+							<li name="province001">北京</li>
+		        			<li name="province003">上海</li>
+		        			<li name="province004">重庆</li>
+		        			<li name="province008">山东</li>
+		        			<li name="province002">广东</li>
+		        			<li name="province005">浙江</li>
+		        			<li name="province006">四川</li>
+		        			<li name="province007">江苏</li>
+		        			<li name="province009">福建</li>
+		        			<li class="hang-more" data-toggle="modal" data-target="#myModal">更多>></li>
+						</ul>
+					</div>
+					<div class="row allListSo" id="allListSo">
+						<div class="hang-title">
+							<span>已选条件</span>
+						</div>
+						<ul class="list-inline soList" id="soCheck">
+							<li class="soClear">
+								<button class="search  btn-ipt" id="soClear">清空条件</button>
+							</li>
+						</ul>
+					</div>
+					<div class="page-line"></div>
+					<!--下面表单开始-->
+					<div class="portlet">
+						<div class="portlet-body maskInTable">
+							<div class="grayBg col-md-12 pdl pdr10" id="tableOne" style="margin-bottom: 20px;">
+							</div>
+							<!--分页开始-->
+							<div id="pageTool"></div>
+							<!--分页结束-->
+						</div>
+					</div>
+					<!--表单结束-->
+					<!-- END CONTENT -->
+					<!-- BEGIN QUICK SIDEBAR -->
+					<a href="javascript:;" class="page-quick-sidebar-toggler"><i class="icon-close"></i></a>
+					</div>
+					<!-- END QUICK SIDEBAR -->
+				</div>
+				<!-- END CONTAINER -->
+				<!-- BEGIN FOOTER -->
+				<div class="page-footer">
+					<div class="page-footer-inner">
+						&copy;&nbsp;2016&nbsp;北京凯峰数据科技有限公司&nbsp;版权所有&nbsp;|&nbsp;京ICP备16037008号-1
+					</div>
+					<div class="scroll-to-top">
+						<i class="icon-arrow-up"></i>
+					</div>
+				</div>
+				<!-- END FOOTER -->
+				<!--MODAL START-->
+				<div class="modal fade myModal01" id="myModal02" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				  <div class="modal-dialog">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				        <h4 class="modal-title" id="myModalLabel">投资领域</h4>
+				      </div>
+				      <div class="modal-body">
+				        <div class="province">
+				        	<div class="province-ul">
+				        		<ul>
+				        			<li>A</li>
+				        			<li>B</li>
+				        			<li>C</li>
+				        			<li>D</li>
+				        			<li>E</li>
+				        			<li>F</li>
+				        			<li>G</li>
+				        			<li>H</li>
+				        			<li>I</li>
+				        			<li>J</li>
+				        			<li>K</li>
+				        			<li>L</li>
+				        			<li>M</li>
+				        			<li>N</li>
+				        			<li>O</li>
+				        			<li>P</li>
+				        			<li>Q</li>
+				        			<li>R</li>
+				        			<li>S</li>
+				        			<li>T</li>
+				        			<li>U</li>
+				        			<li>V</li>
+				        			<li>W</li>
+				        			<li>X</li>
+				        			<li>Y</li>
+				        			<li>Z</li>
+				        			<li class="provinceLi">全部</li>
+				        		</ul>
+				        		<!--<input type="text" name="" id="" value="" placeholder="可输入拼音汉字查找"/>-->
+				        	</div>
+				        	<div class="city-list" id="compPop">
+				        		<ul>
+				        			
+				        		</ul>
+				        	</div>
+				        </div>
+				      </div>
+				      <div class="modal-footer">
+				        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+				        <button type="button" class="btn default" id="compPopspecailSave">确定</button>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+				<!--MODAL END-->
+				<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+				<!-- BEGIN CORE PLUGINS -->
+				<!--[if lt IE 9]>
+<script src="../../assets/global/plugins/respond.min.js"></script>
+<script src="../../assets/global/plugins/excanvas.min.js"></script> 
+<![endif]-->
+				<script src="../../assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+				<script src="../../assets/global/plugins/jquery-migrate.min.js" type="text/javascript"></script>
+				<!-- IMPORTANT! Load jquery-ui.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+				<script src="../../assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+				<script src="../../assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+				<script src="../../assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+				<script type="text/javascript" src="../../assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+				<script type="text/javascript" src="../../assets/global/plugins/bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min.js"></script>
+				<!-- BEGIN PAGE LEVEL SCRIPTS -->
+				<script type="text/javascript" src="../../assets/global/plugins/query.js"></script>
+				<script type="text/javascript" src="../../assets/global/plugins/paging.js"></script>
+				<script src="../../assets/global/scripts/kfStyle.js" type="text/javascript"></script>
+				<script src="../../assets/admin/layout/scripts/layout.js" type="text/javascript"></script>
+				<script src="../../assets/global/plugins/jquery.cookie.js" type="text/javascript"></script>
+				<script src="../../assets/admin/layout/scripts/demo.js" type="text/javascript"></script>
+				<script src="../../assets/global/scripts/application.js" type="text/javascript"></script>
+				<script src="../../assets/global/scripts/getTable.js" type="text/javascript"></script>
+				<script src="../../assets/global/scripts/investment/investInvestors.js" type="text/javascript"></script>
+				<script type="text/javascript" src="../../assets/global/plugins/select2.js"></script>
+				<!-- END PAGE LEVEL SCRIPTS -->
+				<script>
+					jQuery(document).ready(function() {
+						KfStyle.init(); // init metronic core componets
+						Layout.init(); // init layout
+						InvestInvestors.init();
+						popLetter();
+					});
+				</script>
+	</body>
+	<!-- END BODY -->
+
+</html>
+<!DOCTYPE html>

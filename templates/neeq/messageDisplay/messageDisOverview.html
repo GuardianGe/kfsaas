@@ -1,0 +1,45 @@
+<div class="portlet box darkCyan mgt">
+	<div class="row">
+		<div class="col-md-12 pdt10 pdl20 pdr20 pdb10">
+			<div class="title_tit" style="color: #40a7e2; border-left: 2px solid #40a7e2;">今日重要公告</div>
+			<div class="barChartH" style="height: 450px; background: #f7f7f7; margin-top: 23px;">
+				<div id="barChart" style="height: 450px;"></div>
+			</div>
+		</div>
+	</div>
+	<div class="page-line"></div>
+	<div class="row">
+		<div class="col-md-6 pdt10 pdl20 pdr20 pdb10" style="border-right: 10px solid #f1f3fb;">
+			<div class="title_tit" style="color: #e0bb3d; border-left: 2px solid #e0bb3d;">利好公告</div>
+			<div class="barChartH" style="height: 470px; background: #f7f7f7; margin-top: 23px;">
+				<div id="barChart1" style="height: 470px;"></div>
+			</div>
+		</div>
+		<div class="col-md-6 pdt10 pdl20 pdr20 pdb10">
+			<div class="title_tit" style="color: #e0bb3d; border-left: 2px solid #e0bb3d;">利空公告</div>
+			<div class="barChartH" style="height: 470px; background: #f7f7f7; margin-top: 23px;">
+				<div id="barChart2" style="height: 470px;"></div>
+			</div>
+		</div>
+	</div>
+	<div class="page-line mgt"></div>
+	<div class="row">
+		<div class="col-md-12 pdt10 pdl20 pdr20">
+			<div class="title_tit" style="color: #40a7e3; border-left: 2px solid #40a7e3;">今日分类公告</div>
+			<div class="notesTab">
+				<a class="active" id="dataIndustry">按行业</a>
+				<a id="dataArea">按地区</a>
+				<a id="dataBrokerage">按主办券商</a>
+			</div>
+			<div class="barChartH" style="height: 550px; background: #f7f7f7; margin-top: 27px;">
+				<div id="barChart3" style="height: 550px;"></div>
+				<div id="barChart4" class="hide" style="height: 450px;"></div>
+				<div id="barChart5" class="hide" style="height: 450px;"></div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="../../assets/global/scripts/neeq/messageDisplay/messageOverview.js" type="text/javascript"></script>
+<script type="text/javascript">
+	OverviewMessage.init();
+</script>

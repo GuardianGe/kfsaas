@@ -1,0 +1,721 @@
+
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en" class="no-js">
+    <!--<![endif]-->
+    <!-- BEGIN HEAD -->
+
+    <head>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+        <title>三板慧｜最慧分析的新三板数据云</title>
+        <meta content="三板慧聚焦在新三板与一级市场的数据收集（汇聚）、分析、挖掘与连接处理（智慧），为机构用户提供跨市场的金融信息（SaaS）服务。" name="description">
+        <meta content="北京凯峰数据科技有限公司" name="author">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta content="" name="description" />
+        <meta content="" name="author" />
+        <link href="../../assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+        <link href="../../assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="../../assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="../../assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="../../assets/global/css/components.css" id="style_components" rel="stylesheet" type="text/css" />
+        <link href="../../assets/global/css/plugins.css" rel="stylesheet" type="text/css" />
+        <link href="../../assets/admin/layout/css/layout.css" rel="stylesheet" type="text/css" />
+        <link href="../../assets/admin/layout/css/themes/darkblue.css" rel="stylesheet" type="text/css" id="style_color" />
+        <link rel="stylesheet" type="text/css" href="../../assets/admin/layout/css/paging.css">
+        <link href="../../assets/admin/layout/css/custom.css" rel="stylesheet" type="text/css" />
+        <link href="../../assets/global/plugins/select2/select2.css" rel="stylesheet" type="text/css" />
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        <style type="text/css">
+        	.allListSo + .pageTotalDiv{
+        		display: none;
+        	}
+        </style>
+        <!-- END THEME STYLES -->
+    </head>
+    <body class="page-header-fixed page-quick-sidebar-over-content page-container-bg-solid">
+        <div class="modal fade myModal01" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="myModalLabel">省份选择</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="province" id="comProvince">
+                            <div class="province-ul">
+                                    <!--<input type="text" name="" id="" value="" placeholder="可输入拼音汉字查找"/>-->
+                            </div>
+                            <div class="city-list">
+                                <ul>
+                                    <li name="province010">辽宁</li>
+                                    <li name="province011">吉林</li>
+                                    <li name="province012">黑龙江</li>
+                                    <li name="province013">江苏</li>
+                                    <li name="province014">浙江</li>
+                                    <li name="province015">安徽</li>
+                                    <li name="province016">江西</li>
+                                    <li name="province017">福建</li>
+                                    <li name="province018">湖北</li>
+                                    <li name="province019">湖南</li>
+                                    <li name="province020">四川</li>
+                                    <li name="province021">贵州</li>
+                                    <li name="province022">云南</li>
+                                    <li name="province023">广东</li>
+                                    <li name="province024">海南</li>
+                                    <li name="province025">甘肃</li>
+                                    <li name="province026">青海</li>
+                                    <li name="province027">台湾</li>
+                                    <li name="province028">内蒙古</li>
+                                    <li name="province029">新疆</li>
+                                    <li name="province030">西藏</li>
+                                    <li name="province031">广西</li>
+                                    <li name="province032">宁夏</li>
+                                    <li name="province033">香港</li>
+                                    <li name="province034">澳门</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                        <button type="button" class="btn default" id="compProvSave">确定</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade myModal01" id="myModal02" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="myModalLabel">主办券商</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="province">
+                            <div class="province-ul">
+                                <ul>
+                                    <li>A</li>
+                                    <li>B</li>
+                                    <li>C</li>
+                                    <li>D</li>
+                                    <li>E</li>
+                                    <li>F</li>
+                                    <li>G</li>
+                                    <li>H</li>
+                                    <li>I</li>
+                                    <li>J</li>
+                                    <li>K</li>
+                                    <li>L</li>
+                                    <li>M</li>
+                                    <li>N</li>
+                                    <li>O</li>
+                                    <li>P</li>
+                                    <li>Q</li>
+                                    <li>R</li>
+                                    <li>S</li>
+                                    <li>T</li>
+                                    <li>U</li>
+                                    <li>V</li>
+                                    <li>W</li>
+                                    <li>X</li>
+                                    <li>Y</li>
+                                    <li>Z</li>
+                                    <li class="provinceLi">全部</li>
+                                </ul>
+                                <!--<input type="text" name="" id="" value="" placeholder="可输入拼音汉字查找"/>-->
+                            </div>
+                            <div class="city-list" id="compPop">
+                                <ul>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                        <button type="button" class="btn btn-primary" id="compPopspecailSave">确定</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade myModal01" id="myModal03" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="myModalLabel">所属行业</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="province">
+                            <div class="province-ul">
+                                <ul>
+                                    <li>A</li>
+                                    <li>B</li>
+                                    <li>C</li>
+                                    <li>D</li>
+                                    <li>E</li>
+                                    <li>F</li>
+                                    <li>G</li>
+                                    <li>H</li>
+                                    <li>I</li>
+                                    <li>J</li>
+                                    <li>K</li>
+                                    <li>L</li>
+                                    <li>M</li>
+                                    <li>N</li>
+                                    <li>O</li>
+                                    <li>P</li>
+                                    <li>Q</li>
+                                    <li>R</li>
+                                    <li>S</li>
+                                    <li>T</li>
+                                    <li>U</li>
+                                    <li>V</li>
+                                    <li>W</li>
+                                    <li>X</li>
+                                    <li>Y</li>
+                                    <li>Z</li>
+                                    <li class="provinceLi">全部</li>
+                                </ul>
+                                <!--<input type="text" name="" id="" value="" placeholder="可输入拼音汉字查找"/>-->
+                            </div>
+                            <div class="city-list indPop" id="compPop2">
+                                <ul>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                        <button type="button" class="btn btn-primary" id="industrySave">确定</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- BEGIN HEADER -->
+
+        <div class="page-header navbar navbar-fixed-top">
+            <!-- BEGIN HEADER INNER -->
+            <div class="page-header-inner">
+                <!-- BEGIN LOGO -->
+                <div class="page-logo">
+                    <a href="/index.php/companylisted/index">
+                        <img src="../../assets/admin/layout/img/logo.png" alt="logo" class="logo-default" style='width:85%' />
+                    </a>
+                    <div class="menu-toggler sidebar-toggler hide">
+                    </div>
+                </div>
+                <!-- END LOGO -->
+
+                <!-- BEGIN RESPONSIVE MENU TOGGLER -->
+                <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse">
+                </a>
+
+                <div class="top-menu">
+                    <ul class="nav navbar-nav pull-right">
+                        <li class="dropdown dropdown-extended dropdown-inbox" id="header_inbox_bar">
+                            <a href="javascript:;" class="dropdown-toggle myMails"  data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                <span class="myMail"></span>
+                                <span class="badge badge-default letterN"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="external">
+                                    <h3>你有 <span class="bold  letterNs"></span>条新消息</h3>
+                                    <a href="/msg/index">查看全部</a>
+                                </li>
+                                <li>
+                                    <ul class="dropdown-menu-list scroller letterList" data-handle-color="#637283">
+
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown dropdown-extended dropdown-notification" id="header_notification_bar">
+                            <a href="/account/collection" class="dropdown-toggle myHaves" style="height:55px">
+                                <span class="myHave"></span>
+                                <span class="badge badge-default" style="right: 14px"></span>
+                            </a>
+                        </li>
+                        <li class="dropdown dropdown-extended dropdown-notification mgr20" id="header_notification_bar">
+                            <a href="/account/buy" class="dropdown-toggle myBuys" style="height:55px;padding-right: 10px;">
+                                <span class="myBuy"></span>
+                                <!--<span class="badge badge-default" style="right: 2px">购买</span>-->
+                            </a>
+                        </li>
+                        <li class="dropdown dropdown-user" style="margin-right: 30px;">
+                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                <img alt="" class="img-circle" src="" />
+                                <span class="username username-hide-on-mobile"></span>
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-default">
+                                <li>
+                                    <a href="/account/info" style="border-top: 0;">
+                                        <span class="selectOne selectOne01"></span>我的三板慧</a>
+                                </li>
+                                <li class="pay">
+                                    <a href="JavaScript:void(0)" id="dk">
+                                        <i class="selectOne selectOne02"></i><span style="margin-left:10px;">每日打卡</span></a>
+                                </li>
+                                <li>
+                                    <a href="/account/modifyPassword">
+                                        <span class="selectOne selectOne03"></span>修改密码 </a>
+                                </li>
+                                <li>
+                                    <a href="/account/version">
+                                        <span class="selectOne selectOne04"></span>版本介绍 
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/account/feedback">
+                                        <span class="selectOne selectOne05"></span>意见反馈
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/user/logout">
+                                        <span class="selectOne selectOne06"></span>退&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;出 </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!-- END TOP NAVIGATION MENU -->
+                <!--PC端搜索框-->
+                <div class="pc-search hidden-xs hidden-sm">
+                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                    <input type="text" name="" id="searchBlur" value="" placeholder="搜索公司，基金，资料" />
+                    <div class="searchList">
+                        <ul></ul>
+                    </div>
+                </div>
+            </div>
+            <!-- END HEADER INNER -->
+        </div>
+        <!-- END HEADER -->
+        <div class="clearfix">
+        </div>
+        <!-- BEGIN CONTAINER -->
+        <div class="page-container">
+            <!-- BEGIN SIDEBAR -->
+
+            <div class="page-sidebar-wrapper">
+                <div class="page-sidebar navbar-collapse collapse">
+                    <ul class="page-sidebar-menu " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
+                        <li class="sidebar-toggler-wrapper">
+                            <div class="sidebar-toggler">
+                            </div>
+                        </li>
+                        <!--mobile搜索框-->
+                        <li class="start ">
+                            <a href="javascript:;">
+                                <span class="menuOne newThreeIcon"></span>
+                                <span id="badgeOver" class="badge badge-danger">新</span>
+                                <span class="title newThree">新三板</span>
+                                <span class="selected"></span>
+                                <span class="arrow"></span>
+                            </a>
+                            <ul class="sub-menu" style="">
+                                <li class="">
+
+                                    <a class="menuTwo01" href="/companylisted/index" style="position:relative">
+                                        <span id="badgeOver" class="badge badge-danger marktingView" style="left:55px">新</span>
+                                        市场概览
+                                    </a>
+                                </li>
+                                <li class="">
+                                    <a class="menuTwo02">
+                                        挂牌公司
+                                    </a>
+                                </li>
+                                <li class="">
+                                    <a href="/securities/index" class="menuTwo03">
+                                        主办券商
+                                    </a>
+                                </li>
+                                <li class="">
+                                    <a href="/quotation/index" class="menuTwo04">行&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;情</a>
+                                </li>
+                                <li class="">
+                                    <a href="/stockdilution/index" class="menuTwo05">定&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;增</a>
+                                </li>
+                                <li class="">
+                                    <a href="/notice/index" class="menuTwo06">公&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;告</a>
+                                </li>
+                                <li class="">
+                                    <a href="/law/index" class="menuTwo07">
+                                        政策法规
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="start ">
+                            <a href="javascript:;">
+                                <span class="menuOne menuOne02"></span>
+                                <span class="title newtz">场外市场</span>
+                                <span class="selected"></span>
+                                <span class="arrow "></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li class="">
+                                    <a href="/investment/index" class="menuTwo08">
+                                        投资事件
+                                    </a>
+                                </li>
+                                <li class="">
+                                    <a href="/investment/investmentAgency" class="menuTwo09">投资机构</a>
+                                </li>
+                                <li class="">
+                                    <a href="/investment/fundManager" class="menuTwo10">私募基金管理人</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="start ">
+                            <a href="#">
+                                <span class="menuOne menuOne03"></span>
+                                <span class="title newNew">新&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;闻</span>
+                                <span class="selected"></span>
+                                <span class="arrow "></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li class="">
+                                    <a href="/news/index" class="menuTwo11">新闻列表</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="start ">
+                            <a href="javascript:;">
+                                <span class="menuOne menuOne04"></span>
+                                <span class="title newyb">研&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;报</span>
+                                <span class="selected"></span>
+                                <span class="arrow "></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li class="">
+                                    <a href="/report/index" class="menuTwo12">研报列表</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="start active">
+                            <a href="javascript:;">
+                                <span id="badgeOver" class="badge badge-danger">新</span>
+                                <span class="menuOne menuOne05"></span>
+                                <span class="title newyb">搜案例</span>
+                                <span class="selected"></span>
+                                <span class="arrow "></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li class="">
+                                    <a href="/case/index" class="menuTwo13">案例搜索</a>
+                                </li>
+
+                                <li class="active">
+                                    <a href="/case/notice" class="menuTwo14">高级搜索</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <!-- END SIDEBAR MENU -->
+                </div>
+            </div>
+            <!-- END SIDEBAR -->
+            <!-- BEGIN CONTENT -->
+            <div class="page-content-wrapper">
+                <div class="page-content">
+                    <!-- BEGIN PAGE HEADER-->
+                    <div class="page-bar">
+                        <ul class="page-breadcrumb">
+                            <li>
+                                <i class="fa fa-home"></i>
+                                搜案例
+                                <i class="fa fa-angle-right"></i>
+                            </li>
+                            <li>
+                                高级搜索
+                            </li>
+                            <li class='nowTimeTop'>
+								北京时间：<span id="nowDate"></span>
+							</li>
+                        </ul>
+                    </div>
+                    <div class="page-content-par">
+                        <div class="row mod-title">
+                            <div class="col-md-12">搜案例</div>
+                        </div>
+                        <div class="page-height">
+
+                        </div>
+                        <ul class="list-inline overLi-btn overLi-btn-link col-show">
+                            <li>
+                                <a href='javascript:;'>案例搜索</a>
+                            </li>
+                            <li class="active overli-noborder">
+                                <a href="javascript:;">高级搜索</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active resetVul" id="tab_0">
+                                <div class="row allList" id="type">
+                                    <div class="hang-title mgt">
+                                        <span>公告类型</span>
+                                    </div>
+                                    <ul class="list-inline">
+                                        <li name="" class="hang-active">全部</li>
+                                        <li name="9504">持续信息披露</li>
+                                        <li name="9503">定期公告</li>
+                                        <li name="9504">临时公告</li>
+                                        <!--<li name="b4">审查公开信息</li>-->
+                                        <li name="9510">首次信息披露</li>
+                                        <li name="9505">中介机构公告</li>
+                                    </ul>
+                                </div>
+                                <div class="row allList" id="compQs">
+                                    <div class="hang-title">
+                                        <span>主办券商</span>
+                                    </div>
+                                    <ul class="list-inline" id="comSpecial">
+										<li class="hang-active">全部</li>
+										<li name="101001830899000000000000">联讯证券</li>
+										<li name="3a3d97138af9e9324d1602c09a8a3a">山西证券</li>
+										<li name="04c6024f2e8fbb0775ea36f103aefe">财达证券</li>
+										<li name="2990ec52e07e89122e9c151291e377">东北证券</li>
+										<li name="95b212c0fc5a35f7b7956f4717f8f3">华融证券</li>
+										<li id="trPop" class="hang-more" data-toggle="modal" data-target="#myModal02">更多&gt;&gt;</li>
+									</ul>
+								</div>
+                                <div class="row allList" id="compHy">
+                                    <div class="hang-title">
+                                        <span>所属行业</span>
+                                    </div>
+                                    <ul class="list-inline" id="compIndustry">
+										<li class="hang-active">全部</li>
+										<li name="5a2fcfe678">互联网和相关服务</li>
+										<li name="f3afed3025">软件和信息技术服务业</li>
+										<li name="4af3e0c021">专用设备制造业</li>
+										<li name="e617da4639">零售业</li>
+										<li name="7ee1034249">商务服务业</li>
+										<li id="trPop2" class="hang-more" data-toggle="modal" data-target="#myModal03">更多&gt;&gt;</li>
+									</ul>
+								</div>
+                                <div class="row allList" id="compSf">
+                                    <div class="hang-title">
+                                        <span>省&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;份</span>
+                                    </div>
+                                    <ul class="list-inline">
+                                        <li class="hang-active" >全部</li>
+                                        <li name="province001">北京</li>
+                                        <li name="province002">天津</li>
+                                        <li name="province003">上海</li>
+                                        <li name="province004">重庆</li>
+                                        <li name="province005">河北</li>
+                                        <li name="province006">山西</li>
+                                        <li name="province007">陕西</li>
+                                        <li name="province008">山东</li>
+                                        <li name="province009">河南</li>
+                                        <li class="hang-more" data-toggle="modal" data-target="#myModal">更多>></li>
+                                    </ul>
+                                </div>
+                                <div class="row allListSo" id="allListSo">
+                                    <div class="hang-title">
+                                        <span>已选条件</span>
+                                    </div>
+                                    <ul class="list-inline soList" id="soCheck">
+                                        <li class="soClear">
+                                            <button class="search btn-ipt mgr" id="soClear">清空选项</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="row mod-con-ipt">
+                                    <div class="arrive mgl20 mgr15">股票代码</div>
+                                    <div class="col-sm-2 contan-search">
+                                        <input placeholder="请输入代码" id="keyword" type="text" class="form-control form-filter input-sm" name="product_id">
+                                    </div>
+                                    <div class="arrive mgl20 mgr15">挂牌日期</div>
+                                    <div class="col-sm-3 col-md-3 datePar">
+                                        <div class="input-group date date-picker" id="datetimeStart"  data-date-viewmode="years" data-date-format="dd/mm/yyyy">
+                                            <input type="text" id="compStartTime" class="form-control form-filter input-sm date-ipt" readonly="" name="product_created_from" placeholder="请选择开始日期">
+                                            <span class="input-group-btn">
+                                                <button  class="btn btn-sm btn-icon-btn" type="button"><i class="fa fa-calendar"></i></button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="arrive">至</div>
+                                    <div class="col-sm-3 col-md-3 select_box2_father datePar">
+                                        <div class="input-group date date-picker" id="datetimeEnd" data-date-format="dd/mm/yyyy">
+                                            <input type="text" id="compEndTime" class="form-control form-filter input-sm date-ipt" readonly="" name="product_created_from" placeholder="请选择截止日期">
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-sm  btn-icon-btn" type="button"><i class="fa fa-calendar"></i></button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mgt10">
+                                    <div class="arrive mgl20">标题关键词</div>
+                                    <div class="col-sm-3 contan-search pdr">
+                                        <input placeholder="包含以下全部关键词(空格区分)" id="Tone" type="text" class="form-control form-filter input-sm" name="product_id">
+                                    </div>
+                                    <div class="col-sm-3 contan-search pdr pdl5">
+                                        <input placeholder="包含以下任一关键词(空格区分)" id="Ttwo" type="text" class="form-control form-filter input-sm" name="product_id">
+                                    </div>
+                                    <div class="col-sm-3 contan-search pdl5">
+                                        <input placeholder="不包含以下任一关键词(空格区分)" id="Tthree" type="text" class="form-control form-filter input-sm" name="product_id">
+                                    </div>
+                                </div>
+                                <div class="row mgt10">
+                                    <div class="arrive mgl20">内容关键词</div>
+                                    <div class="col-sm-3 contan-search pdr">
+                                        <input placeholder="包含以下全部关键词(空格区分)" id="Cone" type="text" class="form-control form-filter input-sm" name="product_id">
+                                    </div>
+                                    <div class="col-sm-3 contan-search pdr pdl5">
+                                        <input placeholder="包含以下任一关键词(空格区分)" id="Ctwo" type="text" class="form-control form-filter input-sm" name="product_id">
+                                    </div>
+                                    <div class="col-sm-3 contan-search pdl5">
+                                        <input placeholder="不包含以下任一关键词(空格区分)" id="Cthree" type="text" class="form-control form-filter input-sm" name="product_id">
+                                    </div>
+                                </div>
+                                <!--<div class="row mgt10">
+                                        <div class="arrive mgl20">微信关键词</div>
+                                        <div class="col-sm-3 contan-search">
+                                                <input placeholder="请输入关键词(空格区分)" id="comKeyWord" type="text" class="form-control form-filter input-sm" name="product_id">
+                                        </div>
+                                </div>-->
+                                <div class="row mgt10">
+                                    <div class="col-md-12">
+                                        <ul class="keywordListT" style='margin-left: 90px;'>
+                                            <li><a href="javascript:void(0)">外籍高管持股</a></li>
+                                            <li><a href="javascript:void(0)">同业竞争解决方案</a></li>
+                                            <li><a href="javascript:void(0)">企业亏损</a></li>
+                                            <li><a href="javascript:void(0)">有对赌协议</a></li>
+                                            <li><a href="javascript:void(0)">有三类股东</a></li>
+                                            <li><a href="javascript:void(0)">打算IPO的企业</a></li>
+                                            <li><a href="javascript:void(0)">不定向发行</a></li>
+                                            <li><a href="javascript:void(0)">增发认购获配</a></li>
+                                            <li><a href="javascript:void(0)">更换财务总监</a></li>
+                                        </ul>	
+                                    </div>
+                                </div>
+                                <div class="col-md-12 pdl mgt20">
+                                    <div class="compBtn">
+                                        <button class="search btn-ipt" id="compBtn">查询</button>
+                                        <button class="search btn-ipt btn-ipts" id="compReset">重置</button>
+                                    </div>
+                                </div>
+                                <div id="" style="clear: both;overflow: hidden;height: 0;"></div>
+                                <div class="page-line">
+
+                                </div>
+                                <!--下面表单开始-->
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="portlet box darkCyan">
+                                            <div class="tabbable-line boxless tabbable-reversed">
+                                                <div class="portlet-body maskInTable">
+                                                    <table class="table table-condensed table-hover table-team">
+                                                        <thead>
+                                                            <tr role="row" class="tr">
+                                                                <th class="pdl10">
+                                                                    <b>发布时间</b>
+                                                                </th>
+                                                                <th class="pdl10">
+                                                                    <b>股票代码</b>
+                                                                </th>
+                                                                <th class="pdl10">
+                                                                    <b>简称</b>
+                                                                </th>
+                                                                <th class="pdl10">
+                                                                    <b>公告标题</b>
+                                                                </th>
+                                                                <th class="pdl10">
+                                                                    <b>操作</b>
+                                                                </th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody id="tableOne">
+
+                                                        </tbody>
+                                                    </table>
+                                                    <!--下边分页开始-->
+                                                    <div id="pageTool"></div>
+                                                    <!--下边分页结束-->
+                                                </div>										
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--表单结束-->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END QUICK SIDEBAR -->
+                </div>
+                <!-- END CONTAINER -->
+                <!-- BEGIN FOOTER -->
+
+                <div class="page-footer">
+                    <div class="page-footer-inner">
+                        &copy;&nbsp;2016&nbsp;北京凯峰数据科技有限公司&nbsp;版权所有&nbsp;|&nbsp;京ICP备16037008号-1&nbsp（为了保证最佳体验，请采用Chrome或IE8以上的浏览器）
+                    </div>
+                    <div class="scroll-to-top">
+                        <i class="icon-arrow-up"></i>
+                    </div>
+                </div>
+                <!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+                <!-- BEGIN CORE PLUGINS -->
+                <!--[if lte IE 8]><script src="js/libs/selectivizr.js"></script><![endif]-->
+                <!--[if lt IE 9]>
+                <script src="../../assets/global/plugins/respond.min.js"></script>
+                <script src="../../assets/global/plugins/excanvas.min.js"></script> 
+                <![endif]-->
+                <script src="../../assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+                <script src="../../assets/global/plugins/jquery-migrate.min.js" type="text/javascript"></script>
+                <!-- IMPORTANT! Load jquery-ui.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+                <script src="../../assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+                <script src="../../assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+                <script src="../../assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+                <script type="text/javascript" src="../../assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+                <script type="text/javascript" src="../../assets/global/plugins/bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min.js"></script>
+                <!-- BEGIN PAGE LEVEL SCRIPTS -->
+                <script type="text/javascript" src="../../assets/global/plugins/query.js"></script>
+                <script type="text/javascript" src="../../assets/global/plugins/paging.js"></script>
+                <script src="../../assets/global/scripts/kfStyle.js" type="text/javascript"></script>
+                <script src="../../assets/admin/layout/scripts/layout.js" type="text/javascript"></script>
+                <script src="../../assets/admin/layout/scripts/demo.js" type="text/javascript"></script>
+                <script src="../../assets/global/plugins/jquery.cookie.js" type="text/javascript"></script>
+                <script src="../../assets/global/scripts/application.js" type="text/javascript"></script>
+                <script src="../../assets/global/scripts/getTable.js" type="text/javascript"></script>
+                <script src="../../assets/global/scripts/searchCase/searchList.js" type="text/javascript"></script>
+				<script type="text/javascript" src="../../assets/global/plugins/select2.js"></script>
+                <!-- END PAGE LEVEL SCRIPTS -->
+                <script>
+                    jQuery(document).ready(function () {
+                        //日期时间选择器
+                        $(".date-picker").datepicker({
+                            format: "yyyy-mm-dd",
+                            autoclose: true,
+                            minView: "month",
+                            maxView: "decade",
+                            todayBtn: "linked",
+                            language: 'zh-CN',
+                            todayHighlight: true,
+                            endDate:new Date(),
+                            pickerPosition: "bottom-left"
+                        });
+                        //挂牌公司执行list按钮；
+                        searchList.init();
+                        KfStyle.init();
+                        Layout.init();
+                        $(".overLi-btn").find("li").eq(1).find("a").attr("href",$.url.searchList()+"page=1");
+						$(".overLi-btn").find("li").eq(0).find("a").on("click",function(){
+							window.location.href = $.url.wechaSearch();
+						});
+                    });
+                </script>
+                </body>
+                <!-- END BODY -->
+
+                </html>
+                <!DOCTYPE html>

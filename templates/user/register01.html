@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<!--[if IE 8]>
+  <html lang="en" class="ie8 no-js">
+  <![endif]-->
+<!--[if IE 9]>
+    <html lang="en" class="ie9 no-js">
+    <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+	<!--<![endif]-->
+	<!-- BEGIN HEAD -->
+
+	<head>
+		<meta charset="utf-8" />
+		<title>用户注册第一步</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<meta content="" name="description" />
+		<meta content="" name="author" />
+		<!-- BEGIN GLOBAL MANDATORY STYLES -->
+		<link href="../../assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+		<link href="../../assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+		<link href="../../assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+ 		<link href="../../assets/global/css/components.css" id="style_components" rel="stylesheet" type="text/css" />
+		<link href="../../assets/global/css/plugins.css" rel="stylesheet" type="text/css" />
+		<link href="../../assets/admin/layout/css/layout.css" rel="stylesheet" type="text/css" />
+		<link href="../../assets/admin/layout/css/themes/darkblue.css" rel="stylesheet" type="text/css" id="style_color" />
+		<link href="../../assets/admin/layout/css/custom.css" rel="stylesheet" type="text/css" />
+		<link href="../../assets/admin/layout/css/register.css" rel="stylesheet" type="text/css" />
+		<!-- END THEME STYLES -->
+
+	</head>
+
+	<body class="login clock">
+		<!-- BEGIN LOGO -->
+		<div class="logo">
+			<a class="logo-index" href="/index.php/companylisted/index">
+				<img src="../../assets/admin/layout/img/logo.png" alt="" /></a>
+		</div>
+		<div class="stepCon">
+				<div class="stepLeft pull-left">
+					<hr />
+					<span class="stepFirst active">1</span><span class="stepSecond">2</span>
+				</div>
+				<div class="stepRight pull-right">
+					<hr />
+					<span class="stepThree">3</span>
+				</div>
+		</div>
+		<div class="content">
+				<div class="register-wrap">
+					<h3 class="form-title">
+            		账户注册
+            	</h3>
+					<div class="register-title">
+						填写注册信息如下
+					</div>
+					<div class="errorTip" id="registerError01"></div>
+					<div class="register-con">
+						<span class="">手机号</span>
+						<input id="phoneNo" type="text" name="手机号" class="register-ipt" autocomplete="off" value="" placeholder="请输入手机号" />
+					</div>
+					<div class="error-tip" id="phoneNoError"></div>
+					<div class="register-con">
+						<span class="">图形码</span>
+						<input maxlength="4" type="text" name="验证码" id="picCode" class="register-ipt register-ipt-code" autocomplete="off" value="" placeholder="请输入验证码" />
+						<img id="verifyReg" src="" />
+					</div>
+					<div class="error-tip" id="picCodeError"></div>
+					<div class="register-con">
+						<span class="">验证码</span>
+						<input maxlength="6" type="text" name="验证码" id="phoneCode" class="register-ipt register-ipt-code" autocomplete="off" value="" placeholder="请输入验证码" />
+						<button disabled class="btn have-code active" id="userCode" onclick="timeWork(this)">获取验证码</button>
+					</div>
+					<div class="error-tip" id="codeError"></div>
+					<div class="register-con register-con-pw">
+						<span class="">密&ensp;&ensp;码</span>
+						<input maxlength="12" id="pw1" type="password" name="密码" class="register-ipt" value="" placeholder="6到12位小写英文数字组合" />
+						<span class="eye" name="1"></span>
+					</div>
+					<div class="error-tip" id="pwError01"></div>
+					<!--<div class="register-con">
+						<span class="">确认密码</span>
+						<input minlength="6" id="pw2"  type="password" name="密码" class="register-ipt" value="" placeholder="请再次输入密码" />
+					</div>
+					<div class="error-tip" id="pwError02"></div>-->
+					<div class="register-con register-con1">
+						<label class="checkbox" style="display: inline-block;">
+                <input type="checkbox" class="register-check" name="remember" value="1"  />我已阅读并同意<a href="#" data-toggle="modal" data-target="#myModal">《使用许可协议》</a></label>
+					</div>
+					<div class="error-tip error-tips" id="registeCheck">请勾选我已同意并阅读使用许可协议</div>
+					<div class="register-con">
+						<button  id="register" class="btn  btn-block uppercase">确定</button>
+						<a href="/user/login" type="submit" id="loginDerect" class="blue pull-right login-direct">直接登录</a>
+					</div>
+				</div>
+				<!--注册页面开始-->
+		</div>
+		<!--注册页面一结束-->
+		<div class="page-footer">
+    <div class="page-footer-inner">
+        ©&nbsp;2016-2017&nbsp;北京凯峰数据科技有限公司&nbsp;版权所有&nbsp;|&nbsp;京ICP备16037008号-1&nbsp;（为了保证最佳体验，请采用Chrome或IE10以上的浏览器）
+    </div>
+</div>
+		<!--[if lt IE 9]>
+          <script src="../../assets/global/plugins/respond.min.js"></script>
+          <script src="../../assets/global/plugins/excanvas.min.js"></script>
+        <![endif]-->
+		<div class="modal fade registerModel" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+		        <h4 class="modal-title" id="myModalLabel">使用许可协议</h4>
+		      </div>
+		      <div class="modal-body">
+		        <div class="province" id="comProvince">
+		        	<div class="city-list">
+三板慧SaaS（以下简称“三板慧”）为北京凯峰数据科技有限公司（下称"凯峰数据"）所有，凯峰数据在此特别提醒您在注册成为用户之前，请认真阅读本《使用许可协议》（以下简称“协议”），确保您充分理解本协议中各条款。请您审慎阅读并选择接受或不接受本协议。除非您接受本协议所有条款，否则您无权注册、登录或使用本协议所涉服务。您的注册、登录、使用等行为将视为对本协议所有条款的接受，并同意接受本协议各项条款的约束。
+<br/>
+本《协议》是用户与凯峰数据之间关于用户注册、登录、使用、复制随附本《协议》的三板慧产品（以下简称"产品"）的法律协议，其中规定了与用户之间关于“产品”许可使用及服务相关方面的权利义务。
+<br/>
+1.权利声明
+<br/>
+1.1本"产品"的一切知识产权，以及与产品相关的所有信息内容，包括但不限于：文字表述及其组合、图标、图饰、图像、图表、色彩、界面设计、版面框架、有关数据、模型、算法、附加程序、印刷材料或电子文档等均为凯峰数据所有，均受法律保护，其中包括但不限于受著作权法和相应的国际条约以及其他知识产权法律法规的保护。
+<br/>
+1.2除非明确表述，否则本协议不授予用户对本产品的任何知识产权以及凯峰数据未明确授予的其他所有权利。用户也不得向任何第三方转让或许可上述知识产权。
+<br/>
+2.许可范围
+<br/>
+2.1登录、注册和使用：本产品为商业产品，用户可以通过互联网访问，进行商业性试用及使用本产品。用户通过注册，即可在得到凯峰数据审核同意后进行产品试用，经凯峰数据授权后，用户即可在授权期限内进行产品的正式使用。
+<br/>
+2.2复制、分发和传播：在得到凯峰数据书面允许后，用户可以引用本产品中的数据和图表，但必须保证每一份复制、分发和传播都是完整和真实的，包括所有有关本产品的文字表述及其组合、图标、图饰、图像、图表、色彩、界面设计、版面框架、有关数据、模型、算法、附加程序、印刷材料或电子文档、所有权声明，亦包括本协议。禁止未得到凯峰数据事先书面同意的商业性复制、分发和传播。
+<br/>
+3.权利限制
+<br/>
+3.1禁止用户实施以下行为：<br/>
+3.1.1对本产品进行任何恶意攻击，影响产品安全或其他可能危害的行为。<br/>
+3.1.2利用本产品上载、发布、传播违反国家法律、危害国家安全、损害国家荣誉和利益、破坏民族团结、破坏国家宗教政策、公序良俗的内容，或任何不当的、侮辱诽谤的、淫秽的、暴力的及任何违反国家法律法规政策的内容。
+<br/>
+3.1.3通过本产品侵犯商标、版权、专利、商业机密或任何第三方的其他专有权利；<br/>
+3.1.4利用本产品实施误导、欺诈等其他违法犯罪行为。<br/>
+3.1.5其他为非法目的，以任何非法的方式、或以任何与本协议不一致的方式使用本产品。
+<br/>
+3.2组件分割：本产品是作为一个单一服务而被授予许可使用，用户不得将各个部分分开用于任何目的。
+<br/>
+3.3个别授权：如需进行商业性的销售、引用、分发，包括但不限于产品销售、预售、捆绑等，必须获得凯峰数据的书面授权和许可。
+<br/>
+3.4保留权利：本协议未明示授权的其他一切权利仍归凯峰数据所有，用户使用其他权利时必须另外取得凯峰数据的书面同意。
+<br/>
+4.用户使用须知
+<br/>
+4.1本产品提供股票、公告、新闻浏览、搜索、分享、评论、查看股票详细信息等相关功能。
+<br/>
+4.1.1本产品向用户提供的新闻聚合是通过搜索技术收集互联网相关新闻资源在本产品做集中展示，内容著作权归原作者或发表机构，不代表凯峰数据立场。
+<br/>
+4.1.2用户经过付费并获得授权后，使用本产品所包含的股票，公告，新闻浏览、搜索、分享、评论、查看股票详细信息等会产生相应的流量费并由运营商收取。
+<br/>
+4.1.3本产品提供新闻搜索、浏览功能，便于用户浏览由系统自动抓取、分类排列的新闻或搜索互联网新闻。<br/>
+4.1.4本产品对部分原网页做了网页转码处理，保证新闻浏览的一致性和稳定性，以提升用户体验。
+<br/>
+4.2本产品仅适用于产品页面公布支持的浏览器，如果用户在非指定浏览器环境下使用本产品，可能出现部分功能无法正常使用的情况。
+<br/>
+4.3本产品由凯峰数据提供支持。
+<br/>
+4.4 产品的修改和升级：凯峰数据保留随时未经特别通知为用户提供本产品的修改、升级版本的权利。用户再次登录即可使用最新版本的产品功能。
+<br/>
+4.5 本产品不含有任何旨在破坏用户数据和获取用户隐私信息的恶意代码，不含有任何监控、监视用户计算机的功能代码，不会泄漏用户隐私。
+<br/>
+4.6用户应在遵守法律及本协议的前提下使用本产品。用户无权实施包括但不限于下列危害本产品的行为：<br/>
+4.6.1未经凯峰数据授权，用其他任何方式使用本产品；<br/>
+4.6.2故意避开或者破坏著作权人为保护本产品著作权而采取的技术措施；<br/>
+4.6.3破坏本产品的正常运行，故意传播计算机病毒等破坏性程序；<br/>
+4.6.4其他任何危害计算机信息网络安全的行为；
+<br/>
+4.7用户的账号作为用户获得凯峰数据服务的唯一性标识，需对于账号妥善保管，如因用户故意或者过失导致账号丢失，引起用户自身的任何损失，凯峰数据不承担任何由此产生的一切法律责任，因账号丢失引起的凯峰数据的任何损失，凯峰数据保留终止用户使用权限及要求用户赔偿的权利；
+<br/>
+4.8对于从非凯峰数据指定站点访问本产品，凯峰数据无法保证该产品访问路径是否感染计算机病毒、是否隐藏有伪装的特洛伊木马程序或者黑客服务，使用此类渠道，将可能导致不可预测的风险，建议用户不要在非官方渠道注册、登录、使用，凯峰数据不承担任何由此产生的一切法律责任。
+<br/>
+4.9隐私权保护<br/>
+凯峰数据制定了严格的用户上传信息处理规则和安全保护措施来确保不超越目的和范围收集用户信息，确保用户上传信息的安全，确保用户上传信息不被滥用。除征得用户明确同意或法律政策监管明确规定外，凯峰数据不会向任何第三方提供用户上传文件及信息。
+<br/>
+5.免责与责任限制
+<br/>
+5.1用户确认，其知悉本产品所有功能及凯峰数据为实现本产品各功能所进行的必要操作，其根据自身需求自愿选择使用本产品及相关服务，因使用本产品及相关服务所存在的风险和一切后果将完全由其自己承担，凯峰数据不承担任何责任。
+<br/>
+5.2凯峰数据对产品提供或通过产品获取的任何内容的正确性、非侵权、及适用性不作任何明示或默示保证，也不承担任何责任。用户确认其不会就产品的内容向凯峰数据提出任何主张和索赔。
+<br/>
+5.3本产品涉及的所有信息和服务来自于凯峰数据以及交易所或第三方资讯商，凯峰数据及其他信息提供方竭力确保所提供信息的准确和可靠度，但不能保证其绝对准确和可靠，且亦不会承担因任何不准确或遗漏而引起的任何损失或损害的责任，本终端转发的全部交易所行情仅供参考。同时，凯峰数据提供本产品作为辅助工具，不因工具缺陷承担用户由此导致的直接或间接损失。用户应了解本终端的实际功能、信息来源、固有缺陷和使用风险。
+<br/>
+5.4本产品经过详细的测试，但不能保证与所有的浏览器终端完全兼容，不能保证本产品完全没有错误，不能保证本产品的性能和结果。如出现产品故障，用户可联系凯峰数据获得技术支持，凯峰数据尽合理努力处理产品故障。
+<br/>
+5.5对因使用或不能使用本产品所产生的一切损害及风险，包括但不限于直接或间接的人身损害、经济损失、惩罚性赔偿，凯峰数据不承担任何责任，也不对任何第三方的索赔或费用承担任何责任。
+<br/>
+5.6对于因电信系统或互联网通讯故障、技术问题、计算机故障或病毒、信息损坏或丢失、计算机系统问题或其它任何不可抗力原因而产生的一切损失，凯峰数据不承担任何责任。
+<br/>
+5.7用户违反本协议规定，对凯峰数据造成损害的，凯峰数据有权采取包括但不限于停止提供服务、限制使用、追究法律责任等措施。
+<br/>
+6.法律及争议解决
+<br/>
+6.1本协议适用中华人民共和国法律。
+<br/>
+6.2因本协议引起的或与本协议有关的任何争议，各方应友好协商解决；协商不成的，任何一方均可将有关争议提交至北京仲裁委员会并按照其届时有效的仲裁规则仲裁，依照中华人民共和国法律予以处理，或提交凯峰数据总部所在地人民法院审判。
+<br/>
+7.其他条款
+<br/>
+7.1如果本协议中的任何条款无论因何种原因完全或部分无效或不具有执行力，或违反任何适用的法律，不影响本协议的其余条款的效力。
+<br/>
+7.2凯峰数据有权随时根据有关法律、法规的变化以及公司经营状况和经营策略的调整等修改本协议。修改后的协议会在凯峰数据产品官方网站（https://www.kaifengdata.com）及三板慧产品中公布。当发生有关争议时，以最新的协议文本为准。如果不同意改动的内容，用户可以终止使用本产品。如果用户继续使用本产品，则视为您接受本协议的变动。
+<br/>
+7.3凯峰数据在适用法律的最大范围内对本协议拥有解释权与修改权。
+		        	</div>
+		        </div>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		<script src="../../assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+		<script src="../../assets/global/plugins/jquery-migrate.min.js" type="text/javascript"></script>
+		<script src="../../assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+		<script src="../../assets/global/scripts/kfStyle.js" type="text/javascript"></script>
+		<script src="../../assets/global/plugins/jquery.cookie.js" type="text/javascript"></script>
+		<script src="../../assets/global/scripts/application.js" type="text/javascript"></script>
+		<script src="../../assets/global/scripts/user/register.js" type="text/javascript"></script>
+		<script src="../../assets/admin/layout/scripts/layout.js" type="text/javascript"></script>
+		<script src="../../assets/admin/layout/scripts/demo.js" type="text/javascript"></script>
+		<!--<script src="../../assets/admin/pages/scripts/login.js" type="text/javascript"></script>-->
+		<script type="text/javascript">
+			$(function(){
+				verifyReg();//刷新验证码
+			})
+		</script>
+	</body>
+
+</html>

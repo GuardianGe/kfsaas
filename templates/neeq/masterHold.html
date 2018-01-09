@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en" class="no-js">
+	<!--<![endif]-->
+	<!-- BEGIN HEAD -->
+
+	<head>
+		<meta charset="utf-8" />
+		<title>主办券商｜三板慧｜金融大数据</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta content="width=device-width, initial-scale=1" name="viewport" />
+		<meta content="" name="description" />
+		<meta content="" name="author" />
+		<link href="../../assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+		<link href="../../assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+		<link href="../../assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+		<link href="../../assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" />
+		<link href="../../assets/global/css/components.css" id="style_components" rel="stylesheet" type="text/css" />
+		<link href="../../assets/global/css/plugins.css" rel="stylesheet" type="text/css" />
+		<link href="../../assets/admin/layout/css/layout.css" rel="stylesheet" type="text/css" />
+		<link href="../../assets/admin/layout/css/themes/darkblue.css" rel="stylesheet" type="text/css" id="style_color" />
+		<link rel="stylesheet" type="text/css" href="../../assets/admin/layout/css/paging.css">
+		<link href="../../assets/admin/layout/css/custom.css" rel="stylesheet" type="text/css" />
+	</head>
+
+	<body class="page-header-fixed page-quick-sidebar-over-content page-container-bg-solid">
+		<!--头部-->
+		<div class="page-header navbar navbar-fixed-top">
+			<div class="page-header-inner">
+				<div class="page-logo">
+					<a href="/index.php/companylisted/index">
+						<!--<img src="../../assets/admin/layout/img/logo.png" alt="logo" class="logo-default" />-->
+					</a>
+
+					<div class="menu-toggler sidebar-toggler hide">
+					</div>
+				</div>
+			</div>
+			<a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse">
+			</a>
+			<div class="top-menu">
+				<ul class="nav navbar-nav pull-right">
+					<li class="dropdown dropdown-extended dropdown-notification mgr20" id="header_notification_bar">
+						<a href="/account/buy" class="dropdown-toggle" style="height:55px">
+							<i class="fa fa-dollar"></i>
+							<span class="badge badge-default" style="right: -18px">购买</span>
+						</a>
+					</li>
+					<li class="dropdown dropdown-user">
+						<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+							<img alt="" class="img-circle" src="" />
+							<span class="username username-hide-on-mobile"></span>
+							<i class="fa fa-angle-down"></i>
+						</a>
+						 <ul class="dropdown-menu dropdown-menu-default">
+                            <li>
+                                <a href="/account/info">
+                                    <i class="icon-user"></i>我的三板慧</a>
+                            </li>
+                            <li class="pay">
+                                <a href="JavaScript:void(0)" id="dk">
+                                    <i class="fa fa-check-square-o"></i><span>每日打卡</span></a>
+                            </li>
+                            <li>
+                                <a href="/account/modifyPassword">
+                                    <i class="fa fa-pencil-square-o"></i>修改密码 </a>
+                            </li>
+                            <li>
+                                <a href="/account/version">
+                                    <i class="fa fa-file-o"></i>版本介绍 
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/account/feedback">
+                                    <i class="icon-envelope-open"></i>意见反馈
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/user/logout">
+                                    <i class="fa fa-sign-out"></i>退出 </a>
+                            </li>
+                        </ul>
+					</li>
+				</ul>
+			</div>
+			<!--PC端搜索框-->
+			 <!--PC端搜索框-->
+                <div class="pc-search hidden-xs hidden-sm">
+                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                    <input type="text" name="" id="searchBlur" value="" placeholder="搜索 公司/基金/资料" />
+                    <div class="searchList">
+                        <ul></ul>
+                    </div>
+                </div>
+		</div>
+		</div>
+		<div class="clearfix"></div>
+		<!--content-->
+		<div class="page-container">
+			<div class="page-sidebar-wrapper">
+				<!--侧边栏-->
+				<div class="page-sidebar navbar-collapse collapse">
+					<ul class="page-sidebar-menu " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
+						<li class="sidebar-toggler-wrapper">
+							<div class="sidebar-toggler">
+							</div>
+						</li>
+						<!--mobile搜索框-->
+						<li class="sidebar-search-wrapper visible-sm-inline-block visible-xs-inline-block">
+							<form class="sidebar-search " action="extra_search.html" method="POST">
+								<a href="javascript:;" class="remove">
+									<i class="icon-close"></i>
+								</a>
+								<div class="input-group">
+									<input type="text" class="form-control mobile-ipt" placeholder="搜索">
+									<span class="input-group-btn">
+							<a href="javascript:;" class="btn submit"><i class="icon-magnifier"></i></a>
+							</span>
+								</div>
+							</form>
+						</li>
+						<li class="start active open">
+							<a href="javascript:;">
+								<i class="icon-home"></i>
+								<span class="title newThree">新三板</span>
+								<span class="selected"></span>
+								<span class="arrow open"></span>
+							</a>
+							<ul class="sub-menu">
+								<li>
+									<a href="挂牌公司列表页.html">
+										<!--<i class="icon-bar-chart"></i>-->
+										挂牌公司</a>
+								</li>
+								<li>
+									<a href="公告.html">
+										<!--<i class="icon-bulb"></i>-->
+										公告</a>
+								</li>
+								<li class="active">
+									<a href="定增.html">
+										<!--<i class="icon-graph"></i>-->定增</a>
+								</li>
+								<li>
+									<a href="交易.html">
+										<!--<i class="icon-graph"></i>-->
+										交易</a>
+								</li>
+								<li>
+									<a href="#">
+										<!--<i class="icon-graph"></i>-->
+										主办券商</a>
+								</li>
+								<li>
+									<a href="#">
+										<!--<i class="icon-graph"></i>-->
+										政策法规</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<i class="icon-basket"></i>
+								<span class="title newtz">投资</span>
+								<span class="arrow "></span>
+							</a>
+							<ul class="sub-menu">
+								<li>
+									<a href="投资事件.html">
+										<!--<i class="icon-home"></i>-->
+										投资事件</a>
+								</li>
+								<li>
+									<a href="投资机构列表页.html">
+										<!--<i class="icon-basket"></i>-->
+										投资机构</a>
+								</li>
+								<li>
+									<a href="#">
+										<!--<i class="icon-tag"></i>-->
+										私募基金管理人</a>
+								</li>
+
+							</ul>
+						</li>
+						<li>
+							<a href="#">
+								<i class="icon-rocket"></i>
+								<span class="title newNew">新闻</span>
+								<span class="arrow "></span>
+							</a>
+
+						</li>
+						<li>
+							<a href="javascript:;">
+								<i class="icon-diamond"></i>
+								<span class="title newyb">研报</span>
+								<span class="arrow "></span>
+							</a>
+
+						</li>
+						<li>
+							<a href="#">
+								<i class="icon-puzzle"></i>
+								<span class="title newrel">关系查找</span>
+								<span class="arrow "></span>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<i class="icon-basket"></i>
+								<span class="title newlogin">登录和注册</span>
+								<span class="arrow "></span>
+							</a>
+							<ul class="sub-menu">
+								<li>
+									<a href="登录.html">
+										<!--<i class="icon-home"></i>-->
+										登录</a>
+								</li>
+								<li>
+									<a href="用户注册1.html">
+										<!--<i class="icon-basket"></i>-->用户注册1</a>
+								</li>
+								<li>
+									<a href="用户注册2.html">
+										<!--<i class="icon-tag"></i>-->用户注册2</a>
+								</li>
+								<li>
+									<a href="注册成功3.html">
+										<!--<i class="icon-tag"></i>-->注册成功3</a>
+								</li>
+
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="page-content-wrapper">
+				<div class="page-content">
+					<!--页面标题-->
+					<div class="page-bar">
+						<ul class="page-breadcrumb">
+							<li>
+								<i class="fa fa-home"></i>
+								<a href="index.html">新三板</a>
+								<i class="fa fa-angle-right"></i>
+							</li>
+							<li>
+								<a class="blueFont" href="#">主办券商</a>
+							</li>
+							<li class='nowTimeTop'>
+								北京时间：<span id="nowDate"></span>
+							</li>
+						</ul>
+					</div>
+					<div class="page-content-par">
+					<!--页面2级标题-->
+						<div class="row mod-title">
+							<div class="col-md-12">券商详情 <span class="masterDetail"></span></div>
+						</div>
+						<div class="page-height">
+							
+						</div>
+						<!--下面表单开始-->
+						<div class="portlet box darkCyan">
+							<ul class="list-inline overLi-btn overLi-btn-link col-show">
+								<li class="active" name="tab0">
+									<a href="#tab_0" data-toggle="tab">公司概况 </a>
+								</li>
+								<!--<li class="">
+									<a href="#tab_1" data-toggle="tab">业务动态 </a>
+								</li>-->
+								<li class="" name="tab3">
+									<a href="#tab_3" data-toggle="tab">推荐挂牌</a>
+								</li>
+								<li class="" name="tab4">
+									<a href="#tab_4" data-toggle="tab">做市业务</a>
+								</li>
+								<li class="" name="tab5">
+									<a href="#tab_5" data-toggle="tab">挂牌且做市</a>
+								</li>
+								<li class="overli-noborder" name="tab2">
+									<a href="#tab_2" data-toggle="tab">部门设置</a>
+								</li>
+							</ul>
+							<div class="tab-content pdt">
+								<div class="tab-pane active" id="tab_0">
+									<div class="maskInAjax">
+										<div class="row" id="profile" style="line-height:30px;">
+										</div>
+									</div>
+								</div>
+								<div class="tab-pane" id="tab_1">
+									<div class="row maskInTable">
+										<div class="col-md-4">
+											<div class="table-scrollable">
+												<table class="table table-striped table-bordered table-hover">
+													<tbody id="newsFour">
+
+													</tbody>
+												</table>
+											</div>
+										</div>
+										<div class="col-md-4">
+											<div class="table-scrollable">
+												<table class="table table-striped table-bordered table-hover">
+													<tbody id="newsFive">
+
+													</tbody>
+												</table>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="tab-pane" id="tab_3">
+									<div class="row mod-con-ipt">
+										<div class="col-sm-2 contan-search">
+											<input placeholder="名称" type="text" class="form-control form-filter input-sm recomKey">
+										</div>
+										<div class="col-sm-4">
+											<button class="search btn-ipt" id="recomKeywords">查询</button>
+											<button class="search btn-ipt btn-ipts" id="recomKeywordsReset">重置</button>
+										</div>
+									</div>
+									<div class="portlet box darkCyan">
+										<div class="portlet-body maskInTable" id="maskdata">
+											<div class="table-scrollable">
+												<table class="table table-striped table-bordered table-hover dataTable no-footer" id="sample_1" role="grid" aria-describedby="sample_1_info">
+													<colgroup>
+														<col width="11%" />
+														<col width="10%" />
+														<!--<col width="10%" />-->
+														<col width="8%" />
+														<col width="8%" />
+														<col width="7%" />
+														<col width="32%" />
+														<col width="12%" />
+														<col width="12%" />
+													</colgroup>
+													<thead>
+														<tr role="row" class="tr" id="recomLink">
+															<th scope="col">
+																公司名称
+															</th>
+															<th scope="col" name="listing_date_machine">
+																<span>挂牌日期</span>
+																<span class="sort">
+																	 <a href="javascript:void(0)" name="ASC" class="sort-up"></a>
+									                                <a href="javascript:void(0)" name="DESC" class="sort-down bgredB"></a>
+																</span>
+															</th>
+															<!--<th scope="col">
+																业务起始
+															</th>-->
+															<th scope="col">
+																<div class="dropdown dropdown-select2" id="comSelect2">
+																	<a class="dropdown-toggle menu1" id="noteType" role="button" data-toggle="dropdown" href="javascript:void(0)">转让方式<b class="caret"></b></a>
+																	<ul id="menu1" class="dropdown-menu" role="menu" aria-labelledby="drop4" style="min-width: 22px;">
+																		<li role="presentation">
+																			<a role="menuitem" href="javascript:void(0)" name="2">做市</a>
+																		</li>
+																		<li role="presentation">
+																			<a role="menuitem" href="javascript:void(0)" name="1">协议</a>
+																		</li>
+																		<li role="presentation">
+																			<a role="menuitem" tabindex="转让方式" href="javascript:void(0)" name=" ">全部</a>
+																		</li>
+																	</ul>
+																</div>
+															</th>
+															<th scope="col">
+																<div class="dropdown dropdown-select3" id="comSelect1">
+																	<a class="dropdown-toggle menu2" id="noteType" role="button" data-toggle="dropdown" href="javascript:void(0)">市场层级<b class="caret"></b></a>
+																	<ul id="menu2" class="dropdown-menu" role="menu" aria-labelledby="drop4" style="min-width: 22px;">
+																		<li role="presentation">
+																			<a role="menuitem" name="3" href="javascript:void(0)">创新层</a>
+																		</li>
+																		<li role="presentation">
+																			<a role="menuitem" name="4" href="javascript:void(0)">基础层</a>
+																		</li>
+																		<li role="presentation">
+																			<a role="menuitem" tabindex="市场层级" name=" " href="javascript:void(0)">全部</a>
+																		</li>
+																	</ul>
+																</div>
+															</th>
+															<th scope="col">
+																地区
+															</th>
+															<th scope="col">
+																所属行业
+															</th>
+															<th scope="col" name="pe_rate">
+																<span>市盈率</span>
+																<span class="sort">
+																	 <a href="javascript:void(0)" name="ASC" class="sort-up"></a>
+									                                <a href="javascript:void(0)" name="DESC" class="sort-down"></a>
+																</span>
+															</th>
+															<th scope="col" name="equity">
+																<span>市值</span>
+																<span class="sort">
+																	 <a href="javascript:void(0)" name="ASC" class="sort-up"></a>
+									                                <a href="javascript:void(0)" name="DESC" class="sort-down"></a>
+																</span>
+															</th>
+														</tr>
+													</thead>
+													<tbody id="tableOne">
+									
+													</tbody>
+												</table>
+											</div>
+											<!--表单结束-->
+											<div id="pageTool"></div>
+										</div>
+										<!-- END QUICK SIDEBAR -->
+									</div>
+								</div>
+								<div class="tab-pane" id="tab_4">
+									<div class="row mod-con-ipt">
+										<div class="col-sm-2 contan-search">
+											<input placeholder="名称" type="text" class="form-control form-filter input-sm marketKey">
+										</div>
+										<div class="col-sm-4">
+											<button class="search btn-ipt" id="marketKeywords">查询</button>
+											<button class="search btn-ipt btn-ipts" id="marketKeywordsReset">重置</button>
+										</div>
+									</div>
+									<div class="portlet box darkCyan">
+										<div class="portlet-body maskInTable" id="maskdata">
+											<div class="table-scrollable">
+												<table class="table table-striped table-bordered table-hover dataTable no-footer" id="sample_1" role="grid" aria-describedby="sample_1_info">
+													<colgroup>
+														<col width="11%" />
+														<col width="10%" />
+														<!--<col width="10%" />-->
+														<col width="8%" />
+														<col width="7%" />
+														<col width="32%" />
+														<col width="12%" />
+														<col width="12%" />
+													</colgroup>
+													<thead>
+														<tr role="row" class="tr" id="marketLink">
+															<th scope="col">
+																公司名称
+															</th>
+															<th scope="col" name="listing_date_machine">
+																<span>挂牌日期</span>
+																<span class="sort">
+																	 <a href="javascript:void(0)" name="ASC" class="sort-up"></a>
+									                                <a href="javascript:void(0)" name="DESC" class="sort-down bgredB"></a>
+																</span>
+															</th>
+															<!--<th scope="col">
+																业务起始
+															</th>-->
+															<th scope="col">
+																<div class="dropdown dropdown-select3" id="comSelect3">
+																	<a class="dropdown-toggle menu3" id="noteType" role="button" data-toggle="dropdown" href="javascript:void(0)">市场层级<b class="caret"></b></a>
+																	<ul id="menu3" class="dropdown-menu" role="menu" aria-labelledby="drop4" style="min-width: 22px;">
+																		<li role="presentation">
+																			<a role="menuitem" name="3" href="javascript:void(0)">创新层</a>
+																		</li>
+																		<li role="presentation">
+																			<a role="menuitem" name="4" href="javascript:void(0)">基础层</a>
+																		</li>
+																		<li role="presentation">
+																			<a role="menuitem" tabindex="市场层级" name=" " href="javascript:void(0)">全部</a>
+																		</li>
+																	</ul>
+																</div>
+															</th>
+															<th scope="col">
+																地区
+															</th>
+															<th scope="col">
+																所属行业
+															</th>
+															<th scope="col" name="pe_rate">
+																<span>市盈率</span>
+																<span class="sort">
+																	 <a href="javascript:void(0)" name="ASC" class="sort-up"></a>
+									                                <a href="javascript:void(0)" name="DESC" class="sort-down"></a>
+																</span>
+															</th>
+															<th scope="col" name="equity">
+																<span>市值</span>
+																<span class="sort">
+																	 <a href="javascript:void(0)" name="ASC" class="sort-up"></a>
+									                                <a href="javascript:void(0)" name="DESC" class="sort-down"></a>
+																</span>
+															</th>
+														</tr>
+													</thead>
+													<tbody id="tableTow">
+									
+													</tbody>
+												</table>
+											</div>
+											<!--表单结束-->
+											<div id="pageTool2"></div>
+										</div>
+										<!-- END QUICK SIDEBAR -->
+									</div>
+								</div>
+								<div class="tab-pane" id="tab_5">
+									<div class="row mod-con-ipt">
+										<div class="col-sm-2 contan-search">
+											<input placeholder="名称" type="text" class="form-control form-filter input-sm listingKey">
+										</div>
+										<div class="col-sm-4">
+											<button class="search btn-ipt" id="listingKeywords">查询</button>
+											<button class="search btn-ipt btn-ipts" id="listingKeywordsReset">重置</button>
+										</div>
+									</div>
+									<div class="portlet box darkCyan">
+										<div class="portlet-body maskInTable" id="maskdata">
+											<div class="table-scrollable">
+												<table class="table table-striped table-bordered table-hover dataTable no-footer" id="sample_1" role="grid" aria-describedby="sample_1_info">
+													<colgroup>
+														<col width="11%" />
+														<col width="10%" />
+														<!--<col width="10%" />-->
+														<col width="8%" />
+														<col width="7%" />
+														<col width="32%" />
+														<col width="12%" />
+														<col width="12%" />
+													</colgroup>
+													<thead>
+														<tr role="row" class="tr" id="listingLink">
+															<th scope="col">
+																公司名称
+															</th>
+															<th scope="col" name="listing_date_machine">
+																<span>挂牌日期</span>
+																<span class="sort">
+																	 <a href="javascript:void(0)" name="ASC" class="sort-up"></a>
+									                                <a href="javascript:void(0)" name="DESC" class="sort-down bgredB"></a>
+																</span>
+															</th>
+															<!--<th scope="col">
+																业务起始
+															</th>-->
+															<th scope="col">
+																<div class="dropdown dropdown-select3" id="comSelect4">
+																	<a class="dropdown-toggle menu4" id="noteType" role="button" data-toggle="dropdown" href="javascript:void(0)">市场层级<b class="caret"></b></a>
+																	<ul id="menu3" class="dropdown-menu" role="menu" aria-labelledby="drop4" style="min-width: 22px;">
+																		<li role="presentation">
+																			<a role="menuitem" name="3" href="javascript:void(0)">创新层</a>
+																		</li>
+																		<li role="presentation">
+																			<a role="menuitem" name="4" href="javascript:void(0)">基础层</a>
+																		</li>
+																		<li role="presentation">
+																			<a role="menuitem" tabindex="市场层级" name=" " href="javascript:void(0)">全部</a>
+																		</li>
+																	</ul>
+																</div>
+															</th>
+															<th scope="col">
+																地区
+															</th>
+															<th scope="col">
+																所属行业
+															</th>
+															<th scope="col" name="pe_rate">
+																<span>市盈率</span>
+																<span class="sort">
+																	 <a href="javascript:void(0)" name="ASC" class="sort-up"></a>
+									                                <a href="javascript:void(0)" name="DESC" class="sort-down"></a>
+																</span>
+															</th>
+															<th scope="col" name="equity">
+																<span>市值</span>
+																<span class="sort">
+																	 <a href="javascript:void(0)" name="ASC" class="sort-up"></a>
+									                                <a href="javascript:void(0)" name="DESC" class="sort-down"></a>
+																</span>
+															</th>
+														</tr>
+													</thead>
+													<tbody id="tableThree">
+									
+													</tbody>
+												</table>
+											</div>
+											<!--表单结束-->
+											<div id="pageTool3"></div>
+										</div>
+										<!-- END QUICK SIDEBAR -->
+									</div>
+								</div>
+								
+								<div class="tab-pane" id="tab_2">
+									<div class="row">
+										<div class="col-md-12 ">
+											<div class="msg-wrap">
+												<div class="msg-title">经纪业务</div>
+											</div>
+											<div class="table-scrollable maskInTable">
+												<table class="table table-striped table-bordered table-hover">
+													<thead class="view-tr">
+														<tr class="tr">
+															<th>
+																联络人
+															</th>
+															<th>
+																固定电话
+															</th>
+															<th>
+																传真
+															</th>
+															<th>
+																邮箱
+															</th>
+														</tr>
+													</thead>
+													<tbody id="newsOne">
+														
+													</tbody>
+												</table>
+											</div>
+										</div>
+										<div class="col-md-12 mgt20">
+											<div class="msg-wrap">
+												<div class="msg-title">推荐业务</div>
+											</div>
+											<div class="table-scrollable maskInTable">
+												<table class="table table-striped table-bordered table-hover">
+													<thead class="view-tr">
+														<tr class="tr">
+															<th>
+																联络人
+															</th>
+															<th>
+																固定电话
+															</th>
+															<th>
+																传真
+															</th>
+															<th>
+																邮箱
+															</th>
+														</tr>
+													</thead>
+													<tbody id="newsTwo">
+
+													</tbody>
+												</table>
+											</div>
+										</div>
+										<div class="col-md-12 mgt20" id="newsThree">
+											
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--表单结束-->
+					</div>
+				</div>
+				<!-- 底部 -->
+				<div class="page-footer">
+					<div class="page-footer-inner">
+						&copy;&nbsp;2016&nbsp;北京凯峰数据科技有限公司&nbsp;版权所有&nbsp;|&nbsp;京ICP备16037008号-1
+					</div>
+					<div class="scroll-to-top">
+						<i class="icon-arrow-up"></i>
+					</div>
+				</div>
+				<!--MODAL START-->
+				<div class="modal fade myModal01" id="myModal02" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				  <div class="modal-dialog" style="width:666px;">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				        <h4 class="modal-title" id="myModalLabel">推荐挂牌公司数</h4>
+				      </div>
+				      <div class="modal-body" style="height:350px;">
+				        <div class="province">
+				        	<div class="city-list maskInTable" id="compPop">
+				        		<div class="table-scrollable">
+									<table class="table table-striped table-bordered table-hover table-a">
+										<thead class="view-tr">
+											<tr class="tr">
+												<th style="width:238px">
+													代码
+												</th>
+												<th style="width:215px">
+													简称
+												</th>
+												<th style="width:223px">
+													日期
+												</th>
+												<th>
+													公司状态
+												</th>
+											</tr>
+										</thead>
+										<tbody id="companyNumber">
+											
+										</tbody>
+									</table>
+								</div>
+				        	</div>
+				        	<div id="pageToolOne"></div>
+				        </div>
+				      </div>
+				      <div class="modal-footer">
+				        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+				
+				<div class="modal fade myModal03" id="myModal03" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				  <div class="modal-dialog" style="width:666px;">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				        <h4 class="modal-title" id="myModalLabel">推荐定向发行次数</h4>
+				      </div>
+				      <div class="modal-body">
+				        <div class="province">
+				        	<div class="city-list pdt" id="compPop">
+				        		<div class="table-scrollable maskInTable">
+									<table class="table table-striped table-bordered table-hover table-a">
+										<thead class="view-tr">
+											<tr class="tr">
+												<th>
+													代码
+												</th>
+												<th>
+													名称
+												</th>
+												<th>
+													公司状态
+												</th>
+											</tr>
+										</thead>
+										<tbody id="recommendedNumber">
+											
+										</tbody>
+									</table>
+								</div>
+				        	</div>
+				        	<div id="pageToolTow"></div>
+				        </div>
+				      </div>
+				      <div class="modal-footer">
+				        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+				<!--MODAL END-->
+				<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+				<!-- BEGIN CORE PLUGINS -->
+				<!--[if lte IE 8]><script src="js/libs/selectivizr.js"></script><![endif]-->
+				<!--[if lt IE 9]>
+				<script src="../../assets/global/plugins/respond.min.js"></script>
+				<script src="../../assets/global/plugins/excanvas.min.js"></script> 
+				<![endif]-->
+				<script src="../../assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+				<script src="../../assets/global/plugins/jquery-migrate.min.js" type="text/javascript"></script>
+				<!-- IMPORTANT! Load jquery-ui.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+				<script src="../../assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+				<script src="../../assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+				<script src="../../assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+				<script type="text/javascript" src="../../assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+				<script type="text/javascript" src="../../assets/global/plugins/bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min.js"></script>
+				<!-- BEGIN PAGE LEVEL SCRIPTS -->
+				<script type="text/javascript" src="../../assets/global/plugins/query.js"></script>
+				<script type="text/javascript" src="../../assets/global/plugins/paging.js"></script>
+				<script src="../../assets/global/scripts/kfStyle.js" type="text/javascript"></script>
+				<script src="../../assets/admin/layout/scripts/layout.js" type="text/javascript"></script>
+				<script src="../../assets/global/plugins/jquery.cookie.js" type="text/javascript"></script>
+				<script src="../../assets/admin/layout/scripts/demo.js" type="text/javascript"></script>
+				<script src="../../assets/global/scripts/application.js" type="text/javascript"></script>
+				<script src="../../assets/global/scripts/getTable.js" type="text/javascript"></script>
+				<script src="../../assets/global/scripts/neeq/masterBrokers/masterBrokers.js" type="text/javascript"></script>
+				<script type="text/javascript" src="../../assets/global/plugins/select2.js"></script>
+				<!-- END PAGE LEVEL SCRIPTS -->
+				<script>
+					jQuery(document).ready(function() {
+						KfStyle.init();
+						Layout.init(); 
+						securitiesCompany.securitiesP();
+					});
+				</script>
+	</body>
+	<!-- END BODY -->
+
+</html>

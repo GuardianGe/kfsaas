@@ -1,0 +1,353 @@
+<!--下面表单开始-->
+<div class="">
+	<div class="msg-wrap">
+		<div class="msg-title">市场指数</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<div class="sanban-btn">
+				<div class="active" name="1">三板做市</div>
+				<div class="" name="2">三板成指</div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="sanban-btns">
+			
+				<div class="" >三板IPO指数 <span name="指数成份"></span><a id="exponentEle" class="mgl20">指数成份&gt;&gt;</a></div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6"  style="border-right: 1px solid #eeeeee;">
+			<div class="sanban-z">
+				<div class="shiZhNum">
+					<ul>
+						<li class='neqLi' style="width:100%">
+							<span style="padding-right: 3px;">三板做市（899002）</span>
+							<span id="shiPrice" title="">--</span>
+							<span id="shipercent">--</span>
+							<span id="shiTotal">--</span>
+							<span id="shiTime" style="padding-right: 0px;">--</span>
+							<span id="shiTimes">--</span>
+						</li>
+					</ul>
+				</div>
+				<div class="canvas-list canvas-list-pic mgt10" id="quotesMap">
+					<ul>
+						<li class="active">分时图</li>
+						<li>日线图</li>
+						<li>周线图</li>
+						<li>月线图</li>
+						<li class='c-list-right'>季线图</li>
+					</ul>
+				</div>
+				<div class="canvas-most-wrap">
+					<div class="canvas-most canvas-most01 active">
+						<div id="" class="canvas-position">
+							<div id="sellChart" class="sellCanvas" style="height: 250px;"></div>
+						</div>
+						<div id="" class="canvas-position canvas-position-bar">
+							<div id="barChart" class="sellCanvas" style="height: 150px;"></div>
+						</div>
+					</div>
+					<div class="canvas-most canvas-most02">
+						<div id="" class="canvas-position">
+							<div id="dayChart" class="sellCanvas" style="height: 250px;"></div>
+						</div>
+						<div id="" class="canvas-position canvas-position-bar">
+							<div id="barChartDay" class="sellCanvas" style="height: 150px;"></div>
+						</div>
+					</div>
+					<div class="canvas-most canvas-most03">
+						<div id="" class="canvas-position">
+							<div id="weekChart" class="sellCanvas" style="height: 250px;"></div>
+						</div>
+						<div id="" class="canvas-position canvas-position-bar">
+							<div id="barChartWeek" class="sellCanvas" style="height: 150px;"></div>
+						</div>
+					</div>
+					<div class="canvas-most canvas-most04">
+						<div id="" class="canvas-position">
+							<div id="monthChart" class="sellCanvas" style="height: 250px;"></div>
+						</div>
+						<div id="" class="canvas-position canvas-position-bar">
+							<div id="barChartMonth" class="sellCanvas" style="height: 150px;"></div>
+						</div>
+					</div>
+					<div class="canvas-most canvas-most05">
+						<div id="" class="canvas-position">
+							<div id="quarterChart" class="sellCanvas" style="height: 250px;"></div>
+						</div>
+						<div id="" class="canvas-position canvas-position-bar">
+							<div id="barChartQuarter" class="sellCanvas" style="height: 150px;"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="sanban-c" style="display: none;">
+				<div class="shiZhNum">
+					<ul>
+						<li class='neqLi' style="width:100%">
+							<span style="padding-right: 3px;">三板成指（899001）</span>
+							<span id="zhiPrice">--</span>
+							<span id="zhipercent">--</span>
+							<span id="zhiTotal">--</span>
+							<span id="zhiTime">--</span>
+						</li>
+					</ul>
+				</div>
+				<div class="canvas-list canvas-list-pic2 mgt10" id="quotesMap">
+					<ul>
+						<li class="active">日线图</li>
+						<li>周线图</li>
+						<li>月线图</li>
+						<li class='c-list-right'>季线图</li>
+					</ul>
+				</div>
+				<div class="canvas-most-wrap-right">
+					<div class="canvas-most canvas-most02s active">
+						<div id="" class="canvas-position">
+							<div id="dayChart2" class="sellCanvas" style="height: 250px;"></div>
+						</div>
+						<div id="" class="canvas-position canvas-position-bar">
+							<div id="barChartDay2" class="sellCanvas" style="height: 150px;"></div>
+						</div>
+					</div>
+					<div class="canvas-most canvas-most03s">
+						<div id="" class="canvas-position">
+							<div id="weekChart2" class="sellCanvas" style="height: 250px;"></div>
+						</div>
+						<div id="" class="canvas-position canvas-position-bar">
+							<div id="barChartWeek2" class="sellCanvas" style="height: 150px;"></div>
+						</div>
+					</div>
+					<div class="canvas-most canvas-most04s">
+						<div id="" class="canvas-position">
+							<div id="monthChart2" class="sellCanvas" style="height: 250px;"></div>
+						</div>
+						<div id="" class="canvas-position canvas-position-bar">
+							<div id="barChartMonth2" class="sellCanvas" style="height: 150px;"></div>
+						</div>
+					</div>
+					<div class="canvas-most canvas-most05s">
+						<div id="" class="canvas-position">
+							<div id="quarterChart2" class="sellCanvas" style="height: 250px;"></div>
+						</div>
+						<div id="" class="canvas-position canvas-position-bar">
+							<div id="barChartQuarter2" class="sellCanvas" style="height: 150px;"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="shiZhNum">
+				<ul>
+					<div class="shiZhNum">
+					<ul>
+						<li class='neqLi' style="width:100%">
+							<span style="padding-right: 3px;">NIPO</span>
+							<span id="ipoPrice" title="">--</span>
+							<span id="ipopercent">--</span>
+							<span id="ipoTotal">--</span>
+							<span id="ipoTime" style="padding-right: 0px;">--</span>
+							<span id="ipoTimes">--</span>
+						</li>
+					</ul>
+				</div>
+				</ul>
+			</div>
+			<div class="canvas-list canvas-list-pic3 mgt10" id="quotesMap">
+				<ul>
+					<li class="active">分时图</li>
+					<li>日线图</li>
+					<li>周线图</li>
+					<li>月线图</li>
+					<li class='c-list-right'>季线图</li>
+				</ul>
+			</div>
+			<div class="canvas-most-wrap canvas-most-wrap3">
+				<div class="canvas-most canvas-most01ipo active">
+					<div id="" class="canvas-position">
+						<div id="sellChart3" class="sellCanvas" style="height: 250px;"></div>
+					</div>
+					<div id="" class="canvas-position canvas-position-bar">
+						<div id="barChart3" class="sellCanvas" style="height: 150px;"></div>
+					</div>
+				</div>
+				<div class="canvas-most canvas-most02ipo">
+					<div id="" class="canvas-position">
+						<div id="dayChart3" class="sellCanvas" style="height: 250px;"></div>
+					</div>
+					<div id="" class="canvas-position canvas-position-bar">
+						<div id="barChartDay3" class="sellCanvas" style="height: 150px;"></div>
+					</div>
+				</div>
+				<div class="canvas-most canvas-most03ipo">
+					<div id="" class="canvas-position">
+						<div id="weekChart3" class="sellCanvas" style="height: 250px;"></div>
+					</div>
+					<div id="" class="canvas-position canvas-position-bar">
+						<div id="barChartWeek3" class="sellCanvas" style="height: 150px;"></div>
+					</div>
+				</div>
+				<div class="canvas-most canvas-most04ipo">
+					<div id="" class="canvas-position">
+						<div id="monthChart3" class="sellCanvas" style="height: 250px;"></div>
+					</div>
+					<div id="" class="canvas-position canvas-position-bar">
+						<div id="barChartMonth3" class="sellCanvas" style="height: 150px;"></div>
+					</div>
+				</div>
+				<div class="canvas-most canvas-most05ipo">
+					<div id="" class="canvas-position">
+						<div id="quarterChart3" class="sellCanvas" style="height: 250px;"></div>
+					</div>
+					<div id="" class="canvas-position canvas-position-bar">
+						<div id="barChartQuarter3" class="sellCanvas" style="height: 150px;"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="page-line"></div>
+<div class="rqp-box realQupic">
+	<div class="msg-wrap">
+	<div class="msg-title">成交统计<span class="msg-dateTime cjDate"></span></div>
+	<div class="msg-detail">
+		
+	</div>
+	<ul class="rqp-numwrap">
+		<li>成交家数<span id="realNumjs"></span><span style="margin-left: 2px;" id='traderate'></span></li>
+		<!--<li>成交金额<span id="realNumje"></span></li>-->
+		<li><span style="margin-left: 0;">成交股数</span>
+			<span style="margin-left: 7px;" id='realcjNum'>--</span>
+			<span style="margin-left: 15px;">成交金额</span>
+			<span style="margin-left: 7px;" id='realcjMoney'>--</span>
+			<!--新增-->
+			<span style="margin-left: 15px;">市值最高</span>
+			<a style="padding-left: 7px;" href="javascript:;" class='realCompare' id="realNumzg"></a>
+			<span style="margin-left: 7px;" id='realNumzgCode'></span>
+			<span style="padding-left: 0px;">市值最低</span>
+			<a style="padding-left: 7px;"  href="javascript:;" class='realCompare' id="realNumzd"></a>
+			<span style="margin-left: 7px;" id='realNumzdCode'></span>
+		</li>
+	</ul>
+	<div class="rqp-stomp">
+		<div class="rqp-echarts">
+			<div id="realEcharts" style="width: 100%;height: 200px;"></div>
+		</div>
+		<div class="rqp-echarts">
+			<div id="realEcharts2" style="width: 100%;height: 200px;"></div>
+		</div>
+		<div class="rqp-echarts">
+			<div id="realEcharts3" style="width: 100%;height: 200px;"></div>
+		</div>
+	</div>
+</div>
+</div>
+<div class="page-line"></div>
+<div class="" style="overflow: hidden;">
+	<div class="msg-wrap">
+		<div class="msg-title">排行榜<span class='msg-dateTime' id="regTime"></span></div>
+	</div>
+	<div class="tranPadWrap">
+		<div class=" col-sm-12 col-md-6 tranPad tranPadBorder">
+			<table width="100%" class="tableBlue">
+				<colgroup>
+					<col width="33%" />
+					<col width="33%" />
+					<col width="33%" />
+				</colgroup>
+				<caption style="text-align: center;">股票价格排名</caption>
+				<thead>
+					<tr>
+						<th>代码</th>
+						<th>简称</th>
+						<th>成交价（元）</th>
+					</tr>
+				</thead>
+				<tbody id="guPrice">
+				</tbody>
+			</table>
+		</div>
+		<div class=" col-sm-12 col-md-6  tranPad">
+			<table width="100%" class="tableBlue">
+				<colgroup>
+					<col width="33%" />
+					<col width="33%" />
+					<col width="33%" />
+				</colgroup>
+				<caption style="text-align: center;">成交额排名</caption>
+				<thead>
+					<tr>
+						<th>代码</th>
+						<th>简称</th>
+						<th>成交额（万元）</th>
+					</tr>
+				</thead>
+				<tbody id="guVolume">
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+<div class="page-line"></div>
+<div class="msg-wrap">
+	<div class="msg-title">交易异动<span class='msg-dateTime' id='tradTransferDate'></span></div>
+</div>
+<div class="portlet box darkCyan">
+	<div class="portlet-body maskInTable" id="maskdata">
+		<div class="table-scrollable table-scrollMoney">
+			<table class="table table-striped table-bordered table-hover dataTable no-footer" id="tableOne_1" role="grid" aria-describedby="sample_1_info">
+				<colgroup>
+					<col width="10%" />
+					<col width="15%" />
+					<col width="15%" />
+					<col width="15%" />
+					<col width="15%" />
+					<col width="10%" />
+					<col width="15%" />
+				</colgroup>
+				<thead>
+					<tr role="row" class="tr">
+						<th name="">
+							异动时间
+						</th>
+						<th name="">
+							代码
+						</th>
+						<th name="">
+							简称
+						</th>
+						<th name="">
+							最新成交（元）
+						</th>
+						<th name="">
+							成交金额（万元）
+						</th>
+						<th name="">
+							涨跌幅（%）
+						</th>
+						<th name="">
+							异动类型
+						</th>
+						<th name="" style="display: none;">
+							id
+						</th>
+					</tr>
+				</thead>
+				<tbody id="tablePicture">
+
+				</tbody>
+			</table>
+		</div>
+		<!--表单结束-->
+		<div id="pageToolPicture"></div>
+	</div>
+	<!-- END QUICK SIDEBAR -->
+</div>
+<script type="text/javascript">
+	$.getScript("../../assets/global/scripts/neeq/realQuotes/realQuotesPicture.js").done(function(){TranChange.init();});
+</script>

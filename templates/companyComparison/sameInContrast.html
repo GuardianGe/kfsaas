@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en" class="no-js">
+	<!--<![endif]-->
+	<!-- BEGIN HEAD -->
+
+	<head>
+		<meta charset="utf-8" />
+		<title>同行对比</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta content="width=device-width, initial-scale=1" name="viewport" />
+		<meta content="" name="description" />
+		<meta content="" name="author" />
+		<link href="../../assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+		<link href="../../assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+		<link href="../../assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+		<link href="../../assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" />
+		<link href="../../assets/global/css/components.css" id="style_components" rel="stylesheet" type="text/css" />
+		<link href="../../assets/global/css/plugins.css" rel="stylesheet" type="text/css" />
+		<link href="../../assets/admin/layout/css/layout.css" rel="stylesheet" type="text/css" />
+		<link href="../../assets/admin/layout/css/themes/darkblue.css" rel="stylesheet" type="text/css" id="style_color" />
+		<link rel="stylesheet" type="text/css" href="../../assets/admin/layout/css/paging.css">
+		<link href="../../assets/admin/layout/css/custom.css" rel="stylesheet" type="text/css" />
+		<link href="../../assets/admin/layout/css/content.css" rel="stylesheet" type="text/css" />
+		<!-- END THEME STYLES -->
+	</head>
+
+	<body class="page-header-fixed page-quick-sidebar-over-content page-container-bg-solid">
+		<div class="modal fade myModal01" id="myModal02" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+		        <h4 class="modal-title" id="myModalLabel">主办券商</h4>
+		      </div>
+		      <div class="modal-body">
+		        <div class="province">
+		        	<div class="province-ul">
+		        		<ul>
+		        			<li>A</li>
+		        			<li>B</li>
+		        			<li>C</li>
+		        			<li>D</li>
+		        			<li>E</li>
+		        			<li>F</li>
+		        			<li>G</li>
+		        			<li>H</li>
+		        			<li>I</li>
+		        			<li>J</li>
+		        			<li>K</li>
+		        			<li>L</li>
+		        			<li>M</li>
+		        			<li>N</li>
+		        			<li>O</li>
+		        			<li>P</li>
+		        			<li>Q</li>
+		        			<li>R</li>
+		        			<li>S</li>
+		        			<li>T</li>
+		        			<li>U</li>
+		        			<li>V</li>
+		        			<li>W</li>
+		        			<li>X</li>
+		        			<li>Y</li>
+		        			<li>Z</li>
+		        			<li class="provinceLi">全部</li>
+		        		</ul>
+		        		<!--<input type="text" name="" id="" value="" placeholder="可输入拼音汉字查找"/>-->
+		        	</div>
+		        	<div class="city-list" id="compPop">
+		        		<ul>
+		        			
+		        		</ul>
+		        	</div>
+		        </div>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+		        <button type="button" class="btn default" id="compPopspecailSave">确定</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		<!-- BEGIN HEADER -->
+		<div class="page-header navbar navbar-fixed-top">
+			<!-- BEGIN HEADER INNER -->
+			<div class="page-header-inner">
+				<!-- BEGIN LOGO -->
+				<div class="page-logo">
+					<a href="/index.php/companylisted/index">
+						<img src="../../assets/admin/layout/img/logo.png" alt="logo" class="logo-default" />
+					</a>
+					<div class="menu-toggler sidebar-toggler hide">
+					</div>
+				</div>
+				<!-- END LOGO -->
+
+				<!-- BEGIN RESPONSIVE MENU TOGGLER -->
+				<a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse">
+				</a>
+
+				<div class="top-menu">
+				<ul class="nav navbar-nav pull-right">
+					<li class="dropdown dropdown-extended dropdown-inbox" id="header_inbox_bar">
+						<a href="javascript:;" class="dropdown-toggle myMails"  data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+							<span class="myMail"></span>
+							<span class="badge badge-default letterN"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li class="external">
+								<h3>你有 <span class="bold letterNs"></span>条新消息</h3>
+								<a href="">查看全部</a>
+							</li>
+							<li>
+								<ul class="dropdown-menu-list scroller letterList" data-handle-color="#637283">
+									
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li class="dropdown dropdown-extended dropdown-notification" id="header_notification_bar">
+		                <a href="/account/collection" class="dropdown-toggle myHaves" style="height:55px">
+		                    <span class="myHave"></span>
+		                    <span class="badge badge-default" style="right: 14px">20</span>
+		                </a>
+		            </li>
+					<li class="dropdown dropdown-extended dropdown-notification mgr20" id="header_notification_bar">
+						<a href="/account/buy" class="dropdown-toggle myBuys" style="height:55px;padding-right: 10px;">
+							<span class="myBuy"></span>
+							<!--<span class="badge badge-default" style="right: 2px">购买</span>-->
+						</a>
+					</li>
+					<li class="dropdown dropdown-user" style="margin-right: 30px;">
+						<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+							<img alt="" class="img-circle" src="http://user.kaifengdata.com/man.png" />
+							<span class="username username-hide-on-mobile">
+					齐天大圣 </span>
+							<i class="fa fa-angle-down"></i>
+						</a>
+						 <ul class="dropdown-menu dropdown-menu-default">
+                                <li>
+                                    <a href="/account/info" style="border-top: 0;">
+                                        <span class="selectOne selectOne01"></span>我的三板慧</a>
+                                </li>
+                                <li class="pay">
+                                    <a href="JavaScript:void(0)" id="dk">
+                                        <i class="selectOne selectOne02"></i><span style="margin-left:10px;">每日打卡</span></a>
+                                </li>
+                                <li>
+                                    <a href="/account/modifyPassword">
+                                        <span class="selectOne selectOne03"></span>修改密码 </a>
+                                </li>
+                                <li>
+                                    <a href="/account/version">
+                                        <span class="selectOne selectOne04"></span>版本介绍 
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/account/feedback">
+                                        <span class="selectOne selectOne05"></span>意见反馈
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/user/logout">
+                                        <span class="selectOne selectOne06"></span>退&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;出 </a>
+                                </li>
+                            </ul>
+					</li>
+				</ul>
+			</div>
+				<!-- END TOP NAVIGATION MENU -->
+				 <!--PC端搜索框-->
+               <div class="pc-search hidden-xs hidden-sm">
+                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                    <input type="text" name="" id="searchBlur" value="" placeholder="搜索公司，基金，资料" />
+                    <div class="searchList">
+                        <ul></ul>
+                    </div>
+                </div>
+			</div>
+			<!-- END HEADER INNER -->
+		</div>
+		<!-- END HEADER -->
+		<div class="clearfix">
+		</div>
+		<!-- BEGIN CONTAINER -->
+		<div class="page-container">
+			<!-- BEGIN SIDEBAR -->
+			<div class="page-sidebar-wrapper">
+				<div class="page-sidebar navbar-collapse collapse">
+					<ul class="page-sidebar-menu " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
+						<li class="sidebar-toggler-wrapper">
+							<div class="sidebar-toggler">
+							</div>
+						</li>
+						<li class="sidebar-search-wrapper">
+							<form class="sidebar-search " action="extra_search.html" method="POST">
+								<a href="javascript:;" class="remove">
+									<i class="icon-close"></i>
+								</a>
+								<div class="input-group">
+									<input type="text" class="form-control" placeholder="搜索">
+									<span class="input-group-btn">
+							<a href="javascript:;" class="btn submit"><i class="icon-magnifier"></i></a>
+							</span>
+								</div>
+							</form>
+							<!-- END RESPONSIVE QUICK SEARCH FORM -->
+						</li>
+						<li class="start active open">
+							<a href="javascript:;">
+								<span class="menuOne menuOne01"></span>
+								<span class="badge badge-danger badgeOver badgeOverBlue">新</span>
+								<span class="title">新三板</span>
+								<span class="selected"></span>
+								<span class="arrow open"></span>
+							</a>
+							<ul class="sub-menu">
+								<li class="active">
+									<a class='menuTwo01' href="挂牌公司列表页.html">
+										<span class="badge badge-danger badgeOver badgeOverBlue">新</span>
+										市场概览
+									</a>
+								</li>
+								<li class="">
+									<a class='menuTwo02' href="挂牌公司列表页.html">
+										<span class="badge badge-danger badgeOver badgeOverBlue">新</span>
+										挂牌公司
+									</a>
+								</li>
+								<li>
+									<a class='menuTwo03' href="公告.html">公&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;告</a>
+								</li>
+								<li>
+									<a class='menuTwo04' href="定增.html">定&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;增</a>
+								</li>
+								<li>
+									<a class='menuTwo05' href="交易.html">交&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;易</a>
+								</li>
+								<li>
+									<a class='menuTwo06' href="#">主办券商</a>
+								</li>
+								<li>
+									<a class='menuTwo07' href="#">政策法规</a>
+								</li>
+								<li>
+									<a class='menuTwo-real' href="#">实时行情</a>
+								</li>
+								<li class=''>
+									<a class='menuTwo-shareMoney' href="投资事件.html">分&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;红</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<span class="menuOne menuOne02"></span>
+								<span class="title">一级市场</span>
+								<span class="selected"></span>
+								<span class="arrow "></span>
+							</a>
+							<ul class="sub-menu">
+								<li>
+									<a class='menuTwo08' href="投资事件.html">投资事件</a>
+								</li>
+								<li>
+									<a class='menuTwo09' href="投资机构列表页.html">投资机构</a>
+								</li>
+								<li>
+									<a class='menuTwo10' href="#">私募基金管理人</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<span class="menuOne menuOne03"></span>
+								<span class="title">新&nbsp;&nbsp;&nbsp;闻</span>
+								<span class="selected"></span>
+								<span class="arrow "></span>
+							</a>
+							<ul class="sub-menu">
+								<li>
+									<a class='menuTwo11' href="投资事件.html">新闻详情</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<span class="menuOne menuOne04"></span>
+								<span class="title">研&nbsp;&nbsp;&nbsp;报</span>
+								<span class="selected"></span>
+								<span class="arrow "></span>
+							</a>
+							<ul class="sub-menu">
+								<li>
+									<a class='menuTwo12' href="投资事件.html">研报列表</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<span id="badgeOver" class="badge badge-danger">新</span>
+								<span class="menuOne menuOne05"></span>
+								<span class="title">搜案列</span>
+								<span class="selected"></span>
+								<span class="arrow "></span>
+							</a>
+							<ul class="sub-menu">
+								<li>
+									<a class='menuTwo13' href="投资事件.html">案例搜索</a>
+								</li>
+								<li>
+									<a class='menuTwo14' href="投资事件.html">高级搜索</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<span id="badgeOver" class="badge badge-danger">新</span>
+								<span class="menuOne menuOne-vip"></span>
+								<span class="title">IPO监控</span>
+								<span class="selected"></span>
+								<span class="arrow"></span>
+							</a>
+							<ul class="sub-menu">
+								<li>
+									<a class='menuTwo-vip' href="javascript:void(0);">拟IPO探测雷达</a>
+								</li>
+								<li>
+									<a class='menuTwo-iopOver' href="javascript:void(0);">企业分析概览</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<!-- END SIDEBAR MENU -->
+				</div>
+			</div>
+			<!-- END SIDEBAR -->
+			<!-- BEGIN CONTENT -->
+			<div class="page-content-wrapper">
+				<div class="page-content">
+					<!-- BEGIN PAGE HEADER-->
+					<div class="page-bar">
+						<ul class="page-breadcrumb">
+							<li>
+								<i class="fa fa-home"></i>
+								慧工具
+								<i class="fa fa-angle-right"></i>
+							</li>
+							<li>
+								<a id="searchUrl" href="javascript:void(0)">企业对比</a>
+								<i class="fa fa-angle-right"></i>
+							</li>
+							<li>同行对比</li>
+							<li class='nowTimeTop'>
+								北京时间：<span id="nowDate"></span>
+							</li>
+						</ul>
+					</div>
+					<div class="page-content-par tab-content pageSame">
+					<div class="row mod-title">
+						<div class="col-md-12">同行对比</div>
+					</div>
+					<div class="page-height"></div>
+					<ul class="list-inline overLi-btn overLi-btn-link col-show">
+						<li class="active">
+							<a href="javascript:;">同行对比 </a>
+						</li>
+						<li class="">
+							<a href="javascript:;">公司对比 </a>
+						</li>
+						<li  class="overli-noborder">
+							<a href="javascript:;">我的对比</a>
+						</li>
+					</ul>
+					<div class="row mod-con-ipt" style="margin-bottom: 15px;">
+						<div class="col-sm-2 contan-search"  style="position: relative;">
+							<input placeholder="代码/简称" id="codeKeyWord" type="text" class="form-control form-filter input-sm" name="product_id">
+							<div class="codeList codeListSame">
+                   		 		<ul></ul>
+                			</div>
+						</div>
+						<div class="compBtn" style="width:95px;display: none;">
+							<button class="search  btn-ipt" id="compBtn">查询</button>
+							<!--<button class="search  btn-ipt btn-ipts" id="compReset">重置</button>-->
+						</div>
+						<span class="codeHideSame"></span>
+					</div>
+					<div class="row allList" id="compQs">
+						<div class="hang-title">
+							<span>指标模板</span>
+						</div>
+						<ul class="list-inline" id="" style="display: inline-block;">
+							<li class="hang-active"  name="">默认模板</li>
+							
+							<!--<li class="hang-more" data-toggle="modal" data-target="#myModal02">更多</li>-->
+						</ul>
+					</div>
+					<div class="row allList" id="compYg"  style="display: none;">
+						<div class="hang-title" style="">
+							<span>企业标签</span>
+						</div>
+						<ul class="list-inline" id="comSpecial">
+							<!--<li class="hang-active"  name="">全部</li>
+							<li class=""  name="">医疗</li>
+							<li class=""  name="">健康</li>
+							<li class="hang-more" data-toggle="modal" data-target="#myModal02">更多>></li>-->
+						</ul>
+					</div>
+					<div class="page-line"></div>
+					<div class="same-nodata" style="display: none;">
+						<div class="">
+							还没有任何内容
+						</div>
+						<p>您可以通过上方对比输入框输入公司代码或者简称快速进行对比</p>
+					</div>
+					<div class="same-wrap">
+						<div class="same-left same-constrst">
+							<div class="btnList clearfix" style="margin: 10px 5px 11px 0;">
+								<p class="same-totalNum">
+									<span id="bigName"></span>
+									<span id="commonName"></span>
+								</p>
+								<button class="search  btn-ipt pull-right" style="padding: 0 15px;" name='export'   id="same-excel">导出Excel</button>
+								<button class="search  btn-ipt pull-right" style="padding: 0 15px;" id="same-save">保存对比</button>
+                                <!--<button class="search  btn-ipt pull-right" style="padding: 0 15px;" id="same-comp">公司对比</button>-->
+                            </div>
+							<div class="portlet box darkCyan">
+								<div class="tabbable-line boxless tabbable-reversed">
+									<div class="portlet-body maskInTable" style="padding-right: 10px;">
+										<table class="table table-condensed table-hover table-team table-blue">
+											<colgroup>
+												<col width="10%" />
+												<col width="23%" />
+												<col width="21%" />
+												<!--<col width="11%" />-->
+												<col width="23%" />
+												<!--<col width="11%" />-->
+												<col width="23%" />
+											</colgroup>
+											<thead>
+												<tr role="row" class="tr newTr">
+													<th scope="col" class="pdl10" style="text-align: left;padding-left:14px !important;">
+														指标
+													</th>
+													<th scope="col" class="pdl10 same-toRight">
+														数值
+													</th>
+													<th scope="col" class="pdl10 same-toRight">
+														行业均值
+													</th>
+													<!--<th scope="col" class="pdl10">
+														最高公司
+													</th>-->
+													<th scope="col" class="pdl10 same-toRight">
+														最高值
+													</th>
+													<!--<th scope="col" class="pdl10">
+														最低公司
+													</th>-->
+													<th scope="col" class="pdl10 same-toRight">
+														最低值
+													</th>
+												</tr>
+											</thead>
+											<tbody class="touzi-table touzi-team" id="tableOne">
+												
+											</tbody>
+										</table>
+									</div>
+									<div id="samePage"></div>
+								</div>
+							</div>
+						</div>
+						<div class="same-right">
+							<div class="same-right-in" style="margin-right: -10px;">
+								<div class="same-compar">
+									<a href='javascript:;' id="same-comp">公司对比>></a>
+								</div>
+								<div class="same-right-title">
+									同商业模式企业
+								</div>
+								<table border="0" cellspacing="0" cellpadding="0">
+									<colgroup>
+										<col width='33%' />
+										<col width='33%' />
+										<col width='33%' />
+									</colgroup>
+									<tr>
+										<th>代码</th>
+										<th>简称</th>
+										<th>操作</th>
+									</tr>
+									<tbody id="sameIndustry">
+									</tbody>
+								</table>
+								<div class="priceTableTop"></div>
+								<div class="same-right-title">
+									同行业龙头企业
+								</div>
+								<table border="0" cellspacing="0" cellpadding="0">
+									<colgroup>
+										<col width='33%' />
+										<col width='33%' />
+										<col width='33%' />
+									</colgroup>
+									<thead>
+									<tr>
+										<th>代码</th>
+										<th>简称</th>
+										<th>操作</th>
+									</tr>
+									</thead>
+									<tbody id="sameBoss">
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+					</div>
+					<!-- END QUICK SIDEBAR -->
+				</div>
+				<!-- END CONTAINER -->
+				<!-- BEGIN FOOTER -->
+				<div class="page-footer">
+					<div class="page-footer-inner">
+						&copy;&nbsp;2016&nbsp;北京凯峰数据科技有限公司&nbsp;版权所有&nbsp;|&nbsp;京ICP备16037008号-1
+					</div>
+					<div class="scroll-to-top">
+						<i class="icon-arrow-up"></i>
+					</div>
+				</div>
+				<div class="modal fade myModal01" id="myModalSame" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				  <div class="modal-dialog">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				        <h4 class="modal-title" id="myModalLabel">保存对比</h4>
+				      </div>
+				      <div class="modal-body" style="height: 100px;overflow: visible;">
+				        <div class="useInput" style="padding: 30px 0 0 70px;">
+				        	<div style="position: relative;">
+				        		<span class="pull-left pdt5">请输入对比名称：</span>
+				        		<input id="codeKeySave" class="form-control input-sm pull-left" type="text" style="width: 50%;" maxlength="30"/>
+				        		<div class="same-pop-error"></div>
+				        	</div>
+				        </div>
+				      </div>
+				      <div class="modal-footer">
+				      	<button type="button" class="btn btn-primary sameSureSave" id="">确定</button>
+				        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+				<div class="modal fade myModal01" id="myModalOut" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				  <div class="modal-dialog">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				        <h4 class="modal-title" id="myModalLabel">保存对比</h4>
+				      </div>
+				      <div class="modal-body" style="height: 100px;overflow: visible;">
+				        <div class="useInput" style="padding: 30px 0 0 70px;">
+				        	<div style="position: relative;">
+				        		<span class="pull-left pdt5">请输入对比名称：</span>
+				        		<input id="codeKeyOut" class="form-control input-sm pull-left" type="text" style="width: 50%;" maxlength="30"/>
+				        		<div class="same-pop-error"></div>
+				        	</div>
+				        </div>
+				      </div>
+				      <div class="modal-footer">
+				      	<button type="button" class="btn btn-primary sameSureSave" name="export" id="">确定</button>
+				        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+				<div class="modal fade myModal01" id="comModalLoad" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				  <div class="modal-dialog">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <h4 class="modal-title" id="myModalLabel">提示</h4>
+				      </div>
+				      <div class="modal-body" style="height: 100px;overflow: visible;">
+				        <div class="useInput mySamePop" style="padding: 30px 0 0 70px;">
+				        	<div style="position: relative;">
+				        		<span class="pull-left pdt10">请稍候：</span>
+				        		<img src="../../assets/admin/layout/img/exportOut.gif"/>
+				        	</div>
+				        	<div class="pull-left modal_tips" style="padding-left: 5px; color: red;">为了保证格式显示正确，请使用Excel打开</div>
+				        </div>
+				      </div>
+				      <div class="modal-footer">
+				      	<button type="button" style="visibility: hidden;" class="btn btn-primary comSureSave" name="export" id="">确定</button>
+				        <button type="button" style="visibility: hidden;" class="btn btn-default" data-dismiss="modal">关闭</button>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+				<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+				<!-- BEGIN CORE PLUGINS -->
+				<!--[if lte IE 8]><script src="js/libs/selectivizr.js"></script><![endif]-->
+				<!--[if lt IE 9]>
+				<script src="../../assets/global/plugins/respond.min.js"></script>
+				<script src="../../assets/global/plugins/excanvas.min.js"></script> 
+				<![endif]-->
+				<script src="../../assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+				<script src="../../assets/global/plugins/jquery-migrate.min.js" type="text/javascript"></script>
+				<!-- IMPORTANT! Load jquery-ui.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+				<script src="../../assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+				<script src="../../assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+				<script src="../../assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+				<script type="text/javascript" src="../../assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+				<script type="text/javascript" src="../../assets/global/plugins/bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min.js"></script>
+				<!-- BEGIN PAGE LEVEL SCRIPTS -->
+				<script type="text/javascript" src="../../assets/global/plugins/query.js"></script>
+				<script type="text/javascript" src="../../assets/global/plugins/paging.js"></script>
+				<script src="../../assets/global/scripts/kfStyle.js" type="text/javascript"></script>
+				<script src="../../assets/admin/layout/scripts/layout.js" type="text/javascript"></script>
+				<script src="../../assets/global/plugins/jquery.cookie.js" type="text/javascript"></script>
+				<script src="../../assets/admin/layout/scripts/demo.js" type="text/javascript"></script>
+				<script src="../../assets/global/scripts/application.js" type="text/javascript"></script>
+				<script src="../../assets/global/scripts/getTable.js" type="text/javascript"></script>
+				<script src="../../assets/global/scripts/companyComparison/sameContrast.js" type="text/javascript"></script>
+				<script type="text/javascript" src="../../assets/global/plugins/select2.js"></script>
+				<!-- END PAGE LEVEL SCRIPTS -->
+				<script>
+					jQuery(document).ready(function() {
+						SameContrast.init();//同行对比
+						KfStyle.init();
+						Layout.init();
+						$("#searchUrl").attr("href",$.url.contrastSameIn());
+						$(".overLi-btn").find("li").eq(1).find("a").attr("href",$.url.contrastPage());
+						$(".overLi-btn").find("li").eq(2).find("a").attr("href",$.url.myContrast()+"page=1");
+						$(".overLi-btn").find("li").eq(0).find("a").on("click",function(){
+							window.location.href = $.url.contrastSameIn();
+						});
+					});	
+				</script>
+	</body>
+	<!-- END BODY -->
+
+</html>
+<!DOCTYPE html>

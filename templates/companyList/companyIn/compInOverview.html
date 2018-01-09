@@ -1,0 +1,167 @@
+ <style>
+	.company_tit{ font-size: 16px; color: #205ea7; border-left: 2px solid #205ea7; padding-left: 10px; font-weight: bold; height: 17px; line-height: 1; margin-top: 10px;}
+	.company_tit span{ color: #666666; font-weight: normal; margin-left: 10px; padding: 2px 0; width: 120px; text-align: center;}
+	.company_tit b{ color: #5C5C5F; font-size: 14px; font-weight: normal; line-height: 16px;}
+	.barChartH{ position: relative;}
+	.barChartTip{ position: absolute; top: 0; left: 46%; padding-left: 35px;}
+	.barChartTip span{ display: inline-block; width: 30px; height: 15px; background: #4ca9de; border-radius: 3px; position: absolute; left: 0; top: 3px;}
+	.colorZ{ color: #8678A5; border-left: 2px solid #8678A5;}
+	.colorG{ color: #2CA3A4; border-left: 2px solid #2CA3A4;}
+	.colorR{ color: #F57D4B; border-left: 2px solid #F57D4B;}
+	.borRig{ border-right: 10px solid #f1f3fa;}
+	
+	.companyTotal{ padding: 14px 0 30px 0; overflow: auto;}
+	.marktingTotal{ height: 100%; background: #0044CC; height: 110px; text-align: center; color: #ffffff; padding-top: 12px;}
+	.marktingTotal h2{ font-size: 14px; color: #ffffff;}
+	.marktingTotal span{ font-size: 18px; color: #ffffff;}
+	#marketChart2{ margin-top: 100px;}
+	@media only screen and (min-width: 320px) and (max-width: 768px) {
+		#marketChart2{ margin-top: 20px;}
+		.borRig{ border-right: 0px solid #f1f3fa;}
+		.companyTotal {
+		    padding-bottom: 0;
+		}
+	}
+</style>
+<!--<div class="page-line"></div>-->
+<!--下面表单开始-->
+<div class="portlet box darkCyan mgt mgb">
+	<div class="row">
+		<div class="col-md-8 borRig pdt10 pdl20">
+			<div class="col-md-5 pdl">
+				<div class="company_tit colorG">市场规模<span class="yeara" id="year1"></span></div>
+				<div class="companyTotal">
+					<div class="col-md-6 pdl pdr marktingTotal" id="companyNum" style="background: #8cc6f3; border-right:6px solid #ffffff; cursor: pointer;">
+						<h2>总挂牌企业</h2>
+						<span id="companyTotal">--</span>家
+					</div>
+					<div class="col-md-6 marktingTotal" id="totalAssetss" style="background: #56d7d7; cursor: pointer;">
+						<h2>总资产（亿元）</h2>
+						<span id="netProfit">--</span>
+					</div>
+					<div class="col-md-6 pdl pdr marktingTotal" id="totalRevenue" style="background: #fdb989; border-right:6px solid #ffffff; border-top:6px solid #ffffff; cursor: pointer;">
+						<h2>总营收（亿元）</h2>
+						<span id="operatingIncome">--</span>
+					</div>
+					<div class="col-md-6 marktingTotal" id="totalProfit" style="background: #c8b4f2; border-top:6px solid #ffffff; cursor: pointer;">
+						<h2>总利润（亿元）</h2>
+						<span id="totalAssets">--</span>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-7 pdl pdr">
+				<div id="barChart" style="height:240px; margin-top: 30px;"></div>
+			</div>
+		</div>
+		<div class="col-md-4 pdt10">
+			<div class="col-md-12 pdl pdr">
+				<div class="company_tit">挂牌企业地区分布</div>
+				<div id="mapChart" class="pieGrid" style="height:220px; margin-top: 30px;"></div>
+			</div>
+		</div>
+	</div>
+	<div class="page-height"></div>
+	<div class="row">
+		<div class="col-md-8 borRig pdt10 pdl20">
+			<div class="col-md-12 pdl pdr mobileAutoHeight"  style="height: 450px;">
+				<div class="company_tit mgb20">新三板企业盈利排行<span class="yeara" id="year2"></span><b class="pull-right">货币：人民币&nbsp;&nbsp;&nbsp;单位：万元</b></div>
+				<table width="100%" class="tableBlue">
+					<colgroup>
+						<col width="8%">
+						<col width="10%">
+						<col width="12%">
+						<col width="12%">
+						<col width="12%">
+						<col width="12%">
+						<col width="18%">
+					</colgroup>
+					<thead>
+						<tr>
+							<th>排名</th>
+							<th>代码</th>
+							<th>简称</th>
+							<th>2017净利润</th>
+							<th>2016净利润</th>
+							<th>2015净利润</th>
+							<th>近两年复合增长率</th>
+						</tr>
+					</thead>
+					<tbody id="privateMoney">
+						
+					</tbody>
+				</table>
+				<a class="pull-right mgt10 mgb20 ft-purple" id="profitMore">更多&gt;&gt;</a>
+			</div>
+		</div>
+		<div class="col-md-4 pdt10">
+			<div class="col-md-12 pdl pdr">
+				<div class="company_tit">挂牌企业行业分布<span class="yeara" id="year3"></span></div>
+				<div id="marketChart2" style="height: 235px;"></div>
+			</div>
+		</div>
+	</div>
+	<div class="page-height"></div>
+	<div class="row">
+		<div class="col-md-8 borRig pdl5 pdr">
+			<div class="col-md-7 pdt10 borRig mobileAutoHeight" style="height: 550px;">
+				<div class="company_tit mgb20">新三板定增排行<span class="yeara" id="year4"></span><b class="pull-right">货币：人民币<br/>单位：万元</b></div>
+				<table width="100%" class="tableBlue">
+					<colgroup>
+						<col width="8%">
+						<col width="12%">
+						<col width="12%">
+						<col width="22%">
+						<col width="12%">
+					</colgroup>
+					<thead>
+						<tr>
+							<th>排名</th>
+							<th>简称</th>
+							<th>所属层</th>
+							<th>行业</th>
+							<th>募集金额</th>
+						</tr>
+					</thead>
+					<tbody id="privateMoney2">
+						
+					</tbody>
+				</table>
+				<a class="pull-right mgt10 mgb20 ft-purple" id="increaseMore">更多&gt;&gt;</a>
+			</div>
+			<div class="col-md-5 pdt10 mobileAutoHeight" style="height: 540px;">
+				<div class="company_tit mgb20">新三板企业亏损排行<b class="pull-right">货币：人民币<br/>单位：万元</b></div>
+				<table width="100%" class="tableBlue">
+					<colgroup>
+						<col width="20%">
+						<col width="40%">
+						<col width="40%">
+					</colgroup>
+					<thead>
+						<tr>
+							<th>排名</th>
+							<th>简称</th>
+							<th>2017年净利润</th>
+						</tr>
+					</thead>
+					<tbody id="privateMoney3">
+						
+					</tbody>
+				</table>
+				<a class="pull-right mgt10 mgb20 ft-purple" id="lossMore">更多&gt;&gt;</a>
+			</div>
+		</div>
+		<div class="col-md-4 pdt10 pdl15">
+			<div class="col-md-12 pdl pdr">
+				<div class="company_tit colorZ">分层及转让方式分布</div>
+				<div id="pieChart" class="pieGrid" style="height:220px; margin-top: 30px;"></div>
+			</div>
+			<div class="col-md-12 pdl pdr">
+				<div id="pieChart2" class="pieGrid" style="height:220px; margin-top: 30px;"></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	$.getScript("../../assets/global/scripts/companyList/overviewCompList.js").done(function(){OverviewComp.init();});
+</script>

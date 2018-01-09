@@ -1,0 +1,146 @@
+<div class="row mod-con-ipt">
+	<div class="col-sm-2 contan-search" style="display: none;">
+		<input placeholder="名称/代码" id="comSearch" type="text" class="form-control form-filter input-sm" name="product_id">
+	</div>
+	<div class="col-sm-2 contan-search">
+		<input placeholder="简称/代码" id="comKeyWord" type="text" class="form-control form-filter input-sm" name="product_id">
+	</div>
+	<div class="col-sm-3 col-md-3 datePar">
+		<div class="input-group date date-picker" id="datetimeStart" data-date-viewmode="years" data-date-format="dd/mm/yyyy">
+			<input type="text" id="compStartTime" class="form-control form-filter input-sm date-ipt" readonly="" name="product_created_from" placeholder="请选择开始日期">
+			<span class="input-group-btn">
+												<button  class="btn btn-sm btn-icon-btn" type="button"><i class="fa fa-calendar"></i></button>
+												</span>
+		</div>
+	</div>
+	<div class="arrive">至</div>
+	<div class="col-sm-3 col-md-3 select_box2_father datePar">
+		<div class="input-group date date-picker" id="datetimeEnd" data-date-format="dd/mm/yyyy">
+			<input type="text" id="compEndTime" class="form-control form-filter input-sm date-ipt" readonly="" name="product_created_from" placeholder="请选择截止日期">
+			<span class="input-group-btn">
+												<button class="btn btn-sm  btn-icon-btn" type="button"><i class="fa fa-calendar"></i></button>
+												</span>
+		</div>
+	</div>
+	<div class="compBtn">
+		<button class="search  btn-ipt" id="compBtn">查询</button>
+		<button class="search  btn-ipt btn-ipts" id="compReset">重置</button>
+	</div>
+</div>
+<div class="row allList" id="compQs">
+	<div class="hang-title">
+		<span>主办券商</span>
+	</div>
+	<ul class="list-inline" id="comSpecial">
+		<li class="hang-active">全部</li>
+		<li name="101001830899000000000000">联讯证券</li>
+		<li name="3a3d97138af9e9324d1602c09a8a3a">山西证券</li>
+		<li name="04c6024f2e8fbb0775ea36f103aefe">财达证券</li>
+		<li name="2990ec52e07e89122e9c151291e377">东北证券</li>
+		<li name="95b212c0fc5a35f7b7956f4717f8f3">华融证券</li>
+		<li id="trPop" class="hang-more" data-toggle="modal" data-target="#myModal02">更多&gt;&gt;</li>
+	</ul>
+</div>
+<div class="row allList" id="compHy">
+	<div class="hang-title">
+		<span>所属行业</span>
+	</div>
+	<ul class="list-inline" id="compIndustry">
+		<li class="hang-active" name="">全部</li>
+		<li name="5a2fcfe678">互联网和相关服务</li>
+		<li name="f3afed3025">软件和信息技术服务业</li>
+		<li name="4af3e0c021">专用设备制造业</li>
+		<li name="e617da4639">零售业</li>
+		<li name="7ee1034249">商务服务业</li>
+		<li id="trPop2" class="hang-more" data-toggle="modal" data-target="#myModal03">更多&gt;&gt;</li>
+	</ul>
+</div>
+<div class="row allList" id="compSf">
+	<div class="hang-title">
+		<span>省&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;份</span>
+	</div>
+	<ul class="list-inline">
+		<li class="hang-active">全部</li>
+		<li name="province001">北京</li>
+		<li name="province002">天津</li>
+		<li name="province003">上海</li>
+		<li name="province004">重庆</li>
+		<li name="province005">河北</li>
+		<li name="province006">山西</li>
+		<li name="province007">陕西</li>
+		<li name="province008">山东</li>
+		<li name="province009">河南</li>
+		<li class="hang-more" data-toggle="modal" data-target="#myModal">更多>></li>
+	</ul>
+</div>
+<div class="row allList" id="compCw">
+	<div class="hang-title">
+		<span>财务特征</span>
+	</div>
+	<ul class="list-inline">
+		<li class="hang-active">全部</li>
+		<li name="finance002" style="position: relative;margin-right: 26px;">创新层标准<span class="infoExplain" name="创新层标准" set-name="1、最近两年连续盈利，且年平均净利润不少于2000万元（以扣除非经常性损益前后孰低者为计算依据）；最近两年加权平均净资产收益率平均不低于10%（以扣除非经常性损益前后 孰低者为计算依据）；<br/>2、最近两年营业收入连续增长，且年均复合增长率不低于50%；最近两年营业收入平均不低于4000万元；股本不少于 2000万股。"></span></li>
+		<li name="finance001" style="position: relative;margin-right: 26px;">创新层维持标准<span  class="infoExplain" name="创新层维持标准" set-name="1、最近两年连续盈利，且年平均净利润不少于1200万元（以扣除非经常性损益前后孰低者为计算依据）；最近两年加权平均净资产收益率平均不低于6%(以扣除非经常性损益前后孰低者为计算依据）；<br/>2、最近两年营业收入连续增长，且年均复合增长率不低于30%；最近两年营业收入平均不低于4000万元；股本不少于2000万股。"></span></li>
+		<li name="finance003" style="position: relative;margin-right: 26px;">降层风险<span  class="infoExplain" name="降层风险" set-name="无法满足创新层维持财务标准的企业"></span></li>
+		<li name="finance004">连续两年盈利</li>
+		<li name="finance005">净利润大于2000万</li>
+		<li name="finance006">近两年营业收入不低于4000万</li>
+	</ul>
+</div>
+<div class="row allList" id="compBq">
+	<div class="hang-title">
+		<span>公司标签</span>
+	</div>
+	<ul class="list-inline" id="compLb">
+		<li class="hang-active">全部</li>
+		<li name='68ef60fe-40ec-11e7-a764-00163e03bdf1'>新能源</li>
+		<li name='68e58d54-40ec-11e7-a764-00163e03bdf1'>电池</li>
+		<li name='68ee9156-40ec-11e7-a764-00163e03bdf1'>文创</li>
+		<li name='68ebdcb8-40ec-11e7-a764-00163e03bdf1'>人工智能</li>
+		<li name='68e49d4a-40ec-11e7-a764-00163e03bdf1'>SaaS</li>
+		<li name='68f4c79c-40ec-11e7-a764-00163e03bdf1'>智能制造</li>
+		<li name='68e7abb6-40ec-11e7-a764-00163e03bdf1'>共享经济</li>
+		<li name='9bb646d4-4c12-11e7-b098-00163e03bdf1'>区块链</li>
+		<li name='50dc8566-4c16-11e7-9eef-00163e03bdf1'>生物医药</li>
+		<li class="hang-more" data-toggle="modal" data-target="#myModalBq">更多>></li>
+	</ul>
+</div>
+<div class="row allListSo" id="allListSo">
+	<div class="hang-title">
+		<span>已选条件</span>
+	</div>
+	<ul class="list-inline soList " id="soCheck">
+		<li class="soClear">
+			<button class="search  btn-ipt" id="soClear">清空选项</button>
+		</li>
+	</ul>
+</div>
+<div class="page-line"></div>
+<!--下面表单开始-->
+<div class="portlet box darkCyan">
+	<div class="portlet-body maskInTable" id="maskdata">
+		<div class="table-scrollable table-scroll-auto">
+			<table class="table table-striped table-bordered table-hover dataTable no-footer" id="tableOne" role="grid" aria-describedby="sample_1_info">
+			</table>
+		</div>
+		<!--表单结束-->
+		<div id="pageTool"></div>
+	</div>
+	<!-- END QUICK SIDEBAR -->
+</div>
+<script type="text/javascript">
+	//日期时间选择器
+	$.getScript("../../assets/global/scripts/companyList/company.js").done(function(){Comp.init();});
+	$(".date-picker").datepicker({
+        format: "yyyy-mm-dd",
+        autoclose: true,
+        minView: "month",
+        maxView: "decade",
+        todayBtn: "linked",
+        language: 'zh-CN',
+        todayHighlight: true,
+        pickerPosition: "bottom-left",
+        endDate:new Date()
+    });
+	
+</script>

@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en" class="no-js">
+	<!--<![endif]-->
+	<!-- BEGIN HEAD -->
+
+	<head>
+		<meta charset="utf-8" />
+		<title>个人信息</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta content="width=device-width, initial-scale=1" name="viewport" />
+		<meta content="" name="description" />
+		<meta content="" name="author" />
+		<link href="../../assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+		<link href="../../assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+		<link href="../../assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+		<link href="../../assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" />
+		<link href="../../assets/global/css/components.css" id="style_components" rel="stylesheet" type="text/css" />
+		<link href="../../assets/global/css/plugins.css" rel="stylesheet" type="text/css" />
+		<link href="../../assets/admin/layout/css/layout.css" rel="stylesheet" type="text/css" />
+		<link href="../../assets/admin/layout/css/themes/darkblue.css" rel="stylesheet" type="text/css" id="style_color" />
+		<link rel="stylesheet" type="text/css" href="../../assets/admin/layout/css/paging.css">
+		<link href="../../assets/admin/layout/css/custom.css" rel="stylesheet" type="text/css" />
+		<link href="../../assets/admin/layout/css/content.css" rel="stylesheet" type="text/css" />
+		<script src="../../assets/global/plugins/base64image.js"></script>
+    	<script src="../../assets/global/plugins/exif.js"></script>
+		<script>
+			//图片上传预览    IE是用了滤镜。
+			//document.getElementById("replaceImg").style.display = "none";
+			var dataImg = "";
+			var _height,_width;
+			var fileUp = function (me) {
+				if(previewImage(me)){
+					 base64Image({
+		            file: me,                              /*【必填】对应的上传元素 */
+		            callback: function (imageUrl) {        /*【必填】处理成功后的回调函数 */
+			
+							/*imageUrl为得到的图片base64数据，这里可以进行上传到服务器或者其他逻辑操作 */
+							var img = new Image();
+							img.src = imageUrl;
+				            $("#preview").html("").append(img);  
+				            	var param = {
+					                img: imageUrl
+					            	}
+				                $.kf.ajax({
+					                type: "post",
+					                url: $.kf.USERSERVICEUPLOADIMAGE,
+					                data: param,
+					                dataType: "json",
+					                processResponse: function (data) {
+					                	$("#preview").attr("setName","1");
+					                	dataImg = data.data.image;
+					                	$("#saveMess").attr("disabled",false).css("background","#f77e44");
+					                }
+				              });
+				            },
+							ratio:0.75,                         /*【选填】压缩率默认0.75 */
+				            });
+							};
+			           
+			        	};
+    
+			function previewImage(file) {
+				var MyTest = document.getElementById("fileName").files[0];
+				var reader = new FileReader();
+				reader.readAsDataURL(MyTest);
+				reader.onload = function(theFile) {
+				　　var image = new Image();
+				   image.src = theFile.target.result;
+				   image.onload = function() {
+				   　　_width = this.width;
+				     _height = this.height;
+				   };
+				};
+				$("#saveMess").attr("disabled","disabled").css("background","#CCCCCC");
+				var MAXWIDTH = 260;
+				var MAXHEIGHT = 180;
+				var flg = true;
+				var div = document.getElementById('preview');
+				if(file.files && file.files[0]) {
+					var filepath = $("input[name='myFile']").val();
+					var extStart = filepath.lastIndexOf(".");
+					var ext = filepath.substring(extStart, filepath.length).toUpperCase();
+					if(ext != ".PNG" && ext != ".JPG" && ext != ".JPEG") {
+						alert("该文件类型不允许上传，请提交JPG、PNG格式文件");
+						flg = false;
+						return false;
+					}
+					var file_size = 0;
+					file_size = file.files[0].size;
+					var size = file_size / 1024;
+					//console.log(size)
+					if(size > 2048) {
+						alert("该文件大小不能超过2M，请重新上传！");
+						flg = false;
+						return false;
+					} else {
+						var num01 = file_size / 1024;
+						num02 = num01.toFixed(2)
+						$("#size01").text(num02 + " KB");
+					}
+				} 
+				return flg;
+			}
+		
+		</script>
+	</head>
+
+	<body class="page-header-fixed page-quick-sidebar-over-content page-sidebar-closed-hide-logo page-container-bg-solid">
+		<div class="modal fade myModal02" id="myModal02" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog person-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h4 class="modal-title" id="myModalLabel">修改资料</h4>
+					</div>
+					<div class="modal-body">
+						
+					</div>
+					<div class="modal-footer">
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--头部-->
+		<div class="page-header navbar navbar-fixed-top">
+			<div class="page-header-inner">
+				<div class="page-logo">
+					<a href="/index.php/companylisted/index">
+						<img src="../../assets/admin/layout/img/logo.png" alt="logo" class="logo-default" />
+					</a>
+
+					<div class="menu-toggler sidebar-toggler hide">
+					</div>
+				</div>
+			</div>
+			<a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse">
+			</a>
+			<div class="top-menu">
+				<ul class="nav navbar-nav pull-right">
+					 <li class="dropdown dropdown-extended dropdown-notification mgr20" id="header_notification_bar">
+                        <a href="/account/buy" class="dropdown-toggle" style="height:55px">
+                            <i class="fa fa-dollar"></i>
+                            <span class="badge badge-default" style="right: -18px">购买</span>
+                        </a>
+                    </li>
+                    <li class="userToltip"><span>认证成功</span></li>
+					<li class="dropdown dropdown-user">
+						<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+							<img alt="" class="img-circle" src="" />
+							<span class="username username-hide-on-mobile"></span>
+							<i class="fa fa-angle-down"></i>
+						</a>
+						<ul class="dropdown-menu dropdown-menu-default">
+							<li>
+								<a href="###">
+									<i class="icon-user"></i>我的简介</a>
+							</li>
+							<li>
+								<a href="page_calendar.html">
+									<i class="icon-calendar"></i>我的日程表 </a>
+							</li>
+							<li>
+								<a href="inbox.html">
+									<i class="icon-envelope-open"></i>我的收件箱 <span class="badge badge-danger">
+							3 </span>
+								</a>
+							</li>
+							<li>
+								<a href="page_todo.html">
+									<i class="icon-rocket"></i>我的任务 <span class="badge badge-success">
+							7 </span>
+								</a>
+							</li>
+							<li class="divider">
+							</li>
+							<li>
+								<a href="extra_lock.html">
+									<i class="icon-lock"></i>锁屏 </a>
+							</li>
+							<li>
+								<a href="login.html">
+									<i class="icon-key"></i>退出 </a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<!--PC端搜索框-->
+			 <div class="pc-search hidden-xs hidden-sm">
+                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                <input type="text" name="" id="searchBlur" value="" placeholder="搜索公司，基金，资料" />
+                <div class="searchList">
+                    <ul></ul>
+                </div>
+            </div>
+		</div>
+		</div>
+		<div class="clearfix"></div>
+		<!--content-->
+		<div class="page-container">
+			<div class="page-sidebar-wrapper">
+				<!--侧边栏-->
+				<div class="page-sidebar navbar-collapse collapse">
+					<ul class="page-sidebar-menu " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
+						<li class="sidebar-toggler-wrapper">
+							<div class="sidebar-toggler">
+							</div>
+						</li>
+						<!--mobile搜索框-->
+						<li class="sidebar-search-wrapper visible-sm-inline-block visible-xs-inline-block">
+							<form class="sidebar-search " action="extra_search.html" method="POST">
+								<a href="javascript:;" class="remove">
+									<i class="icon-close"></i>
+								</a>
+								<div class="input-group">
+									<input type="text" class="form-control mobile-ipt" placeholder="搜索">
+									<span class="input-group-btn">
+							<a href="javascript:;" class="btn submit"><i class="icon-magnifier"></i></a>
+							</span>
+								</div>
+							</form>
+						</li>
+						<li class="start active open">
+							<a href="javascript:;">
+								<i class="icon-home"></i>
+								<span class="title newThree">新三板</span>
+								<span class="selected"></span>
+								<span class="arrow open"></span>
+							</a>
+							<ul class="sub-menu">
+								<li>
+									<a href="挂牌公司列表页.html">
+										<!--<i class="icon-bar-chart"></i>-->
+										挂牌公司</a>
+								</li>
+								<li>
+									<a href="公告.html">
+										<!--<i class="icon-bulb"></i>-->
+										公告</a>
+								</li>
+								<li class="active">
+									<a href="定增.html">
+										<!--<i class="icon-graph"></i>-->定增</a>
+								</li>
+								<li>
+									<a href="交易.html">
+										<!--<i class="icon-graph"></i>-->
+										交易</a>
+								</li>
+								<li>
+									<a href="#">
+										<!--<i class="icon-graph"></i>-->
+										主办券商</a>
+								</li>
+								<li>
+									<a href="#">
+										<!--<i class="icon-graph"></i>-->
+										政策法规</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<i class="icon-basket"></i>
+								<span class="title newtz">投资</span>
+								<span class="arrow "></span>
+							</a>
+							<ul class="sub-menu">
+								<li>
+									<a href="投资事件.html">
+										<!--<i class="icon-home"></i>-->
+										投资事件</a>
+								</li>
+								<li>
+									<a href="投资机构列表页.html">
+										<!--<i class="icon-basket"></i>-->
+										投资机构</a>
+								</li>
+								<li>
+									<a href="#">
+										<!--<i class="icon-tag"></i>-->
+										私募基金管理人</a>
+								</li>
+
+							</ul>
+						</li>
+						<li>
+							<a href="#">
+								<i class="icon-rocket"></i>
+								<span class="title newNew">新闻</span>
+								<span class="arrow "></span>
+							</a>
+
+						</li>
+						<li>
+							<a href="javascript:;">
+								<i class="icon-diamond"></i>
+								<span class="title newyb">研报</span>
+								<span class="arrow "></span>
+							</a>
+
+						</li>
+						<li>
+							<a href="#">
+								<i class="icon-puzzle"></i>
+								<span class="title newrel">关系查找</span>
+								<span class="arrow "></span>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<i class="icon-basket"></i>
+								<span class="title newlogin">登录和注册</span>
+								<span class="arrow "></span>
+							</a>
+							<ul class="sub-menu">
+								<li>
+									<a href="登录.html">
+										<!--<i class="icon-home"></i>-->
+										登录</a>
+								</li>
+								<li>
+									<a href="用户注册1.html">
+										<!--<i class="icon-basket"></i>-->用户注册1</a>
+								</li>
+								<li>
+									<a href="用户注册2.html">
+										<!--<i class="icon-tag"></i>-->用户注册2</a>
+								</li>
+								<li>
+									<a href="注册成功3.html">
+										<!--<i class="icon-tag"></i>-->注册成功3</a>
+								</li>
+
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="page-content-wrapper">
+				<div class="page-content">
+					<div class="page-bar">
+						<ul class="page-breadcrumb">
+							<li>
+								<i class="fa fa-home"></i>
+								个人资料
+							</li>
+							<li class='nowTimeTop'>
+								北京时间：<span id="nowDate"></span>
+							</li>
+						</ul>
+					</div>
+					<div class="page-content-par" style="min-height: 600px;">
+						<!--页面标题-->
+						<!--页面2级标题-->
+						<div class="row mod-title">
+							<div class="col-md-12">我的三板慧</div>
+						</div>
+						<div class="page-height"></div>
+						<div class="personInfo2">
+							<div class="row register-wrap">
+								<div class="col-md-5 modifyBox" style="width:345px;padding-top: 15px;">
+									<div class="register-con">
+										<span class="">姓名</span>
+										<input  type="text" id="userNameChange" name="姓名" class="register-ipt" value="" placeholder="请输入姓名" />
+									</div>
+									<div class="error-tip" id="userNameChangeError"></div>
+									<div class="register-con sexid">
+										<span class="mgr5">性别</span>
+										<div class="pdt5">
+											<label><input type="radio" name="radio2" value="0"> 男</label>
+											<label><input type="radio" name="radio2" value="1" class="mgl10"> 女</label>
+										</div>
+									</div>
+									<div class="register-con">
+										<span class="">邮箱</span>
+										<input type="text" id="userEmailChange" name="邮箱" class="register-ipt" maxlength="99" value="" placeholder="请输入邮箱" />
+									</div>
+									<div class="error-tip" id="userEmailChangeError"></div>
+									<div class="register-con">
+										<span class="">职位</span>
+										<input type="text" id="userJobChange" name="职位" class="register-ipt" value="" maxlength="30" placeholder="请输入职位" />
+									</div>
+									<div class="error-tip" id="userJobChangeError"></div>
+									<div class="register-con">
+										<span class="">公司</span>
+										<input type="text" id="userCompnayChange" name="公司名称" class="register-ipt" maxlength="100" value="" placeholder="请输入公司名称" />
+									</div>
+									<div class="error-tip" id="userComChangeError"></div>
+								</div>
+								<div class="col-md-7">
+									<div class="certificTip hide">
+										<div class="certifactionSuccess hide">
+							        		<img src='../../assets/admin/layout/img/certifactionSuccess.png'/>
+							        		<p class="mgt20">您的认证资料已经重新提交，请耐心等待审核结果。</p>
+							        	</div>
+							        	<div class="certifactionFail hide">
+							        		<img src='../../assets/admin/layout/img/certifactionFail.png'/>
+							        		<p class="mgt20">您的认证申请未通过审核，请重新提交认证材料<a class="tocertification" href="javascript:;" style="color: #ea7a4c;">申请认证</a></p>
+							        	</div>
+									</div>
+									<div class="row" id="modifyMR" style="padding-top: 20px; display: none;width:635px;">
+							        	<div class="col-md-6">
+							        		<h4>认证材料：</h4>
+							        		<div class="certificationMaterial">
+							        			<div class="shadowBg"></div>
+								        			<div id="preview" setName="0">
+								        				<img id="imghead" />
+								        			</div>
+								        			<input type="file" name="myFile" id="fileName" onchange="fileUp(this)" />
+								        			<div id="replaceImg" style="display: none;">
+								        				<img src="../../assets/admin/layout/img/shangchuan.png"/><br />
+								        				<span style="line-height: 34px;">替换图片</span>
+								        			</div>
+							        		</div>
+							        		<div class="enlargeImg"><a href="javascript:void(0)">预览大图</a></div>
+							        		<div class="materialNote">
+							        			<div class="note2">请上传职位 / 称号证明材料（例如：名片 / 工牌等）或者你也可以上传已加盖公章的工作证明图片。</div>
+							        			<a href="../../assets/word/工作证明模板.docx">下载工作证明模板</a>
+							        		</div>
+							        	</div>
+							        	<div class="col-md-6">
+							        		<h4>材料示例：</h4>
+							        		<div class="materialExample">
+							        			<img src="../../assets/admin/layout/img/exampleTerital.png" />
+							        		</div>
+							        	</div>
+							        	
+							        </div>
+								</div>
+								<div class="col-md-12">
+									<button type="button" id="saveMess" class="btn btn-primary infoBtn">保存 <img class="hide" src="../../assets/admin/layout/img/loadingIcon.gif"/></button>
+								</div>
+							</div>
+                        </div>
+					</div>
+				</div>
+				<!-- 底部 -->
+				<div class="page-footer">
+					<div class="page-footer-inner">
+						&copy;&nbsp;2016&nbsp;北京凯峰数据科技有限公司&nbsp;版权所有&nbsp;|&nbsp;京ICP备16037008号-1
+					</div>
+					<div class="scroll-to-top">
+						<i class="icon-arrow-up"></i>
+					</div>
+				</div>
+				<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+				<!-- BEGIN CORE PLUGINS -->
+				<!--[if lte IE 8]><script src="js/libs/selectivizr.js"></script><![endif]-->
+				<!--[if lt IE 9]>
+				<script src="../../assets/global/plugins/respond.min.js"></script>
+				<script src="../../assets/global/plugins/excanvas.min.js"></script> 
+				<![endif]-->
+				<script>
+				
+		        
+				</script>
+				<script src="../../assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+				<script src="../../assets/global/plugins/jquery-migrate.min.js" type="text/javascript"></script>
+				<!-- IMPORTANT! Load jquery-ui.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+				<script src="../../assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+				<script src="../../assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+				<script src="../../assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+				<script type="text/javascript" src="../../assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+				<script type="text/javascript" src="../../assets/global/plugins/bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min.js"></script>
+				<!-- BEGIN PAGE LEVEL SCRIPTS -->
+				<script src="../../assets/global/scripts/kfStyle.js" type="text/javascript"></script>
+				<script src="../../assets/admin/layout/scripts/layout.js" type="text/javascript"></script>
+				<script src="../../assets/admin/layout/scripts/demo.js" type="text/javascript"></script>
+				<script type="text/javascript" src="../../assets/global/plugins/query.js"></script>
+				<script type="text/javascript" src="../../assets/global/plugins/paging.js"></script>
+				<script src="../../assets/global/plugins/jquery.cookie.js" type="text/javascript"></script>
+				<script src="../../assets/global/scripts/application.js" type="text/javascript"></script>
+				<script src="../../assets/global/scripts/user/modifyInfo.js" type="text/javascript"></script>
+				<script src="../../assets/global/plugins/layer.js" type="text/javascript"></script>
+				<!-- END PAGE LEVEL SCRIPTS -->
+				<script>
+					jQuery(document).ready(function() {
+						pageMessage.init();//获取个人信息
+						//getUserInfo.userPermissions();//获取权限列表
+						KfStyle.init(); // init metronic core componets
+						Layout.init(); // init layout
+						$(".enlargeImg").show();
+						//图片预览
+						$(".enlargeImg a").click(function(){
+							var imgSrc = $("#preview img").attr("src");
+							if(_height > 600){
+								_width = (1-(_height-600)/_height)*_width;
+								_height = 600;
+							}
+							if(!isNullOrEmpty(imgSrc)){
+								layer.open({
+								  type: 1,
+								  title: false,
+								  closeBtn: true,
+						  		  shade: 0.7,
+								  skin: 'layui-layer-nobg', //没有背景色
+								  area:[_width+"px",_height+"px"],
+								  shadeClose: true,
+								  content: "<img src='"+ imgSrc +"'/>"
+								});
+							}
+						})
+						
+						//图片替换
+						$(".shadowBg").addClass("shadowB");
+						$(".certificationMaterial").mouseover(function(){
+							$("#replaceImg").show()
+						}).mouseout(function(){
+							$("#replaceImg").hide()
+						})
+					});
+				</script>
+				
+	</body>
+	<!-- END BODY -->
+
+</html>
