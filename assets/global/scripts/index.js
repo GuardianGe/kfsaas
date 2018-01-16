@@ -1605,9 +1605,9 @@ function activeBody(thisName,thisSort){
 	        	}
 	            tr += "<td>" + list[i].companyNum + "</td>";
 	            if(list[i].boardName.length > 4){
-	            	tr += "<td><a href='"+ $.url.industryUrl() + "companyName="+ list[i].boardCompanyName +"&from=companylisted'>" + list[i].boardName.substring(0,4) + "...</a></td>";
+	            	tr += "<td><a href='"+ $.url.industryUrl() + "id="+ list[i].boardcompanyId +"&from=companylisted'>" + list[i].boardName.substring(0,4) + "...</a></td>";
 	            }else{
-	            	tr += "<td><a href='"+ $.url.industryUrl() + "companyName="+ list[i].boardCompanyName +"&from=companylisted'>" + list[i].boardName + "</a></td>";
+	            	tr += "<td><a href='"+ $.url.industryUrl() + "id="+ list[i].boardcompanyId +"&from=companylisted'>" + list[i].boardName + "</a></td>";
 	            }
 	            if(mobileWidth > 1280){
 	            	tr += "<td class='text-right'>" + list[i].date + "</td>";
@@ -1890,7 +1890,7 @@ function accountant(thisName,thisSort){
 	        if(!isNullOrEmpty(list)){
 	        	$(list).each(function (i) {
 	                tr += "<tr>";
-	                tr += "<td><a class='basicName2'  data-name='"+list[i].companyName+"' href='"+ $.url.industryUrl() + "companyName=" + list[i].companyName +"'>" + list[i].name + "</a></td>";
+	                tr += "<td><a class='basicName2'  data-name='"+list[i].companyName+"' href='"+ $.url.industryUrl() + "id=" + list[i].id +"'>" + list[i].name + "</a></td>";
 	                tr += "<td>" + list[i].serviceListing + "</td>";
 	                tr += "<td>" + list[i].date + "</td>";
 	                tr += "</tr>";
@@ -1922,7 +1922,7 @@ function lawyer(thisName,thisSort){
 	        if(!isNullOrEmpty(list)){
 	        	$(list).each(function (i) {
 	                tr += "<tr>";
-	                tr += "<td><a class='basicName2'  data-name='"+list[i].companyName+"' href='"+ $.url.industryUrl() + "companyName=" + list[i].companyName +"'>" + list[i].name + "</a></td>";
+	                tr += "<td><a class='basicName2'  data-name='"+list[i].companyName+"' href='"+ $.url.industryUrl() + "id=" + list[i].id +"'>" + list[i].name + "</a></td>";
 	                tr += "<td>" + list[i].serviceListing + "</td>";
 	                tr += "<td>" + list[i].date + "</td>";
 	                tr += "</tr>";

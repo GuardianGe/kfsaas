@@ -175,7 +175,6 @@ var InvestCompany = function(){
 	        $("#tableOneSearch").html("");
 	        var attention = "";
 	        $(list).each(function (i) {
-	        	console.log(list[i].saasType);
 	        	if(list[i].attention == "1"){
 					attention = "取消";
 				}else{

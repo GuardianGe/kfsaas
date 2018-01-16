@@ -509,10 +509,11 @@ var CompanyDetail = function () {
 		$("#telIn").text(list.tel);
 		$("#addressIn").text(list.address);
 		$("#postCodeIn").text(list.postCode);
+		$("#legalRepresentativeIn").text(list.legalRepresentative);
 		$("#detailedAddressIn").text(list.detailedAddress);
 		$("#registrationDateIn").text(list.registrationDate);
 		$("#peopleIn").text(list.people);
-		$("#industryIn").text(list.industry);
+		$("#industryIn").text(list.industryName);
 		if(!isNullOrEmpty(list.website)){
 			$("#websiteIn").html('<a href="'+ list.website +'" target="_blank">'+ list.website +'</a>');
 		}
@@ -606,6 +607,7 @@ var CompanyDetail = function () {
 	        function (ec) {
 	            // 基于准备好的dom，初始化echarts图表
 	            var myChartPie = ec.init(document.getElementById('shareHolderX')); 
+	            $("#shareHolderX").width($(".page-content-par").width()*0.52);
 				//图表自适应
 				/*window.addEventListener("resize",function(){
 		        	myChartPie.resize();
@@ -705,16 +707,15 @@ var CompanyDetail = function () {
     //拼接列表
     var corePersonList = function (data) {
         var list = data.data;
-        console.log(list)
         var tr = "";
         $("#corePersonBox").html("");
         $(list).each(function (i) {
         	tr += "<li>";
 			tr += '<div class="corePer-left">';
 			if(isNullOrEmpty(list[i].logo)){
-				tr += '<img src="'+ list[i].logo +'" alt="" />';
-			}else{
 				tr += '<img src="../../assets/admin/layout/img/rentou.png" alt="" />';
+			}else{
+				tr += '<img src="'+ list[i].logo +'" alt="" />';
 			}
 			tr += '<span>'+ list[i].name +'</span>';
 			tr += '</div>';
@@ -1535,13 +1536,13 @@ var CompanyDetail = function () {
 	        $(list).each(function (i) {
 	            if (Number(list[i].isTips)) {
 	                tr += "<tr>";
-	                tr += "<td><li><a href='" + $.url.newsInfoUrl() + "id=" + list[i].id + '&name=news' + "'>" + list[i].title + "</a>" + "<img src='../../assets/admin/layout/img/tip.png' class='tip'/></li><p>" + list[i].summary + "</p></td>";
+	                tr += "<td><li><a target='_blank' href='" + $.url.newsInfoUrl() + "id=" + list[i].id + '&name=news' + "'>" + list[i].title + "</a>" + "<img src='../../assets/admin/layout/img/tip.png' class='tip'/></li><p>" + list[i].summary + "</p></td>";
 	                tr += "<td>" + list[i].source + "</td>";
 	                tr += "<td>" + list[i].date + "</td>";
 	                tr += "</tr>";
 	            } else {
 	                tr += "<tr>";
-	                tr += "<td><li><a href='" + $.url.newsInfoUrl() + "id=" + list[i].id + '&name=news' + "'>" + list[i].title + "</a></li></td>";
+	                tr += "<td><li><a target='_blank' href='" + $.url.newsInfoUrl() + "id=" + list[i].id + '&name=news' + "'>" + list[i].title + "</a></li></td>";
 	                tr += "<td>" + list[i].source + "</td>";
 	                tr += "<td>" + list[i].date + "</td>";
 	                tr += "</tr>";
@@ -1608,12 +1609,11 @@ var CompanyDetail = function () {
 	        	basicMsg();
 	        	//行业评级
 		        industryLv();
+		        //同行业企业
+	        	industryAnalysis();
 	        }
 	    	//历史变更
 	        industryComm();
-	        //同行业模式
-	        industryAnalysis();
-	        
 	    }
 	    
 	    
@@ -1801,7 +1801,6 @@ var CompanyDetail = function () {
 	    var isDelisted = "";
 	    var basicMsgList = function (data) {
 	        var list = data.data;
-	        console.log(list)
 	        //工商信息
 	        $("#creditCode").text(list.creditCode);
 	        $("#registrationNumber").text(list.registrationNumber);
@@ -1822,12 +1821,15 @@ var CompanyDetail = function () {
 	        $("#industryName").text(list.industryName);  
 	        $("#registeredAddress").text(list.registeredAddress);
 	        $("#taxpayerNumber").text(list.taxpayerNumber);
-	        if(!isNullOrEmpty(list.businessCcope)){
-	        	$("#businessCcope").text(list.businessCcope.substring(0,278)+'...');
+	        if(!isNullOrEmpty(list.businessScope)){
+	        	$("#businessCcope").text(list.businessScope.substring(0,278)+'...');
 	        }else{
 	        	$(".businessCcope-detail").hide();
 	        }
-	        $("#businessCcope").attr("title",list.businessCcope);
+	        if(list.highSalary == "是"){
+	        	$(".highSalary").removeClass("hide");
+	        }
+	        $("#businessCcope").attr("title",list.businessScope);
 	        if(fromType != "investCompany"){
 	        companyNameJs = list.name;
 	        //Query.setHash({"companyName":list.name});
@@ -1986,8 +1988,8 @@ var CompanyDetail = function () {
 				$("#step").text(list.step);
 				$("#companyAbout").text(list.shortname);
 				if (htmlWid.offsetWidth > 768) {
-	        		if(list.companyAbout.length>120){
-		        		var companyAbout= list.companyAbout.substring(0,120);
+	        		if(list.companyAbout.length>118){
+		        		var companyAbout= list.companyAbout.substring(0,118);
 		        		$("#in-content").html(companyAbout+"...<a class='in-more'>展开<img src='../../assets/admin/layout/img/xiala.png' /></a>");
 		        		$("#in-content2").html(list.companyAbout+"<a class='in-more in-hide'>收起<img src='../../assets/admin/layout/img/shouqi.png' /></a>").hide();
 		        	}else{
@@ -3504,7 +3506,11 @@ var CompanyDetail = function () {
 	        if (_leg == "tab_11") {
 	            $(".mask-in").remove();
 	            $(".maskInTable").height("auto");
-            	ownershipStructure();//关系图谱
+	            if(fromType == "investCompany"){
+	            	$("#foreignInvestment").click();//默认加载对外投资
+	            }else{
+	            	ownershipStructure();//关系图谱 默认加载股权结构
+	            }
 	        };
 	        if (_leg == "tab_12") {
 	            $(".mask-in").remove();
@@ -3673,7 +3679,6 @@ var CompanyDetail = function () {
 		        		//企业图谱
 		        		if($(this).hasClass("qytp")){
 		        			var qytpInd = $(this).parent().index();
-		        			
 		        			$(".relationshipTab").find("a").eq(qytpInd).click();
 		        			return false;
 		        		}

@@ -180,7 +180,7 @@ var searchResult = function () {
                     $(this).parent("td").siblings("td").children("a").attr("href", $.url.companyListUrl() + "id=" + id)
                 } else if ($(this).text() == "一般企业") {
                     $(this).parent("td").siblings("td").children("a").addClass('investRestEl');
-                    $(this).parent("td").siblings("td").children("a").attr("href", $.url.industryUrl() + "companyName=" + companyName)
+                    $(this).parent("td").siblings("td").children("a").attr("href", $.url.industryUrl() + "id=" + id)
                 } else if ($(this).text() == "证券公司") {
                     $(this).parent("td").siblings("td").children("a").attr("href", $.url.securitiesUrl() + "id=" + id)
                 } else if ($(this).text() == "私募基金管理人") {

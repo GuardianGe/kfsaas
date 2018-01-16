@@ -542,10 +542,10 @@ var InvestOrganization = function(){
 				if (list[i].type == "新三板") {
 	                invNmae = "<a class='investRest' href='" + $.url.companyListUrl() + "id=" + list[i].boardcompanyId + "'>" + list[i].boardName + "</ a>";
 	            } else {
-	            	if(isNullOrEmpty(list[i].boardCompanyName)){
+	            	if(isNullOrEmpty(list[i].boardcompanyId)){
 	            		invNmae = "<span>" + list[i].boardName + "</span>";
 	            	}else{
-	               	 	invNmae = "<a class='investRests' data-name='" + list[i].boardCompanyName + "' href='" + $.url.industryUrl()  + "companyName=" + list[i].boardCompanyName + "'>" + list[i].boardName + "</ a>";
+	               	 	invNmae = "<a class='investRests' data-name='" + list[i].boardCompanyName + "' href='" + $.url.industryUrl()  + "id=" + list[i].boardcompanyId + "'>" + list[i].boardName + "</ a>";
 	            	}
 	            }
                 tr += "<tr>";

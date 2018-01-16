@@ -480,7 +480,7 @@ var securitiesCompany = function () {
                 var tr = "";
                 $("#profile").html("");
                 tr += "<div class='col-md-5'>";
-                tr += "公司名称：<a class='newsId' class='toIndusDetail' href='" + $.url.industryUrl() + "companyName=" + list.fullname + "'>" + list.fullname + "<span class='seeIndustryDetails'>查看详情</span></a><br/>";
+                tr += "公司名称：<a class='newsId' class='toIndusDetail' href='" + $.url.industryUrl() + "id=" + list.id + "'>" + list.fullname + "<span class='seeIndustryDetails'>查看详情</span></a><br/>";
                 tr += "成立日期：" + list.foundTime + "<br/>";
                 tr += "法定代表人：" + list.legalRepresentative + "<br/>";
                 tr += "总经理：" + list.generalManager + "<br/>";

@@ -137,11 +137,13 @@ var InvestCompany = function(){
 	        	}
 	        	tr += "</div>";
 	        	if(isNullOrEmpty(list[i].id)){
-	        	
 	        		tr += "<div class='investComNum-right'><span>" + list[i].companyName + "</span>";
 	        	}else{
-	        	
-	        		tr += "<div class='investComNum-right'><a class='basicName' title='"+ list[i].name +"' data-name='"+list[i].name+"' href='"+ $.url.industryUrl() + "id=" + list[i].id +"'>"+ list[i].companyName +"</a>";
+	        		if(list[i].type == "新三板"){
+	        			tr += "<div class='investComNum-right'><a class='basicName' title='"+ list[i].name +"' data-name='"+list[i].name+"' href='"+ $.url.companyListUrl() + "id=" + list[i].id +"'>"+ list[i].companyName +"</a>";
+		        	}else{
+	        			tr += "<div class='investComNum-right'><a class='basicName' title='"+ list[i].name +"' data-name='"+list[i].name+"' href='"+ $.url.industryUrl() + "id=" + list[i].id +"'>"+ list[i].companyName +"</a>";
+		        	}
 	        	}
 	        	if(list[i].summary.length<39){
 	        		tr += "<span>" + list[i].summary + "</span>";

@@ -695,7 +695,6 @@ var OverviewComp = function () {
                         mes += param.seriesIndex;
                     }
                     if (param.type == 'click') {
-                    	console.log(param)
                     	var mode = "";
                     	if(param.data.name == "协议"){
                     		mode = 2;

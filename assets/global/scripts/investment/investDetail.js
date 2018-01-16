@@ -35,10 +35,14 @@ var InvestDetail = function(){
         $(list).each(function (i) {
             //console.log(list[i]);
             if(list[i].type == "新三板"){
+            	if (isNullOrEmpty(list[i].companyId)){
+            	 comId = "<span class='industry03'>" + list[i].name + "</span> <span class='badge badge-roundless badge-danger'>" + list[i].type + "</span>";
+            	}else{
             	 comId = "<a class='industry03' href='" + $.url.companyListUrl() + "id=" + list[i].companyId + "'>" + list[i].name + "</a> <span class='badge badge-roundless badge-danger'>" + list[i].type + "</span>";
+            	}
             }else{
-            	if (!isNullOrEmpty(list[i].companyId) && !isNullOrEmpty(list[i].companyName)) {
-	                comId = "<a class='industry03' href='" + $.url.industryUrl() + "companyName=" + list[i].companyName + "'>" + list[i].name + "</a> <span class='badge badge-roundless badge-danger'>" + list[i].type + "</span>";
+            	if (!isNullOrEmpty(list[i].companyId)) {
+	                comId = "<a class='industry03' href='" + $.url.industryUrl() + "id=" + list[i].companyId + "'>" + list[i].name + "</a> <span class='badge badge-roundless badge-danger'>" + list[i].type + "</span>";
 	            } else {
 	                comId = "<span>" + list[i].name + "</span> <span class='badge badge-roundless badge-danger'>" + list[i].type + "</span>";
 	            }

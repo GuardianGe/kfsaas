@@ -1280,7 +1280,6 @@
     //招投标拼接表格
     var biddingList = function (data) {
         var list = data.data;
-        console.log(list)
         var tr = "";
         $("#biddingList").html("");
         $(list).each(function (i) {

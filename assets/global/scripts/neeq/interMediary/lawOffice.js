@@ -80,11 +80,10 @@ var LawOffice = function(){
     var getList = function (data) {
         var list = data.data;
         var tr = "";
-
         $("#tableTwo").html("");
         $(list).each(function (i) {
             tr += "<tr>";
-            tr += "<td><a class='basicName' data-name='"+list[i].companyName+"' href='"+ $.url.industryUrl() + "companyName=" + list[i].companyName +"'>" + list[i].name + "</a></td>";
+            tr += "<td><a class='basicName' data-name='"+list[i].companyName+"' href='"+ $.url.industryUrl() + "id=" + list[i].id +"'>" + list[i].name + "</a></td>";
             tr += "<td>" + list[i].principalName + "</td>";
             tr += "<td>" + list[i].tel + "</td>";
             tr += "<td>" + list[i].date + "</td>";

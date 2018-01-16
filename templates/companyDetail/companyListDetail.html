@@ -480,6 +480,7 @@
 									<span id="nameShort"></span>
 									<span class='sitColor' id="sit"></span>
 									<span id="chuyu" class='sitColors'></span>
+									<span class="highSalary hide">高新企业</span>
 									<span style='display: none;' id="zhaipai" title="终止挂牌" class='sitColors'>摘</span>
 								</li>
 								<li class='liBorderTop' title='收盘价' style="color: #222222; cursor: default;float: left;margin-left:10px;">最新价&nbsp;&nbsp;<span  id="shoupan">--</span></li>
@@ -505,6 +506,7 @@
 							<div class="investT-right">
 								<div class="investR-top">
 									<span id="inName"></span>
+									<span class="highSalary hide">高新企业</span>
 									<span id="inShortName"></span>
 									<span id="step"></span>
 									<div class="joinOptional" name="b2"></div>
@@ -613,16 +615,17 @@
 											<ul class="">
 												<li class="companyData"><a name="jbxx1" href="javascript:;">公司信息</a></li>
 												<li><a name="jbxx2" href="javascript:;">工商信息</a></li>
-												<li><a name="jbxx3" href="javascript:;">行业信息</a></li>
+												<li class="companyData"><a name="jbxx3" href="javascript:;">行业信息</a></li>
 												<li><a name="jbxx4" href="javascript:;">历史变更</a></li>
 												<li class="companyData"><a name="jbxx5" href="javascript:;">企业评级</a></li>
 												<li class="investData"><a name="jbxx7" href="javascript:;">公司年报</a></li>
-												<li><a name="jbxx6" href="javascript:;">同行业企业</a></li>
+												<li class="companyData"><a name="jbxx6" href="javascript:;">同行业企业</a></li>
 											</ul>
 										</li>
 										<li>
 											<ul class="">
-												<li><a name="syfx1" href="javascript:;">主营业务</a></li>
+												<li class="companyData"><a name="syfx1" href="javascript:;">主营业务</a></li>
+												<li class="investData"><a name="syfx1" href="javascript:;">经营范围</a></li>
 												<li class='companyData'><a name="syfx2" href="javascript:;">营收来源</a></li>
 												<li class='companyData'><a name="syfx3" href="javascript:;">主要客户</a></li>
 												<li class='companyData'><a name="syfx4" href="javascript:;">主要供应商</a></li>
@@ -632,12 +635,12 @@
 										</li>
 										<li>
 											<ul>
-												<li><a name="qytp1" class="qytp" href="javascript:;">股权结构</a></li>
+												<li class="companyData"><a name="qytp1" class="qytp" href="javascript:;">股权结构</a></li>
 												<li class="companyData"><a name="qytp2" class="qytp" href="javascript:;">客户关系</a></li>
 												<li class="companyData"><a name="qytp3" class="qytp" href="javascript:;">供应链关系</a></li>
 												<li><a name="qytp4" class="qytp" href="javascript:;">对外投资</a></li>
 												<li><a name="qytp5" class="qytp" href="javascript:;">分支机构</a></li>
-												<li><a name="qytp6" class="qytp" href="javascript:;">历史融资</a></li>
+												<li class="companyData"><a name="qytp6" class="qytp" href="javascript:;">历史融资</a></li>
 											</ul>
 										</li>
 										<li class="companyData">
@@ -662,7 +665,7 @@
 										</li>
 										<li>
 											<ul class="basicMenuLabel">
-												<li><a name="fxxx1" href="javascript:;">风险提示</a></li>
+												<li class="companyData"><a name="fxxx1" href="javascript:;">风险提示</a></li>
 												<li><a name="fxxx3" href="javascript:;">法律诉讼</a></li>
 												<li><a name="fxxx2" href="javascript:;">法院公告</a></li>
 												<li><a name="fxxx4" href="javascript:;">经营异常</a></li>
@@ -682,14 +685,14 @@
 										</li>
 										<li>
 											<ul>
-												<li><a name="zscq1" href="javascript:;">研发投入</a></li>
+												<li class="companyData"><a name="zscq1" href="javascript:;">研发投入</a></li>
 												<li><a name="zscq2" href="javascript:;">公司专利</a></li>
 												<li><a name="zscq3" href="javascript:;">商标信息</a></li>
 												<li><a name="zscq4" href="javascript:;">作品著作权</a></li>
 												<li><a name="zscq5" href="javascript:;">软件著作权</a></li>
 												<li><a name="zscq6" href="javascript:;">域名</a></li>
 												<li><a name="zscq7" href="javascript:;">企业证书</a></li>
-												<li><a name="zscq8" href="javascript:;">特许经营权</a></li>
+												<li class="companyData"><a name="zscq8" href="javascript:;">特许经营权</a></li>
 											</ul>
 										</li>
 										<li class="companyData">
@@ -715,7 +718,7 @@
 												<div class="col-sm-6">
 													<button class="search  btn-ipt" id="noticeBtn">查询</button>
 													<button class="search  btn-ipt btn-ipts" id="noticeBtnReset">重置</button>
-													<a href="javascript:void(0)" class="allNotice">全部公告>></a>
+													<a href="notice/index" class="allNotice">全部公告>></a>
 												</div>
 											</div>
 											<div class="row allList" id="compQs">
@@ -1148,7 +1151,7 @@
 												<div class="col-sm-6">
 													<button class="search  btn-ipt" id="newsBtn">查询</button>
 													<button class="search  btn-ipt btn-ipts" id="newsBtnReset">重置</button>
-													<a href="javascript:void(0)" class="allNotice">全部新闻>></a>
+													<a href="/news/index" class="allNotice">全部新闻>></a>
 													<div class="typeNews">
 														<b></b>
 														<span>重要提示<img src='../../assets/admin/layout/img/tip.png' class='tip'/></span>
@@ -1351,42 +1354,45 @@
 													</div>
 												</div>
 											</div>
-											<div class="page-line"></div>
-											<div class="msg-wrap">
-												<div class="msg-title" id="jbxx3">行业信息</div>
-											</div>
-											<div class="portlet box darkCyan ">
-												<div class="portlet-body tableBasic  maskInAjax" style="padding-bottom: 0;">
-													<div class="table-scrollable" style="border: none;">
-														<table class="table table-striped">
-															<colgroup>
-																<col width="45%" />
-																<col width="55%" />
-															</colgroup>
-															<tbody class="comLinkColor">
-																<tr class="companyData">
-																	<td>
-																		管理型行业分类：<span id="managementIndustry"></span>
-																	</td>
-																	<td>
-																		投资型行业分类：<span id="investmentIndustry"></span>
-																	</td>
-																</tr class="companyData">
-																<!--<tr>
-																	<td>
-																		证监会行业分类：<span id="sfcType"></span>
-																	</td>
-																</tr>-->
-																<tr>
-																	<td>
-																		企业标签：<span id="tag"></span>
-																	</td>
-																</tr>
-															</tbody>
-														</table>
+											<div class="companyData">
+												<div class="page-line"></div>
+												<div class="msg-wrap">
+													<div class="msg-title" id="jbxx3">行业信息</div>
+												</div>
+												<div class="portlet box darkCyan ">
+													<div class="portlet-body tableBasic  maskInAjax" style="padding-bottom: 0;">
+														<div class="table-scrollable" style="border: none;">
+															<table class="table table-striped">
+																<colgroup>
+																	<col width="45%" />
+																	<col width="55%" />
+																</colgroup>
+																<tbody class="comLinkColor">
+																	<tr>
+																		<td>
+																			管理型行业分类：<span id="managementIndustry"></span>
+																		</td>
+																		<td>
+																			投资型行业分类：<span id="investmentIndustry"></span>
+																		</td>
+																	</tr>
+																	<!--<tr>
+																		<td>
+																			证监会行业分类：<span id="sfcType"></span>
+																		</td>
+																	</tr>-->
+																	<tr>
+																		<td>
+																			企业标签：<span id="tag"></span>
+																		</td>
+																	</tr>
+																</tbody>
+															</table>
+														</div>
 													</div>
 												</div>
 											</div>
+												
 											<!--变更记录开始-->
 											<div class="page-line"></div>
 											<div class="msg-wrap">
@@ -1469,7 +1475,8 @@
 													</ul>
 												</div>
 											</div>
-											<div class="page-line"></div>
+											<div class="companyData">
+												<div class="page-line"></div>
 											<div class="msg-wrap">
 												<div class="msg-title" id="jbxx6">同行业企业</div>
 												<div class="msg-detail">
@@ -1519,6 +1526,7 @@
 												</table>
 											</div>
 											<div id="pageToolCompany" class="detailPageHeight"></div>
+											</div>
 										</div>
 										<div class="tab-pane tabCaiWu" id="tab_4">
 											<div class="row">
@@ -1835,8 +1843,11 @@
 		                                                    <div class="fundHalf">
 	                                                        	邮政编码：<span id="postCodeIn"></span>
 		                                                    </div>
-		                                                    <div>
+		                                                    <div class="fundHalf">
 	                                                        	注册地点：<span id="addressIn"></span>
+		                                                    </div>
+		                                                    <div class="fundHalf">
+	                                                       	 	官方网站：<span id="websiteIn"></span>
 		                                                    </div>
 		                                                    <div>
 	                                                        	详细地址：<span id="detailedAddressIn"></span>
@@ -1849,9 +1860,6 @@
 		                                                    </div>
 		                                                    <div>
 	                                                        	所属行业：<span id="industryIn"></span>
-		                                                    </div>
-		                                                    <div>
-	                                                       	 	官方网站：<span id="websiteIn"></span>
 		                                                    </div>
 		                                                </div>
 													</div>
@@ -2381,7 +2389,7 @@
 											</div>
 										</div>
 										<div class="tab-pane" id="tab_7">
-											<div class="msg-wrap">
+											<div class="msg-wrap companyData">
 												<div class="msg-title" id="zscq1">研发投入</div>
 												<div class="msg-detail">
 													
@@ -2636,7 +2644,8 @@
 												</table>
 											</div>
 											<div id="recordPageZs" class="detailPageHeight"></div>
-											<div class="page-line"></div>
+											<div class="companyData">
+												<div class="page-line"></div>
 											<div class="msg-wrap">
 												<div class="msg-title" id="zscq8">特许经营权</div>
 												<div class="msg-detail">
@@ -2671,28 +2680,31 @@
 												</table>
 											</div>
 											<div id="recordPageJy" class="detailPageHeight"></div>
+											</div>
 										</div>
 										<div class="tab-pane" id="tab_9">
-											<div class="page-line"></div>
-											<div class="msg-wraps" id="wrapTs">
-												<div class="msg-title msg-timeTl" id="fxxx1">风险提示</div>
-												<div class="list_con_down list_con_time">
-													<div class="list_left_btn timelf_btn" id="timelfTs"></div>
-													<div class="list_con list_time">
-														<ul class="j_ul_list overLi-btn col-show" id="timeListTs">
-														</ul>
+											<div class="companyData">
+												<div class="page-line"></div>
+												<div class="msg-wraps" id="wrapTs">
+													<div class="msg-title msg-timeTl" id="fxxx1">风险提示</div>
+													<div class="list_con_down list_con_time">
+														<div class="list_left_btn timelf_btn" id="timelfTs"></div>
+														<div class="list_con list_time">
+															<ul class="j_ul_list overLi-btn col-show" id="timeListTs">
+															</ul>
+															</div>
+														<div class="list_right_btn timerg_btn" id="timergTs"></div>
 														</div>
-													<div class="list_right_btn timerg_btn" id="timergTs"></div>
-													</div>
-												<div class="portlet-body maskInTable maskInTableTs" style="clear: both;">
-													<ul class="riskWarn-box pdt10 pdb10" id="riskWarn-box">
-														
-													</ul>
-													<div class="riskWarn-choose">
-														本期风险是否变更：<span></span>
-														<div class="riskWarn-chbox">
-															<span class='riskWarn-content'></span>
-			            									<a class='textGl-detail riskWarn-text' data-toggle='modal' data-target='#myModalOut'>查看详情</a>
+													<div class="portlet-body maskInTable maskInTableTs" style="clear: both;">
+														<ul class="riskWarn-box pdt10 pdb10" id="riskWarn-box">
+															
+														</ul>
+														<div class="riskWarn-choose">
+															本期风险是否变更：<span></span>
+															<div class="riskWarn-chbox">
+																<span class='riskWarn-content'></span>
+				            									<a class='textGl-detail riskWarn-text' data-toggle='modal' data-target='#myModalOut'>查看详情</a>
+															</div>
 														</div>
 													</div>
 												</div>
@@ -3073,7 +3085,8 @@
 											</div>-->
 											<div class="page-line"></div>
 											<div class="msg-wrap" id="msgSer01">
-												<div class="msg-title" id="syfx1">主营业务</div>
+												<div class="msg-title companyData" id="syfx1">主营业务</div>
+												<div class="msg-title investData">经营范围</div>
 											</div>
 											<div class="">
 												<div id="scopeWrap">
@@ -3253,12 +3266,12 @@
 																<div class="canvas-list mgt">
 																	<div class="relationshipTab">
 																		<!--class="notAllowed" 禁止点击-->
-																		<a class="active" id="ownershipStructure">股权结构</a>
-																		<a  id="customerRelations" class="companyData">客户关系</a>
-																		<a id="supplyChainRelationship" class="companyData">供应链关系</a>
+																		<a class="active companyData" id="ownershipStructure">股权结构</a>
+																		<a class="companyData" id="customerRelations">客户关系</a>
+																		<a class="companyData" id="supplyChainRelationship">供应链关系</a>
 																		<a id="foreignInvestment">对外投资</a>
 																		<a id="branchOffice">分支机构</a>
-																		<a id="storyFinancing">历史融资</a>
+																		<a class="companyData" id="storyFinancing">历史融资</a>
 																	</div>																
 															    </div>
 																<div class="canvas-most-wrap">

@@ -402,7 +402,6 @@ $(function(){
 			            		dataArr[i].itemStyle = createRandomItemStyle();
 			            	}
 		                	optionWord.series[0].data = dataArr;
-		                	console.log(wordChart);
 		                	wordChart.setOption(optionWord,true);
 		            	}else{
 		            		$("#wordChart>div").hide();
@@ -497,7 +496,7 @@ $(function(){
 		        $("#changeTable").html("");
 		        $(list).each(function (i) {
 		            tr += "<tr>";
-		            tr += "<td class='creentCom'><a class='' data-name='"+list[i][4]+"' href='"+ $.url.industryUrl() + "companyName=" + list[i][4] +"'>" + list[i][1] + "</a></td>";
+		            tr += "<td class='creentCom'><a class='' data-name='"+list[i][4]+"' href='"+ $.url.industryUrl() + "id=" + list[i][0] +"'>" + list[i][1] + "</a></td>";
 		            tr += "<td>" + list[i][2] +"</td>";
 		            tr += "<td>" + list[i][3]+ "</td>";
 		            tr += "</tr>";

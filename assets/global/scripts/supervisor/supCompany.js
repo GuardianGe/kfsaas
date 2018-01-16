@@ -580,7 +580,6 @@ var Sup = function () {
     };
     //新建公告公告上送
     var sendNotice = function(status){
-    	console.log(thisType)
 		if(thisType == "kongzi"){
 			var sum = ["number","company_code","secompany_summary","secompany_name","company_name","announcement_name",
 			"authenticity_part","authenticity","investment_cooperation","subsidiary_holding","registered_area","currency","money",

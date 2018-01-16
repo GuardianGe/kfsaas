@@ -147,7 +147,7 @@ var DetailDwon = function(){
             if(list[i].type == "个人"){
             	tr += "<td>" + list[i].name + "</td>";
             }else{
-            	tr += "<td><a href='"+ $.url.industryUrl() + "companyName=" + list[i].name +"'>" + list[i].name + "</a></td>";
+            	tr += "<td><a href='"+ $.url.industryUrl() + "id=" + list[i].id +"'>" + list[i].name + "</a></td>";
             }
             /*tr += "<td>" + list[i].type + "</td>";*/
             tr += "<td style='text-align:right'>" + list[i].money + "</td>";

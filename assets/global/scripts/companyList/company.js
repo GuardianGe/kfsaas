@@ -705,7 +705,6 @@ var Comp = function(){
     	
     	//排序判断
     	if(!isNullOrEmpty(getByName)){
-    		console.log(getByName)
         	orderByName = getByName;
         	orderByType = Query.getHash("orderByType");
         }

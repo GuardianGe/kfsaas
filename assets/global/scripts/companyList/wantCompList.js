@@ -165,7 +165,7 @@ var WantComp = function(){
         $("#tableWant").html("");
         $(list).each(function (i) {
             tr += "<tr>";
-            tr += "<td><a class='basicName' data-name='"+list[i].companyName+"' href='"+$.url.industryUrl() + "companyName=" + list[i].companyName+"'>" + list[i].shortname + "</a></td>";
+            tr += "<td><a class='basicName' data-name='"+list[i].companyName+"' href='"+$.url.industryUrl() + "id=" + list[i].id+"'>" + list[i].shortname + "</a></td>";
             tr += "<td>" + list[i].special + "</td>";
             tr += "<td>" + list[i].lawOffice + "</td>";
             tr += "<td>" + list[i].accountingFirm + "</td>";

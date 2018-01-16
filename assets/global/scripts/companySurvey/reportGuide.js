@@ -539,7 +539,6 @@ var reportGuide = function () {
         	var indexTab = $(this).parent().attr("name");
         	$(".productionCon").each(function(){
         		if($(this).attr("name") == indexTab){
-        			console.log($(this).attr("name"))
         			$(this).removeClass("hide").siblings("div").addClass("hide")
         		}
         	})

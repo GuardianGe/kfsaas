@@ -434,7 +434,6 @@ var SupSecurity = function () {
 	        	}else{
 	        		$(this).parents(".sup-right").find(".textRadius").css("display","none");
 	        		if($(this).hasClass("date-ipt")){
-	        			console.log(2);
 	        			$(this).parent().parent().find(".textRadius").css("display","inline-block");
 	        			var _text = $(this).parent().parent().find(".textRadius").text();
 	        		}else{

@@ -239,7 +239,6 @@ $('#register').on("click", function () {
                     data: param,
                     dataType: "json",
                     success: function (data) {
-                    	console.log(data)
                         if (data.code == "100001") {//图片验证码错误
                             $("#picCodeError").text(data.message);
                             $('#register').attr("disabled", false);

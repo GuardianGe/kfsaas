@@ -107,7 +107,6 @@ var modifyPassword = function () {
                     data: param,
                     dataType: "json",
                     processResponse: function (data) {
-                    	console.log(data)
                         if (data.code == 10001) {
                             $("#pwError01").text(data.message)
                         } else if (data.code == 100005) {

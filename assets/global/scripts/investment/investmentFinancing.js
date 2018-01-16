@@ -229,9 +229,9 @@ var InvestFinanc = function(){
 		                }
 	        		}else{
 						if(isNullOrEmpty(list[i].logoUrl)){
-	               	 		invNmae = "<div class='investOrgImg'><div class='investOrgBox'><img src='../../assets/admin/layout/img/investImg.png' /></div><a class='investRests' data-name='" + list[i].companyName + "' href='" + $.url.industryUrl()  + "companyName=" + list[i].companyName + "'>" + list[i].name + "</a></div>";
+	               	 		invNmae = "<div class='investOrgImg'><div class='investOrgBox'><img src='../../assets/admin/layout/img/investImg.png' /></div><a class='investRests' data-name='" + list[i].companyName + "' href='" + $.url.industryUrl()  + "id=" + list[i].companyId + "'>" + list[i].name + "</a></div>";
 		                }else{
-	               	 		invNmae = "<div class='investOrgImg'><div class='investOrgBox'><img src='"+ list[i].logoUrl +"' /></div><a class='investRests' data-name='" + list[i].companyName + "' href='" + $.url.industryUrl()  + "companyName=" + list[i].companyName + "'>" + list[i].name + "</a></div>";
+	               	 		invNmae = "<div class='investOrgImg'><div class='investOrgBox'><img src='"+ list[i].logoUrl +"' /></div><a class='investRests' data-name='" + list[i].companyName + "' href='" + $.url.industryUrl()  + "id=" + list[i].companyId + "'>" + list[i].name + "</a></div>";
 		                }
 	        		}
 	        	}

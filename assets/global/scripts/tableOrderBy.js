@@ -29,7 +29,6 @@ var TableManaged = function () {
 	    	return list;
     	}
 		dataList = ad();
-		console.log(dataList);
         table.dataTable({
 			data:dataList,
 			columns: [

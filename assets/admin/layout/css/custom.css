@@ -3959,7 +3959,7 @@ table .dropdown-select{
     font-weight: bold;
     color: white;
     margin-left: 6px;
-    
+    margin-right: 10px;
 }
 #liushizhi{
 	color: #000;
@@ -4213,6 +4213,17 @@ table td{
 .table-blue td{
 	text-align: center;
 }
+.highSalary{
+	padding-right: 0!important;
+    text-align: center;
+    display: inline-block;
+    width: 72px;
+    height: 22px;
+    background: rgba(254,121,59,0.18);
+    font-size: 14px;
+    color: #fd5c19!important;
+    line-height: 22px;
+}
 .corePersonBox li{
 	overflow: hidden;
 	padding: 14px 24px 14px 14px;
@@ -4451,7 +4462,7 @@ table td{
 	padding-left: 4px;
 }
 .investT-right .investR-top span{
-	margin-right: 20px;
+	margin-right: 12px;
 }
 .investT-right .investR-top a{
 	margin-right: 26px;
@@ -5962,7 +5973,7 @@ textarea:disabled{
 #companyName{ font-size: 22px; color: #f77e44;}
 #companyName,#companyName2{ font-size: 22px; color: #f77e44;margin-bottom: 30px;margin-top: 20px;}
 .relationshipTab{ width: 490px; margin: 0 auto; overflow: auto;}
-.relationshipTab2{width: 335px;}
+.relationshipTab2{width: 174px;}
 .relationshipTab a{ display: block; float: left; font-size: 14px; font-weight: bold; width: 80px; text-align: center; text-decoration: none; padding-bottom: 10px;}
 .relationshipTab .active,.relationshipTab a:hover{ border-bottom: 2px solid #f57d4b;}
 /*定增*/
