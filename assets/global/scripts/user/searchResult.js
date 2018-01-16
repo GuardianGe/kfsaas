@@ -4,41 +4,114 @@ var searchResult = function () {
 	
 	/*内容写入*/
     var search = function () {
-        /*股票列表*/
-        var keyword = Query.getHash("keyword");
-        var _url = $.kf.COMPANYCODE + "?" + "code=" + keyword + "&page=" + 1;
-        //_url = $.kf.COMPANYCODE+"?"+"code="+keyword+"&page="+1;
-        $.getTable({
-        	url:_url,//url
-	    	pageId:$("#pageTool"),//分页id
-	    	callback:companyCodeList,//callback
-	    	loadId:".maskInTable1",
-	    	tbodyId:$("#companyCodeList")//tbody的id,
-        })
-
-        /**table**/
-        function companyCodeList(data) {
-            var list = data.data.companyList;
-            if(isNullOrEmpty(list)){
-            	funNoData($("#pageTool"));
-            	$(".count1").text("（" + 0 + "）");
-            }else{
-            	var tr = "";
-	            if (data.total > 99) {
-	                $(".count1").text("（99+）");
-	            } else {
-	                $(".count1").text("（" + data.total + "）");
+    	var keyword = Query.getHash("keyword");
+    	/*投资机构*/
+    	var investOrg = function(){
+	        var _url = $.kf.SEARCHGETINVESTMENSEARCH + "?" + "code=" + keyword + "&page=" + 1;
+	        //_url = $.kf.COMPANYCODE+"?"+"code="+keyword+"&page="+1;
+	        $.getTable({
+	        	url:_url,//url
+		    	pageId:$("#pageTool"),//分页id
+		    	callback:companyCodeList,//callback
+		    	loadId:".maskInTable1",
+		    	tbodyId:$("#companyCodeList")//tbody的id,
+	        })
+	
+	        /**table**/
+	        function companyCodeList(data) {
+	        	
+	            var list = data.data;
+	            var attention = "";
+	            if(isNullOrEmpty(list)){
+	            	funNoData($("#pageTool"));
+	            	$(".count1").text("（" + 0 + "）");
+	            }else{
+	            	var tr = "";
+		            if (data.total > 99) {
+		                $(".count1").text("（99+）");
+		            } else {
+		                $(".count1").text("（" + data.total + "）");
+		            }
+		            $("#companyCodeList").html("");
+		            
+		            $(list).each(function (i) {
+		            	if(list[i].attention == "1"){
+							attention = "取消";
+						}else{
+							attention = "关注";
+						};
+		                tr += "<tr>";
+		                
+		                tr += '<td><div class="investTbox investTbox-search">';
+                        tr += '    <div class="investT-left investT-left-search"><img src="'+list[i].logoUrl+'"></div>';
+                        tr += '    <div class="investT-right">';
+                        tr += '        <div class="investR-top">';
+                        tr += '            <span id="inName"><a href="">'+ list[i].name +'</a></span>';
+                        tr += '            <span id="investType">'+ list[i].investType +'</span>';
+                        tr += '            <span class="investHide"><br></span>';
+                        tr += '            <span id="startYear">'+ list[i].date +'</span>';
+                        tr += '            <a id="website" href="'+ list[i].website +'" target="_blank"><img src="../../assets/admin/layout/img/lianjie2.png">官网</a>';
+                        tr += '        </div>';
+                        tr += '        <div class="in-content" style="display: block;">'+ list[i].introduction.substring(0,28) +'...<a class="in-more">展开<img src="../../assets/admin/layout/img/xiala.png"></a></div>';
+                        tr += '        <div class="in-content2" style="display: none;">'+ list[i].introduction +'<a class="in-more in-hide">收起<img src="../../assets/admin/layout/img/shouqi.png"></a></div>';
+                        tr += '   </div>';
+                        tr += '</div></td>';
+		                
+		                tr += "<td style='text-align:center;'>" + list[i].project + "</td>";
+		                tr += "<td style='text-align:center;'>" + list[i].num + "</td>";
+		                if(attention == "取消"){
+		                	tr += "<td style='text-align:center;' class='investR-top'><a class='joinOptional  cancelOptional' name='" + list[i].id + "'>" + attention + "</a></td>";
+		                }else{
+		                	tr += "<td style='text-align:center;' class='investR-top'><a class='joinOptional  wantOptional' name='" + list[i].id + "'>" + attention + "</a></td>";
+		                }
+		                
+		                tr += "</tr>";
+		            });
+		            $("#companyCodeList").append(tr);
+		            //自选功能
+		        	comOptional();
+		            
 	            }
-	            $("#companyCodeList").html("");
-	            $(list).each(function (i) {
-	                tr += "<tr>";
-	                tr += "<td><a href='" + $.url.companyListUrl() + "id=" + list[i].companyId + "'>" + list[i].shortname + "(" + list[i].code + ") <span class='badge badge-default'>" + list[i].type + "</span></a></td>";
-	                tr += "</tr>";
-	            });
-	            $("#companyCodeList").append(tr);
-            }
-            
-        }
+	            
+	        }
+    	}
+    	investOrg();
+        //加入自选功能
+	    var comOptional = function(){
+	    	//展开收起
+			$(".investT-right").on("click",".in-more",function(){
+				if($(this).hasClass("in-hide")){
+					$(this).parents(".investT-right").find(".in-content2").hide();
+					$(this).parents(".investT-right").find(".in-content").show();
+				}else{
+					$(this).parents(".investT-right").find(".in-content2").show();
+					$(this).parents(".investT-right").find(".in-content").hide();
+				}
+			})
+			//自选
+			$(".joinOptional").click(function(){
+				var _url = "";
+				var code = $(this).attr("name");
+				var param = {
+				  		"code":code,
+				  		"type":"b1"
+				 	};
+				if($(this).text()== "关注"){
+		           	 _url = $.kf.ADDCOLLECTIONOPTION;
+				}else{
+					 _url = $.kf.CANCELCOLLECTIONOPTION;
+				}
+				$.kf.ajax({
+		            type: "post",
+		            url: _url,
+		            data: param,
+		            dataType: "json",
+		            processResponse: function(data){
+		            	investOrg();
+	            	}
+			 	 })
+			})
+	   };
 
         /*公告列表*/
         var _url = $.kf.GNOTE + "?" + "keyword=" + keyword + "&page=" + 1;
@@ -51,6 +124,7 @@ var searchResult = function () {
         })
         /***table***/
         function noteList(data) {
+        	
             var list = data.data;
             var tr = "";
             if (data.total > 99) {
@@ -82,6 +156,7 @@ var searchResult = function () {
         })
         /***table***/
         function companyList(data) {
+        	
             var list = data.data;
             var tr = "";
             if (data.total > 99) {
@@ -129,6 +204,7 @@ var searchResult = function () {
         })
         /***table***/
         function newsList(data) {
+        	
             var list = data.data;
             var tr = "";
             if (data.total > 99) {
@@ -158,6 +234,7 @@ var searchResult = function () {
         })
         /***table***/
         function getList(data) {
+        	
             var list = data.data;
             var tr = "";
             if (data.total > 99) {
@@ -187,6 +264,7 @@ var searchResult = function () {
 	    	tbodyId:$("#lawList")//tbody的id,
         })
         function lawList(data) {
+        	
             var list = data.data;
             var tr = "";
             if (data.total > 99) {
@@ -210,7 +288,7 @@ var searchResult = function () {
             $("#lawList").append(tr);
         }
 
-        /*事件列表*/
+        /*投资事件列表*/
         var _url2 = $.kf.INVESTHING + "?" + "keyword=" + keyword + "&page=" + 1;
         $.getTable({
         	url:_url2,//url
@@ -221,6 +299,7 @@ var searchResult = function () {
         })
         /***table***/
         function investList(data) {
+        	
             var list = data.data;
             var tr = "";
             if (data.total > 99) {
@@ -230,9 +309,12 @@ var searchResult = function () {
             }
             $("#investList").html("");
             $(list).each(function (i) {
-                  console.log(list[i]);
                 tr += "<tr>";
-                tr += "<td>" + list[i].name + "</td>";
+                if(isNullOrEmpty(list[i].logoUrl)){
+	            	tr += "<td><div class='investOrgImg'><div class='investOrgBox'><img src='../../assets/admin/layout/img/investImg.png' /></div><span>"+ list[i].name +"</span></div></td>";
+	            }else{
+	            	tr += "<td><div class='investOrgImg'><div class='investOrgBox'><img src='"+ list[i].logoUrl +"' /></div><span>"+ list[i].name +"</span></div></td>";
+	            }
                 tr += "<td>" + list[i].industry + "</td>";
                 tr += "<td class='investT" + i + " investMg'></td>";
                 //tr += "<td><a href=''>" +  + "</a></td>";
@@ -282,6 +364,21 @@ var searchResult = function () {
     return{
     	init:function(){
     		search();
+    		var pageUrl = "./serachCompany.html";
+    		pageFun(pageUrl);
+            function pageFun(pageUrl) {
+                new LoadingAjax($("#tabComps"), {}, $("#tabComps")).init();
+                $.ajax({
+                    type: "get",
+                    url: pageUrl,
+                    data: "",
+                    dataType: "HTML",
+                    success: function (data) {
+                        new LoadingAjax($("#tabComps"), {}, $("#tabComps")).close();
+                        $("#searchCompany").empty("").html("").append(data);
+                    }
+                });
+            }
     	}
     }
 }();

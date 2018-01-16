@@ -509,12 +509,12 @@ var InvestOrganization = function(){
             if (!isNullOrEmpty(d)) {
                 $("#allListSo").show();
                 $(".listFour").remove();
-                $("#allListSo").find("ul").prepend("<li class='listFour' name=" + c + ">" + cc + "<span class='soListClose'></span></li>");
+                $("#allListSo").find("ul").prepend("<li class='listFour' name=" + d + ">" + dd + "<span class='soListClose'></span></li>");
             }
             if (!isNullOrEmpty(e)) {
                 $("#allListSo").show();
                 $(".listFive").remove();
-                $("#allListSo").find("ul").prepend("<li class='listFive' name=" + c + ">" + cc + "<span class='soListClose'></span></li>");
+                $("#allListSo").find("ul").prepend("<li class='listFive' name=" + e + ">" + ee+ "<span class='soListClose'></span></li>");
             }
             //显示关闭按钮
             $("#soClear").on("click", function () {

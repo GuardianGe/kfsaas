@@ -86,6 +86,8 @@
         GETNEWS: URL + 'service/getNews' + urlType, //新闻
         GETYEARLIST: URL + 'companynewservice/getYearList' + urlType, //公司年报
         GETYEARLISTINFO: URL + 'companynewservice/getYearListInfo' + urlType, //公司年报
+        GETPETITORS: URL + 'companynewservice/getCompanyCompetitors' + urlType, //竞品分析
+        GETCOMPANYSHAREHOLDERGRAP: URL + 'companynewservice/getCompanyShareholderGrap' + urlType, //被投详情 股东信息
         GETCOMPANYCASEHTML: URL + 'companynewservice/getCompanyCaseHtml' + urlType, //法律诉讼
         GETCOMPANYCASENOTICE: URL + 'companynewservice/getCompanyCaseNotice' + urlType, //法院公告
         GETEVENTSTENDERBIDINFO: URL + 'companyinfoservice/getEventsTenderBidInfo' + urlType, //招投标详情
@@ -93,11 +95,13 @@
         GETCOMPANYBONDFINANCING: URL + 'companynewservice/getCompanyBondFinancing' + urlType, //债券信息
         GETCOMPANYCHECKS: URL + 'companynewservice/getCompanyChecks' + urlType, //抽查检查
         GETNOTICECATEGORY: URL + 'companyservice/getNoticeCategory' + urlType, //挂牌公司详情公告
+        GETCOMPANYCORETEAM: URL + 'companynewservice/getCompanyCoreTeam' + urlType, //企业详情 核心人员
         GETFEATUREDLAYERS: URL + 'privilegeservice/getFeaturedLayers' + urlType, //IPO精选层
      	GETAGANCYAREA: URL + 'investstatservice/getAgancyArea' + urlType, //机构详情=》机构概览=》地区分布
         GETCOMPANYNOTICE: URL + 'service/getCompanyNotice' + urlType, //公司详情公告
         GETCOMPANYEXECUTIVENEW: URL + 'companyinfoservice/getCompanyExecutiveNew' + urlType, //公司详情==》公司概况==》公司高管
         GETCOMPANYREPORT: URL + 'service/getCompanyReport' + urlType, //公司详情研报
+        GETCOMPANYPRODUCT: URL + 'companynewservice/getCompanyProduct' + urlType, //公司产品信息
         GETCOMPANYSTRUCTURE: URL + 'companyinfoservice/getCompanyStructure' + urlType, //公司详情股本结构
         GETCOMPANYNEWS: URL + 'service/getCompanyNews' + urlType, //公司详情新闻
         GETCOMPANYINFO: URL + 'service/getCompanyInfo' + urlType, //公司基本信息
@@ -323,6 +327,8 @@
         SEARCHCHWECHA:URL + 'caseservice/searchWecha' + urlType,//搜索案例-》微信搜索
         SUPBBSERVICE: URL + 'supervisorservice/pdf' + urlType, //督导导出pdf
         SUPXBRL: URL + 'supervisorservice/xbrl' + urlType, //督导导出xbrl
+        SEARCHGETCOMPANYSEARCH: URL + 'searchservice/getCompanySearch' + urlType, //大搜索 --公司
+        SEARCHGETINVESTMENSEARCH: URL + 'searchservice/getInvestmenSearch' + urlType, //大搜索--投资机构
         SUPWORD: URL + 'supervisorservice/word' + urlType, //督导导出word
         STATSERVICECOMPANYAREA: URL + 'listedcompanystatservice/getListcompanyArea' + urlType,//挂牌公司 -》挂牌概览 -》企业地区分布
         SHAREHOLDER: URL + 'graphservice/getShareholder' + urlType,//挂牌公司详情-》关系图谱-》股权关系
@@ -405,9 +411,9 @@
         },
         industryUrl: function () {//工商信息
             if ($.url.isServer) {
-                var industryUrl = "/company/index?sid="+fakeId+"&r=s26&from=companylisted"+ Query.urlState();
+                var industryUrl = "/companylisted/details?sid="+fakeId+"&r=s25&from=investCompany"+ Query.urlState();
             } else {
-                var industryUrl = "http://" + window.location.host + $.url.getContextPath() + "/templates/companyDetail/industryCommerce.html?sid="+fakeId+"&r=s25"+ Query.urlState();
+                var industryUrl = "http://" + window.location.host + $.url.getContextPath() + "/templates/companyDetail/companyListDetail.html?sid="+fakeId+"&r=s25&from=investCompany"+ Query.urlState();
             }
             return industryUrl;
         },
@@ -1011,7 +1017,7 @@ function userName(s)
 /*邮箱检验规则*/
 function userEmail(s)
 {
-    var isIntCharSpecial = RegExp(/^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$/);
+    var isIntCharSpecial = RegExp(/^[A-Za-z\d]+([-_.][A-Za-z\d]+)*@([A-Za-z\d]+[-.])+[A-Za-z\d]{2,4}$/);
     return (isIntCharSpecial.test(s));
 }
 /*汉字，数字，英文*/

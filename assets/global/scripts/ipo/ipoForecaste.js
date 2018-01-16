@@ -262,7 +262,7 @@ var Vip = function () {
                 });
             }
 			//查询条件清除地址栏参数
-            if ($(this).parent().hasClass("listFive")) {
+            if ($(this).parent().hasClass("listSix")) {
             	$("#compLabelPop").find("li").removeClass("provinceLi");
             	$("#compLabelSave").addClass("default").removeClass("btn-primary");
                 $("#compBq").find("li").each(function () {

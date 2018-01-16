@@ -343,7 +343,7 @@ var InvestFinanc = function(){
 	            //查询条件清除地址栏参数
 	            if ($(this).parent().hasClass("listFour")) {
 	                $("#compTm").find("li").each(function () {
-	                    if ($(this).text() == "全部") {
+	                    if ($(this).text() == "不限") {
 	                        $(this).addClass("hang-active");
 	                        $(this).siblings().removeClass("hang-active");
 	                    }

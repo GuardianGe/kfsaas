@@ -473,7 +473,7 @@
 						<div class="page-height">
 
 						</div>
-						<div class="row mod-linetext mod-linetextIn">
+						<div class="row mod-linetext mod-linetextIn companyData">
 							<ul class="list-inline list-inline-title" style="overflow: hidden;">
 								<li style="cursor:default;float: left;" id='modDiLi'>
 									<span title="股票代码" id="nameCodeId"></span>
@@ -488,7 +488,7 @@
 								<li class='liBorderTop' title='流通市值' style="color: #222222;cursor: default;float: left;">流通市值&nbsp;&nbsp;<span id="liushizhi">--</span></li>
 								<li class='liBorderTop' title='PE(TTM)' style="color: #222222;cursor: default;float: left;">PE(TTM)&nbsp;&nbsp;<span id="pettm">--</span>|</li>
 								<li title='' style="color: #222222;cursor: default;float: left;"><span id="zhandat"></span></li>
-								<li class='joinOptional' id="joinOptional"></li>
+								<li class='joinOptional' id="joinOptional" name=""></li>
 							</ul>
 							<ul class="list-inline list-inline-title" style="overflow: hidden;margin-top: -15px;">
 								<li style="color: #222222;padding-right: 10px;cursor:default;">财务分析&nbsp;&nbsp;<span class="leverImg" id="lever-img"></span></li>
@@ -497,6 +497,21 @@
 								<li style="color: #222222;padding-right: 10px;cursor:default;">安全性&nbsp;&nbsp;<span class="leverSun" id="lever-3"></span></li>
 								<li style="padding-right: 10px;"><a id="toCwfx" href="javascript:;">查看详情>></a></li>
 							</ul>
+						</div>
+						<div class="investTbox investData" style="margin-bottom: 20px;">
+							<div class="investT-left">
+								
+							</div>
+							<div class="investT-right">
+								<div class="investR-top">
+									<span id="inName"></span>
+									<span id="inShortName"></span>
+									<span id="step"></span>
+									<div class="joinOptional" name="b2"></div>
+								</div>
+								<div id="in-content"></div>
+								<div id="in-content2"></div>
+							</div>
 						</div>
 						<div class="row col-hide">
 							<div class="dropdown dropdown-select">
@@ -535,7 +550,7 @@
 								<div style="height: 46px; margin-bottom: 20px;">
 								<div class="comNewCss">
 									<ul class="list-inline clearfix  comNewTab">
-										<li class="">
+										<li class="companyData">
 											<a href="#tab_1" data-toggle="tab">个股速览 </a>
 										</li>
 										<li class="">
@@ -550,7 +565,7 @@
 										<li>
 											<a href="#tab_11" name="qytp1"  data-toggle="tab">企业图谱</a>
 										</li>
-										<li class="">
+										<li class="companyData">
 											<a href="#tab_4" name="cwsj1"  data-toggle="tab">财务数据</a>
 										</li>
 										<li class="">
@@ -562,13 +577,13 @@
 										<li class="">
 											<a href="#tab_7" name="zscq1"  data-toggle="tab">知识产权 </a>
 										</li>
-										<li class="">
+										<li class="companyData">
 											<a href="#tab_12" name="zqxx1"  data-toggle="tab">证券信息</a>
 										</li>
-										<li class="lastMenuWidUp">
+										<li class="lastMenuWidUp companyData">
 											<a href="#tab_0" name=""  data-toggle="tab">公告 </a>
 										</li>
-										<li  class="lastMenuWidUp">
+										<li  class="lastMenuWidUp companyData">
 											<a href="#tab_5" name=""  data-toggle="tab">研报</a>
 										</li>
 										<li  class="overli-noborder lastMenuWidUp">
@@ -576,48 +591,56 @@
 										</li>
 									</ul>
 									<ul class="basicMenu">
-										<li></li>
+										<li class="companyData"></li>
 										<li>
 											<ul class="basicMenuLabel secondBasicMenuLabel active">
-												<li><a name="gsgk1" href="javascript:;">公司高管</a></li>
-												<li><a name="gsgk2" href="javascript:;">十大股东</a></li>
-												<li><a name="gsgk3" href="javascript:;">股本结构</a></li>
-												<li><a name="gsgk4" href="javascript:;">股票分红</a></li>
-												<li><a name="gsgk5" href="javascript:;">股票增发</a></li>
-												<li><a name="gsgk6" href="javascript:;">核心员工</a></li>
+												<li class="investData"><a name="gsgk8" href="javascript:;">基本信息</a></li>
+												<li class="investData"><a name="gsgk9" href="javascript:;">历史融资</a></li>
+												<li class="investData"><a name="gsgk10" href="javascript:;">股东信息</a></li>
+												<li class="investData"><a name="gsgk12" href="javascript:;">核心团队</a></li>
+												<li class="companyData"><a name="gsgk1" href="javascript:;">公司高管</a></li>
+												<li class="investData"><a name="gsgk1" href="javascript:;">主要人员</a></li>
+												<li class="companyData"><a name="gsgk2" href="javascript:;">十大股东</a></li>
+												<li class="companyData"><a name="gsgk3" href="javascript:;">股本结构</a></li>
+												<li class="companyData"><a name="gsgk4" href="javascript:;">股票分红</a></li>
+												<li class="companyData"><a name="gsgk5" href="javascript:;">股票增发</a></li>
+												<li class="companyData"><a name="gsgk6" href="javascript:;">核心员工</a></li>
+												<li class="investData"><a name="gsgk7" href="javascript:;">产品信息</a></li>
+												<li class="investData"><a name="gsgk11" href="javascript:;">竞品分析</a></li>
 											</ul>
 										</li>
 										<li>
 											<ul class="">
-												<li><a name="jbxx1" href="javascript:;">公司信息</a></li>
+												<li class="companyData"><a name="jbxx1" href="javascript:;">公司信息</a></li>
 												<li><a name="jbxx2" href="javascript:;">工商信息</a></li>
 												<li><a name="jbxx3" href="javascript:;">行业信息</a></li>
 												<li><a name="jbxx4" href="javascript:;">历史变更</a></li>
-												<li><a name="jbxx5" href="javascript:;">企业评级</a></li>
+												<li class="companyData"><a name="jbxx5" href="javascript:;">企业评级</a></li>
+												<li class="investData"><a name="jbxx7" href="javascript:;">公司年报</a></li>
 												<li><a name="jbxx6" href="javascript:;">同行业企业</a></li>
 											</ul>
 										</li>
 										<li>
 											<ul class="">
 												<li><a name="syfx1" href="javascript:;">主营业务</a></li>
-												<li><a name="syfx2" href="javascript:;">营收来源</a></li>
-												<li><a name="syfx3" href="javascript:;">主要客户</a></li>
-												<li><a name="syfx4" href="javascript:;">主要供应商</a></li>
-												<li><a name="syfx5" href="javascript:;">商业模式</a></li>
-												<li><a name="syfx6" href="javascript:;">同商业模式</a></li>
+												<li class='companyData'><a name="syfx2" href="javascript:;">营收来源</a></li>
+												<li class='companyData'><a name="syfx3" href="javascript:;">主要客户</a></li>
+												<li class='companyData'><a name="syfx4" href="javascript:;">主要供应商</a></li>
+												<li class='companyData'><a name="syfx5" href="javascript:;">商业模式</a></li>
+												<li class='companyData'><a name="syfx6" href="javascript:;">同商业模式</a></li>
 											</ul>
 										</li>
 										<li>
 											<ul>
 												<li><a name="qytp1" class="qytp" href="javascript:;">股权结构</a></li>
-												<li><a name="qytp2" class="qytp" href="javascript:;">客户关系</a></li>
-												<li><a name="qytp3" class="qytp" href="javascript:;">供应链关系</a></li>
+												<li class="companyData"><a name="qytp2" class="qytp" href="javascript:;">客户关系</a></li>
+												<li class="companyData"><a name="qytp3" class="qytp" href="javascript:;">供应链关系</a></li>
 												<li><a name="qytp4" class="qytp" href="javascript:;">对外投资</a></li>
 												<li><a name="qytp5" class="qytp" href="javascript:;">分支机构</a></li>
 												<li><a name="qytp6" class="qytp" href="javascript:;">历史融资</a></li>
 											</ul>
 										</li>
-										<li>
+										<li class="companyData">
 											<ul class="">
 												<li><a name="cwsj1" class="cwsj" href="javascript:;">财务分析</a></li>
 												<li><a name="cwsj2" class="cwsj"  href="javascript:;">财务摘要</a></li>
@@ -669,21 +692,21 @@
 												<li><a name="zscq8" href="javascript:;">特许经营权</a></li>
 											</ul>
 										</li>
-										<li>
+										<li class="companyData">
 											<ul class="basicMenuLabel">
 												<li><a name="zqxx1" href="javascript:;">挂牌信息</a></li>
 												<li><a name="zqxx2" href="javascript:;">主办券商</a></li>
 												<li><a name="zqxx3" href="javascript:;">中介机构</a></li>
 											</ul>
 										</li>
-										<li class="lastMenuWid"></li>
-										<li class="lastMenuWid"></li>
+										<li class="lastMenuWid companyData"></li>
+										<li class="lastMenuWid companyData"></li>
 										<li class="lastMenuWid"></li>
 									</ul>
 								    </div>
 							</div>
 							<div class="tab-content reset-col">
-										<div class="tab-pane active" id="tab_0">
+										<div class="tab-pane" id="tab_0">
 											<div class="page-line"></div>
 											<div class="row mod-con-ipt">
 												<div class="col-sm-2 contan-search">
@@ -1170,54 +1193,56 @@
 											</div>
 										</div>
 										<div class="tab-pane" id="tab_3">
-											<div class="page-line"></div>
-											<div class="msg-wrap">
-												<div class="msg-title" id="jbxx1">公司信息</div>
-											</div>
-											<div class="portlet box darkCyan ">
-												<div class="portlet-body tableBasic  maskInAjax" style="padding-bottom: 0;">
-													<div class="table-scrollable" style="border: none;">
-														<table class="table table-striped">
-															<colgroup>
-																<col width="45%" />
-																<col width="55%" />
-															</colgroup>
-															<tbody id="comManAll" class="comLinkColor">
-																<tr>
-																	<td>
-																		公司全称：<span id="basicName2"></span>
-																	</td>
-																	<td>
-																		曾用名：<span id="onceName"></span>
-																	</td>
-																</tr>
-																<tr>
-																	<td>
-																		成立日期：<span id="foundDate"></span>
-																	</td>
-																	<td >
-																		所属地区：<span id="basicProvince"></span>
-																	</td>
-																</tr>
-																<tr>
-																	<td >
-																		所属城市：<span id="basicCity"></span>
-																	</td>
-																	<td>
-																		注册地址：<span id="basicAdress"></span>
-																	</td>
-																</tr>
-																	<td>
-																		公司网址：<span id="basciWeb"></span>
-																	</td>
-																</tr>
-																
-
-															</tbody>
-														</table>
-														<!--<div class="dataDiv"></div>-->
+											<div class="companyData">
+												<div class="page-line"></div>
+												<div class="msg-wrap">
+													<div class="msg-title" id="jbxx1">公司信息</div>
+												</div>
+												<div class="portlet box darkCyan ">
+													<div class="portlet-body tableBasic  maskInAjax" style="padding-bottom: 0;">
+														<div class="table-scrollable" style="border: none;">
+															<table class="table table-striped">
+																<colgroup>
+																	<col width="45%" />
+																	<col width="55%" />
+																</colgroup>
+																<tbody id="comManAll" class="comLinkColor">
+																	<tr>
+																		<td>
+																			公司全称：<span id="basicName2"></span>
+																		</td>
+																		<td>
+																			曾用名：<span id="onceName"></span>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td>
+																			成立日期：<span id="foundDate"></span>
+																		</td>
+																		<td >
+																			所属地区：<span id="basicProvince"></span>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td >
+																			所属城市：<span id="basicCity"></span>
+																		</td>
+																		<td>
+																			注册地址：<span id="basicAdress"></span>
+																		</td>
+																	</tr>
+																		<td>
+																			公司网址：<span id="basciWeb"></span>
+																		</td>
+																	</tr>
+																	
+	
+																</tbody>
+															</table>
+															<!--<div class="dataDiv"></div>-->
+														</div>
+														
 													</div>
-													
 												</div>
 											</div>
 											<div class="page-line"></div>
@@ -1339,14 +1364,14 @@
 																<col width="55%" />
 															</colgroup>
 															<tbody class="comLinkColor">
-																<tr>
+																<tr class="companyData">
 																	<td>
 																		管理型行业分类：<span id="managementIndustry"></span>
 																	</td>
 																	<td>
 																		投资型行业分类：<span id="investmentIndustry"></span>
 																	</td>
-																</tr>
+																</tr class="companyData">
 																<!--<tr>
 																	<td>
 																		证监会行业分类：<span id="sfcType"></span>
@@ -1383,54 +1408,67 @@
 												</table>
 												<div id="pageToolStoryTool"></div>
 											</div>
-											<div class="page-line"></div>
-											<div class="msg-wrap">
-												<div class="msg-title" id="jbxx5">企业评级</div>
-												<div class="msg-detail">
+											<div class="companyData">
+												<div class="page-line"></div>
+												<div class="msg-wrap">
+													<div class="msg-title" id="jbxx5">企业评级</div>
+													<div class="msg-detail">
+													</div>
+												</div>
+												<div class="table-scrollable maskInTable maskInTablePj maskLv">
+													<table class="table table-striped table-bordered table-hover dataTable no-footer" id="sample_3" role="grid" aria-describedby="sample_3_info">
+														<colgroup>
+															<col width="10%"/>
+															<col width="10%"/>
+															<col width="11%"/>
+															<col width="10%"/>
+															<col width="10%"/>
+															<col width="41%"/>
+														</colgroup>
+														<colgroup>
+															<col width="10%"/>
+															<col width="10%"/>
+														</colgroup>
+														<thead>
+															<tr role="row" class="tr">
+																<th scope="col" rowspan="2">
+																	发布时间
+																</th>
+																<th scope="col" rowspan="2">
+																	研究机构
+																</th>
+																<th scope="col" rowspan="2">
+																	分析师
+																</th>
+																<th scope="col" colspan="2">
+																	评级内容
+																</th>
+																<th scope="col" rowspan="2" colspan="2">
+																	报告标题
+																</th>
+															</tr>
+															<tr role="row" class="tr">
+																<th>本期评级</th>
+																<th>上期评级</th>
+															</tr>
+														</thead>
+														<tbody id="tableNine2">
+														</tbody>
+													</table>
+												</div>
+												<div id="pageToolNine2" class="detailPageHeight"></div>
+											</div>
+											<div class="investData">
+												<div class="page-line"></div>
+												<div class="msg-wrap">
+													<div class="msg-title" id="jbxx7">公司年报</div>
+												</div>
+												<div class="portlet-body maskInTable">
+													<ul class="inannualReports">
+														
+													</ul>
 												</div>
 											</div>
-											<div class="table-scrollable maskInTable maskInTablePj maskLv">
-												<table class="table table-striped table-bordered table-hover dataTable no-footer" id="sample_3" role="grid" aria-describedby="sample_3_info">
-													<colgroup>
-														<col width="10%"/>
-														<col width="10%"/>
-														<col width="11%"/>
-														<col width="10%"/>
-														<col width="10%"/>
-														<col width="41%"/>
-													</colgroup>
-													<colgroup>
-														<col width="10%"/>
-														<col width="10%"/>
-													</colgroup>
-													<thead>
-														<tr role="row" class="tr">
-															<th scope="col" rowspan="2">
-																发布时间
-															</th>
-															<th scope="col" rowspan="2">
-																研究机构
-															</th>
-															<th scope="col" rowspan="2">
-																分析师
-															</th>
-															<th scope="col" colspan="2">
-																评级内容
-															</th>
-															<th scope="col" rowspan="2" colspan="2">
-																报告标题
-															</th>
-														</tr>
-														<tr role="row" class="tr">
-															<th>本期评级</th>
-															<th>上期评级</th>
-														</tr>
-													</thead>
-													<tbody id="tableNine2">
-													</tbody>
-												</table>
-											</div>
-											<div id="pageToolNine2" class="detailPageHeight"></div>
 											<div class="page-line"></div>
 											<div class="msg-wrap">
 												<div class="msg-title" id="jbxx6">同行业企业</div>
@@ -1777,364 +1815,570 @@
 											</div>
 										</div>
 										<div class="tab-pane" id="tab_6">
+											<div class="investData">
+												<div class="page-line"></div>
+												<div class="msg-wrap">
+													<div class="msg-title" id="gsgk8">基本信息</div>
+												</div>
+												<div class="portlet box darkCyan ">
+													<div class="portlet-body tableBasic " style="padding-bottom: 0;">
+														<div id="namefulas" class="fundinColor">
+		                                                    <div class="fundHalf">
+	                                                        	企业全称：<span id="fullnameIn"></span>
+		                                                    </div>
+		                                                    <div class="fundHalf">
+	                                                        	联系电话：<span id="telIn"></span>
+		                                                    </div>
+		                                                    <div class="fundHalf">
+                                                        		企业法人：<span id="legalRepresentativeIn"></span>
+		                                                    </div>
+		                                                    <div class="fundHalf">
+	                                                        	邮政编码：<span id="postCodeIn"></span>
+		                                                    </div>
+		                                                    <div>
+	                                                        	注册地点：<span id="addressIn"></span>
+		                                                    </div>
+		                                                    <div>
+	                                                        	详细地址：<span id="detailedAddressIn"></span>
+		                                                    </div>
+		                                                    <div>
+	                                                        	成立时间：<span id="registrationDateIn"></span>
+		                                                    </div>
+		                                                    <div>
+	                                                       	 	员工人数：<span id="peopleIn"></span>
+		                                                    </div>
+		                                                    <div>
+	                                                        	所属行业：<span id="industryIn"></span>
+		                                                    </div>
+		                                                    <div>
+	                                                       	 	官方网站：<span id="websiteIn"></span>
+		                                                    </div>
+		                                                </div>
+													</div>
+												</div>
+												<div class="page-line"></div>
+												<div class="msg-wrap">
+													<div class="msg-title" id="gsgk9">历史融资</div>
+													<div class="portlet-body maskInTable maskInTableRz">
+														<div class="table-scrollable">
+															<table class="table table-striped table-bordered table-hover dataTable no-footer" id="sample_1" role="grid" aria-describedby="sample_1_info">
+																<thead class="view-tr">
+																	<tr class="tr">
+																		<th>
+																			融资时间
+																		</th>
+																		<th>
+																			轮次
+																		</th>
+																		<th>
+																			投资金额（万元）
+																		</th>
+																		<th>
+																			比例
+																		</th>
+																		<th>
+																			投资方
+																		</th>
+																	</tr>
+																</thead>
+																<tbody id="historyFin">
+																</tbody>
+															</table>
+											            </div>
+													</div>
+													<div id="pageToolHistoryFin"></div>
+												</div>
+												<div class="page-line"></div>
+												<div class="msg-wrap mgb10">
+													<div class="msg-title" id="gsgk10">股东信息</div>
+												</div>
+												<div class="portlet-body " style="overflow: hidden;">
+													<div class=" maskInTable maskInTableGx" style="width: 48%;float: left;">
+														<div class="table-scrollable">
+															<table class="table table-striped table-bordered table-hover dataTable no-footer" id="sample_1" role="grid" aria-describedby="sample_1_info">
+																<colgroup>
+																	<col width="40%"/>
+																	<col width="40%"/>
+																	<col width="20%"/>
+																</colgroup>
+																<thead class="view-tr">
+																	<tr class="tr">
+																		<th scope="col">
+																			股东
+																		</th>
+																		<th scope="col">
+																			认缴出资额
+																		</th>
+																		<th scope="col">
+																			出资比例
+																		</th>
+																	</tr>
+																</thead>
+																<tbody id="tableGudongx">
+																</tbody>
+															</table>
+														</div>
+														<div id="pageGx"></div>
+											    	</div>
+											    	<div id="shareHolderX" style="width: 52%; height: 260px;float: left;margin-top: 10px;">
+														
+													</div>
+												</div>
+												<div class="page-line"></div>
+												<div class="msg-wrap">
+													<div class="msg-title" id="gsgk12">核心团队</div>
+													<ul class="corePersonBox maskInTableHx" id="corePersonBox">
+														
+													</ul>
+													<div id="pageCorePer"></div>
+												</div>
+											</div>
+											
 											<div class="page-line"></div>
 											<div class="msg-wraps" id="wrapGg">
-												<div class="msg-title msg-timeTl" id="gsgk1">公司高管</div>
-												<div class="list_con_down list_con_time">
-													<div class="list_left_btn timelf_btn" id="timelfGg"></div>
-													<div class="list_con list_time">
-														<ul class="j_ul_list overLi-btn col-show" id="timeListGg">
-														</ul>
-													</div>
-													<div class="list_right_btn timerg_btn" id="timergGg"></div>
+											<div class="msg-title msg-timeTl companyData" id="gsgk1">公司高管</div>
+											<div class="msg-title msg-timeTl investData">主要人员</div>
+											<div class="list_con_down list_con_time">
+												<div class="list_left_btn timelf_btn" id="timelfGg"></div>
+												<div class="list_con list_time">
+													<ul class="j_ul_list overLi-btn col-show" id="timeListGg">
+													</ul>
 												</div>
-												<div class="portlet-body maskInTable maskInTableGg" style="clear: both;">
-													<div class="table-scrollable">
-														<table style="min-width: auto;table-layout:fixed;" class="table table-striped table-bordered table-hover dataTable no-footer" id="sample_1" role="grid" aria-describedby="sample_1_info">
-															<colgroup>
-																<col width="8%"/>
-																<col width="10%"/>
-																<col width="10%"/>
-																<col width="6%"/>
-																<!--<col width="8%"/>-->
-																<col width="13%"/>
-																<col width="15%"/>
-																<col width="38%"/>
-															</colgroup>
-															<thead>
-																<tr role="row" class="tr">
-																	<th scope="col">
-																		姓名
-																	</th>
-																	<th scope="col">
-																		国籍
-																	</th>
-																	<th scope="col">
-																		职位
-																	</th>
-																	<th scope="col">
-																		性别
-																	</th>
-																	<!--<th scope="col">
-																		年龄
-																	</th>-->
-																	<th scope="col">
-																		学历
-																	</th>
-																	<th scope="col">
-																		任期
-																	</th>
-																	<th scope="col">
-																		履历
-																	</th>
-																</tr>
-															</thead>
-															<tbody id="tableGg">
-															</tbody>
-														</table>
-													</div>
+												<div class="list_right_btn timerg_btn" id="timergGg"></div>
+											</div>
+											<div class="portlet-body maskInTable maskInTableGg" style="clear: both;">
+												<div class="table-scrollable">
+													<table style="min-width: auto;table-layout:fixed;" class="table table-striped table-bordered table-hover dataTable no-footer" id="sample_1" role="grid" aria-describedby="sample_1_info">
+														<colgroup>
+															<col width="8%"/>
+															<col width="10%"/>
+															<col width="10%"/>
+															<col width="6%"/>
+															<!--<col width="8%"/>-->
+															<col width="13%"/>
+															<col width="15%"/>
+															<col width="38%"/>
+														</colgroup>
+														<thead>
+															<tr role="row" class="tr">
+																<th scope="col">
+																	姓名
+																</th>
+																<th scope="col">
+																	国籍
+																</th>
+																<th scope="col">
+																	职位
+																</th>
+																<th scope="col">
+																	性别
+																</th>
+																<!--<th scope="col">
+																	年龄
+																</th>-->
+																<th scope="col">
+																	学历
+																</th>
+																<th scope="col">
+																	任期
+																</th>
+																<th scope="col">
+																	履历
+																</th>
+															</tr>
+														</thead>
+														<tbody id="tableGg">
+														</tbody>
+													</table>
 												</div>
+											</div>
 											</div>
 											<div id="pageGg" class="detailPageHeight"></div>
-											<div class="page-line"></div>
-											<div class="msg-wraps" id="wrapGd">
-												<div class="msg-title msg-timeTl" id="gsgk2">十大股东</div>
-												<div class="list_con_down list_con_time">
-													<div class="list_left_btn timelf_btn" id="timelfGd"></div>
-													<div class="list_con list_time">
-														<ul class="j_ul_list overLi-btn col-show" id="timeListGd">
-														</ul>
+											<div class="companyData">
+												<div class="page-line"></div>
+												<div class="msg-wraps" id="wrapGd">
+													<div class="msg-title msg-timeTl" id="gsgk2">十大股东</div>
+													<div class="list_con_down list_con_time">
+														<div class="list_left_btn timelf_btn" id="timelfGd"></div>
+														<div class="list_con list_time">
+															<ul class="j_ul_list overLi-btn col-show" id="timeListGd">
+															</ul>
+														</div>
+														<div class="list_right_btn timerg_btn" id="timergGd"></div>
 													</div>
-													<div class="list_right_btn timerg_btn" id="timergGd"></div>
-												</div>
-												<div class="portlet-body maskInTable maskInTableGd" style="clear: both;">
-													<div class="table-scrollable">
-														<table style="min-width: auto;" class="table table-striped table-bordered table-hover dataTable no-footer" id="sample_1" role="grid" aria-describedby="sample_1_info">
-															<colgroup>
-																<col width="14%"/>
-																<col width="34%"/>
-																<col width="20%"/>
-																<col width="10%"/>
-																<col width="10%"/>
-																<col width="12%"/>
-															</colgroup>
-															<thead>
-																<tr role="row" class="tr">
-																	<th scope="col">
-																		截止时间
-																	</th>
-																	<th scope="col">
-																		股东名称
-																	</th>
-																	<th scope="col">
-																		持股数量（股）
-																	</th>
-																	<th scope="col">
-																		持股比例
-																	</th>
-																	<th scope="col">
-																		股东类型
-																	</th>
-																	<th scope="col">
-																		出资金额
-																	</th>
-																</tr>
-															</thead>
-															<tbody id="tableGd">
-															</tbody>
-														</table>
+													<div class="portlet-body maskInTable maskInTableGd" style="clear: both;">
+														<div class="table-scrollable">
+															<table style="min-width: auto;" class="table table-striped table-bordered table-hover dataTable no-footer" id="sample_1" role="grid" aria-describedby="sample_1_info">
+																<colgroup>
+																	<col width="14%"/>
+																	<col width="34%"/>
+																	<col width="20%"/>
+																	<col width="10%"/>
+																	<col width="10%"/>
+																	<col width="12%"/>
+																</colgroup>
+																<thead>
+																	<tr role="row" class="tr">
+																		<th scope="col">
+																			截止时间
+																		</th>
+																		<th scope="col">
+																			股东名称
+																		</th>
+																		<th scope="col">
+																			持股数量（股）
+																		</th>
+																		<th scope="col">
+																			持股比例
+																		</th>
+																		<th scope="col">
+																			股东类型
+																		</th>
+																		<th scope="col">
+																			出资金额
+																		</th>
+																	</tr>
+																</thead>
+																<tbody id="tableGd">
+																</tbody>
+															</table>
+														</div>
 													</div>
 												</div>
+												<div id="pageGd" class="detailPageHeight"></div>
+												<div class="page-line"></div>
+												<div class="msg-wraps" id="wrapGb">
+													<div class="msg-title msg-timeTl" id="gsgk3">股本结构</div>
+													<div class="list_con_down list_con_time">
+														<div class="list_left_btn timelf_btn" id="timelfGb"></div>
+														<div class="list_con list_time">
+															<ul class="j_ul_list overLi-btn col-show" id="timeListGb">
+															</ul>
+														</div>
+														<div class="list_right_btn timerg_btn" id="timergGb"></div>
+													</div>
+													<div class="portlet-body maskInTable maskInTableGb" style="clear: both;">
+														<div class="table-scrollable">
+															<table style="min-width: auto;table-layout:fixed;" class="table table-striped table-bordered table-hover dataTable no-footer" id="sample_1" role="grid" aria-describedby="sample_1_info">
+																<colgroup>
+																	<col width="14%"/>
+																	<col width="14%"/>
+																	<col width="14%"/>
+																	<col width="14%"/>
+																	<col width="10%"/>
+																	<col width="10%"/>
+																	<col width="14%"/>
+																	<col width="10%"/>
+																</colgroup>
+																<thead>
+																	<tr role="row" class="tr">
+																		<th scope="col">
+																			截止时间
+																		</th>
+																		<th scope="col">
+																			股份性质
+																		</th>
+																		<th scope="col">
+																			股份分类详情
+																		</th>
+																		<th scope="col">
+																			期初数量
+																		</th>
+																		<th scope="col">
+																			期初比例
+																		</th>
+																		<th scope="col">
+																			本期变动
+																		</th>
+																		<th scope="col">
+																			期末数量
+																		</th>
+																		<th scope="col">
+																			期末比例
+																		</th>
+																	</tr>
+																</thead>
+																<tbody id="tableGb">
+																</tbody>
+															</table>
+														</div>
+													</div>
+												</div>
+												<div id="pageGb" class="detailPageHeight"></div>
+												<div class="page-line"></div>
+												<div class="msg-wraps" id="wrapGp">
+													<div class="msg-title msg-timeTl" id="gsgk4">股票分红</div>
+													<div class="list_con_down list_con_time">
+														<div class="list_left_btn timelf_btn" id="timelfGp"></div>
+														<div class="list_con list_time">
+															<ul class="j_ul_list overLi-btn col-show" id="timeListGp">
+															</ul>
+														</div>
+														<div class="list_right_btn timerg_btn" id="timergGp"></div>
+													</div>
+													<div class="portlet-body maskInTable maskInTableGp" style="clear: both;">
+														<div class="table-scrollable">
+															<table style="min-width: auto;table-layout:fixed;" class="table table-striped table-bordered table-hover dataTable no-footer" id="sample_1" role="grid" aria-describedby="sample_1_info">
+																<colgroup>
+																	<col width="8%"/>
+																	<col width="10%"/>
+																	<col width="10%"/>
+																	<col width="10%"/>
+																	<col width="12%"/>
+																	<col width="10%"/>
+																	<col width="10%"/>
+																	<col width="10%"/>
+																	<col width="20%"/>
+																</colgroup>
+																<thead>
+																	<tr role="row" class="tr">
+																		<th scope="col">
+																			报告期
+																		</th>
+																		<th scope="col">
+																			预案公告
+																		</th>
+																		<th scope="col">
+																			股权登记
+																		</th>
+																		<th scope="col">
+																			除权除息
+																		</th>
+																		<th scope="col">
+																			实施进度
+																		</th>
+																		<th scope="col">
+																			每股派息税前
+																		</th>
+																		<th scope="col">
+																			转增比例（%）
+																		</th>
+																		<th scope="col">
+																			分红对象
+																		</th>
+																		<th scope="col">
+																			分红说明
+																		</th>
+																	</tr>
+																</thead>
+																<tbody id="tableGp">
+																</tbody>
+															</table>
+														</div>
+													</div>
+												</div>
+												<div id="pageGp" class="detailPageHeight"></div>
+												<div class="page-line"></div>
+												<div class="msg-wraps" id="wrapZf">
+													<div class="msg-title msg-timeTl" id="gsgk5">股票增发</div>
+													<div class="list_con_down list_con_time">
+														<div class="list_left_btn timelf_btn" id="timelfZf"></div>
+														<div class="list_con list_time">
+															<ul class="j_ul_list overLi-btn col-show" id="timeListZf">
+															</ul>
+														</div>
+														<div class="list_right_btn timerg_btn" id="timergZf"></div>
+													</div>
+													<div class="portlet-body maskInTable maskLv maskInTableZf" style="clear: both;">
+														<div class="table-scrollable">
+															<table style="min-width: auto;" class="table table-striped table-bordered table-hover dataTable no-footer" id="sample_1" role="grid" aria-describedby="sample_1_info">
+																<colgroup>
+																	<col width="10%"/>
+																	<col width="10%"/>
+																	<col width="8%"/>
+																	<col width="8%"/>
+																	<col width="12%"/>
+																	<col width="12%"/>
+																	<col width="8%"/>
+																	<col width="11%"/>
+																	<col width="11%"/>
+																	<col width="10%"/>
+																</colgroup>
+																<thead>
+																	<tr role="row" class="tr">
+																		<th scope="col">
+																			预案公告
+																		</th>
+																		<th scope="col">
+																			最新公告
+																		</th>
+																		<th scope="col">
+																			发行对象
+																		</th>
+																		<th scope="col">
+																			增发价格
+																		</th>
+																		<th scope="col">
+																			增发数量（万股）
+																		</th>
+																		<th scope="col">
+																			募集资金（万元）
+																		</th>
+																		<th scope="col">
+																			增发进度
+																		</th>
+																		<th scope="col">
+																			股权登记
+																		</th>
+																		<th scope="col">
+																			新股上市
+																		</th>
+																		<th scope="col">
+																			折溢价率（%）
+																		</th>
+																	</tr>
+																</thead>
+																<tbody id="tableZf">
+																</tbody>
+															</table>
+														</div>
+													</div>
+												</div>
+												<div id="pageZf" class="detailPageHeight"></div>
+												<div class="page-line"></div>
+												<div class="msg-wraps" id="wrapYg">
+													<div class="msg-title msg-timeTl" id="gsgk6">核心员工</div>
+													<div class="list_con_down list_con_time">
+														<div class="list_left_btn timelf_btn" id="timelfYg"></div>
+														<div class="list_con list_time">
+															<ul class="j_ul_list overLi-btn col-show" id="timeListYg">
+															</ul>
+														</div>
+														<div class="list_right_btn timerg_btn" id="timergYg"></div>
+													</div>
+													<div class="portlet-body maskInTable maskInTableYg" style="clear: both;">
+														<div class="table-scrollable">
+															<table style="min-width: auto;table-layout:fixed;" class="table table-striped table-bordered table-hover dataTable no-footer" id="sample_1" role="grid" aria-describedby="sample_1_info">
+																<colgroup>
+																	<col width="8%"/>
+																	<col width="10%"/>
+																	<col width="10%"/>
+																	<col width="6%"/>
+																	<col width="8%"/>
+																	<col width="10%"/>
+																	<col width="14%"/>
+																	<col width="34%"/>
+																</colgroup>
+																<thead>
+																	<tr role="row" class="tr">
+																		<th scope="col">
+																			姓名
+																		</th>
+																		<th scope="col">
+																			国籍
+																		</th>
+																		<th scope="col">
+																			职位
+																		</th>
+																		<th scope="col">
+																			性别
+																		</th>
+																		<th scope="col">
+																			年龄
+																		</th>
+																		<th scope="col">
+																			学历
+																		</th>
+																		<th scope="col">
+																			任期
+																		</th>
+																		<th scope="col">
+																			履历
+																		</th>
+																	</tr>
+																</thead>
+																<tbody id="tableYg">
+																</tbody>
+															</table>
+														</div>
+													</div>
+												</div>
+												<div id="pageYg" class="detailPageHeight"></div>
 											</div>
-											<div id="pageGd" class="detailPageHeight"></div>
-											<div class="page-line"></div>
-											<div class="msg-wraps" id="wrapGb">
-												<div class="msg-title msg-timeTl" id="gsgk3">股本结构</div>
-												<div class="list_con_down list_con_time">
-													<div class="list_left_btn timelf_btn" id="timelfGb"></div>
-													<div class="list_con list_time">
-														<ul class="j_ul_list overLi-btn col-show" id="timeListGb">
-														</ul>
-													</div>
-													<div class="list_right_btn timerg_btn" id="timergGb"></div>
-												</div>
-												<div class="portlet-body maskInTable maskInTableGb" style="clear: both;">
-													<div class="table-scrollable">
-														<table style="min-width: auto;table-layout:fixed;" class="table table-striped table-bordered table-hover dataTable no-footer" id="sample_1" role="grid" aria-describedby="sample_1_info">
-															<colgroup>
-																<col width="14%"/>
-																<col width="14%"/>
-																<col width="14%"/>
-																<col width="14%"/>
-																<col width="10%"/>
-																<col width="10%"/>
-																<col width="14%"/>
-																<col width="10%"/>
-															</colgroup>
-															<thead>
-																<tr role="row" class="tr">
-																	<th scope="col">
-																		截止时间
-																	</th>
-																	<th scope="col">
-																		股份性质
-																	</th>
-																	<th scope="col">
-																		股份分类详情
-																	</th>
-																	<th scope="col">
-																		期初数量
-																	</th>
-																	<th scope="col">
-																		期初比例
-																	</th>
-																	<th scope="col">
-																		本期变动
-																	</th>
-																	<th scope="col">
-																		期末数量
-																	</th>
-																	<th scope="col">
-																		期末比例
-																	</th>
-																</tr>
-															</thead>
-															<tbody id="tableGb">
-															</tbody>
-														</table>
+											<div class="investData">
+												<div class="page-line"></div>
+												<div class="msg-wraps" id="wrapCp">
+													<div class="msg-title msg-timeTl" id="gsgk7">产品信息</div>
+													<div class="portlet-body maskInTable maskInTableCp" style="clear: both;">
+														<div class="table-scrollable">
+															<table style="min-width: auto;table-layout:fixed;" class="table table-striped table-bordered table-hover dataTable no-footer" id="sample_1" role="grid" aria-describedby="sample_1_info">
+																<colgroup>
+																	<col width="30%"/>
+																	<col width="20%"/>
+																	<col width="20%"/>
+																	<col width="20%"/>
+																	<col width="10%"/>
+																</colgroup>
+																<thead>
+																	<tr role="row" class="tr">
+																		<th scope="col">
+																			产品名称
+																		</th>
+																		<th scope="col">
+																			产品简称
+																		</th>
+																		<th scope="col">
+																			产品分类
+																		</th>
+																		<th scope="col">
+																			领域
+																		</th>
+																		<th scope="col">
+																			操作
+																		</th>
+																	</tr>
+																</thead>
+																<tbody id="tableCp">
+																</tbody>
+															</table>
+														</div>
 													</div>
 												</div>
+												<div id="pageCp" class="detailPageHeight"></div>
+												<div class="page-line"></div>
+												<div class="msg-wraps" id="wrapCp">
+													<div class="msg-title msg-timeTl" id="gsgk11">竞品分析</div>
+													<div class="portlet-body maskInTable maskInTableJp" style="clear: both;">
+														<div class="table-scrollable">
+															<table style="min-width: auto;table-layout:fixed;" class="table table-striped table-bordered table-hover dataTable no-footer" id="sample_1" role="grid" aria-describedby="sample_1_info">
+																<colgroup>
+																	<col width="18%"/>
+																	<col width="10%"/>
+																	<col width="10%"/>
+																	<col width="15%"/>
+																	<col width="32%"/>
+																	<col width="15%"/>
+																</colgroup>
+																<thead>
+																	<tr role="row" class="tr">
+																		<th scope="col">
+																			公司名称
+																		</th>
+																		<th scope="col">
+																			地区
+																		</th>
+																		<th scope="col">
+																			当前轮次
+																		</th>
+																		<th scope="col">
+																			行业
+																		</th>
+																		<th scope="col">
+																			业务
+																		</th>
+																		<th scope="col">
+																			成立时间
+																		</th>
+																	</tr>
+																</thead>
+																<tbody id="tableJp">
+																</tbody>
+															</table>
+														</div>
+													</div>
+												</div>
+												<div id="pageJp"></div>
 											</div>
-											<div id="pageGb" class="detailPageHeight"></div>
-											<div class="page-line"></div>
-											<div class="msg-wraps" id="wrapGp">
-												<div class="msg-title msg-timeTl" id="gsgk4">股票分红</div>
-												<div class="list_con_down list_con_time">
-													<div class="list_left_btn timelf_btn" id="timelfGp"></div>
-													<div class="list_con list_time">
-														<ul class="j_ul_list overLi-btn col-show" id="timeListGp">
-														</ul>
-													</div>
-													<div class="list_right_btn timerg_btn" id="timergGp"></div>
-												</div>
-												<div class="portlet-body maskInTable maskInTableGp" style="clear: both;">
-													<div class="table-scrollable">
-														<table style="min-width: auto;table-layout:fixed;" class="table table-striped table-bordered table-hover dataTable no-footer" id="sample_1" role="grid" aria-describedby="sample_1_info">
-															<colgroup>
-																<col width="8%"/>
-																<col width="10%"/>
-																<col width="10%"/>
-																<col width="10%"/>
-																<col width="12%"/>
-																<col width="10%"/>
-																<col width="10%"/>
-																<col width="10%"/>
-																<col width="20%"/>
-															</colgroup>
-															<thead>
-																<tr role="row" class="tr">
-																	<th scope="col">
-																		报告期
-																	</th>
-																	<th scope="col">
-																		预案公告
-																	</th>
-																	<th scope="col">
-																		股权登记
-																	</th>
-																	<th scope="col">
-																		除权除息
-																	</th>
-																	<th scope="col">
-																		实施进度
-																	</th>
-																	<th scope="col">
-																		每股派息税前
-																	</th>
-																	<th scope="col">
-																		转增比例（%）
-																	</th>
-																	<th scope="col">
-																		分红对象
-																	</th>
-																	<th scope="col">
-																		分红说明
-																	</th>
-																</tr>
-															</thead>
-															<tbody id="tableGp">
-															</tbody>
-														</table>
-													</div>
-												</div>
-											</div>
-											<div id="pageGp" class="detailPageHeight"></div>
-											<div class="page-line"></div>
-											<div class="msg-wraps" id="wrapZf">
-												<div class="msg-title msg-timeTl" id="gsgk5">股票增发</div>
-												<div class="list_con_down list_con_time">
-													<div class="list_left_btn timelf_btn" id="timelfZf"></div>
-													<div class="list_con list_time">
-														<ul class="j_ul_list overLi-btn col-show" id="timeListZf">
-														</ul>
-													</div>
-													<div class="list_right_btn timerg_btn" id="timergZf"></div>
-												</div>
-												<div class="portlet-body maskInTable maskLv maskInTableZf" style="clear: both;">
-													<div class="table-scrollable">
-														<table style="min-width: auto;" class="table table-striped table-bordered table-hover dataTable no-footer" id="sample_1" role="grid" aria-describedby="sample_1_info">
-															<colgroup>
-																<col width="10%"/>
-																<col width="10%"/>
-																<col width="8%"/>
-																<col width="8%"/>
-																<col width="12%"/>
-																<col width="12%"/>
-																<col width="8%"/>
-																<col width="11%"/>
-																<col width="11%"/>
-																<col width="10%"/>
-															</colgroup>
-															<thead>
-																<tr role="row" class="tr">
-																	<th scope="col">
-																		预案公告
-																	</th>
-																	<th scope="col">
-																		最新公告
-																	</th>
-																	<th scope="col">
-																		发行对象
-																	</th>
-																	<th scope="col">
-																		增发价格
-																	</th>
-																	<th scope="col">
-																		增发数量（万股）
-																	</th>
-																	<th scope="col">
-																		募集资金（万元）
-																	</th>
-																	<th scope="col">
-																		增发进度
-																	</th>
-																	<th scope="col">
-																		股权登记
-																	</th>
-																	<th scope="col">
-																		新股上市
-																	</th>
-																	<th scope="col">
-																		折溢价率（%）
-																	</th>
-																</tr>
-															</thead>
-															<tbody id="tableZf">
-															</tbody>
-														</table>
-													</div>
-												</div>
-											</div>
-											<div id="pageZf" class="detailPageHeight"></div>
-											<div class="page-line"></div>
-											<div class="msg-wraps" id="wrapYg">
-												<div class="msg-title msg-timeTl" id="gsgk6">核心员工</div>
-												<div class="list_con_down list_con_time">
-													<div class="list_left_btn timelf_btn" id="timelfYg"></div>
-													<div class="list_con list_time">
-														<ul class="j_ul_list overLi-btn col-show" id="timeListYg">
-														</ul>
-													</div>
-													<div class="list_right_btn timerg_btn" id="timergYg"></div>
-												</div>
-												<div class="portlet-body maskInTable maskInTableYg" style="clear: both;">
-													<div class="table-scrollable">
-														<table style="min-width: auto;table-layout:fixed;" class="table table-striped table-bordered table-hover dataTable no-footer" id="sample_1" role="grid" aria-describedby="sample_1_info">
-															<colgroup>
-																<col width="8%"/>
-																<col width="10%"/>
-																<col width="10%"/>
-																<col width="6%"/>
-																<col width="8%"/>
-																<col width="10%"/>
-																<col width="14%"/>
-																<col width="34%"/>
-															</colgroup>
-															<thead>
-																<tr role="row" class="tr">
-																	<th scope="col">
-																		姓名
-																	</th>
-																	<th scope="col">
-																		国籍
-																	</th>
-																	<th scope="col">
-																		职位
-																	</th>
-																	<th scope="col">
-																		性别
-																	</th>
-																	<th scope="col">
-																		年龄
-																	</th>
-																	<th scope="col">
-																		学历
-																	</th>
-																	<th scope="col">
-																		任期
-																	</th>
-																	<th scope="col">
-																		履历
-																	</th>
-																</tr>
-															</thead>
-															<tbody id="tableYg">
-															</tbody>
-														</table>
-													</div>
-												</div>
-											</div>
-											<div id="pageYg" class="detailPageHeight"></div>
 										</div>
 										<div class="tab-pane" id="tab_7">
 											<div class="msg-wrap">
@@ -2838,164 +3082,166 @@
 												
 												</div>
 											</div>
-											<div class="page-line"></div>
-											<div class="msg-wrap" id="msgSer02">
-												<div class="msg-title" id="syfx2">营收来源</div>
-											</div>
-											<div class="msg-mgr msg-business" style="overflow: hidden;">
-												<div id="businessWrap"></div>
-												<div class="revenueStreams busssWrap" style="float: left;">
-													<div class="revenueStreams-date" id="revenueStreams-date">更新日期: <span></span></div>
-													<table border="1" class="businessTable">
-														<colgroup>
-																<col width="33%" />
-																<col width="33%" />
-																<col width="33%" />
-															</colgroup>
-															<thead>
-																<tr role="row" class="tr">
-																	<th scope="col">业务名称</th>
-																	<th scope="col">收入金额（万元）</th>
-																	<th scope="col">收入占比（%）</th>
-																</tr>
-															</thead>
-															<tbody id="businessTbody">
-																
-															</tbody>
-													</table>
+											<div class="companyData">
+												<div class="page-line"></div>
+												<div class="msg-wrap" id="msgSer02">
+													<div class="msg-title" id="syfx2">营收来源</div>
 												</div>
-												<div id="revenueStreams" style="width: 550px; height: 260px;float: left;margin-top: 10px;">
-													
-												</div>
-											</div>
-											<div class="page-line"></div>
-											<div class="msg-wrap" id="msgSer03">
-												<div class="msg-title" id="syfx3">主要客户</div>
-												<div class="msg-detail">
-													
-												</div>
-											</div>
-											<div class="msg-mgr" style="overflow: hidden;">
-												<div id="clientWrap"></div>
-												<div class="revenueStreams majorWrap" style="float: left;">
-													<div class="revenueStreams-date" id="majorClient-data">更新日期: <span></span></div>
-													<table border="1" class="businessTable">
-														<colgroup>
-																<col width="33%" />
-																<col width="33%" />
-																<col width="33%" />
-															</colgroup>
-															<thead>
-																<tr role="row" class="tr">
-																	<th scope="col">客户名称</th>
-																	<th scope="col">销售额（万元）</th>
-																	<th scope="col">占比（%）</th>
-																</tr>
-															</thead>
-															<tbody id="majorClientTbody">
-																
-															</tbody>
-													</table>
-												</div>
-												<div id="majorClient" style="width: 550px;height:260px;float: left;">
-													
-												</div>
-											</div>
-											<div class="page-line"></div>
-											<div class="msg-wrap" id="msgSer04">
-												<div class="msg-title" id="syfx4">主要供应商</div>
-												<div class="msg-detail">
-													
-												</div>
-											</div>
-											<div class="msg-mgr" style="overflow: hidden;">
-												<div id="supplierWrap"></div>
-												<div class="revenueStreams supplierBox" style="float: left;">
-													<div class="revenueStreams-date" id="majorSupplier-data">更新日期: <span ></span></div>
-													<table border="1" class="businessTable">
-														<colgroup>
-																<col width="33%" />
-																<col width="33%" />
-																<col width="33%" />
-															</colgroup>
-															<thead>
-																<tr role="row" class="tr">
-																	<th scope="col">公司名称</th>
-																	<th scope="col">采购额（万元）</th>
-																	<th scope="col">占比（%）</th>
-																</tr>
-															</thead>
-															<tbody id="majorSupplierTbody">
-																
-															</tbody>
-													</table>
-												</div>
-												<div id="majorSupplie" style="width: 550px; height: 280px;float: left;">
-													
-												</div>
-											</div>
-											<div class="page-line"></div>
-											<div class="msg-wrap" id="msgSer05">
-												<div class="msg-title" id="syfx5">商业模式</div>
-												<div class="msg-detail">
-													
-												</div>
-											</div>
-											<div class="msg-mgr">
-												<div id="modelWrap"></div>
-												<ul class="businessModel-date overLi-btn col-show">
-													
-												</ul>
-												<div class="businessModel-content">
-													
-												</div>
-											</div>
-											<div class="page-line"></div>
-											<div class="msg-wraps" id="msgSer06">
-												<div class="msg-title"  id="syfx6">同商业模式企业</div>
-												<div class="portlet-body maskInTable maskInTableTonf">
-													<div class="table-scrollable">
-														<table style="min-width: auto;" class="table table-striped table-bordered table-hover dataTable no-footer" id="sample_1" role="grid" aria-describedby="sample_1_info">
-															<thead>
-																<tr role="row" class="tr">
-																	<th scope="col">
-																		代码
-																	</th>
-																	<th scope="col">
-																		简称
-																	</th>
-																	<th scope="col">
-																		最新价
-																	</th>
-																	<th scope="col">
-																		财务日期
-																	</th>
-																	<th scope="col">
-																		净利润
-																	</th>
-																	<th scope="col">
-																		每股收益
-																	</th>
-																	<th scope="col">
-																		市盈率
-																	</th>
-																	<th scope="col">
-																		净资产收益率
-																	</th>
-																	<th scope="col">
-																		总市值
-																	</th>
-																	<th scope="col">
-																		商业模式
-																	</th>
-																</tr>
-															</thead>
-														<tbody id="tableOneSame">
-														</tbody>
+												<div class="msg-mgr msg-business" style="overflow: hidden;">
+													<div id="businessWrap"></div>
+													<div class="revenueStreams busssWrap" style="float: left;">
+														<div class="revenueStreams-date" id="revenueStreams-date">更新日期: <span></span></div>
+														<table border="1" class="businessTable">
+															<colgroup>
+																	<col width="33%" />
+																	<col width="33%" />
+																	<col width="33%" />
+																</colgroup>
+																<thead>
+																	<tr role="row" class="tr">
+																		<th scope="col">业务名称</th>
+																		<th scope="col">收入金额（万元）</th>
+																		<th scope="col">收入占比（%）</th>
+																	</tr>
+																</thead>
+																<tbody id="businessTbody">
+																	
+																</tbody>
 														</table>
 													</div>
-											</div>
-											</div>
+													<div id="revenueStreams" style="width: 550px; height: 260px;float: left;margin-top: 10px;">
+														
+													</div>
+												</div>
+												<div class="page-line"></div>
+												<div class="msg-wrap" id="msgSer03">
+													<div class="msg-title" id="syfx3">主要客户</div>
+													<div class="msg-detail">
+														
+													</div>
+												</div>
+												<div class="msg-mgr" style="overflow: hidden;">
+													<div id="clientWrap"></div>
+													<div class="revenueStreams majorWrap" style="float: left;">
+														<div class="revenueStreams-date" id="majorClient-data">更新日期: <span></span></div>
+														<table border="1" class="businessTable">
+															<colgroup>
+																	<col width="33%" />
+																	<col width="33%" />
+																	<col width="33%" />
+																</colgroup>
+																<thead>
+																	<tr role="row" class="tr">
+																		<th scope="col">客户名称</th>
+																		<th scope="col">销售额（万元）</th>
+																		<th scope="col">占比（%）</th>
+																	</tr>
+																</thead>
+																<tbody id="majorClientTbody">
+																	
+																</tbody>
+														</table>
+													</div>
+													<div id="majorClient" style="width: 550px;height:260px;float: left;">
+														
+													</div>
+												</div>
+												<div class="page-line"></div>
+												<div class="msg-wrap" id="msgSer04">
+													<div class="msg-title" id="syfx4">主要供应商</div>
+													<div class="msg-detail">
+														
+													</div>
+												</div>
+												<div class="msg-mgr" style="overflow: hidden;">
+													<div id="supplierWrap"></div>
+													<div class="revenueStreams supplierBox" style="float: left;">
+														<div class="revenueStreams-date" id="majorSupplier-data">更新日期: <span ></span></div>
+														<table border="1" class="businessTable">
+															<colgroup>
+																	<col width="33%" />
+																	<col width="33%" />
+																	<col width="33%" />
+																</colgroup>
+																<thead>
+																	<tr role="row" class="tr">
+																		<th scope="col">公司名称</th>
+																		<th scope="col">采购额（万元）</th>
+																		<th scope="col">占比（%）</th>
+																	</tr>
+																</thead>
+																<tbody id="majorSupplierTbody">
+																	
+																</tbody>
+														</table>
+													</div>
+													<div id="majorSupplie" style="width: 550px; height: 280px;float: left;">
+														
+													</div>
+												</div>
+												<div class="page-line"></div>
+												<div class="msg-wrap" id="msgSer05">
+													<div class="msg-title" id="syfx5">商业模式</div>
+													<div class="msg-detail">
+														
+													</div>
+												</div>
+												<div class="msg-mgr">
+													<div id="modelWrap"></div>
+													<ul class="businessModel-date overLi-btn col-show">
+														
+													</ul>
+													<div class="businessModel-content">
+														
+													</div>
+												</div>
+												<div class="page-line"></div>
+												<div class="msg-wraps" id="msgSer06">
+													<div class="msg-title"  id="syfx6">同商业模式企业</div>
+													<div class="portlet-body maskInTable maskInTableTonf">
+														<div class="table-scrollable">
+															<table style="min-width: auto;" class="table table-striped table-bordered table-hover dataTable no-footer" id="sample_1" role="grid" aria-describedby="sample_1_info">
+																<thead>
+																	<tr role="row" class="tr">
+																		<th scope="col">
+																			代码
+																		</th>
+																		<th scope="col">
+																			简称
+																		</th>
+																		<th scope="col">
+																			最新价
+																		</th>
+																		<th scope="col">
+																			财务日期
+																		</th>
+																		<th scope="col">
+																			净利润
+																		</th>
+																		<th scope="col">
+																			每股收益
+																		</th>
+																		<th scope="col">
+																			市盈率
+																		</th>
+																		<th scope="col">
+																			净资产收益率
+																		</th>
+																		<th scope="col">
+																			总市值
+																		</th>
+																		<th scope="col">
+																			商业模式
+																		</th>
+																	</tr>
+																</thead>
+															<tbody id="tableOneSame">
+															</tbody>
+															</table>
+														</div>
+												</div>
+												</div>
+<br />											</div>
 										</div>
 										<div class="tab-pane" id="tab_11">
 											<div class="page-line"></div>
@@ -3008,8 +3254,8 @@
 																	<div class="relationshipTab">
 																		<!--class="notAllowed" 禁止点击-->
 																		<a class="active" id="ownershipStructure">股权结构</a>
-																		<a  id="customerRelations">客户关系</a>
-																		<a id="supplyChainRelationship">供应链关系</a>
+																		<a  id="customerRelations" class="companyData">客户关系</a>
+																		<a id="supplyChainRelationship" class="companyData">供应链关系</a>
 																		<a id="foreignInvestment">对外投资</a>
 																		<a id="branchOffice">分支机构</a>
 																		<a id="storyFinancing">历史融资</a>
@@ -3023,38 +3269,34 @@
 																		<div class="page-line mgt20"></div>
 																		<div id="companyName"></div>
 																		<div class="msg-wrap mgb10">
-																			<div class="msg-title"><span  style="color: #9398cb;">更新日期：<b id="equityDate"></b></span>股权结构</div>
+																			<div class="msg-title">股权结构</div>
 																		</div>
-																		<div class="portlet-body maskInTable">
+																		<div class="portlet-body maskInTable maskInTableGd">
 																			<div class="table-scrollable">
 																				<table class="table table-striped table-bordered table-hover dataTable no-footer" id="sample_1" role="grid" aria-describedby="sample_1_info">
-																					<thead>
-																						<tr role="row" class="tr">
-																							<th scope="col" width="260">
-																								截止日期
-																							</th>
+																					<colgroup>
+																						<col width="40%"/>
+																						<col width="40%"/>
+																						<col width="20%"/>
+																					</colgroup>
+																					<thead class="view-tr">
+																						<tr class="tr">
 																							<th scope="col">
 																								股东名称
 																							</th>
 																							<th scope="col">
-																								股东类型
-																							</th>
-																							<th scope="col">
-																								持股数量（股）
-																							</th>
-																							<th scope="col">
-																								出资金额（万元）
+																								出资金额
 																							</th>
 																							<th scope="col">
 																								持股比例
 																							</th>
 																						</tr>
 																					</thead>
-																					<tbody id="shareholderList2">
+																					<tbody id="tableGudong">
 																					</tbody>
 																				</table>
 																			</div>
-																			<div id="pageToolShareholder"></div>
+																			 <div id="pageGd"></div>
 																	    </div>
 																	</div>
 																	<div class="canvas-most" id="updownRelationshipCon">
@@ -3232,43 +3474,43 @@
 																	</div>
 																	<div id="pageToolBranchOffice"></div>
 																</div>
-																	<div class="canvas-most" id="storyFinancingList">
-																		<div style="background: #eff2fc;">
-																			<div id="storyFinancingChart" style="height: 400px;"></div>
+																<div class="canvas-most" id="storyFinancingList">
+																	<div style="background: #eff2fc;">
+																		<div id="storyFinancingChart" style="height: 400px;"></div>
+																	</div>
+																	<div class="page-line mgt20"></div>
+																	<div id="companyName2"></div>
+																	<div class="equityList">
+																		<div class="msg-wrap mgb10">
+																			<div class="msg-title"><span style="color: #9398cb;">更新日期：<b id="storyFinancingDate"></b></span>历史融资</div>
 																		</div>
-																		<div class="page-line mgt20"></div>
-																		<div id="companyName2"></div>
-																		<div class="equityList">
-																			<div class="msg-wrap mgb10">
-																				<div class="msg-title"><span style="color: #9398cb;">更新日期：<b id="storyFinancingDate"></b></span>历史融资</div>
-																			</div>
-																			<div class="portlet-body maskInTable">
-																				<div class="table-scrollable">
-																					<table class="table table-striped table-bordered table-hover dataTable no-footer" id="sample_1" role="grid" aria-describedby="sample_1_info">
-																						<thead class="view-tr">
-																							<tr class="tr">
-																								<th>
-																									投资机构
-																								</th>
-																								<th>
-																									投资轮次
-																								</th>
-																								<th>
-																									投资币种
-																								</th>
-																								<th>
-																									投资金额（万元）
-																								</th>
-																								<th>
-																									投资日期
-																								</th>
-																							</tr>
-																						</thead>
-																						<tbody id="storyFinancingList2">
-																						</tbody>
-																					</table>
-																	            </div>
-																		</div>
+																		<div class="portlet-body maskInTable">
+																			<div class="table-scrollable">
+																				<table class="table table-striped table-bordered table-hover dataTable no-footer" id="sample_1" role="grid" aria-describedby="sample_1_info">
+																					<thead class="view-tr">
+																						<tr class="tr">
+																							<th>
+																								投资机构
+																							</th>
+																							<th>
+																								投资轮次
+																							</th>
+																							<th>
+																								投资币种
+																							</th>
+																							<th>
+																								投资金额（万元）
+																							</th>
+																							<th>
+																								投资日期
+																							</th>
+																						</tr>
+																					</thead>
+																					<tbody id="storyFinancingList2">
+																					</tbody>
+																				</table>
+																            </div>
+																	</div>
 																	</div>
 																	<div id="pageToolStoryFinancing"></div>
 																</div>
@@ -3670,7 +3912,15 @@
 		<script src="../../assets/global/scripts/companyDetail/businessAnalysis.js" type="text/javascript"></script>
 		<script src="../../assets/global/scripts/companyDetail/commonDetail.js" type="text/javascript"></script>
 		<script src="../../assets/global/scripts/companyDetail/companyDetail.js" type="text/javascript"></script>
-		<script src="../../assets/global/scripts/companyDetail/realTimeQuotes.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			if(Query.getHash("from") != "investCompany"){
+				$(".companyData").removeClass("companyData");
+				$.getScript("../../assets/global/scripts/companyDetail/realTimeQuotes.js").done(function(){});
+			}else{
+				$(".investData").removeClass("investData");
+				$(".relationshipTab").addClass("relationshipTab2");
+			}
+		</script>
 		<script src="../../assets/global/scripts/companyDetail/relationshipMap.js" type="text/javascript"></script>
 		<script type="text/javascript" src="../../assets/global/plugins/select2.js"></script>
 		

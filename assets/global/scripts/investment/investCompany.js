@@ -141,7 +141,7 @@ var InvestCompany = function(){
 	        		tr += "<div class='investComNum-right'><span>" + list[i].companyName + "</span>";
 	        	}else{
 	        	
-	        		tr += "<div class='investComNum-right'><a class='basicName' title='"+ list[i].name +"' data-name='"+list[i].name+"' href='"+ $.url.industryUrl() + "companyName=" + list[i].name +"'>"+ list[i].companyName +"</a>";
+	        		tr += "<div class='investComNum-right'><a class='basicName' title='"+ list[i].name +"' data-name='"+list[i].name+"' href='"+ $.url.industryUrl() + "id=" + list[i].id +"'>"+ list[i].companyName +"</a>";
 	        	}
 	        	if(list[i].summary.length<39){
 	        		tr += "<span>" + list[i].summary + "</span>";

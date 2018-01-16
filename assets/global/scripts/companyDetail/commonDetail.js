@@ -6,11 +6,15 @@
 	}
 	
 	//事件滚动
-	var rollTim = function (leftBtn,rightBtn,jList,len) {
+	var rollTim = function (leftBtn,rightBtn,jList,len,size) {
 	    var ind = 0;
 	    var len = len;
+	    var _size = size;
+	    if(isNullOrEmpty(size)){
+	    	_size = 6;
+	    }
 	    var rollIn = function (flg) {
-	        if (flg > 6) {
+	        if (flg > _size) {
 	            leftBtn.show();
 	            rightBtn.show();
 	        } else {
@@ -19,7 +23,7 @@
 	        }
 	        rightBtn.off().on("click", function () {
 	            ind++;
-	            if (ind > flg - 6) {
+	            if (ind > flg - _size) {
 	                ind = 0;
 	            }
 	            rollFun(ind);
@@ -27,7 +31,7 @@
 	        leftBtn.off().on("click", function () {
 	            ind--;
 	            if (ind < 0) {
-	                ind = flg - 6;
+	                ind = flg - _size;
 	            }
 	            rollFun(ind);
 	        });
@@ -207,9 +211,9 @@
         });
         $(".j_ul_lists").append(tr);
         $("[data-toggle='tooltip']").tooltip();
-        rollTim($(".lists_left_btn"),$(".lists_right_btn"),$(".j_ul_lists"),320);
+        rollTim($(".lists_left_btn"),$(".lists_right_btn"),$(".j_ul_lists"),320,3);
     };
-    rollTim($(".lists_left_btn"),$(".lists_right_btn"),$(".j_ul_lists"),320);
+    rollTim($(".lists_left_btn"),$(".lists_right_btn"),$(".j_ul_lists"),320,3);
     // 公司专利
     var compPatent = function () {
         var _url = "";

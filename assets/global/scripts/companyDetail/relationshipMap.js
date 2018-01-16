@@ -215,50 +215,41 @@ var ownershipStructure = function () {
 //              myChart.on(ecConfig.EVENT.CLICK, eConsole);
 
 
-                //股东列表
-                var shareholderList = function (data) {
-                    var list = data.data;
-                    var tr = "";
-                    $("#shareholderList2").html("");
-                    if (list != "") {
-                    	if(!isNullOrEmpty(list[0].date)){
-                    		$("#equityDate").text(list[0].date);
-                    	}else{
-                        	$("#equityDate").text("--");
-                    	}
-                        $(list).each(function (i) {
-                            tr += "<tr>";
-                            tr += "<td>" + list[i].date + "</td>";
-                            if (list[i].type == "机构") {
-                                tr += "<td><a class='basicName' data-name='" + list[i].name + "' href='" + $.url.industryUrl() + 'companyName=' + list[i].name + "'>" + list[i].name + "</a></td>";
-                            } else {
-                                tr += "<td>" + list[i].name + "</td>";
-                            }
-                            tr += "<td>" + list[i].type + "</td>";
-                            tr += "<td>" + list[i].quantity + "</td>";
-                            tr += "<td>" + list[i].money + "</td>";
-                            tr += "<td>" + list[i].ratio + "</td>";
-                            tr += "</tr>";
-                        });
-                        $("#shareholderList2").append(tr);
-                        var isCookie = false;
-                        moneyUrl($(".basicName"), isCookie, "isCookie");
-                    }else{
-                    	$("#equityDate").text("--");
-                    }
-                };
-
-
-				var lastPage = Query.getHash("page");
-                _url = $.kf.SHAREHOLDERLIST + "?" + "id=" + id + "&page=" + 1;
-                //new GetTable(_url, $("#pageToolShareholder"), "", shareholderList, "get", $("#shareholderList2")).init();
-                $.getTable({
-		        	url:_url,//url
-			    	pageId:$("#pageToolShareholder"),//分页id
-			    	callback:shareholderList,//callback
-			    	currentPage:lastPage,
-			    	tbodyId:$("#shareholderList")//tbody的id,
-		        })
+                //股东信息
+				var shareHolder = function (thisDate) {
+			        var _url  = $.kf.GETCOMPANYSHAREHOLDERNEW + "?" + "id=" + id + "&page=" + 1;
+			        var lastPage = 1;
+			        $.getTable({
+			        	url:_url,//url
+				    	pageId:$("#pageGd"),//分页id
+				    	callback:shareHolderList,//callback
+				    	currentPage:lastPage,
+				    	pageNum:10,
+				    	showDataBox:false,
+				    	targetId:"gsgk2",
+				    	loadId:".maskInTableGd",
+				    	tbodyId:$("#tableGudong")//tbody的id,
+			        })
+			    };
+			    //股东信息拼接列表
+			    var shareHolderList = function (data) {
+			        var list = data.data;
+			        var tr = "";
+			        $("#tableGudong").html("");
+			        $(list).each(function (i) {
+			            tr += "<tr>";
+			            if(list[i].type == "个人"){
+			            	tr += "<td>" + list[i].name + "</td>";
+			            }else{
+			            	tr += "<td><a href='"+ $.url.industryUrl() + "id=" + list[i].id +"'>" + list[i].name + "</a></td>";
+			            }
+			            tr += "<td style='text-align:right'>" + list[i].money + "</td>";
+			            tr += "<td style='text-align:right'>" + list[i].ratio + "</td>";
+			            tr += "</tr>";
+			        });
+			        $("#tableGudong").append(tr);
+			    };
+				shareHolder();
             }
     );
 
@@ -422,7 +413,7 @@ var customerRlations = function () {
                                 if (isNullOrEmpty(list[i].id)) {
                                     tr += "<td><span>" + list[i].name + "</span></td>";
                                 } else {
-                                    tr += "<td><a class='basicName' data-name='" + list[i].name + "' href='" + $.url.industryUrl() + 'companyName=' + list[i].name + "'>" + list[i].name + "</a></td>";
+                                    tr += "<td><a class='basicName' data-name='" + list[i].name + "' href='" + $.url.industryUrl() + 'id=' + list[i].id + "'>" + list[i].name + "</a></td>";
                                 }
                             }
                             tr += "<td style='text-align:right'>" + list[i].money + "</td>";
@@ -610,7 +601,7 @@ var supplyChainRelationship = function () {
                                 if (isNullOrEmpty(list[i].id)) {
                                     tr += "<td><span>" + list[i].name + "</span></td>";
                                 } else {
-                                    tr += "<td><a class='basicName' data-name='" + list[i].name + "' href='" + $.url.industryUrl() + 'companyName=' + list[i].name + "'>" + list[i].name + "</a></td>";
+                                    tr += "<td><a class='basicName' data-name='" + list[i].name + "' href='" + $.url.industryUrl() + 'id=' + list[i].id + "'>" + list[i].name + "</a></td>";
                                 }
                             }
                             tr += "<td>" + list[i].money + "</td>";
@@ -789,7 +780,7 @@ var foreignInvestment = function () {
                         $(list).each(function (i) {
                             tr += "<tr>";
                             tr += "<td>" + list[i].investmentDate + "</td>";
-                            tr += "<td><a href='" + $.url.industryUrl() + "companyName=" + list[i].investedName + "'>" + list[i].investedName + "</a></td>";
+                            tr += "<td><a href='" + $.url.industryUrl() + "id=" + list[i].investedId + "'>" + list[i].investedName + "</a></td>";
                             tr += "<td>" + list[i].legalPerson + "</td>";
                             tr += "<td>" + list[i].capital + "</td>";
                             tr += "<td style='text-align:right'>" + list[i].investmentAmount + "</td>";
@@ -825,8 +816,7 @@ var foreignInvestment = function () {
 //分支机构
 var branchOffice = function () {
     $("#mainChart2").width($(".page-content-par").width() - 70)
-
-    // 路径配置
+	    // 路径配置
     require.config({
         paths: {
             echarts: '../../assets/global/plugins/echarts/build/dist'
@@ -972,7 +962,7 @@ var branchOffice = function () {
 	                    $(list).each(function (i) {
 	                        tr += "<tr>";
 	                        if (list[i].type = "0") {
-	                            tr += "<td><a class='basicName' data-name='" + list[i].name + "' href='" + $.url.industryUrl() + 'companyName=' + list[i].name + "'>" + list[i].name + "</a></td>";
+	                            tr += "<td><a class='basicName' data-name='" + list[i].name + "' href='" + $.url.industryUrl() + 'id=' + list[i].id + "'>" + list[i].name + "</a></td>";
 	                        } else {
 	                            tr += "<td><a href='" + $.url.companyListUrl() + '#id=' + list[i].id + "'>" + list[i].name + "</a></td>";
 	                        }

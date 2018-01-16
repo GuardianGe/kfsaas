@@ -65,7 +65,7 @@ var DetailDwon = function(){
         //拼接table
         var change = data.data;
         var tr = "";
-        var changeLength = change.length;
+        var changeLength = data.total;
         $("#changeLength").text(changeLength);
         $("#industryTable").html("");
         $(change).each(function (i) {
@@ -199,7 +199,7 @@ var DetailDwon = function(){
 			changeTable();//变更记录
 		},
 		industryLvInit:function(){
-			industryLv();//企业评级
+			//industryLv();//企业评级
 		},
 		shareHolderInit:function(){
 			shareHolder();//股东信息

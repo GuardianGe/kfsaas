@@ -121,12 +121,15 @@ var InvestInvestors = function(){
 	        	}else{
 	        		tr += "<h2><a style='font-size:16px;' href='" + $.url.investmentAgencyDetailsUrl() + "id=" + list[i].companyId +"'>"+ list[i].investment + "</a>&nbsp;&nbsp;&nbsp;<b>" + list[i].job +"</b></h2>";
 	        	}
-	        	if($(window).width() < 1366){
-	        		tr += "<p title='"+list[i].summary+"'>"+ list[i].summary.substring(0,30) +"...</p>";
+	        	if(isNullOrEmpty(list[i].summary)){
+	        		tr += "<p>--</p>";
 	        	}else{
-	        		tr += "<p title='"+list[i].summary+"'>"+ list[i].summary.substring(0,50) +"...</p>";
+	        		if($(window).width() < 1366){
+		        		tr += "<p title='"+list[i].summary+"'>"+ list[i].summary.substring(0,30) +"...</p>";
+		        	}else{
+		        		tr += "<p title='"+list[i].summary+"'>"+ list[i].summary.substring(0,50) +"...</p>";
+		        	}
 	        	}
-	        	
 	        	tr += "</div>";
 	        	tr += "</div>";
 	        	tr += "<div class='companyConBottom'>";

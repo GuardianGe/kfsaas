@@ -387,7 +387,7 @@ var collectionList = function () {
         $("#aNoteList7").html("");
         $(list).each(function (i) {
             tr += "<tr>";
-            tr += "<td name='"+ list[i].id +"'><a href='" + $.url.industryUrl() + "id=" + list[i].companyId + "&position=collection"+"'>" + list[i].name + "</a></td>";
+            tr += "<td name='"+ list[i].id +"'><a href='" + $.url.industryUrl() + "id=" + list[i].companyId +"&companyName=" + list[i].companyName + "&position=collection"+"'>" + list[i].name + "</a></td>";
             tr += "<td style='text-align:left' name='b2'>" + list[i].remarks + "</td>";
             tr += "<td><a class='stockNote'>编辑</a></td>";
          	tr += "<td>" + list[i].start_time + "</td>";

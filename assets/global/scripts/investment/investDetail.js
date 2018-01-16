@@ -50,6 +50,7 @@ var InvestDetail = function(){
             tr += "<td class='investT"+i+" investEdg'></td>";
             tr += "<td>" + list[i].step + "</td>";
             tr += "<td class='queryWidth'>" + list[i].total + "</td>";
+            tr += "<td>" + list[i].currency + "</td>";
             tr += "<td>" + list[i].date + "</td>";
             tr += "</tr>";
         });
@@ -135,12 +136,7 @@ var InvestDetail = function(){
             processResponse: function (data) {
                 var obj1 = data.data;
                 new LoadingAjax($(".maskInAjax"), {}, $("#myChartInfo")).close();
-                if (isData($(".dataDiv"), obj1, "")) {
-                    informationList(data);
-                } else {
-                    $("#informationTitle").text(Query.getHash('company'));
-                }
-                ;
+                informationList(data);
             }
         });
         /***table***/
@@ -176,6 +172,7 @@ var InvestDetail = function(){
 			$("#investType").text(list.investType);
 			$("#startYear").text(list.startYear);
 			if(!isNullOrEmpty(list.website)){
+				$("#website").show();
 				$("#website").attr("href",list.website);
 			}else{
 				$("#website").hide();
@@ -193,21 +190,23 @@ var InvestDetail = function(){
         		$("#investors-phone").text(list.tel);
         		$(".investorsTxtLine").html('<img src="../../assets/admin/layout/img/dianhua2.png" /><img src="../../assets/admin/layout/img/youxiang2.png" />');
         	}
-        	if (htmlWid.offsetWidth > 768) {
-        		if(list.introduction.length>120){
-	        		var introduction= list.introduction.substring(0,120);
-	        		$("#in-content").html(introduction+"...<a class='in-more'>展开<img src='../../assets/admin/layout/img/xiala.png' /></a>");
-	        		$("#in-content2").html(list.introduction+"<a class='in-more in-hide'>收起<img src='../../assets/admin/layout/img/shouqi.png' /></a>").hide();
+        	if(!isNullOrEmpty(list.introduction)){
+        		if (htmlWid.offsetWidth > 768) {
+	        		if(list.introduction.length>120){
+		        		var introduction= list.introduction.substring(0,120);
+		        		$("#in-content").html(introduction+"...<a class='in-more'>展开<img src='../../assets/admin/layout/img/xiala.png' /></a>");
+		        		$("#in-content2").html(list.introduction+"<a class='in-more in-hide'>收起<img src='../../assets/admin/layout/img/shouqi.png' /></a>").hide();
+		        	}else{
+		        		$("#in-content").html(list.introduction);
+		        	}
 	        	}else{
-	        		$("#in-content").html(list.introduction);
-	        	}
-        	}else{
-        		if(list.introduction.length>30){
-	        		var introduction= list.introduction.substring(0,30);
-	        		$("#in-content").html(introduction+"...<a class='in-more'>展开<img src='../../assets/admin/layout/img/xiala.png' /></a>");
-	        		$("#in-content2").html(list.introduction+"<a class='in-more in-hide'>收起<img src='../../assets/admin/layout/img/shouqi.png' /></a>").hide();
-	        	}else{
-	        		$("#in-content").html(list.introduction);
+	        		if(list.introduction.length>30){
+		        		var introduction= list.introduction.substring(0,30);
+		        		$("#in-content").html(introduction+"...<a class='in-more'>展开<img src='../../assets/admin/layout/img/xiala.png' /></a>");
+		        		$("#in-content2").html(list.introduction+"<a class='in-more in-hide'>收起<img src='../../assets/admin/layout/img/shouqi.png' /></a>").hide();
+		        	}else{
+		        		$("#in-content").html(list.introduction);
+		        	}
 	        	}
         	}
         	
@@ -408,6 +407,7 @@ var InvestDetail = function(){
  	var joinShipData = "joinShipData";
  	//合投
 	var partnerShip = function () {
+		$(".noOutData").remove();
         var _url = "";
         var id = Query.getHash("id");
         if(parentPage == 1){
@@ -437,7 +437,7 @@ var InvestDetail = function(){
         $(list).each(function (i) {
             tr += "<tr>";
             if(isNullOrEmpty(list[i].id)){
-            if(isNullOrEmpty(list[i].logo)){
+            	if(isNullOrEmpty(list[i].logo)){
 	            	tr += "<td><div class='investOrgImg'><div class='investOrgBox'><img src='../../assets/admin/layout/img/investImg.png' /></div><span>"+ list[i].name +"</span></div></td>";
 	            }else{
 	            	tr += "<td><div class='investOrgImg'><div class='investOrgBox'><img src='"+ list[i].logo +"' /></div><span>"+ list[i].name +"</span></div></td>";
@@ -510,8 +510,13 @@ var InvestDetail = function(){
 			    	$(window).off("scroll");
 			    	$(".investg-noMore").show();
 			    }else{
-	           		partnerShip();
-	           		joinShip();
+			    	if(!$(".joinShip-box").find(".noOutData").size()){
+			    		joinShip();
+			    	}
+			    	if(!$(".partnerShip-box").find(".noOutData").size()){
+			    		partnerShip();
+			    	}
+	           		
 			    }
 	        }
 	    });
@@ -602,7 +607,7 @@ var InvestDetail = function(){
 			        	tr += "<td class='investT"+i+" investEdg'><div class='investTwo'></div><div class='investAll'></div></td>";
 			        	tr += "<td class='center'><div>";
 			        	for(var j=0; j<list[i].stage.length; j++){
-			        		if(j = list[i].stage.length-1){
+			        		if(j == list[i].stage.length-1){
 			        			tr += "<span>"+ list[i].stage[j] +"</span>";	
 			        		}else{
 			        			tr += "<span>"+ list[i].stage[j] +",</span>";	
@@ -696,9 +701,9 @@ var InvestDetail = function(){
                         tr += "<td>" + list[i].fund_name + "</td>";
                         tr += "<td>" + list[i].type + "</td>";
                         tr += "<td style='text-align:right'>" + list[i].money + "</td>";
-                        tr += "<td>" + list[i].currencyCode + "</td>";
                         tr += "<td>" + list[i].fundraisingName + "</td>";
                         tr += "<td style='text-align:right'>" + list[i].scale + "</td>";
+                        tr += "<td>" + list[i].currencyCode + "</td>";
                         tr += "<td>" + list[i].date + "</td>";
                         tr += "<td><a class='infundDetail' data-toggle='modal' name='"+ list[i].content +"' data-target='#myModalZy'>详情</a></td>";
                         tr += "</tr>";

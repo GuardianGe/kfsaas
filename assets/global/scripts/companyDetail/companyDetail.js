@@ -1,4 +1,5 @@
-
+	var fromType = Query.getHash("from");
+	var htmlWid = document.getElementsByTagName("html")[0];
 	modelCon();
 	function modelCon(){
 		$(".textGl-detail").off().on("click",function(){
@@ -14,6 +15,8 @@
 				var dataTitle = "变更详情";
 			}else if($(this).hasClass("disBok")){
 				var dataTitle = "状态详情";
+			}else if($(this).hasClass("textGl-cpxx")){
+				var dataTitle = "产品信息";
 			}else if($(this).hasClass("businessCcope-detail")){
 				var dataTitle = "经营范围";
 			}else if($(this).hasClass("patentA")){
@@ -451,13 +454,297 @@ var CompanyDetail = function () {
      * 
      * */
 
+	var companyStatus = function(){
+		//公司高管
+		compGg();
+		if(fromType != "investCompany"){
+			//十大股东
+		    shareHolder();
+		    //股本结构
+		    capitalGb();
+		    //股票分红
+		    capitalStructure();
+		    //股票增发
+		    capitalZf();
+		    //核心员工
+		    compYg();
+		}else{
+			//非挂牌基本信息
+			basicContent();
+			//非挂牌历史融资
+			historyFin();
+			//非挂牌股东信息
+			shareHolderX();
+			shareHolderXEcharts();
+			//非挂牌核心团队
+			corePerson();
+			//产品信息
+			productInfo();
+			//竞品信息
+			comProductAny();
+		}
+		
+	}
+	//非挂牌基本信息
+	var basicContent=function(){
+		var _url =$.kf.GETCOMPANYINFOSER + "?" + "id=" + id + "&page=" + 1;
+		$.kf.ajax({
+            type: "get",
+            url: _url,
+            data: "",
+            dataType: "json",
+            processResponse: function (data) {
+                var obj = data.data;
+                new LoadingAjax($(".maskInAjax"), {}, $("#comManAll")).close();
+                new LoadingAjax($(".maskInAjax"), {}, $("#basicTable")).close();
+                if(!isNullOrEmpty(obj)){
+                	basicConList(data);
+                }
+            }
+        });
+	}
+	var basicConList = function(data){
+		var list = data.data;
+		$("#fullnameIn").text(list.fullname);
+		$("#telIn").text(list.tel);
+		$("#addressIn").text(list.address);
+		$("#postCodeIn").text(list.postCode);
+		$("#detailedAddressIn").text(list.detailedAddress);
+		$("#registrationDateIn").text(list.registrationDate);
+		$("#peopleIn").text(list.people);
+		$("#industryIn").text(list.industry);
+		if(!isNullOrEmpty(list.website)){
+			$("#websiteIn").html('<a href="'+ list.website +'" target="_blank">'+ list.website +'</a>');
+		}
+	}
+	//非挂牌历史融资
+	 var historyFin = function () {
+        var _url = "";
+        _url = $.kf.GRAPHSERVICEINVESTED + "?" + "id=" + id + "&page=" + 1;
+        var lastPage = 1;
+        $.getTable({
+        	showDefaultTabel:showDefaultTabel,
+        	url:_url,//url
+	    	pageId:$("#pageToolHistoryFin"),//分页id
+	    	callback:historyFinList,//callback
+	    	currentPage:lastPage,
+	    	loadId:".maskInTableRz",
+	    	showDataBox:false,
+	    	targetId:"gsgk9",
+	    	tbodyId:$("#historyFin")//tbody的id,
+        })
+    };
+    
+    //拼接列表
+    var historyFinList = function (data) {
+        var list = data.data;
+        var tr = "";
+        $("#historyFin").html("");
+        $(list).each(function (i) {
+            tr += "<tr>";
+            tr += "<td>" + list[i].investmentDate + "</td>";
+             tr += "<td>" + list[i].step + "</td>";
+             tr += "<td>" + list[i].investmentAmount + "</td>";
+             tr += "<td>" + list[i].investRatio + "</td>";
+             if(isNullOrEmpty(list[i].companyId)){
+            	tr += "<td>" + list[i].companyName + "</td>";
+             }else{
+            	tr += "<td><a href='" + $.url.investmentAgencyDetailsUrl() + "id=" + list[i].companyId + "'>" + list[i].companyName + "</a></td>";
+             }
+            tr += "</tr>";
+        });
+        $("#historyFin").append(tr);
+    };
+    //非挂牌股东信息
+	var shareHolderX = function (thisDate) {
+        var _url  = $.kf.GETCOMPANYSHAREHOLDERNEW + "?" + "id=" + id + "&limit=5&page=" + 1;
+        var lastPage = 1;
+        $.getTable({
+        	url:_url,//url
+	    	pageId:$("#pageGx"),//分页id
+	    	callback:shareHolderListX,//callback
+	    	currentPage:lastPage,
+	    	pageNum:5,
+	    	showDataBox:false,
+	    	targetId:"gsgk10",
+	    	loadId:".maskInTableGx",
+	    	tbodyId:$("#tableGudongx")//tbody的id,
+        })
+    };
+    //非挂牌股东信息拼接列表
+    var shareHolderListX = function (data) {
+        var list = data.data;
+        var tr = "";
+        $("#tableGudongx").html("");
+        $(list).each(function (i) {
+            tr += "<tr>";
+            if(list[i].type == "个人"){
+            	tr += "<td>" + list[i].name + "</td>";
+            }else{
+            	tr += "<td><a href='"+ $.url.industryUrl() + "id=" + list[i].id +"'>" + list[i].name + "</a></td>";
+            }
+            tr += "<td style='text-align:right'>" + list[i].money + "</td>";
+            tr += "<td style='text-align:right'>" + list[i].ratio + "</td>";
+            tr += "</tr>";
+        });
+        $("#tableGudongx").append(tr);
+    };
+    //非挂牌股东信息echarts图表
+    var shareHolderXEcharts = function(){
+    	 // 路径配置
+	    require.config({
+	        paths: {
+	            echarts: '../../assets/global/plugins/echarts/build/dist'
+	        }
+	    });
+	    // 使用
+	    require(
+	        [
+	            'echarts',
+	            'echarts/chart/pie',
+	        ],
+	        function (ec) {
+	            // 基于准备好的dom，初始化echarts图表
+	            var myChartPie = ec.init(document.getElementById('shareHolderX')); 
+				//图表自适应
+				/*window.addEventListener("resize",function(){
+		        	myChartPie.resize();
+		        })*/
+			option = {
+				calculable : false,
+				title: {
+			        text: '出资占比',
+			        x: 135,
+			        y: 120,
+			        textStyle: {
+			            fontWeight: 'normal',
+			            fontSize: 16
+			        }
+			    },
+			    tooltip : {
+			        trigger: 'item',
+			        formatter: "{b}</br>出资比例 : {c}%"
+			    },
+			    legend: {
+			        orient : 'vertical',
+			        x : 320,
+			        y : 60,
+			        data:[],
+			        textStyle:{
+			        	fontFamily:"微软雅黑"
+			        }
+			    },
+			    color: ['#ffcb6f', '#5eaff1', '#fe9a9c', '#89d467','#f88d54', '#af8bd5'],
+			    series : [
+			        {
+			            name:'',
+			            type:'pie',
+			            radius : ['40%', '70%'],
+			            color: ['#86D560', '#AF89D6', '#59ADF3', '#FF999A', '#FFCC67'],
+			            center: ['30%', '50%'],
+			            itemStyle : {
+			                normal : {
+			                    label : {
+			                        show : false,
+			                        formatter : "{c}"
+			                    },
+			                    labelLine : {
+			                        show : false
+			                    }
+			                },
+			            },
+			            data:[]
+			        }
+			    ]
+			};
+			var _url = "";
+	        var id = Query.getHash("id");
+	        _url = $.kf.GETCOMPANYSHAREHOLDERGRAP + "?" + "id=" + id ;
+			$.kf.ajax({
+	            type: "get",
+	            url: _url,
+	            data: "",
+	            dataType: "json",
+	            processResponse: function(data){
+	            	var list = data.data;
+	            	if(isNullOrEmpty(list.data)){
+	            		$("#shareHolderX").hide();
+//	            		option.title.text = "暂无数据";
+//	            		option.series[0].data = [{"name":"","value":0}];
+	            	}else{
+	            		option.legend.data = list.title;
+	            		option.series[0].data = list.data;
+	            	}
+	            	
+	            	myChartPie.setOption(option);
+            	}
+	        });
+        })
+	}
+    
+    //非挂牌核心团队
+    var corePerson = function () {
+        var _url = "";
+        var id = Query.getHash("id");
+    	 _url = $.kf.GETCOMPANYCORETEAM + "?" + "id=" + id + "&limit=5&page=" + 1;
+        var lastPage = 1;
+        $.getTable({
+	        showDefaultTabel:showDefaultTabel,
+        	url:_url,//url
+	    	pageId:$("#pageCorePer"),//分页id
+	    	callback:corePersonList,//callback
+	    	currentPage:lastPage,
+	    	pageNum:5,
+	    	showDataBox:false,
+	    	loadId:".maskInTableHx",
+	    	targetId:"gsgk12",
+	    	tbodyId:$("#corePersonBox")//tbody的id,
+        })
+    };
+
+    //拼接列表
+    var corePersonList = function (data) {
+        var list = data.data;
+        console.log(list)
+        var tr = "";
+        $("#corePersonBox").html("");
+        $(list).each(function (i) {
+        	tr += "<li>";
+			tr += '<div class="corePer-left">';
+			if(isNullOrEmpty(list[i].logo)){
+				tr += '<img src="'+ list[i].logo +'" alt="" />';
+			}else{
+				tr += '<img src="../../assets/admin/layout/img/rentou.png" alt="" />';
+			}
+			tr += '<span>'+ list[i].name +'</span>';
+			tr += '</div>';
+			tr += '<div class="corePer-right">';
+			if(isNullOrEmpty(list[i].title)){
+				tr += '<div class="corePer-jop">--</div>';
+			}else{
+				tr += '<div class="corePer-jop">'+ list[i].title +'</div>';
+			}
+			tr += '<div style="overflow: hidden;padding-left: 5px;">';
+			tr += '<div class="corePer-time">';
+			if(!isNullOrEmpty(list[i].content)){
+				$(list[i].content).each(function(j){
+					tr += '<span><i></i>'+ list[i].content[j] +'</span>';
+				})
+			}
+			tr += '</div>';
+			tr += '</div>';
+			tr += '</div>';
+			tr += '</li>';
+        });
+        $("#corePersonBox").append(tr);
+    };
 	//公司高管
  	//高管请求地址
     var compGg = function (thisDate) {
         var _url = "";
         var id = Query.getHash("id");
         if(isNullOrEmpty(thisDate)){
-        	showDefaultTabel = false;
+        	
         	 _url = $.kf.GETCOMPANYEXECUTIVENEW + "?" + "id=" + id + "&page=" + 1;
         }else{
         	showDefaultTabel = true;
@@ -477,19 +764,6 @@ var CompanyDetail = function () {
 	    	tbodyId:$("#tableGg")//tbody的id,
         })
     };
-	var companyStatus = function(){
-		compGg();
-		//十大股东
-	    shareHolder();
-	    //股本结构
-	    capitalGb();
-	    //股票分红
-	    capitalStructure();
-	    //股票增发
-	    capitalZf();
-	    //核心员工
-	    compYg();
-	}
     //拼接列表
     var compGgList = function (data) {
         var list = data.data;
@@ -524,7 +798,8 @@ var CompanyDetail = function () {
         tableGg();
         modelCon();
     };
-     tableGg();
+     //日期事件
+    tableGg();
     function tableGg (){
         //日期点击事件
         $(".timeChildGg a").off().on("click",function(){
@@ -535,13 +810,103 @@ var CompanyDetail = function () {
         rollTim($("#timelfGg"),$("#timergGg"),$("#timeListGg"),130);
     }
     
+    
+    //产品信息
+	 var productInfo = function () {
+        var _url = "";
+        _url = $.kf.GETCOMPANYPRODUCT + "?" + "id=" + id + "&page=" + 1;
+        var lastPage = 1;
+        $.getTable({
+        	showDefaultTabel:showDefaultTabel,
+        	url:_url,//url
+	    	pageId:$("#pageCp"),//分页id
+	    	callback:productInfoList,//callback
+	    	currentPage:lastPage,
+	    	loadId:".maskInTableCp",
+	    	showDataBox:false,
+	    	targetId:"gsgk7",
+	    	tbodyId:$("#tableCp")//tbody的id,
+        })
+    };
+    
+    //拼接列表
+    var productInfoList = function (data) {
+        var list = data.data;
+        var tr = "";
+        $("#tableCp").html("");
+        $(list).each(function (i) {
+            tr += "<tr>";
+            tr += "<td class='leftIn'>" + list[i].productName + "</td>";
+            tr += "<td class='leftIn'>" + list[i].productShortname + "</td>";
+            tr += "<td class='leftIn'>" + list[i].productType + "</td>";
+            tr += "<td class='leftIn'>" + list[i].area + "</td>";
+            tr += "<td><a class='textGl-detail textGl-cpxx' data-toggle='modal' data-target='#myModalOut'>查看详情</a><span class='col-hide'>"+ list[i].content +"</span></td>";
+            tr += "</tr>";
+        });
+        $("#tableCp").append(tr);
+        modelCon();
+    };
+    
+    //竞品分析
+ 	var comProductAny = function () {
+        var _url = "";
+        _url = $.kf.GETPETITORS + "?" + "id=" + id + "&page=" + 1;
+        var lastPage = 1;
+        $.getTable({
+        	showDefaultTabel:showDefaultTabel,
+        	url:_url,//url
+	    	pageId:$("#pageJp"),//分页id
+	    	callback:comProductAnyList,//callback
+	    	currentPage:lastPage,
+	    	loadId:".maskInTableJp",
+	    	showDataBox:false,
+	    	targetId:"gsgk11",
+	    	tbodyId:$("#tableJp")//tbody的id,
+        })
+    };
+    
+    //拼接列表
+    var comProductAnyList = function (data) {
+        var list = data.data;
+        var tr = "";
+        $("#tableJp").html("");
+        $(list).each(function (i) {
+            tr += "<tr>";
+            if(list[i].type == "新三板"){
+            	var _link = $.url.companyListUrl();
+            }else{
+            	var _link = $.url.industryUrl();
+            }
+            if(isNullOrEmpty(list[i].id)){
+            if(isNullOrEmpty(list[i].logo)){
+	            	tr += "<td><div class='investOrgImg'><div class='investOrgBox'><img src='../../assets/admin/layout/img/investImg.png' /></div><span>"+ list[i].name +"</span></div></td>";
+	            }else{
+	            	tr += "<td><div class='investOrgImg'><div class='investOrgBox'><img src='"+ list[i].logo +"' /></div><span>"+ list[i].name +"</span></div></td>";
+	            }
+            }else{
+    			if(isNullOrEmpty(list[i].logo)){
+            	tr += "<td><div class='investOrgImg'><div class='investOrgBox'><img src='../../assets/admin/layout/img/investImg.png' /></div><a class='basicName' href='"+ $.url.investmentAgencyDetailsUrl()+ "id=" + list[i].id +"'>"+ list[i].name +"</a></div></td>";
+            }else{
+            	tr += "<td><div class='investOrgImg'><div class='investOrgBox'><img src='"+ list[i].logo +"' /></div><a class='basicName' href='"+ $.url.investmentAgencyDetailsUrl()+ "id=" + list[i].id +"'>"+ list[i].name +"</a></div></td>";
+	            }
+            }
+            tr += "<td style='text-align:center'>"+list[i].area +"</td>";
+            tr += "<td style='text-align:center'>"+list[i].step +"</td>";
+            tr += "<td style='text-align:center'>"+list[i].industry +"</td>";
+            tr += "<td style='text-align:center'>"+list[i].scope +"</td>";
+            tr += "<td style='text-align:center'>"+list[i].date +"</td>";
+            tr += "</tr>";
+        });
+        $("#tableJp").append(tr);
+        modelCon();
+    };
     //十大股东
     //十大股东请求地址
     var shareHolder = function (thisDate) {
         var _url = "";
         var id = Query.getHash("id");
         if(isNullOrEmpty(thisDate)){
-        	showDefaultTabel = false;
+        	
         	 _url = $.kf.GETCOMPANYSHAREHOLDERS + "?" + "id=" + id + "&page=" + 1;
         }else{
         	showDefaultTabel = true;
@@ -610,7 +975,7 @@ var CompanyDetail = function () {
         var _url = "";
         var id = Query.getHash("id");
         if(isNullOrEmpty(thisDate)){
-        	showDefaultTabel = false;
+        	
         	 _url = $.kf.GETCOMPANYSTRUCTURE + "?" + "id=" + id + "&page=" + 1;
         }else{
         	showDefaultTabel = true;
@@ -676,7 +1041,7 @@ var CompanyDetail = function () {
         var _url = "";
         var id = Query.getHash("id");
         if(isNullOrEmpty(thisDate)){
-        	showDefaultTabel = false;
+        	
         	 _url = $.kf.GETCOMPANYDIV + "?" + "id=" + id + "&page=" + 1;
         }else{
         	showDefaultTabel = true;
@@ -742,7 +1107,7 @@ var CompanyDetail = function () {
         var _url = "";
         var id = Query.getHash("id");
         if(isNullOrEmpty(thisDate)){
-        	showDefaultTabel = false;
+        	
         	 _url = $.kf.GETCOMPANYISSUANCE + "?" + "id=" + id + "&page=" + 1;
         }else{
         	showDefaultTabel = true;
@@ -816,7 +1181,7 @@ var CompanyDetail = function () {
         var _url = "";
         var id = Query.getHash("id");
         if(isNullOrEmpty(thisDate)){
-        	showDefaultTabel = false;
+        	
         	 _url = $.kf.GETCOMPANYCORESTAFF + "?" + "id=" + id + "&page=" + 1;
         }else{
         	showDefaultTabel = true;
@@ -887,7 +1252,6 @@ var CompanyDetail = function () {
         //日期滚动效果
         rollTim($("#timelfYg"),$("#timergYg"),$("#timeListYg"),130);
     }
-    
     
    
    
@@ -964,6 +1328,7 @@ var CompanyDetail = function () {
 		    	loadId:".maskInTableIC",
 		    	callback:industryAnalysisList,//callback
 		    	currentPage:lastPage,
+		    	showDataBox:false,
 		    	targetId:"jbxx6",
 		    	tbodyId:$("#tableCompany")//tbody的id,
 	        })
@@ -1233,6 +1598,25 @@ var CompanyDetail = function () {
 	     * */
 	    
 	    
+	    function basicInfo(){
+	    	if(fromType == "investCompany"){
+	    		//非挂牌工商信息
+	        	//公司年报
+	        	annualReports();
+	        }else{
+	        	//挂牌基本信息
+	        	basicMsg();
+	        	//行业评级
+		        industryLv();
+	        }
+	    	//历史变更
+	        industryComm();
+	        //同行业模式
+	        industryAnalysis();
+	        
+	    }
+	    
+	    
 	    //等级划分
 	    var leverSun = function(){
 	    	$.kf.ajax({
@@ -1361,9 +1745,14 @@ var CompanyDetail = function () {
 			if(backPosition == "formDetail"){
 				$("#brandTwo a").text("报表详情").attr("href","/table/formDetail");
 			};
-	        var _url = $.kf.GETCOMPANYINFO + "?" + "id=" + id;
-	        new LoadingAjax($(".maskInAjax"), {}, $(".comManAll")).init();
-	        new LoadingAjax($(".maskInAjax"), {}, $("#basicTable")).init();
+			if(fromType == "investCompany"){
+				//非挂牌工商信息
+				var _url = $.kf.GETCOMPANYINFOSER + "?" + "id=" + id;
+			}else{
+				var _url = $.kf.GETCOMPANYINFO + "?" + "id=" + id;
+			}
+	        /*new LoadingAjax($(".maskInAjax"), {}, $(".comManAll")).init();
+	        new LoadingAjax($(".maskInAjax"), {}, $("#basicTable")).init();*/
 	        var _urlDeal = $.kf.GETTRADETRANSACTION + "?" + "id=" + id + "&page=" + 1;
 	        var lastPage = 1;
 	        $.getTable({
@@ -1389,12 +1778,6 @@ var CompanyDetail = function () {
 	                }
 	            }
 	        });
-	        //历史变更
-	        industryComm();
-	        //行业评级
-	        industryLv();
-	        industryAnalysis();
-	        
 	    };
 	    //成交明细
 	    var dealDetailList = function (data) {
@@ -1418,6 +1801,34 @@ var CompanyDetail = function () {
 	    var isDelisted = "";
 	    var basicMsgList = function (data) {
 	        var list = data.data;
+	        console.log(list)
+	        //工商信息
+	        $("#creditCode").text(list.creditCode);
+	        $("#registrationNumber").text(list.registrationNumber);
+	        $("#organizationCode").text(list.organizationCode);
+	        $("#operating_status").text(list.operatingStatus);
+	        $("#operatingBeginDate").text(list.operatingBeginDate+'至'+list.operatingEndDate);
+	        $("#company_type").text(list.companyType);
+	        $("#approvedDate").text(list.approvedDate);
+	        $("#registrationAuthority").text(list.registrationAuthority);
+	        $("#legalRepresentative").text(list.legalRepresentative);
+	        $("#basicPhone").text(list.phone);
+	        $("#registeredCapital").text(list.registeredCapital);
+	        $("#people").text(list.people);
+	        $("#basciSecretaries").text(list.secretaries);
+	        $("#basicFax").text(list.fax);
+	        $("#basicEquity").text(list.totalStockEquity);
+	        $("#englishName").text(list.englishName);
+	        $("#industryName").text(list.industryName);  
+	        $("#registeredAddress").text(list.registeredAddress);
+	        $("#taxpayerNumber").text(list.taxpayerNumber);
+	        if(!isNullOrEmpty(list.businessCcope)){
+	        	$("#businessCcope").text(list.businessCcope.substring(0,278)+'...');
+	        }else{
+	        	$(".businessCcope-detail").hide();
+	        }
+	        $("#businessCcope").attr("title",list.businessCcope);
+	        if(fromType != "investCompany"){
 	        companyNameJs = list.name;
 	        //Query.setHash({"companyName":list.name});
 	        var idPage = Query.getHash("id");
@@ -1500,32 +1911,7 @@ var CompanyDetail = function () {
 	        $("#basicCity").text(list.city);
 	        $("#basicAdress").text(list.address);
 	        $("#basciWeb").html("<a href=" + list.website + " target='_blank'>" + list.website + "</a>");
-	        //工商信息
-	        $("#creditCode").text(list.creditCode);
-	        $("#registrationNumber").text(list.registrationNumber);
-	        $("#organizationCode").text(list.organizationCode);
-	        $("#operating_status").text(list.operatingStatus);
-	        $("#operatingBeginDate").text(list.operatingBeginDate+'至'+list.operatingEndDate);
-	        $("#company_type").text(list.companyType);
-	        $("#approvedDate").text(list.approvedDate);
-	        $("#registrationAuthority").text(list.registrationAuthority);
-	        $("#legalRepresentative").text(list.legalRepresentative);
-	        $("#basicPhone").text(list.phone);
-	        $("#registeredCapital").text(list.registeredCapital);
-	        $("#people").text(list.people);
-	        $("#basciSecretaries").text(list.secretaries);
-	        $("#basicFax").text(list.fax);
-	        $("#basicEquity").text(list.totalStockEquity);
-	        $("#englishName").text(list.englishName);
-	        $("#industryName").text(list.industryName);  
-	        $("#registeredAddress").text(list.registeredAddress);
-	        $("#taxpayerNumber").text(list.taxpayerNumber);
-	        if(!isNullOrEmpty(list.businessCcope)){
-	        	$("#businessCcope").text(list.businessCcope.substring(0,278)+'...');
-	        }else{
-	        	$(".businessCcope-detail").hide();
-	        }
-	        $("#businessCcope").attr("title",list.businessCcope)
+	        
 	        //行业信息
 	        $("#managementIndustry").html("<a href='" + $.url.companyList() + "&currentTab=tab1&inCode=" + list.managementType.id + "'>" + list.managementType.name +"</a>");
 	        $("#investmentIndustry").html(list.investmentType.name);
@@ -1543,9 +1929,9 @@ var CompanyDetail = function () {
 	        $("#special").html("<a href='"+ $.url.securitiesUrl() +"currentTab=tab0"+ "&id=" + list.masterId + "'>"+ list.special +"</a>");
 	        $("#mode").text(list.mode);
 	        //中介机构
-	        $("#accountingFirm").html("<a href='" + $.url.industryUrl() + "companyName=" + list.accountingFirm + "'>"+ list.accountingFirm +"</a>");
-	        $("#lawOffice").html("<a href='" + $.url.industryUrl() + "companyName=" + list.lawOffice + "'>"+ list.lawOffice +"</a>");
-	        $("#assetCaluation").html("<a href='" + $.url.industryUrl() + "companyName=" + list.assetCaluation + "'>"+ list.assetCaluation +"</a>");
+	        $("#accountingFirm").html("<a href='" + $.url.industryUrl() + "id=" + list.accountingFirmId + "'>"+ list.accountingFirm +"</a>");
+	        $("#lawOffice").html("<a href='" + $.url.industryUrl() + "id=" + list.lawOfficeId + "'>"+ list.lawOffice +"</a>");
+	        $("#assetCaluation").html("<a href='" + $.url.industryUrl() + "id=" + list.assetCaluationId + "'>"+ list.assetCaluation +"</a>");
 	        
 	        
 	        
@@ -1581,6 +1967,52 @@ var CompanyDetail = function () {
 	            tr += "</tr>";
 	        });
 	        $("#basicTable").append(tr);
+	        }else{
+	        	//非挂牌行业信息
+		        $("#tag").html("");
+		        if(!isNullOrEmpty(list.tag)){
+		        	$(list.tag).each(function(i){
+			        	$("#tag").append("<a class='basicName' href='" + $.url.companyList() + "&currentTab=tab1&bqCode=" + list.tag[i].id + "'>"+ list.tag[i].name +"</a>&nbsp;&nbsp;&nbsp;")
+			        })
+		        }
+		        //头部信息
+		        if(isNullOrEmpty(list.logo)){
+					$(".investT-left").html("<img src='../../assets/admin/layout/img/investImg2.png' />");
+				}else{
+					$(".investT-left").html("<img src='"+ list.logo +"' />");
+				}
+				$("#inName").text(list.fullname);
+				$("#inShortName").text(list.shortname);
+				$("#step").text(list.step);
+				$("#companyAbout").text(list.shortname);
+				if (htmlWid.offsetWidth > 768) {
+	        		if(list.companyAbout.length>120){
+		        		var companyAbout= list.companyAbout.substring(0,120);
+		        		$("#in-content").html(companyAbout+"...<a class='in-more'>展开<img src='../../assets/admin/layout/img/xiala.png' /></a>");
+		        		$("#in-content2").html(list.companyAbout+"<a class='in-more in-hide'>收起<img src='../../assets/admin/layout/img/shouqi.png' /></a>").hide();
+		        	}else{
+		        		$("#in-content").html(list.companyAbout);
+		        	}
+	        	}else{
+	        		if(list.companyAbout.length>30){
+		        		var companyAbout= list.companyAbout.substring(0,30);
+		        		$("#in-content").html(companyAbout+"...<a class='in-more'>展开<img src='../../assets/admin/layout/img/xiala.png' /></a>");
+		        		$("#in-content2").html(list.companyAbout+"<a class='in-more in-hide'>收起<img src='../../assets/admin/layout/img/shouqi.png' /></a>").hide();
+		        	}else{
+		        		$("#in-content").html(list.companyAbout);
+		        	}
+	        	}
+	        	//展开收起
+				$(".investT-right").on("click",".in-more",function(){
+					if($(this).hasClass("in-hide")){
+						$("#in-content2").hide();
+						$("#in-content").show();
+					}else{
+						$("#in-content2").show();
+						$("#in-content").hide();
+					}
+				});
+	        }
 	        //自选事件
 	        postOptional();
 	    };
@@ -1588,9 +2020,14 @@ var CompanyDetail = function () {
 		var optionalClick = function(){
 			$(".joinOptional").unbind().on("click",function(){
 				var _url = "";
-			  	var code = $("#nameCodeId").html();
+			  	if(fromType == "investCompany"){
+			  		var code = Query.getHash("id");
+			  	}else{
+			  		var code = $("#nameCodeId").html();
+			  	}
 			  	var param = {
-			  			"code":code
+			  			"code":code,
+			  			"type":$(this).attr("name")
 				 	 };
 				if($(this).text()== "关注"){
 		           	 _url = $.kf.ADDCOLLECTIONOPTION;
@@ -1603,15 +2040,20 @@ var CompanyDetail = function () {
 			            data: param,
 			            dataType: "json",
 			            processResponse: function(){
-			            	postOptional();
+			            	if(fromType == "investCompany"){
+						  		postOptional("b2");
+						  	}else{
+						  		postOptional("");
+						  	}
+			            	
 	            	}
 			 	 })
 			})
 			  	}
 		//自选功能请求
-		var postOptional = function(){
+		var postOptional = function(type){
 			var id = Query.getHash("id");
-	        var _url = $.kf.GETWHETHEROPTIONAL + "?" + "id=" + id;
+	        var _url = $.kf.GETWHETHEROPTIONAL + "?" + "id=" + id+"&type="+type;
 	        $.kf.ajax({
 	            type: "get",
 	            url: _url,
@@ -1634,9 +2076,8 @@ var CompanyDetail = function () {
 	            		}else{
 	            			$("#nameShort").css("color","#222");
 	            		}
-	            		
 	            	}
-	            	$("#joinOptional").text(securities);
+	            	$(".joinOptional").text(securities);
 	            }
 	        })
 	        optionalClick();
@@ -1730,6 +2171,33 @@ var CompanyDetail = function () {
 //      	var _content = $(this).attr("data-content");
 //      	$("#privateListutO").html(_content);
 //      })
+    };
+    
+    //公司年报
+	var annualReports = function () {
+        var _url  = $.kf.GETYEARLIST + "?" + "id=" + id + "&page=" + 1;
+        $.kf.ajax({
+            type: "get",
+            url: _url,
+            data: "",
+            dataType: "json",
+            processResponse: function (data) {
+               annualReportsList(data);
+            }
+        });
+    };
+    //公司年报拼接列表
+    var annualReportsList = function (data) {
+        var list = data.data;
+        var tr = "";
+        $(".inannualReports").html("");
+        $(list).each(function (i) {
+            tr += "<li>";
+            tr += "<span>"+ list[i].year +"</span>"
+            tr += "<a target='_blank' href='" + $.url.newsInfoUrl() + "id=" + list[i].id + '&name=annualReport' + "'>详情 ></a>";
+            tr += "</li>";
+        });
+        $(".inannualReports").append(tr);
     };
 	   
 	    /*
@@ -2985,14 +3453,14 @@ var CompanyDetail = function () {
 	            }
 	        }
 	        ;
-//	        if (_leg == "tab_3") {
-//	            $(".mask-in").remove();
-//	            $(".maskInAjax").height("auto");
-//	            if (isNullOrEmpty($("#basicName").html())) {
-//	                basicMsg();//基本信息
-//	            }
-//	        }
-//	        ;
+	        if (_leg == "tab_3") {
+	            $(".mask-in").remove();
+	            $(".maskInAjax").height("auto");
+	            if (isNullOrEmpty($("#basicName").html())) {
+	                basicInfo();//基本信息
+	            }
+	        }
+	        ;
 	        if (_leg == "tab_4") {
 	            //财报
 	            $(".mask-in").remove();
@@ -3058,17 +3526,25 @@ var CompanyDetail = function () {
 	    		var nameCodeId = Query.getHash("nameCodeId");
 	            var _leg = $(this).attr('href');
 	            _leg = _leg.split("_")[1];
-	            pushUrlState("_"+_leg,{"id":thisId,"nameCodeId":nameCodeId,"from":"companylisted","companyName":companyNameJs});
+	            pushUrlState("_"+_leg,{"id":thisId,"nameCodeId":nameCodeId,"from":fromType,"companyName":companyNameJs});
 	            comRefreshTab("tab_" + _leg);
 	        }); 
 	        //刷新
 			var _leg = Query.getHash("currentTab");
 			if(isNullOrEmpty(_leg)){
-				_leg = 'tab_1';
+				if(fromType != "investCompany"){
+					_leg = 'tab_1';
+				}else{
+					_leg = 'tab_6';
+				}
 			}
 			comRefreshTab(_leg);
 			if(isNullOrEmpty(_leg)){
-				_leg = '#tab_1';
+				if(fromType != "investCompany"){
+					_leg = '#tab_1';
+				}else{
+					_leg = '#tab_6';
+				}
 			}else{
 				_leg = "#" + _leg;
 			}
@@ -3086,8 +3562,8 @@ var CompanyDetail = function () {
 	        		window.location.href= $.url.login();
 	        		return false;
 	        	}
-				basicMsg();//基本信息
 				comDetailTab();//tab切换
+				basicMsg();//执行挂牌公司基本信息
 	            /*模拟select选中,和宽度适应*/
 	            var Selects = function (el, options) {
 	                this.el = el;

@@ -1,3 +1,4 @@
+var fromType = Query.getHash("from");
 /*
      
      * 
@@ -36,17 +37,19 @@
         	$(document).scrollTop(_top);
         	
         });
-        //营收来源
-        revenueStreams();
-        revenueStreamsList();
-        //主要客户
-        majorClient();
-        //主要供应商
-        majorSupplier();
-        //商业模式
-        businessModel();
-       	// 同商业模式企业
-        theSameComp();
+        if(fromType != "investCompany"){
+        	//营收来源
+	        revenueStreams();
+	        revenueStreamsList();
+	        //主要客户
+	        majorClient();
+	        //主要供应商
+	        majorSupplier();
+	        //商业模式
+	        businessModel();
+	       	// 同商业模式企业
+	        theSameComp();
+        }
     };
     //同商业详情弹窗
     function toSamePop(){

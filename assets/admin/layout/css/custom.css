@@ -4213,6 +4213,54 @@ table td{
 .table-blue td{
 	text-align: center;
 }
+.corePersonBox li{
+	overflow: hidden;
+	padding: 14px 24px 14px 14px;
+	border: 1px solid #e5e5e5;
+	border-radius: 5px;
+	margin-bottom: 10px;
+	display: flex;
+	line-height: 24px;
+}
+.corePersonBox .corePer-left{
+	text-align: center;
+	margin-right: 10px;
+}
+.corePersonBox .corePer-left img{
+	width: 72px;
+	height: 72px;
+	border-radius: 50%;
+	display: block;
+	margin-bottom: 8px;
+}
+.corePersonBox .corePer-right{
+	flex: 1;
+}
+.corePersonBox .corePer-jop{
+	margin-bottom: 20px;
+}
+.corePersonBox .corePer-time{
+	border-left:1px solid #e5e5e5;
+	position: relative;
+	top: -5px;
+}
+.corePersonBox .corePer-time span{
+	display: block;
+	padding-left: 14px;
+	position: relative;
+	margin-bottom: 10px;
+}
+.corePersonBox .corePer-time span i{
+	position: absolute;
+	display: block;
+	width: 11px;
+	height: 11px;
+	border-radius: 10px;
+	border: 3px solid #F57D4B;
+	left: -6px;
+	top: 5px;
+	background: #ffffff;
+}
 .investComNum{
 	text-align: left!important;
 	display: flex;
@@ -4536,6 +4584,9 @@ table td{
 	display: inline-block;
 	margin-right: 10px;
 }
+.companyData,.investData{
+	display: none!important;
+}
 .zp-color{
     color: #888;
 }
@@ -4633,6 +4684,9 @@ table td{
 .maskInTableJj .fundPhcolor{
 	display: inline;
 }
+.inannualReports{
+	overflow: hidden;
+}
 .inannualReports li{
 	width: 170px;
 	height: 44px;
@@ -4651,6 +4705,33 @@ table td{
 .choose-content{
 	padding-bottom: 20px;
 	overflow: hidden;
+}
+.tableListRy{
+}
+.tableListRy li{
+	width: 318px;
+	height: 46px;
+	display: inline-block;
+	margin-right: 30px;
+	margin-bottom: 14px;
+	border: 1px solid #e2e2e2;
+}
+.tableListRy li span{
+	font-size: 14px;
+	width: 151px;
+	height: 46px;
+	float: left;
+	padding-left: 8px;
+	display: flex;
+	justify-content:center;
+	align-items:center;
+}
+.tableListRy li span:nth-child(1){
+	color: #333;
+	background: #eeeeee;
+}
+.tableListRy li span:nth-child(2){
+	color: #666;
 }
 .choose-tip{
 	width: 100%;
@@ -5451,6 +5532,34 @@ textarea:disabled{
 .overLi-btn-link li:hover{
     border-right: 0;
 }
+.investT-left-search{
+	width:53px;
+	height: 53px;
+	
+}
+.investTbox-search{
+	margin:0;
+	color: #666;
+}
+.investTbox-search .investT-right .investR-top a{
+	margin-right: 0;
+}
+	
+.investR-top a.joinOptional{
+	float: none;
+	width:60px;
+	border-radius: 5px;
+}
+.investR-top a.joinOptional:hover{
+	text-decoration: none;
+}
+.sear-p-inline{
+	float: left;
+    padding: 0 21px;
+}
+.sear-p-inline1{
+	padding-left: 0px;
+}
 /*personinfo*/
 .personInfo{
     overflow: hidden;
@@ -5853,6 +5962,7 @@ textarea:disabled{
 #companyName{ font-size: 22px; color: #f77e44;}
 #companyName,#companyName2{ font-size: 22px; color: #f77e44;margin-bottom: 30px;margin-top: 20px;}
 .relationshipTab{ width: 490px; margin: 0 auto; overflow: auto;}
+.relationshipTab2{width: 335px;}
 .relationshipTab a{ display: block; float: left; font-size: 14px; font-weight: bold; width: 80px; text-align: center; text-decoration: none; padding-bottom: 10px;}
 .relationshipTab .active,.relationshipTab a:hover{ border-bottom: 2px solid #f57d4b;}
 /*定增*/
@@ -5967,6 +6077,16 @@ textarea:disabled{
 #__echarts_download_wrap__ img{
 	max-width:80%;
 	max-height: 80%;
+}
+#compCw ul li span {
+    background: url(../img/wenhao.png) no-repeat;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    margin: 2px 0 0 2px;
+    position: absolute;
+    right: -8px;
+    top: 2px;
 }
 @media only screen and (min-width:1921px ) {
 	#__echarts_download_wrap__{
@@ -6232,11 +6352,6 @@ textarea:disabled{
 .basicMenu > li li{
 	height: 30px;
 	line-height: 30px;
-}
-.inArrowUl > li a.gray {
-    color: #999;
-    text-decoration: none;
-    cursor: default;
 }
 .comNewCss .comNewTab li.active1,.comNewCss .comNewTab li.active2{
 	background: #F77E44;
@@ -6547,7 +6662,16 @@ textarea:disabled{
 	padding:6px 15px 6px 14px;
 }
 
-
+.inArrowPage li  .inArrowUl > li a.gray{
+	color: #999;
+    text-decoration: none;
+    cursor: default;
+}
+.inArrowPage li  .inArrowUl > li a.gray:hover{
+	color: #999;
+    text-decoration: none;
+    cursor: default;
+}
 
 
 

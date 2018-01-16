@@ -22,7 +22,7 @@ body{
 .bgDarkBlue .bgContent{ background: url(../img/index/indexTopBg07.png) no-repeat bottom left; float: left;}
 .bgBlue{ background: #3795db;}
 .bgBlue .bgContent{ background: url(../img/index/indexTopBg09.png) no-repeat bottom left; float: left;}
-.bgBlue .bgContentpad{line-height:24px;padding: 15px 8px 0;}
+.topBlock .bgContentpad{line-height:24px;padding: 15px 8px 0;}
 .arrow2:before{
 	position: relative;
     display: inline-block;
