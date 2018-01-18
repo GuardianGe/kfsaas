@@ -117,7 +117,7 @@ var OverviewPrivate = function () {
 						    	borderWidth:0
 						    },
 						    legend: {
-						        data:['增发总数', '基础层', '创新层', '做市转让', '协议转让']
+						        data:['增发总数', '基础层', '创新层', '做市转让', '集合竞价转让']
 						    },
 						    calculable : true,
 						    xAxis : [
@@ -184,7 +184,7 @@ var OverviewPrivate = function () {
 						            data:[]
 						        },
 						        {
-						            name:'协议转让',
+						            name:'集合竞价转让',
 						            type:'bar',
 						            stack: '总量',
 						            itemStyle : { normal: {label : {show: true, position: 'insideLeft',formatter: '{c}'+' 家'}, color: '#feb985'}},
@@ -270,7 +270,7 @@ var OverviewPrivate = function () {
 						        }
 						    },
 						    legend: {
-						        data:['增发总额', '基础层', '创新层', '做市转让', '协议转让']
+						        data:['增发总额', '基础层', '创新层', '做市转让', '集合竞价转让']
 						    },
 						    grid: {
 						    	borderWidth:0
@@ -329,7 +329,7 @@ var OverviewPrivate = function () {
 						            data:[]
 						        },
 						        {
-						            name:'协议转让',
+						            name:'集合竞价转让',
 						            type:'bar',
 						            stack: '总量',
 						            itemStyle : { normal: {label : {show: true, position: 'insideLeft',formatter: '{c}'+' 亿'}, color: '#feb985'}},

@@ -258,6 +258,15 @@ var InvestCompany = function(){
 					$(this).html($(this).html().substring(0,$(this).html().length-1));
 				}
 			});
+			//机构展开收起
+			$(".investEdg").on("click",".investJg",function(){
+				$(this).parent(".investTwo").hide();
+				$(this).parent(".investTwo").siblings(".investAll").show();
+			})
+			$(".investEdg").on("click",".investJg2",function(){
+				$(this).parent(".investAll").hide();
+				$(this).parent(".investAll").siblings(".investTwo").show();
+			})
 			//简介展开收起
 			$(".investSumBox").on("click",".investJj",function(){
 				if($(this).hasClass("investSummaryClose")){
@@ -267,15 +276,6 @@ var InvestCompany = function(){
 					var cont = $(this).parent("span").attr("data-title");
 					$(this).parent("span").html(cont+"<b class='investSummary investJj investSummaryClose'>收起</b>");
 				}
-			})
-			//机构展开收起
-			$(".investEdg").on("click",".investJg",function(){
-				$(this).parent(".investTwo").hide();
-				$(this).parent(".investTwo").siblings(".investAll").show();
-			})
-			$(".investEdg").on("click",".investJg2",function(){
-				$(this).parent(".investAll").hide();
-				$(this).parent(".investAll").siblings(".investTwo").show();
 			})
 			//自选功能
 	        comOptional();

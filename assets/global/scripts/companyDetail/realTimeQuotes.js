@@ -1209,7 +1209,7 @@ $(function(){
 	                var obj = data.data;
 	                companyCode = obj.code;//公司code
 				    companyName = obj.shortname;//公司简称
-				    listMode = obj.mode;//做市或协议
+				    listMode = obj.mode;//做市或集合竞价
 				    awaysConnect();//默认加载实时行情
 				    $("#allMoney").text(obj.totalStockEquity);//总股本
 	       			$("#pastMoney").text(obj.circulatingCapital);//流通股本
@@ -1497,7 +1497,7 @@ $(function(){
 			      		};
 			      		
 		        	});
-		        	if(listMode == "协议"){
+		        	if(listMode == "集合竞价"){
 		        		//当日统计表格
 				      	stompClient.subscribe('/app/stock/agreetransstat.init.'+companyCode, function (stockdata) {
 				      		var socketNum =  JSON.parse(JSON.parse(stockdata.body).content);

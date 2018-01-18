@@ -141,7 +141,7 @@ var Comp = function(){
 							th += '			<a role="menuitem" href="javascript:void(0)" name="2">做市</a>';
 							th += '		</li>';
 							th += '		<li role="presentation">';
-							th += '			<a role="menuitem" href="javascript:void(0)" name="1">协议</a>';
+							th += '			<a role="menuitem" href="javascript:void(0)" name="1">集合竞价</a>';
 							th += '		</li>';
 							th += '		<li role="presentation">';
 							th += '			<a role="menuitem" tabindex="转让方式" href="javascript:void(0)" name=" ">全部</a>';

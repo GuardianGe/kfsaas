@@ -5235,7 +5235,7 @@ var TranChange = function(){
 	                legend: {
 	                    orient: 'vertical',
 	                    x: 'left',
-	                    data: ['协议', '做市'],
+	                    data: ['集合竞价', '做市'],
 	                    textStyle:{
 	                    	fontFamily:"微软雅黑"
 	                    }

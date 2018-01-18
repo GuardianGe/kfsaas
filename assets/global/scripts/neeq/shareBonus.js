@@ -152,7 +152,7 @@ var privateAddPage = function(){
 	   };
 		var pickItem = function(){
 			var securities = "";//转让方式1,2  mode
-	        var industry = "";//市场层级,做市和协议  type
+	        var industry = "";//市场层级,做市和集合竞价  type
 	        var province = "";//定增进度
 	        $(".allList").find("li").unbind("click").on("click", function (event) {
 	            event.preventDefault();

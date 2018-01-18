@@ -239,7 +239,7 @@ var Comp = function(){
 							th += '			<a role="menuitem" href="javascript:void(0)" name="2">做市</a>';
 							th += '		</li>';
 							th += '		<li role="presentation">';
-							th += '			<a role="menuitem" href="javascript:void(0)" name="1">协议</a>';
+							th += '			<a role="menuitem" href="javascript:void(0)" name="1">集合竞价</a>';
 							th += '		</li>';
 							th += '		<li role="presentation">';
 							th += '			<a role="menuitem" tabindex="转让方式" href="javascript:void(0)" name=" ">全部</a>';
@@ -281,8 +281,8 @@ var Comp = function(){
     		mode = "做市";
     		$("#comSelect2").children("a").html('做市<b class="caret"></b>');
     	}else if(mode == 2){
-    		mode = "协议";
-    		$("#comSelect2").children("a").html('协议<b class="caret"></b>');
+    		mode = "集合竞价";
+    		$("#comSelect2").children("a").html('集合竞价<b class="caret"></b>');
     	}
         
         //市场层级
@@ -761,8 +761,8 @@ var Comp = function(){
     		mode = "做市";
     		//$("#comSelect2").children("a").html('做市<b class="caret"></b>');
     	}else if(mode == 2){
-    		mode = "协议";
-    		//$("#comSelect2").children("a").html('协议<b class="caret"></b>');
+    		mode = "集合竞价";
+    		//$("#comSelect2").children("a").html('集合竞价<b class="caret"></b>');
     	}
         
         //市场层级
@@ -1095,8 +1095,8 @@ var Comp = function(){
 					"mode":1,
 					"page":1
 				});
-			}else if(trimAll($(this).text()) == "协议"){
-				$("#noteType").html("协议<b class='caret'></b>");
+			}else if(trimAll($(this).text()) == "集合竞价"){
+				$("#noteType").html("集合竞价<b class='caret'></b>");
 				Query.setHash({
 					"mode":2,
 					"page":1

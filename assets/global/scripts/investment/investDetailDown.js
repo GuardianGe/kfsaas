@@ -24,12 +24,12 @@ var DetailDwon = function(){
         $("#creditCode").text(list.creditCode);
         $("#companyType").text(list.companyType);
         $("#taxpayerNumber").text(list.taxpayerNumber);
-        $("#industry").text(list.industry);
+        $("#industry").text(list.industryName);
         $("#legalRepresentative").text(list.legalRepresentative);
         $("#registeredCapital").text(list.registeredCapital);
         $("#people").text(list.people);
         $("#secretaries").text(list.secretaries);
-        $("#tel").text(list.tel);
+        $("#tel").text(list.phone);
         $("#operatingStatus").text(list.operatingStatus);
         $("#operatingData").text(list.operatingData);
         $("#approvedDate").text(list.approvedDate);
@@ -38,12 +38,12 @@ var DetailDwon = function(){
         $("#totalStockEquity").text(list.totalStockEquity);
         $("#english").text(list.english);
         $("#registeredCity").text(list.registeredCity);
-        if(!isNullOrEmpty(list.businessCcope)){
-        	$("#businessCcope").text(list.businessCcope.substring(0,278)+'...');
+        if(!isNullOrEmpty(list.businessScope)){
+        	$("#businessCcope").text(list.businessScope.substring(0,278)+'...');
         }else{
         	$(".businessCcope-detail").hide();
         }
-        $("#businessCcope").attr("title",list.businessCcope)
+        $("#businessCcope").attr("title",list.businessScope)
     };
     //变更记录
     var changeTable = function(){

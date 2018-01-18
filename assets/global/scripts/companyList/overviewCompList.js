@@ -622,7 +622,7 @@ var OverviewComp = function () {
                     legend: {
                         orient: 'vertical',
                         x: 'left',
-                        data: ['协议', '做市']
+                        data: ['集合竞价', '做市']
                     },
                     calculable: false,
                     series: [
@@ -696,7 +696,7 @@ var OverviewComp = function () {
                     }
                     if (param.type == 'click') {
                     	var mode = "";
-                    	if(param.data.name == "协议"){
+                    	if(param.data.name == "集合竞价"){
                     		mode = 2;
                     	}else{
                     		mode = 1;

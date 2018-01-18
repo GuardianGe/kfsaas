@@ -618,7 +618,7 @@ var InvestDetail = function(){
 			        		}
 			        	}
 			        	tr += "</div></td>";
-			        	tr += "<td>"+ list[i].email +"</td>";
+			        	tr += "<td>"+ list[i].city +"</td>";
 			        	tr += "</tr>";
                     });
                     $("#tableOne").append(tr);
@@ -813,7 +813,7 @@ var InvestDetail = function(){
 					"mode":1,
 					"page":1
 				});
-			}else if(trimAll($(this).text()) == "协议"){
+			}else if(trimAll($(this).text()) == "集合竞价"){
 				Query.setHash({
 					"mode":2,
 					"page":1

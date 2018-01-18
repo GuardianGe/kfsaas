@@ -239,7 +239,7 @@
 		GRAPHSERVICEEVENTSINVESTMENT: URL + 'graphservice/getEventsInvestment' + urlType,//关系图谱 -》主要客户
 		GETCOMPANYDYNAMICCOLUMN: URL + 'service/getCompanyDynamicColumn' + urlType,//挂牌公司动态列
 		GETSTOCKDILUTIONCOLUMN: URL + 'companyservice/getStockDilutionColumn' + urlType,//定增动态列
-		GRAPHSERVICEINVESTED: URL + 'graphservice/getCompanyInvested' + urlType,//历史融资 -》投资机构
+		GRAPHSERVICEINVESTED: URL + 'investmentservice/getCompanyList' + urlType,//历史融资 -》投资机构
 		GETINVESTMENTMANAGEMENT: URL + 'investmentservice/getInvestmentManagement' + urlType,//机构详情-基金管理
 		GETTOPAYCOMPANYLISTED: URL + 'companylisted/getToPay' + urlType,//财务数据权限
 		GETHTMLNOTICESERVICE: URL + 'noticeservice/getHtml' + urlType,//获取psd的html格式

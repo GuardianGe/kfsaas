@@ -400,9 +400,9 @@
 									<!--<li>
 										<a href="#tab_1" data-toggle="tab">报单监控</a>
 									</li>-->
-									<li>
-										<a href="#tab_2" data-toggle="tab">保单监控</a>
-									</li>
+									<!--<li>
+										<a href="#tab_2" data-toggle="tab">报单监控</a>
+									</li>-->
 									<li  class="overli-noborder">
 										<a href="#tab_3" data-toggle="tab">行情列表</a>
 									</li>
@@ -470,14 +470,16 @@
                         pageUrl = $.kf.GETQUOTESTPL+"?type=overview";
 						pageUrl = "./realQuotes/realQuotesPicture.html";
                         $(".overLi-btn").find("li").eq(0).addClass("active").siblings().removeClass("active");
-                    } else if (currentTab == "tab1") {
-                        pageUrl = $.kf.GETQUOTESTPL+"?type=realTimeQuotes";
-						pageUrl = "./realQuotes/declarationDetail.html";
-                        $(".overLi-btn").find("li").eq(1).addClass("active").siblings().removeClass("active");
-                    } else if (currentTab == "tab2") {
+                    } 
+//                  else if (currentTab == "tab1") {
+//                      pageUrl = $.kf.GETQUOTESTPL+"?type=realTimeQuotes";
+//						pageUrl = "./realQuotes/declarationDetail.html";
+//                      $(".overLi-btn").find("li").eq(1).addClass("active").siblings().removeClass("active");
+//                  } 
+                    else if (currentTab == "tab1") {
                         pageUrl = $.kf.GETQUOTESTPL+"?type=realTimeQuotes";
 						pageUrl = "./realQuotes/realQuotesTable.html";
-                        $(".overLi-btn").find("li").eq(2).addClass("active").siblings().removeClass("active");
+                        $(".overLi-btn").find("li").eq(1).addClass("active").siblings().removeClass("active");
                     } 
 					//律师事务所执行list按钮；
 					KfStyle.init(); 
