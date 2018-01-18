@@ -7,6 +7,7 @@ var InvestCompany = function(){
 	    	var industry = "";
 	        var status = "";
 	        var province = "";
+	        var highSalary = "";
 	        $(".allList").find("li").unbind("click").on("click", function (event) {
 	            event.preventDefault();
 	
@@ -96,6 +97,32 @@ var InvestCompany = function(){
 	                        $("#allListSo").find("ul").prepend("<li class='listThree'name =" + proCode + ">" + province + "<span class='soListClose'></span></li>");
 	                    }
 	                }
+	                /*高新企业*/
+	                if ($(this).parents(".allList").attr("id") == "compGx") {
+	                    highSalary = $(this).text();
+	                    var higCode = $(this).attr("name");
+	                    if ($(this).index() == 0) {
+	                    	if($(".listFour").length){
+	                    		if(ind <= 2){
+	                    			$("#allListSo").hide();
+	                    		}
+	                    		
+	                    		$(".listFour").remove();
+		                        Query.setHash({
+		                            higCode: "",
+		                            "page":1
+		                        });
+	                    	}
+	                    } else {
+	                    	$("#allListSo").show();
+	                        Query.setHash({
+	                            higCode: higCode,
+	                            "page":1
+	                        });
+	                        $(".listFour").remove();
+	                        $("#allListSo").find("ul").prepend("<li class='listFour'name =" + higCode + ">" + highSalary + "<span class='soListClose'></span></li>");
+	                    }
+	                }
 	                initTable();
 	            }
 				removeThing();
@@ -139,7 +166,7 @@ var InvestCompany = function(){
 	        	if(isNullOrEmpty(list[i].id)){
 	        		tr += "<div class='investComNum-right'><span>" + list[i].companyName + "</span>";
 	        	}else{
-	        		if(list[i].type == "新三板"){
+	        		if(list[i].companyType == "新三板"){
 	        			tr += "<div class='investComNum-right'><a class='basicName' title='"+ list[i].name +"' data-name='"+list[i].name+"' href='"+ $.url.companyListUrl() + "id=" + list[i].id +"'>"+ list[i].companyName +"</a>";
 		        	}else{
 	        			tr += "<div class='investComNum-right'><a class='basicName' title='"+ list[i].name +"' data-name='"+list[i].name+"' href='"+ $.url.industryUrl() + "id=" + list[i].id +"'>"+ list[i].companyName +"</a>";
@@ -169,7 +196,12 @@ var InvestCompany = function(){
 	        	tr += "<td>" + list[i].investmentDate + "</td>";
 	        	tr += "<td>" + list[i].invest + "</td>";
 	        	tr += "<td class='investT"+i+" investEdg'><div class='investTwo'></div><div class='investAll'></div></td>";
-	        	tr += "<td><a class='comOptional' name='" + list[i].id + "'>" + attention + "</a></td>";
+	        	if(isNullOrEmpty(list[i].id)){
+	        		tr += "<td>关注</td>";
+	        	}else{
+	        		tr += "<td><a class='comOptional' name='" + list[i].id + "'>" + attention + "</a></td>";
+	        	}
+
                 tr += "</tr>";
 	        });
 	        $("#tableOne").append(tr);
@@ -330,6 +362,19 @@ var InvestCompany = function(){
                         "page":1
 	                });
 	            }
+	            //查询条件清除地址栏参数
+	            if ($(this).parent().hasClass("listFour")) {
+	                $("#compGx").find("li").each(function () {
+	                    if ($(this).text() == "全部") {
+	                        $(this).addClass("hang-active");
+	                        $(this).siblings().removeClass("hang-active");
+	                    }
+	                });
+	                Query.setHash({//清除地址栏对应的参数
+	                    higCode: "",
+                        "page":1
+	                });
+	            }
 	            initTable();
 	        });
 	    };
@@ -338,7 +383,8 @@ var InvestCompany = function(){
 	        var aCode = Query.getHash("inCode");
 	        var bCode = Query.getHash("seCode");
 	        var cCode = Query.getHash("proCode");
-	        var a = "", b = "", c = "";
+	        var dCode = Query.getHash("higCode");
+	        var a = "", b = "", c = "",d = "";
 	        $("#compQs").find("li").each(function (i) {
 	            if (!isNullOrEmpty(aCode)) {
 	                if ($(this).attr("name") != aCode) {
@@ -392,6 +438,18 @@ var InvestCompany = function(){
 	            }
 	
 	        });
+	        $("#compGx").find("li").each(function (i) {
+	            if (!isNullOrEmpty(dCode)) {
+	            	if ($(this).attr("name") != dCode) {
+	                    $(this).removeClass("hang-active");
+	                    $(this).nextAll("li").removeClass("hang-active");                   
+	                } else {
+	                    $(this).addClass("hang-active");
+	                    $(this).siblings("li").removeClass("hang-active");
+	                    d = $(this).text();
+	                }
+	            }
+	        });
 	        if (isNullOrEmpty(aCode) && isNullOrEmpty(bCode) && isNullOrEmpty(cCode)) {
 	            $("#allListSo").hide();
 	        }
@@ -410,12 +468,18 @@ var InvestCompany = function(){
 	            $(".listThree").remove();
 	            $("#allListSo").find("ul").prepend("<li class='listThree' name=" + cCode + ">" + c + "<span class='soListClose'></span></li>");
 	        }
+	        if (!isNullOrEmpty(dCode)) {
+	            $("#allListSo").show();
+	            $(".listFour").remove();
+	            $("#allListSo").find("ul").prepend("<li class='listFour' name=" + dCode + ">" + d + "<span class='soListClose'></span></li>");
+	        }
 	        //显示关闭按钮
 	        $("#soClear").on("click", function () {
 	            Query.setHash({
 	                "inCode": "",
 	                "seCode": "",
 	                "proCode": "",
+	                "higCode": "",
                     "page":1
 	            });
 	            $("#tradingStart").val("");
@@ -425,6 +489,7 @@ var InvestCompany = function(){
 	            $("#compQs").find("li").eq(0).addClass("hang-active").siblings().removeClass("hang-active");
 	            $("#compHy").find("li").eq(0).addClass("hang-active").siblings().removeClass("hang-active");
 	            $("#compSf").find("li").eq(0).addClass("hang-active").siblings().removeClass("hang-active");
+	            $("#compGx").find("li").eq(0).addClass("hang-active").siblings().removeClass("hang-active");
 	            initTable();
 	        });
 	        //初始化列表
@@ -438,6 +503,7 @@ var InvestCompany = function(){
 	        var status = "";
 	        var industry = "";
 	        var province = "";
+	        var highSalary = "";
 	        //行业
 	        if ($(".listOne").size()) {
 	            industry = $(".listOne").text();
@@ -462,14 +528,21 @@ var InvestCompany = function(){
 	        } else {
 	            province = $("#compSf").find(".hang-active").text();
 	        }
-	
+			//高新企业
+	        if ($(".listFour").size()) {
+	            highSalary = $(".listFour").text();
+	        } else if ($("#compGx").find(".hang-active").text() == "全部") {
+	            highSalary = "";
+	        } else {
+	            highSalary = $("#compGx").find(".hang-active").text();
+	        }
 	        var code = "";
 	        var keyword = $("#comKeyWord").val();
 			var startTime = $("#tradingStart").val();
 			var stopTime = $("#tradingStop").val();
 	        var _url = "";
 			if (compareDate(startTime, stopTime)) {
-				 _url = $.kf.GETCOMPANYLIST + "?" + "keyword=" + keyword + "&status=" + status + "&province=" + province + "&industry=" + industry + "&startTime=" + startTime + "&stopTime=" + stopTime + "&page=" + 1;
+				 _url = $.kf.GETCOMPANYLIST + "?" + "keyword=" + keyword + "&status=" + status + "&province=" + province + "&industry=" + industry+ "&highSalary=" + highSalary + "&startTime=" + startTime + "&stopTime=" + stopTime + "&page=" + 1;
 		        $("#tableTwo").html("");
 				var lastPage = Query.getHash("page");
 	            $.getTable({

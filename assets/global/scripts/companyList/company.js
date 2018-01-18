@@ -14,10 +14,10 @@ var Comp = function(){
         var province = "";
         var finance = "";
         var tag = "";
+        var highSalary = "";
         $(".allList").find("li").unbind("click").on("click", function (event) {
             event.preventDefault();
             var ind = $("#soCheck").find("li").length;
-
             if (!$(this).hasClass("hang-more")) {
                 $("#tableTd").html("");
                 $(this).parent("ul").find("li").removeClass("hang-active");
@@ -162,6 +162,32 @@ var Comp = function(){
                         $("#allListSo").find("ul").prepend("<li class='listFive' name =" + bqCode + ">" + tag + "<span class='soListClose'></span></li>");
                     }
 
+                }
+                /*是否高新企业*/
+                if ($(this).parents(".allList").attr("id") == "compGx") {
+                    highSalary = $(this).text();
+                    var higCode = $(this).attr("name");
+                    if ($(this).index() == 0) {
+                    	if($(".listSix").length){
+                    		if(ind <= 2){
+                    			$("#allListSo").hide();
+                    		}
+                    		
+                    		$(".listSix").remove();
+	                        Query.setHash({
+	                            higCode: "",
+	                            "page":1
+	                        });
+                    	}
+                    } else {
+                    	$("#allListSo").show();
+                        Query.setHash({
+                            higCode: higCode,
+                            "page":1
+                        });
+                        $(".listSix").remove();
+                        $("#allListSo").find("ul").prepend("<li class='listSix'name =" + higCode + ">" + highSalary + "<span class='soListClose'></span></li>");
+                    }
                 }
                 initTable("td");
                 removeThing();
@@ -476,6 +502,19 @@ var Comp = function(){
                     "page":1
                 });
             }
+            //查询条件清除地址栏参数
+            if ($(this).parent().hasClass("listSix")) {
+                $("#compGxList").find("li").each(function () {
+                    if ($(this).text() == "全部") {
+                        $(this).addClass("hang-active");
+                        $(this).siblings().removeClass("hang-active");
+                    }
+                });
+                Query.setHash({
+                    higCode: "",
+                    "page":1
+                });
+            }
             initTable("td");
         });
     };
@@ -486,7 +525,8 @@ var Comp = function(){
         var cCode = Query.getHash("proCode");
         var dCode = Query.getHash("finCode");
         var eCode = Query.getHash("bqCode");
-        var a = "", b = "", c = "", d = "",e = "";
+        var fCode = Query.getHash("higCode");
+        var a = "", b = "", c = "", d = "",e = "",f = "";
         $("#compQs").find("li").each(function (i) {
             if (!isNullOrEmpty(aCode)) {
                 if ($(this).attr("name") != aCode) {
@@ -573,6 +613,20 @@ var Comp = function(){
             }
 
         });
+        $("#compGx").find("li").each(function (i) {
+            if (!isNullOrEmpty(fCode)) {
+                if ($(this).attr("name") != fCode) {
+                    $(this).removeClass("hang-active");
+                    $(this).nextAll("li").removeClass("hang-active");                   
+                } else {
+                    $(this).addClass("hang-active");
+                    $(this).siblings("li").removeClass("hang-active");
+                    f = $(this).text();
+                }
+            }
+
+        });
+        
         if (isNullOrEmpty(aCode) && isNullOrEmpty(bCode) && isNullOrEmpty(cCode) && isNullOrEmpty(dCode)&& isNullOrEmpty(eCode)){
             $("#allListSo").hide();
         }
@@ -601,6 +655,11 @@ var Comp = function(){
             $(".listFive").remove();
             $("#allListSo").find("ul").prepend("<li class='listFive' name=" + eCode + ">" + e + "<span class='soListClose'></span></li>");
         }
+        if (!isNullOrEmpty(fCode)) {
+            $("#allListSo").show();
+            $(".listSix").remove();
+            $("#allListSo").find("ul").prepend("<li class='listSix' name=" + fCode + ">" + f + "<span class='soListClose'></span></li>");
+        }
         //显示关闭按钮
         $("#soClear").on("click", function () {
             Query.setHash({
@@ -609,6 +668,7 @@ var Comp = function(){
                 proCode: "",
                 finCode: "",
                 bqCode: "",
+                higCode:"",
                 type:"",
                 mode:"",
                 "page":1
@@ -622,6 +682,7 @@ var Comp = function(){
             $("#compSf").find("li").eq(0).addClass("hang-active").siblings().removeClass("hang-active");
             $("#compCw").find("li").eq(0).addClass("hang-active").siblings().removeClass("hang-active");
             $("#compBq").find("li").eq(0).addClass("hang-active").siblings().removeClass("hang-active");
+            $("#compGx").find("li").eq(0).addClass("hang-active").siblings().removeClass("hang-active");
            	
            	$(".city-list").find(".provinceLi").removeClass("provinceLi");
            	$(".modal-footer").each(function(){
@@ -641,6 +702,7 @@ var Comp = function(){
         var industry = "";
         var province = "";
         var finance = "";
+        var highSalary = "";
         var tag = "";
         var orderByName = "";
         var orderByType = "";
@@ -685,6 +747,14 @@ var Comp = function(){
         } else {
             tag = $("#compBq").find(".hang-active").attr("name")
         }
+        //高新企业
+        if ($(".listSix").size()) {
+            highSalary = $(".listSix").text();
+        } else if ($("#compGx").find(".hang-active").text() == "全部") {
+            highSalary = "";
+        } else {
+            highSalary = $("#compGx").find(".hang-active").text();
+        }
         //转让方式
     	var mode = Query.getHash("mode");
     	if(mode == 1){
@@ -727,7 +797,7 @@ var Comp = function(){
 	        	var orderName = "";
 	        	var orderType = "";
 	        }
-	        _url = $.kf.GETCOMPANYDYNAMICCOLUMN + "?"+ "type=" + type + "&source="+ source + "&orderByName="+ orderName +"&orderByType="+ orderType +"&mode=" + mode+ "&tag=" + tag + "&keyword=" + keyword + "&securities=" + securities + "&province=" + province + "&industry=" + industry + "&finance=" + finance +"&start_time=" + start_time + "&stop_time=" + stop_time + "&page=" + 1;
+	        _url = $.kf.GETCOMPANYDYNAMICCOLUMN + "?"+ "type=" + type + "&source="+ source + "&orderByName="+ orderName + "&highSalary="+ highSalary +"&orderByType="+ orderType +"&mode=" + mode+ "&tag=" + tag + "&keyword=" + keyword + "&securities=" + securities + "&province=" + province + "&industry=" + industry + "&finance=" + finance +"&start_time=" + start_time + "&stop_time=" + stop_time + "&page=" + 1;
 	    	var lastPage = Query.getHash("page");
 	    	
 	    	if(isNullOrEmpty(flg)){//正常逻辑

@@ -3507,7 +3507,10 @@ var CompanyDetail = function () {
 	            $(".mask-in").remove();
 	            $(".maskInTable").height("auto");
 	            if(fromType == "investCompany"){
-	            	$("#foreignInvestment").click();//默认加载对外投资
+	            	//$("#foreignInvestment").click();//默认加载对外投资
+	            	$("#foreignInvestment").addClass("active").siblings("a").removeClass("active");
+	            	$("#foreignInvestmentList").addClass("active").siblings(".canvas-most").removeClass("active");
+	            	foreignInvestment();
 	            }else{
 	            	ownershipStructure();//关系图谱 默认加载股权结构
 	            }
