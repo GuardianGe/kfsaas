@@ -1136,23 +1136,69 @@ var storyFinancing = function () {
                     var tr = "";
                     $("#storyFinancingList2").html("");
                     if (list != "") {
-	                    if(!isNullOrEmpty(list[0].date)){
-	                    	$("#storyFinancingDate").text(list[0].date);
+	                    if(!isNullOrEmpty(list[0].investmentDate)){
+	                    	$("#storyFinancingDate").text(list[0].investmentDate);
 	                    }else{
 	                    	$("#storyFinancingDate").text("--");
 	                    }
 	                    $(list).each(function (i) {
-				            tr += "<tr>";
-				            tr += "<td><a href='" + $.url.investmentAgencyDetailsUrl() + "id=" + list[i].companyId + "'>" + list[i].companyName + "</a></td>";
-				            tr += "<td>" + list[i].step + "</td>";
-				            tr += "<td>" + list[i].currencyCode + "</td>";
-				            tr += "<td>" + list[i].investmentAmount + "</td>";
-				            tr += "<td>" + list[i].registrationDate + "</td>";
-				            tr += "</tr>";
-				        });
-	                    $("#storyFinancingList2").append(tr);
-	                    var isCookie = false;
-	                    moneyUrl($(".basicName"), isCookie, "isCookie");
+			            tr += "<tr>";
+			            tr += "<td>" + list[i].investmentDate + "</td>";
+			             tr += "<td>" + list[i].invest + "</td>";
+			             tr += "<td>" + list[i].investmentAmount + "</td>";
+			             tr += "<td>" + list[i].investRatio + "</td>";
+			             tr += "<td class='investT"+i+" investEdg'><div class='investTwo'></div><div class='investAll'></div></td>";
+			            tr += "</tr>";
+			        });
+			        $("#storyFinancingList2").append(tr);
+			        //投资机构列表
+				        for (var i = 0; i < list.length; i++) {
+				            var tr2 = [];
+				            var tr3 = [];
+				            var investmentL = list[i].investmentAgency.length;
+				            for (var j = 0; j < investmentL; j++) {
+				                if (investmentL == 0 || investmentL == 1) {
+				                    if (list[i].investmentAgency[j].investorId) {
+				                        tr2 += "<a href=" + $.url.investmentAgencyDetailsUrl() + "id=" + list[i].investmentAgency[j].investorId + ">" + list[i].investmentAgency[j].investment + "</a>";
+				                    } else {
+				                        tr2 += list[i].investmentAgency[j].investment;
+				                    }
+				                } else {
+				                    if (list[i].investmentAgency[j].investorId) {
+				                    	if(list[i].investmentAgency[j].investment !=" "){
+				                    		tr2 += "<a href=" + $.url.investmentAgencyDetailsUrl() + "id=" + list[i].investmentAgency[j].investorId + ">" + list[i].investmentAgency[j].investment + "</a>/";
+				                    	}else{
+				                    		tr2 += "";
+				                    	}
+				                    } else {
+				                    	if(list[i].investmentAgency[j].investment !=" "){
+				                        	tr2 += list[i].investmentAgency[j].investment + "/";
+				                        }else{
+				                        	tr2 += "";
+				                        }
+				                    }
+				                    if(j<2){
+				                    	tr3 = tr2;
+				                    }
+				                }
+				            }
+				            if(investmentL<3){
+				            	if(investmentL ==2){
+				            		$(".investT" + i).find(".investTwo").append(tr2.substring(0,tr2.length-1));
+				            	}else{
+				            		$(".investT" + i).find(".investTwo").append(tr2);
+				            	}
+				            }else{
+				            	var tr4 = tr3.substring(0,tr3.length-1)+'...<b class="investSummary investJg">展开</b>';
+				            	$(".investT" + i).find(".investTwo").append(tr4);
+				            	$(".investT" + i).find(".investAll").append(tr2.substring(0,tr2.length-1)+'<b class="investSummary investSummaryClose investJg2">收起</b>');
+				            }
+				        }
+						$(".investEdg").each(function(){
+							if($(this).html().indexOf("/") > 0){
+								$(this).html($(this).html().substring(0,$(this).html().length-1));
+							}
+						});
 					}
                 };
 

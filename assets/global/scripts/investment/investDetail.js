@@ -590,7 +590,7 @@ var InvestDetail = function(){
                         tr += "<td class='investComNum investComNum2'>";
 			        	tr += "<div class='investComNum-left investComNum-detail'>"
 			        	if(isNullOrEmpty(list[i].logo)){
-			        		tr += "<img src='../../assets/admin/layout/img/investorsUser.png'/>";
+			        		tr += "<img src='../../assets/admin/layout/img/rentou.png'/>";
 			        	}else{
 			        		tr += "<img src='"+ list[i].logo +"'/>";
 			        	}

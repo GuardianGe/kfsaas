@@ -188,6 +188,7 @@ input::-webkit-input-safebox-button {
 	top: 30px;
 	width:170px;
 }
+
 .codeList{left: 160px;}
 .searchList{
 	white-space:nowrap;
@@ -985,17 +986,17 @@ caption{
 }
 /*8*/
 .page-sidebar .page-sidebar-menu .sub-menu > li > a.menuTwo08{
-	background: url(../img/allicon.png) -334px -505px no-repeat;
+	background: url(../img/allicon.png) -329px -2881px no-repeat;
 }
 .page-sidebar .page-sidebar-menu .sub-menu > li.active > a.menuTwo08{
-	background:#4b4f78 url(../img/allicon.png) -4px -505px no-repeat;
+	background:#4b4f78 url(../img/allicon.png) 2px -2881px no-repeat;
 }
 .page-sidebar .page-sidebar-menu .sub-menu > li:hover a.menuTwo08{
-	background:#4b4f78 url(../img/allicon.png) -4px -505px no-repeat;
+	background:#4b4f78 url(../img/allicon.png) 2px -2881px no-repeat;
 }
 .page-sidebar .page-sidebar-menu .sub-menu > li.active:hover a.menuTwo08
 {
-	background:#4b4f78 url(../img/allicon.png) -4px -505px no-repeat;
+	background:#4b4f78 url(../img/allicon.png) 2px -2881px no-repeat;
 }
 /*9*/
 .page-sidebar .page-sidebar-menu .sub-menu > li > a.menuTwo09{
@@ -1493,6 +1494,32 @@ caption{
 .page-sidebar .page-sidebar-menu .sub-menu > li.active:hover a.myCharts{
 	background:#4b4f78 url(../img/allicon.png) -4px -2317px no-repeat;
 }
+/*并购事件*/
+.page-sidebar .page-sidebar-menu .sub-menu > li > a.mergerEvent{
+	background: url(../img/allicon.png) -333px -2963px no-repeat;
+}
+.page-sidebar .page-sidebar-menu .sub-menu > li.active > a.mergerEvent{
+	background:#4b4f78 url(../img/allicon.png) -3px -2963px no-repeat;
+}
+.page-sidebar .page-sidebar-menu .sub-menu > li:hover a.mergerEvent{
+	background:#4b4f78 url(../img/allicon.png) -3px -2963px no-repeat;
+}
+.page-sidebar .page-sidebar-menu .sub-menu > li.active:hover a.mergerEvent{
+	background:#4b4f78 url(../img/allicon.png) -3px -2963px no-repeat;
+}
+/*ipo事件*/
+.page-sidebar .page-sidebar-menu .sub-menu > li > a.ipoEvent{
+	background: url(../img/allicon.png) -332px -3030px no-repeat;
+}
+.page-sidebar .page-sidebar-menu .sub-menu > li.active > a.ipoEvent{
+	background:#4b4f78 url(../img/allicon.png) -2px -3030px no-repeat;
+}
+.page-sidebar .page-sidebar-menu .sub-menu > li:hover a.ipoEvent{
+	background:#4b4f78 url(../img/allicon.png) -2px -3030px no-repeat;
+}
+.page-sidebar .page-sidebar-menu .sub-menu > li.active:hover a.ipoEvent{
+	background:#4b4f78 url(../img/allicon.png) -2px -3030px no-repeat;
+}
 /*收起*/
 .page-sidebar-closed .page-sidebar .page-sidebar-menu.page-sidebar-menu-closed > li:hover > .sub-menu > li > a{
 	    padding-left: 35px !important;
@@ -1624,17 +1651,17 @@ caption{
 }
 /*8*/
 .page-sidebar .page-sidebar-menu-closed .sub-menu > li > a.menuTwo08{
-	background: url(../img/allicon.png) -390px -505px no-repeat;
+	background: url(../img/allicon.png) -386px -2881px no-repeat;
 }
 .page-sidebar .page-sidebar-menu-closed .sub-menu > li.active > a.menuTwo08{
-	background:#4b4f78 url(../img/allicon.png) -60px -505px no-repeat;
+	background:#4b4f78 url(../img/allicon.png) -55px -2881px no-repeat;
 }
 .page-sidebar .page-sidebar-menu-closed .sub-menu > li:hover a.menuTwo08{
-	background:#4b4f78 url(../img/allicon.png) -60px -505px no-repeat;
+	background:#4b4f78 url(../img/allicon.png) -55px -2881px no-repeat;
 }
 .page-sidebar .page-sidebar-menu-closed .sub-menu > li.active:hover a.menuTwo08
 {
-	background:#4b4f78 url(../img/allicon.png) -60px -505px no-repeat;
+	background:#4b4f78 url(../img/allicon.png) -55px -2881px no-repeat;
 }
 /*9*/
 .page-sidebar .page-sidebar-menu-closed .sub-menu > li > a.menuTwo09{
@@ -2116,6 +2143,32 @@ caption{
 .page-sidebar .page-sidebar-menu-closed .sub-menu > li.active:hover a.myCharts{
 	background:#4b4f78 url(../img/allicon.png) -56px -2317px no-repeat;
 }
+/*并购事件*/
+.page-sidebar .page-sidebar-menu-closed .sub-menu > li > a.mergerEvent{
+	background: url(../img/allicon.png) -385px -2963px no-repeat;
+}
+.page-sidebar .page-sidebar-menu-closed .sub-menu > li.active > a.mergerEvent{
+	background:#4b4f78 url(../img/allicon.png) -55px -2963px no-repeat;
+}
+.page-sidebar .page-sidebar-menu-closed .sub-menu > li:hover a.mergerEvent{
+	background:#4b4f78 url(../img/allicon.png) -55px -2963px no-repeat;
+}
+.page-sidebar .page-sidebar-menu-closed .sub-menu > li.active:hover a.mergerEvent{
+	background:#4b4f78 url(../img/allicon.png) -55px -2963px no-repeat;
+}
+/*ipo事件*/
+.page-sidebar .page-sidebar-menu-closed .sub-menu > li > a.ipoEvent{
+	background: url(../img/allicon.png) -384px -3030px no-repeat;
+}
+.page-sidebar .page-sidebar-menu-closed .sub-menu > li.active > a.ipoEvent{
+	background:#4b4f78 url(../img/allicon.png) -54px -3030px no-repeat;
+}
+.page-sidebar .page-sidebar-menu-closed .sub-menu > li:hover a.ipoEvent{
+	background:#4b4f78 url(../img/allicon.png) -54px -3030px no-repeat;
+}
+.page-sidebar .page-sidebar-menu-closed .sub-menu > li.active:hover a.ipoEvent{
+	background:#4b4f78 url(../img/allicon.png) -54px -3030px no-repeat;
+}
 .page-sidebar-menu-closed .marktingView{ left:0!important;}
 /* footer copyright */
 .login .copyright {
@@ -2331,6 +2384,15 @@ caption{
 }
 .menuOne-masterBrokes{
 	background: url(../img/zhubanquanshang.png) center center no-repeat;
+}
+.menuOne-investMoney{
+	background: url(../img/allicon.png) -41px  -2853px no-repeat;
+}
+.menuOne-merger{
+	background: url(../img/allicon.png) -41px  -2933px no-repeat;
+}
+.menuOne-ipo{
+	background: url(../img/allicon.png) -41px  -2998px no-repeat;
 }
 .datePar .fa-calendar{
 	background: url(../img/rili.png) center center no-repeat;
@@ -4279,8 +4341,8 @@ table td{
 .investComNum .investComNum-left{
 	border: 1px solid #c6d0d8;
 	background-color: #fff;
-	width: 68px;
-	height: 68px;
+	width: 58px;
+	height: 58px;
 	text-align: center;
 	display: flex;
 	justify-content: center;
@@ -4292,13 +4354,20 @@ table td{
 	background: none;
 }
 .investComNum img{
-	max-width: 64px;
-	max-height: 64px;
+	max-width: 54px;
+	max-height: 54px;
 }
 .investComNum .investComNum-detail{
 	width: 70px;
 	height: 70px;
 	border: none;
+}
+.investComNum-right .investTabBox span{
+	width: auto;
+	display: inline-block;
+	color: #333;
+	margin-right: 8px;
+	font-size: 13px;
 }
 .investComNum-detail img{
 	width: 70px;
@@ -4404,7 +4473,6 @@ table td{
     margin-right:10px; 
     border: 1px solid #C6D0D8;
     border-radius: 4px;
-    padding: 6px;
     background: #ffffff;
 }
 .investOrgBox img{

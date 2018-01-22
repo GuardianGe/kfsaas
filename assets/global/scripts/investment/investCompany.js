@@ -164,7 +164,7 @@ var InvestCompany = function(){
 	        	}
 	        	tr += "</div>";
 	        	if(isNullOrEmpty(list[i].id)){
-	        		tr += "<div class='investComNum-right'><span>" + list[i].companyName + "</span>";
+	        		tr += "<div class='investComNum-right'><span style='font-size:16px'>" + list[i].companyName + "</span>";
 	        	}else{
 	        		if(list[i].companyType == "新三板"){
 	        			tr += "<div class='investComNum-right'><a class='basicName' title='"+ list[i].name +"' data-name='"+list[i].name+"' href='"+ $.url.companyListUrl() + "id=" + list[i].id +"'>"+ list[i].companyName +"</a>";
@@ -172,10 +172,13 @@ var InvestCompany = function(){
 	        			tr += "<div class='investComNum-right'><a class='basicName' title='"+ list[i].name +"' data-name='"+list[i].name+"' href='"+ $.url.industryUrl() + "id=" + list[i].id +"'>"+ list[i].companyName +"</a>";
 		        	}
 	        	}
-	        	if(list[i].summary.length<39){
+	        	if(list[i].summary.length<9){
 	        		tr += "<span>" + list[i].summary + "</span>";
 	        	}else{
-	        		tr += "<div class='investSumBox'><span data-title='"+list[i].summary+"'>" + list[i].summary.substring(0,38) + "...<b class='investSummary investJj'>展开</b></span></div>";
+	        		tr += "<div class='investSumBox'><span data-title='"+list[i].summary+"'>" + list[i].summary.substring(0,9) + "...<b class='investSummary investJj'>展开</b></span></div>";
+	        		if(list[i].companyType == "新三板"){
+	        			tr +="<div class='investTabBox'><span>"+ list[i].companyType +"</span><span>"+ list[i].companyShortName +"</span><span>"+ list[i].code +"</span></div>"
+	        		}
 	        	};
 	        	tr += "</div></td>";
 	        	if(isNullOrEmpty(list[i].city)){
@@ -270,8 +273,8 @@ var InvestCompany = function(){
 			//简介展开收起
 			$(".investSumBox").on("click",".investJj",function(){
 				if($(this).hasClass("investSummaryClose")){
-					var cont = $(this).parent("span").attr("data-title").substring(0,38);
-					$(this).parent("span").html(cont+"...<b class='investJj'>展开</b>");
+					var cont = $(this).parent("span").attr("data-title").substring(0,9);
+					$(this).parent("span").html(cont+"...<b class='investSummary investJj'>展开</b>");
 				}else{
 					var cont = $(this).parent("span").attr("data-title");
 					$(this).parent("span").html(cont+"<b class='investSummary investJj investSummaryClose'>收起</b>");
