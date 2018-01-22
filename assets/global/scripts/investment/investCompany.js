@@ -174,12 +174,12 @@ var InvestCompany = function(){
 	        	}
 	        	if(list[i].summary.length<9){
 	        		tr += "<span>" + list[i].summary + "</span>";
-	        	}else{
+	        	}else{	
 	        		tr += "<div class='investSumBox'><span data-title='"+list[i].summary+"'>" + list[i].summary.substring(0,9) + "...<b class='investSummary investJj'>展开</b></span></div>";
-	        		if(list[i].companyType == "新三板"){
-	        			tr +="<div class='investTabBox'><span>"+ list[i].companyType +"</span><span>"+ list[i].companyShortName +"</span><span>"+ list[i].code +"</span></div>"
-	        		}
 	        	};
+	        	if(list[i].companyType == "新三板"){
+        			tr +="<div class='investTabBox'><span>"+ list[i].companyType +"</span><span>"+ list[i].companyShortName +"</span><span>"+ list[i].code +"</span></div>"
+        		}
 	        	tr += "</div></td>";
 	        	if(isNullOrEmpty(list[i].city)){
 	        		tr += "<td>--</td>";

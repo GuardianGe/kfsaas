@@ -5,9 +5,10 @@
 <html lang="en" class="no-js">
 	<!--<![endif]-->
 	<!-- BEGIN HEAD -->
+
 	<head>
 		<meta charset="utf-8" />
-		<title>投资机构｜三板慧｜金融大数据</title>
+		<title>定增｜三板慧｜金融大数据</title>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta content="width=device-width, initial-scale=1" name="viewport" />
 		<meta content="" name="description" />
@@ -19,63 +20,12 @@
 		<link href="../../assets/global/css/components.css" id="style_components" rel="stylesheet" type="text/css" />
 		<link href="../../assets/global/css/plugins.css" rel="stylesheet" type="text/css" />
 		<link href="../../assets/admin/layout/css/layout.css" rel="stylesheet" type="text/css" />
-		<link href="../../assets/admin/layout/css/themes/darkblue.css" rel="stylesheet" type="text/css" id="style_color" />
 		<link rel="stylesheet" type="text/css" href="../../assets/admin/layout/css/paging.css">
+		<link href="../../assets/admin/layout/css/themes/darkblue.css" rel="stylesheet" type="text/css" id="style_color" />
 		<link href="../../assets/admin/layout/css/custom.css" rel="stylesheet" type="text/css" />
-		<!-- END THEME STYLES -->
 	</head>
 
 	<body class="page-header-fixed page-quick-sidebar-over-content page-container-bg-solid">
-		<div class="modal fade myModal01" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-		  <div class="modal-dialog">
-		    <div class="modal-content">
-		      <div class="modal-header">
-		        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-		        <h4 class="modal-title" id="myModalLabel">省份选择</h4>
-		      </div>
-		      <div class="modal-body">
-		        <div class="province" id="comProvince">
-		        	<div class="province-ul">
-		        		<!--<input type="text" name="" id="" value="" placeholder="可输入拼音汉字查找"/>-->
-		        	</div>
-		        	<div class="city-list">
-		        		<ul>
-		        			<li name="province010">辽宁</li>
-		        			<li name="province011">吉林</li>
-		        			<li name="province012">黑龙江</li>
-		        			<li name="province013">江苏</li>
-		        			<li name="province014">浙江</li>
-		        			<li name="province015">安徽</li>
-		        			<li name="province016">江西</li>
-		        			<li name="province017">福建</li>
-		        			<li name="province018">湖北</li>
-		        			<li name="province019">湖南</li>
-		        			<li name="province020">四川</li>
-		        			<li name="province021">贵州</li>
-		        			<li name="province022">云南</li>
-		        			<li name="province023">广东</li>
-		        			<li name="province024">海南</li>
-		        			<li name="province025">甘肃</li>
-		        			<li name="province026">青海</li>
-		        			<li name="province027">台湾</li>
-		        			<li name="province028">内蒙古</li>
-		        			<li name="province029">新疆</li>
-		        			<li name="province030">西藏</li>
-		        			<li name="province031">广西</li>
-		        			<li name="province032">宁夏</li>
-		        			<li name="province033">香港</li>
-		        			<li name="province034">澳门</li>
-		        		</ul>
-		        	</div>
-		        </div>
-		      </div>
-		      <div class="modal-footer">
-		        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-		        <button type="button" class="btn default" id="compProvSave">确定</button>
-		      </div>
-		    </div>
-		  </div>
-		</div>
 		<!-- BEGIN HEADER -->
 		<div class="page-header navbar navbar-fixed-top">
 			<!-- BEGIN HEADER INNER -->
@@ -83,29 +33,30 @@
 				<!-- BEGIN LOGO -->
 				<div class="page-logo">
 					<a href="/index.php/companylisted/index">
-						<img src="../../assets/admin/layout/img/logo.png" alt="logo" class="logo-default" />
+						<!--<img src="../../assets/admin/layout/img/logo.png" alt="logo" class="logo-default" />-->
 					</a>
 					<div class="menu-toggler sidebar-toggler hide">
 					</div>
 				</div>
 				<!-- END LOGO -->
-
 				<!-- BEGIN RESPONSIVE MENU TOGGLER -->
 				<a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse">
 				</a>
-
+				<!-- END RESPONSIVE MENU TOGGLER -->
+				<!-- BEGIN TOP NAVIGATION MENU -->
 				<div class="top-menu">
 				<ul class="nav navbar-nav pull-right">
 					<li class="dropdown dropdown-extended dropdown-notification mgr20" id="header_notification_bar">
-						<a href="javascript:void(0)" class="dropdown-toggle" style="height:55px">
+						<a href="/account/buy" class="dropdown-toggle" style="height:55px">
 							<i class="fa fa-dollar"></i>
 							<span class="badge badge-default" style="right: -18px">购买</span>
 						</a>
 					</li>
 					<li class="dropdown dropdown-user">
 						<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-							<img alt="" class="img-circle" src="" />
-							<span class="username username-hide-on-mobile"></span>
+							<img alt="" class="img-circle" src="http://user.kaifengdata.com/man.png" />
+							<span class="username username-hide-on-mobile">
+					齐天大圣 </span>
 							<i class="fa fa-angle-down"></i>
 						</a>
 						 <ul class="dropdown-menu dropdown-menu-default">
@@ -140,10 +91,11 @@
 				</ul>
 			</div>
 				<!-- END TOP NAVIGATION MENU -->
+				<!-- END TOP NAVIGATION MENU -->
 				 <!--PC端搜索框-->
                 <div class="pc-search hidden-xs hidden-sm">
                     <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-                    <input type="text" name="" id="searchBlur" value="" placeholder="搜索公司，基金，资料" />
+                    <input type="text" name="" id="searchBlur" value="" placeholder="搜索 公司/基金/资料" />
                     <div class="searchList">
                         <ul></ul>
                     </div>
@@ -160,10 +112,14 @@
 			<div class="page-sidebar-wrapper">
 				<div class="page-sidebar navbar-collapse collapse">
 					<ul class="page-sidebar-menu " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
+						<!-- DOC: To remove the sidebar toggler from the sidebar you just need to completely remove the below "sidebar-toggler-wrapper" LI element -->
 						<li class="sidebar-toggler-wrapper">
+							<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
 							<div class="sidebar-toggler">
 							</div>
+							<!-- END SIDEBAR TOGGLER BUTTON -->
 						</li>
+						<!-- DOC: To remove the search box from the sidebar you just need to completely remove the below "sidebar-search-wrapper" LI element -->
 						<li class="sidebar-search-wrapper">
 							<form class="sidebar-search " action="extra_search.html" method="POST">
 								<a href="javascript:;" class="remove">
@@ -180,29 +136,40 @@
 						</li>
 						<li class="start active open">
 							<a href="javascript:;">
-								<i class="icon-home"></i>
+								<!--<i class="icon-home"></i>-->
 								<span class="title">新三板</span>
 								<span class="selected"></span>
 								<span class="arrow open"></span>
 							</a>
 							<ul class="sub-menu">
+								<li>
+									<a href="挂牌公司列表页.html">
+										<!--<i class="icon-bar-chart"></i>-->
+										挂牌公司</a>
+								</li>
+								<li>
+									<a href="公告.html">
+										<!--<i class="icon-bulb"></i>-->
+										公告</a>
+								</li>
 								<li class="active">
-									<a href="挂牌公司列表页.html">挂牌公司</a>
+									<a href="定增.html">
+										<!--<i class="icon-graph"></i>-->定增</a>
 								</li>
 								<li>
-									<a href="公告.html">公告</a>
+									<a href="交易.html">
+										<!--<i class="icon-graph"></i>-->
+										交易</a>
 								</li>
 								<li>
-									<a href="定增.html">定增</a>
+									<a href="#">
+										<!--<i class="icon-graph"></i>-->
+										主办券商</a>
 								</li>
 								<li>
-									<a href="交易.html">交易</a>
-								</li>
-								<li>
-									<a href="#">主办券商</a>
-								</li>
-								<li>
-									<a href="#">政策法规</a>
+									<a href="#">
+										<!--<i class="icon-graph"></i>-->
+										政策法规</a>
 								</li>
 							</ul>
 						</li>
@@ -214,13 +181,19 @@
 							</a>
 							<ul class="sub-menu">
 								<li>
-									<a href="投资事件.html">投资事件</a>
+									<a href="投资事件.html">
+										<!--<i class="icon-home"></i>-->
+										投资事件</a>
 								</li>
 								<li>
-									<a href="投资机构列表页.html">投资机构</a>
+									<a href="投资机构列表页.html">
+										<!--<i class="icon-basket"></i>-->
+										投资机构</a>
 								</li>
 								<li>
-									<a href="#">私募基金管理人</a>
+									<a href="#">
+										<!--<i class="icon-tag"></i>-->
+										私募基金管理人</a>
 								</li>
 
 							</ul>
@@ -272,6 +245,7 @@
 									<a href="注册成功3.html">
 										<!--<i class="icon-tag"></i>-->注册成功3</a>
 								</li>
+
 							</ul>
 						</li>
 					</ul>
@@ -281,7 +255,31 @@
 			<!-- END SIDEBAR -->
 			<!-- BEGIN CONTENT -->
 			<div class="page-content-wrapper">
-				<div class="page-content">
+				<div class="page-content" style="background:#FFFFFF;">
+					<!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+					<div class="modal fade" id="portlet-config" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="background:#FFFFFF;">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+									<h4 class="modal-title">Modal title</h4>
+								</div>
+								<div class="modal-body">
+									Widget settings form goes here
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn blue">Save changes</button>
+									<button type="button" class="btn default" data-dismiss="modal">Close</button>
+								</div>
+							</div>
+							<!-- /.modal-content -->
+						</div>
+						<!-- /.modal-dialog -->
+					</div>
+					<!-- /.modal -->
+					<!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+					<!-- BEGIN STYLE CUSTOMIZER -->
+					<!-- END STYLE CUSTOMIZER -->
 					<!-- BEGIN PAGE HEADER-->
 					<div class="page-bar">
 						<ul class="page-breadcrumb">
@@ -291,7 +289,7 @@
 								<i class="fa fa-angle-right"></i>
 							</li>
 							<li>
-								投资机构
+								定增
 							</li>
 							<li class='nowTimeTop'>
 								北京时间：<span id="nowDate"></span>
@@ -300,171 +298,29 @@
 					</div>
 					<div class="page-content-par">
 					<div class="row mod-title">
-						<div class="col-md-12">投资机构</div>
+						<div class="col-md-12">定增</div>
 					</div>
 					<div class="page-height"></div>
-					<div class="row mod-con-ipt">
-						<div class="col-sm-2 contan-search">
-							<input placeholder="机构名称" type="text" class="form-control form-filter input-sm investSname">
-						</div>
-						<div class="col-sm-4 compBtn">
-							<button class="search btn-ipt" id="investSer">搜索</button>
-							<button class="search btn-ipt btn-ipts" id="investSerReset">重置</button>
-						</div>
-					</div>
-					<div class="row allList" id="compQs">
-						<div class="hang-title">
-							<span>投资领域</span>
-						</div>
-						<ul class="list-inline" id="comSpecial">
-							<li name="" class="hang-active">全部</li>
-							<li name="6b3636b4e3" data-name="h" title="互联网">互联网</li>
-							<li name="2e86e4c71c" data-name="d" title="电信及增值业务">电信及增值业务</li>
-							<li name="e95c43ceca" data-name="i" title="IT">IT</li>
-							<li name="0a38ddff45" data-name="l" title="连锁及零售">连锁及零售</li>
-							<li name="b68cc0c58f" data-name="n" title="能源及矿产">能源及矿产</li>
-							<li id="trPop" class="hang-more" data-toggle="modal" data-target="#myModal02">更多&gt;&gt;</li>
-						</ul>
-					</div>
-					<div class="row allList" id="compHy">
-						<div class="hang-title">
-							<span>投资阶段</span>
-						</div>
-						<ul class="list-inline" id="compIndustry">
-							<li name="" class="hang-active">全部</li>
-							<li name="b1">种子期</li>
-							<li name="b2">初创期</li>
-							<li name="b3">扩张期</li>
-							<li name="b4">成熟期</li>
-							<li name="b6">新三板</li>
-							<li name="b5">PIPE</li>
-						</ul>
-					</div>
-					<div class="row allList" id="compLy">
-						<div class="hang-title">
-							<span>机构类型</span>
-						</div>
-						<ul class="list-inline" id="compIndustry">
-							<li name="" class="hang-active">全部</li>
-							<li name="a1">VC</li>
-							<li name="a2">FOFs</li>
-							<li name="a3">天使投资人</li>
-							<li name="a4">券商直投</li>
-							<li name="a5">PE</li>
-							<!--<li name="a6">战略投资者PE</li>-->
-						</ul>
-					</div>
-					<div class="row allList" id="compSf">
-						<div class="hang-title">
-							<span>资本类型</span>
-						</div>
-						<ul class="list-inline">
-							<li name="" class="hang-active">全部</li>
-							<li name="b3">外资</li>
-                            <li name="b1">内资</li>
-                            <li name="b2">合资</li>
-						</ul>
-					</div>
-					<div class="row allList" id="compDq">
-						<div class="hang-title">
-							<span>所在地区</span>
-						</div>
-						<ul class="list-inline">
-							<li name="" class="hang-active">全部</li>
-							<li name="province001">北京</li>
-		        			<li name="province002">天津</li>
-		        			<li name="province003">上海</li>
-		        			<li name="province004">重庆</li>
-		        			<li name="province005">河北</li>
-		        			<li name="province006">山西</li>
-		        			<li name="province007">陕西</li>
-		        			<li name="province008">山东</li>
-		        			<li name="province009">河南</li>
-		        			<li class="hang-more" data-toggle="modal" data-target="#myModal">更多>></li>
-						</ul>
-					</div>
-					<div class="row allListSo" id="allListSo">
-						<div class="hang-title">
-							<span>已选条件</span>
-						</div>
-						<ul class="list-inline soList" id="soCheck">
-							<li class="soClear">
-								<button class="search  btn-ipt" id="soClear">清空条件</button>
-							</li>
-						</ul>
-					</div>
-					<div class="page-line">
-						
-					</div>
-					<!--下面表单开始-->
-					<div class="portlet">
-						<div class="portlet-body maskInTable maskInScroll maskInTable-pad">
-							<div class="table-scrollable">
-								<table class="table table-striped table-bordered table-hover dataTable no-footer" id="sample_1" role="grid" aria-describedby="sample_1_info">
-									<colgroup>
-										<col width="16%" />
-										<col width="8%" />
-										<col width="10%" />
-										<col width="7%" />
-										<col width="8%" />
-										<col width="8%" />
-										<col width="8%" />
-										<col width="9%" />
-										<col width="10%" />
-										<col width="6%" />
-									</colgroup>
-									<thead id="allDelSort">
-										<tr role="row" class="tr">
-											<th scope="col" width="260">
-												机构名称
-											</th>
-											<th name="investment_num" class="pdr20">
-												<span class="">投资企业数</span>
-												<span class="sort">
-													 <a href="javascript:void(0)" name="ASC" class="sort-up"></a>
-					                                 <a href="javascript:void(0)" name="DESC" class="sort-down"></a>
-												</span>
-											</th>
-											<th name="investment_neeq_num" class="pdr20">
-												<span class="">投资新三板公司</span>
-												<span class="sort">
-													 <a href="javascript:void(0)" name="ASC" class="sort-up"></a>
-					                                 <a href="javascript:void(0)" name="DESC" class="sort-down"></a>
-												</span>
-											</th>
-											<th scope="col">
-												所在地区
-											</th>
-											<th scope="col">
-												资本类型
-											</th>
-											<th scope="col">
-												投资管理基金
-											</th>
-											<th scope="col">
-												最新投资企业
-											</th>
-											<th scope="col">
-												轮次
-											</th>
-											<th scope="col">
-												投资日期
-											</th>
-											<th scope="col">
-												操作
-											</th>
-										</tr>
-									</thead>
-									<tbody id="investList">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="tabbable-line boxless tabbable-reversed">
+								<ul class="list-inline overLi-btn overLi-btn-link col-show">
+									<li class="active">
+										<a href="#tab_0" data-toggle="tab">定增概览 </a>
+									</li>
+									<li  class="overli-noborder">
+										<a href="#tab_1" data-toggle="tab">定增列表</a>
+									</li>
+								</ul>
+								<div class="tab-content reset-col" id="tabPrivates">
+									<div class="tab-pane active" id="tabPrivate">
 										
-									</tbody>
-								</table>
+									</div>
+								</div>
 							</div>
 						</div>
-						<!--分页开始-->
-						<div id="pageTool"></div>
-						<!--分页结束-->
 					</div>
+					
 					</div>
 					<!-- END QUICK SIDEBAR -->
 				</div>
@@ -479,13 +335,147 @@
 					</div>
 				</div>
 				<!-- END FOOTER -->
+
 				<!--MODAL START-->
-				<div class="modal fade myModal01" id="myModal02" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal fade myModal01" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 				  <div class="modal-dialog">
 				    <div class="modal-content">
 				      <div class="modal-header">
 				        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-				        <h4 class="modal-title" id="myModalLabel">投资领域</h4>
+				        <h4 class="modal-title" id="myModalLabel">详情</h4>
+				      </div>
+				      <div class="modal-body">
+				        <div class="province pdt10">
+				        	<table class="table table-condensed table-hover table-team">
+				        		<colgroup>
+				        			<col width="30%" />
+				        			<col width="70%" />
+				        		</colgroup>
+								<tbody id="privateList">
+
+								</tbody>
+							</table>
+				        </div>
+				      </div>
+				      <div class="modal-footer">
+				        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+				<div class="modal fade myModal01" id="myModalBq" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				  <div class="modal-dialog">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				        <h4 class="modal-title" id="myModalLabel">公司标签</h4>
+				      </div>
+				      <div class="modal-body">
+				        <div class="province">
+				        	<div class="province-ul">
+				        		<ul>
+				        			<li>A</li>
+				        			<li>B</li>
+				        			<li>C</li>
+				        			<li>D</li>
+				        			<li>E</li>
+				        			<li>F</li>
+				        			<li>G</li>
+				        			<li>H</li>
+				        			<li>I</li>
+				        			<li>J</li>
+				        			<li>K</li>
+				        			<li>L</li>
+				        			<li>M</li>
+				        			<li>N</li>
+				        			<li>O</li>
+				        			<li>P</li>
+				        			<li>Q</li>
+				        			<li>R</li>
+				        			<li>S</li>
+				        			<li>T</li>
+				        			<li>U</li>
+				        			<li>V</li>
+				        			<li>W</li>
+				        			<li>X</li>
+				        			<li>Y</li>
+				        			<li>Z</li>
+				        			<li class="provinceLi">全部</li>
+				        		</ul>
+				        	</div>
+				        	<div class="city-list" id="compLabelPop">
+				        		<ul>
+				        		</ul>
+				        	</div>
+				        </div>
+				      </div>
+				      <div class="modal-footer">
+				        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+				        <button type="button" class="btn default"  id="compLabelSave">确定</button>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+				<!--行业-->
+				<div class="modal fade myModal01" id="compLabelInd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				  <div class="modal-dialog">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				        <h4 class="modal-title" id="myModalLabel">公司标签</h4>
+				      </div>
+				      <div class="modal-body">
+				        <div class="province">
+				        	<div class="province-ul">
+				        		<ul>
+				        			<li>A</li>
+				        			<li>B</li>
+				        			<li>C</li>
+				        			<li>D</li>
+				        			<li>E</li>
+				        			<li>F</li>
+				        			<li>G</li>
+				        			<li>H</li>
+				        			<li>I</li>
+				        			<li>J</li>
+				        			<li>K</li>
+				        			<li>L</li>
+				        			<li>M</li>
+				        			<li>N</li>
+				        			<li>O</li>
+				        			<li>P</li>
+				        			<li>Q</li>
+				        			<li>R</li>
+				        			<li>S</li>
+				        			<li>T</li>
+				        			<li>U</li>
+				        			<li>V</li>
+				        			<li>W</li>
+				        			<li>X</li>
+				        			<li>Y</li>
+				        			<li>Z</li>
+				        			<li class="provinceLi">全部</li>
+				        		</ul>
+				        	</div>
+				        	<div class="city-list" id="compLabelIndw">
+				        		<ul>
+				        		</ul>
+				        	</div>
+				        </div>
+				      </div>
+				      <div class="modal-footer">
+				        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+				        <button type="button" class="btn default"  id="compLabelIndSave">确定</button>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+				<div class="modal fade myModal01" id="myModalPro" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				  <div class="modal-dialog">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				        <h4 class="modal-title" id="">定增进度</h4>
 				      </div>
 				      <div class="modal-body">
 				        <div class="province">
@@ -521,7 +511,7 @@
 				        		</ul>
 				        		<!--<input type="text" name="" id="" value="" placeholder="可输入拼音汉字查找"/>-->
 				        	</div>
-				        	<div class="city-list" id="compPop">
+				        	<div class="city-list" id="progressMy">
 				        		<ul>
 				        			
 				        		</ul>
@@ -539,9 +529,9 @@
 				<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
 				<!-- BEGIN CORE PLUGINS -->
 				<!--[if lt IE 9]>
-<script src="../../assets/global/plugins/respond.min.js"></script>
-<script src="../../assets/global/plugins/excanvas.min.js"></script> 
-<![endif]-->
+		<script src="../../assets/global/plugins/respond.min.js"></script>
+		<script src="../../assets/global/plugins/excanvas.min.js"></script> 
+		<![endif]-->
 				<script src="../../assets/global/plugins/jquery.min.js" type="text/javascript"></script>
 				<script src="../../assets/global/plugins/jquery-migrate.min.js" type="text/javascript"></script>
 				<!-- IMPORTANT! Load jquery-ui.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
@@ -559,19 +549,64 @@
 				<script src="../../assets/admin/layout/scripts/demo.js" type="text/javascript"></script>
 				<script src="../../assets/global/scripts/application.js" type="text/javascript"></script>
 				<script src="../../assets/global/scripts/getTable.js" type="text/javascript"></script>
-				<script src="../../assets/global/scripts/investment/investOrganization.js" type="text/javascript"></script>
+				<script src="../../assets/global/plugins/echarts/build/dist/echarts.js"></script>
 				<script type="text/javascript" src="../../assets/global/plugins/select2.js"></script>
 				<!-- END PAGE LEVEL SCRIPTS -->
 				<script>
 					jQuery(document).ready(function() {
-						KfStyle.init(); // init metronic core componets
-						Layout.init(); // init layout
-						InvestOrganization.init();
-						popLetter();
+						var pageUrl = "";
+	                    var currentTab = Query.getHash("currentTab");
+	                    if (isNullOrEmpty(currentTab)) {
+	                        pageUrl = $.kf.ISSUANCESTATOVERVIEW;
+							pageUrl = "./ipoEvent/applyIpo.html";
+	                        $(".overLi-btn").find("li").eq(0).addClass("active").siblings().removeClass("active");
+	                    } else if (currentTab == "tab0") {
+	                        pageUrl = $.kf.ISSUANCESTATOVERVIEW;
+							pageUrl = "./ipoEvent/ipoEnd.html";
+	                        $(".overLi-btn").find("li").eq(0).addClass("active").siblings().removeClass("active");
+	                    } else if (currentTab == "tab1") {
+	                        pageUrl = $.kf.ISSUANCESTATLIST;
+							pageUrl = "./ipoEvent/ipoEnd.html";
+	                        $(".overLi-btn").find("li").eq(1).addClass("active").siblings().removeClass("active");
+	                    }
+						KfStyle.init();
+						Layout.init();
+						new Select($(".dropdown-select2"),{}).init();
+						new Select($(".dropdown-select3"),{}).init();
+						var ind = '';
+						
+						pageFun(pageUrl);
+						function pageFun(pageUrl){
+							new LoadingAjax($("#tabPrivates"), {}, $("#tabPrivate")).init();
+							$.ajax({
+						        type: "get",
+						        url: pageUrl,
+						        data: "",
+						        dataType: "HTML",
+						        success: function (data) {
+						        	new LoadingAjax($("#tabPrivates"), {}, $("#tabPrivate")).close();
+						        	$("#tabPrivate").empty("").html("").append(data);
+						        }
+						    });
+						}
+						
+						$(".overLi-btn").find("a").on("click",function(){
+							//window.location.hash = 'page=1&currentTab=tab' + $(this).parent().index();
+							pushUrlState($(this).parent().index());
+							$("#tabPrivate").empty("").html("");
+							if($(this).parent().index() == 0){
+								pageUrl = $.kf.ISSUANCESTATOVERVIEW;
+								pageUrl = "./ipoEvent/applyIpo.html";
+							};
+							if($(this).parent().index() == 1){
+								pageUrl = $.kf.ISSUANCESTATLIST;
+								pageUrl = "./ipoEvent/ipoEnd.html";
+							};
+							pageFun(pageUrl);
+						});
 					});
 				</script>
 	</body>
 	<!-- END BODY -->
 
 </html>
-<!DOCTYPE html>

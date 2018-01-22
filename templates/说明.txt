@@ -43,7 +43,7 @@ recentNews.html 最新动态
 shareBonus.html 分红
 transaction.html 行情
 historyQuotes.html 历史行情
-privateAdd.html 定增
+privateAdd.html 定增  - ipo事件
 
 
 
