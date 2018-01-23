@@ -175,6 +175,7 @@ var InvestCompany = function(){
 	        $("#tableOneSearch").html("");
 	        var attention = "";
 	        $(list).each(function (i) {
+	        	console.log(list[i].saasType);
 	        	if(list[i].attention == "1"){
 					attention = "取消";
 				}else{
@@ -186,27 +187,42 @@ var InvestCompany = function(){
                 tr += '    <div class="investT-right">';
                 tr += '        <div class="investR-top">';
                 tr += '            <span id="inName"><a href="">'+ list[i].name +'</a></span>';
-                tr += '            <span id="investType">'+ list[i].setBy +'</span>';
+                if(!isNullOrEmpty(list[i].companyType)){
+                	tr += '            <span id="investType">'+ list[i].companyType +'（'+ list[i].code +'）'+'</span>';
+                }
+                if(!isNullOrEmpty(list[i].setBy)){
+                	tr += '            <span id="investSetBy">'+ list[i].setBy +'</span>';
+                }
+                if(!isNullOrEmpty(list[i].financing)){
+                	tr += '            <span id="investMoney">'+ list[i].financing +'</span>';
+                }
                 tr += '            <span class="investHide"><br></span>';
                 tr += '        </div>';
+                if(!isNullOrEmpty(list[i].hit)){
+                	tr += '        <div class="investHit">'+ list[i].hit +'</div>';
+                }
                 tr += '        <div class="in-content" style="display: block;">'+ list[i].content.substring(0,28) +'...<a class="in-more">展开<img src="../../assets/admin/layout/img/xiala.png"></a></div>';
-                tr += '        <div class="in-content2" style="display: none;">'+ list[i].content +'<a class="in-more in-hide">收起<img src="../../assets/admin/layout/img/shouqi.png"></a></div>';
+                tr += '        <div class="in-content2" style="display: none;text-align: justify;">'+ list[i].content +'<a class="in-more in-hide">收起<img src="../../assets/admin/layout/img/shouqi.png"></a></div>';
                 tr += '   </div>';
                 tr += '   </div>';
-                tr += '   <div>';
+                tr += '   <div class="search-label-icon">';
                 
                 $(list[i].saasType).each(function(j){
                 	 tr += '<span>'+list[i].saasType[j].type+'</span>';
                 }); 
                 
                 tr += '</div>';
-                tr += '   <div><span>共有'+ list[i].dynamic +'条动态</span><span>重大提示：'+ list[i].major +'条</span></div>';
+                tr += '   <div class="search-label-imp"><span>共有'+ list[i].dynamic +'条动态</span><span class="search-importenmt">重大提示：'+ list[i].major +'条</span></div>';
                 tr += '</td>';
 	        	tr += "<td>" + list[i].companyType + "</td>";
 	        	tr += "<td>" + list[i].step + "</td>";
 	        	tr += "<td>" + list[i].date + "</td>";
 	        	tr += "<td>" + list[i].address + "</td>";
-	        	tr += "<td><a class='comOptional' name='" + list[i].id + "'>" + attention + "</a></td>";
+	        	if(attention == "取消"){
+                	tr += "<td class='investR-top'><a class='joinOptional  cancelOptional' name='" + list[i].id + "'>" + "已关注" + "</a></td>";
+                }else{
+                	tr += "<td class='investR-top'><a class='joinOptional  wantOptional' name='" + list[i].id + "'>" + attention + "</a></td>";
+                }
                 tr += "</tr>";
 	        });
 	        $("#tableOneSearch").append(tr);
@@ -226,7 +242,15 @@ var InvestCompany = function(){
 	    };
 	    //加入自选功能
 	    var comOptional = function(){
-			$(".comOptional").click(function(){
+	    	$(".cancelOptional").on({
+	    		"mouseenter":function(){
+		    		$(this).text("取消");
+		    	},
+		    	"mouseleave":function(){
+		    		$(this).text("已关注");
+		    	}
+	    	})
+			$(".joinOptional").click(function(){
 				var _url = "";
 				var code = $(this).attr("name");
 				var param = {

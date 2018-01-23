@@ -188,7 +188,6 @@ input::-webkit-input-safebox-button {
 	top: 30px;
 	width:170px;
 }
-
 .codeList{left: 160px;}
 .searchList{
 	white-space:nowrap;
@@ -4473,6 +4472,7 @@ table td{
     margin-right:10px; 
     border: 1px solid #C6D0D8;
     border-radius: 4px;
+    padding: 6px;
     background: #ffffff;
 }
 .investOrgBox img{
@@ -4516,7 +4516,7 @@ table td{
 	margin-right: 4px;
 }
 .investT-right .investR-top{
-	margin-bottom: 7px;
+	
 }
 .investT-right .investR-top #inName{
 	font-size: 16px;
@@ -4526,11 +4526,15 @@ table td{
 	padding-left: 10px;
 	color:#F57D4B;
 }
+.investTbox-search .in-content {
+	margin-top: 6px;
+	
+}
 .investT-right .in-more img{
 	padding-left: 4px;
 }
 .investT-right .investR-top span{
-	margin-right: 12px;
+	margin-right: 11px;
 }
 .investT-right .investR-top a{
 	margin-right: 26px;
@@ -4541,7 +4545,7 @@ table td{
     height: 28px;
     text-align: center;
     padding: 0;
-    line-height: 23px;
+    line-height: 28px;
     color: white;
     float: right;
     cursor: pointer;	
@@ -4550,6 +4554,27 @@ table td{
 	border-radius: 6px;
     background-color: #F28D5D;
     border: 1px solid rgb(242, 141, 93);
+}
+#investType{
+	background: #5392EF;
+	padding:2px 10px;
+	color: white;
+	border-radius: 5px;
+}
+#investSetBy{
+	background: #FEAF22;
+	padding:2px 10px;
+	color: white;
+	border-radius: 5px;
+}
+#investMoney{
+	padding:2px 10px;
+	color: #fc4c60;
+	border:1px solid #fc4c60;
+	border-radius: 5px;
+}
+.investHit{
+	margin-top: 6px;
 }
 .investg-noMore{
 	display: none;
@@ -5558,6 +5583,22 @@ textarea:disabled{
 }
 .table-striped>tbody.view-tr2>tr.tableOfTh td {
 	padding-left: 10px !important;
+}
+.search-label-icon{
+	background: url(../img/huibiaoqian.png) 0 center  no-repeat;
+	padding:5px 0 5px 36px;
+	color: #f77e44;
+}
+.search-label-icon span{
+	padding-right: 5px;
+}
+.search-label-imp .search-importenmt{
+	background: url(../img/tishi.png) 10px center  no-repeat;
+	padding-left: 30px;
+	color: #f77e44;
+}
+.search-label-imp{
+	color: #222;
 }
 #typeSelNull span{
 	color: #f77e44;

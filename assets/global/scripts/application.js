@@ -248,7 +248,8 @@
 		GETCOMPANYDISHONESTY: URL + 'companynewservice/getCompanyDishonesty' + urlType,//失信人
 		GETCOMPANYEXECUTOR: URL + 'companynewservice/getCompanyExecutor' + urlType,//被执行人
 		GETCOMPANYTAXARREARS: URL + 'companynewservice/getCompanyTaxArrears' + urlType,//欠税公告
-        LOGIN: URL + 'service/login' + urlType, //登录 
+		GETCREDITCREDITSERVICE: URL + 'creditservice/getCredit' + urlType,//贷款
+        LOGIN: URL + 'service/login' + urlType, //登录   
         LAWOFFICE: URL + 'antermediaryservice/getLawOffice' + urlType,//律师事务所列表
         LAWEROFFICE: URL + 'antermediaryservice/getLawyer' + urlType,//律师事务所页面
         LISTCOMPANY: URL + 'listedcompanystatservice/getListcompany' + urlType,//挂牌公司 -》挂牌概览 -》挂牌企业分布
@@ -339,6 +340,7 @@
         SEARCHEXPORTLIST: URL + 'searchservice/exportList' + urlType,// 我的筛选 -》导出
         SEARCHGETPROGRESS: URL + 'searchservice/getProgress' + urlType,// 我的筛选 -》 进度条
         STATISTICSTURN: URL + 'indexservice/getStatisticsTurn' + urlType, //图表数据
+        SEARCHGETSEARCHRESULT: URL + 'searchservice/getSearchResult' + urlType, //固定榜单搜索  
         TABLEBASESERVICEGETLIST:URL + 'tablebaseservice/getList' + urlType,//我的报表 -》报表列表
         TABLEBASESERVICEGETTABLEDETAIL:URL + 'tablebaseservice/getTableDetail' + urlType,//报表详情
         TABLEBASESERVICEGETCOLLECTIONLIST: URL + 'tablebaseservice/getCollectionList' + urlType,//我的报表 -》列表
@@ -1926,6 +1928,9 @@ function searchBlur() {
         var searchK = $.trim(searchI);
         var keyCode = e.which;
         if (keyCode == 13 && searchK) {
+        	/*if(searchK == ""){
+        		
+        	}*/
             //不含有下拉选中项并且不再搜索界面
             if (!$(".searchList ul li").hasClass("active") && $.trim($(".mod-title").text()) != "搜索结果") {
                 window.top.location.href = $.url.searchIndex() + "type=search&keyword=" + encodeURI(searchK);
@@ -1945,14 +1950,14 @@ function searchBlur() {
             }
         } else if (keyCode == 40) {
             if($(".searchList ul li").text() != "回车查看更多类型"){
-            if ($(".searchList ul li:last-child").hasClass("active")) {
-                return false;
-            } else if (!$(".searchList ul li").hasClass("active")) {
-                $(".searchList ul li:first-child").addClass("active");
-                return false;
-            } else {
-                $(".searchList .active").removeClass("active").next().addClass("active");
-                return false;
+	            if ($(".searchList ul li:last-child").hasClass("active")) {
+	                return false;
+	            } else if (!$(".searchList ul li").hasClass("active")) {
+	                $(".searchList ul li:first-child").addClass("active");
+	                return false;
+	            } else {
+	                $(".searchList .active").removeClass("active").next().addClass("active");
+	                return false;
                 }
             }
         } else if (keyCode == 38) {

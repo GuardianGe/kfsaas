@@ -145,53 +145,6 @@ var searchResult = function () {
             $("#Gnote").append(tr);
         }
 
-        /*公司列表*/
-        var _url = $.kf.COMPANYLIST + "?" + "companyName=" + keyword + "&page=" + 1;
-        $.getTable({
-        	url:_url,//url
-	    	pageId:$("#pageTool8"),//分页id
-	    	callback:companyList,//callback
-	    	loadId:".maskInTable2",
-	    	tbodyId:$("#companyList")//tbody的id,
-        })
-        /***table***/
-        function companyList(data) {
-        	
-            var list = data.data;
-            var tr = "";
-            if (data.total > 99) {
-                $(".count2").text("（99+）");
-            } else {
-                $(".count2").text("（" + data.total + "）");
-            }
-            $("#companyList").html("");
-            $(list).each(function (i) {
-                tr += "<tr>";
-                tr += "<td><a href=>" + list[i].companyName + "</a></td>";
-                tr += "<td><span  typeName=" + list[i].companyNameEl + " name=" + list[i].companyId + ">" + list[i].type + "</span></td>";
-                tr += "</tr>";
-            });
-            $("#companyList").append(tr);
-
-            $("#companyList span").each(function () {
-                var id = $(this).attr("name");
-                var companyName = $(this).attr("typeName");
-                if ($(this).text() == "新三板挂牌公司") {
-                    $(this).parent("td").siblings("td").children("a").attr("href", $.url.companyListUrl() + "id=" + id)
-                } else if ($(this).text() == "一般企业") {
-                    $(this).parent("td").siblings("td").children("a").addClass('investRestEl');
-                    $(this).parent("td").siblings("td").children("a").attr("href", $.url.industryUrl() + "id=" + id)
-                } else if ($(this).text() == "证券公司") {
-                    $(this).parent("td").siblings("td").children("a").attr("href", $.url.securitiesUrl() + "id=" + id)
-                } else if ($(this).text() == "私募基金管理人") {
-                    $(this).parent("td").siblings("td").children("a").attr("href", $.url.fundManagerUrl() + "id=" + id)
-                } else {
-                    $(this).parent("td").siblings("td").children("a").attr("href", $.url.investmentAgencyDetailsUrl() + "id=" + id)
-                }
-            })
-            var isCookie = false;
-            moneyUrl($(".investRestEl"), isCookie, "isCookie");
-        }
 
         /*新闻列表*/
         var _url = $.kf.GETNEWS + "?" + "keyword=" + keyword + "&page=" + 1;
@@ -322,7 +275,11 @@ var searchResult = function () {
                 tr += "<td>" + list[i].currencyCode + "</td>";
                 tr += "<td>" + list[i].investmentAmount + "</td>";
                 tr += "<td>" + list[i].date + "</td>";
-                tr += "<td><a href='javascript:void(0)' data-toggle='tooltip' data-placement='top' title=" + list[i].desc + ">简介</a></td>";
+                if(isNullOrEmpty(list[i].desc)){
+                	tr += "<td>--</td>";
+                }else{
+                	tr += "<td><a href='javascript:void(0)' data-toggle='tooltip' data-placement='top' title=" + list[i].desc + ">简介</a></td>";
+                }
                 tr += "</tr>";
             });
             $("#investList").append(tr);
@@ -367,14 +324,14 @@ var searchResult = function () {
     		var pageUrl = "./serachCompany.html";
     		pageFun(pageUrl);
             function pageFun(pageUrl) {
-                new LoadingAjax($("#tabComps"), {}, $("#tabComps")).init();
+                //new LoadingAjax($("#tabComps"), {}, $("#tabComps")).init();
                 $.ajax({
                     type: "get",
                     url: pageUrl,
                     data: "",
                     dataType: "HTML",
                     success: function (data) {
-                        new LoadingAjax($("#tabComps"), {}, $("#tabComps")).close();
+                        //new LoadingAjax($("#tabComps"), {}, $("#tabComps")).close();
                         $("#searchCompany").empty("").html("").append(data);
                     }
                 });
