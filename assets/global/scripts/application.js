@@ -328,6 +328,7 @@
         SEARCHCHWECHA:URL + 'caseservice/searchWecha' + urlType,//搜索案例-》微信搜索
         SUPBBSERVICE: URL + 'supervisorservice/pdf' + urlType, //督导导出pdf
         SUPXBRL: URL + 'supervisorservice/xbrl' + urlType, //督导导出xbrl
+        SEARCHGETKEYWORDRESULT: URL + 'searchservice/getKeywordResult' + urlType, //搜索十大排名
         SEARCHGETCOMPANYSEARCH: URL + 'searchservice/getCompanySearch' + urlType, //大搜索 --公司
         SEARCHGETINVESTMENSEARCH: URL + 'searchservice/getInvestmenSearch' + urlType, //大搜索--投资机构
         SUPWORD: URL + 'supervisorservice/word' + urlType, //督导导出word
@@ -770,6 +771,14 @@
                 var agencyLaw = "http://" + window.location.host + $.url.getContextPath() + "/templates/neeq/lawOffice.html?sid="+fakeId+"&r=s25";
             }
             return agencyLaw;
+        },
+        searchBillboard: function(){ //律师事务所
+        	if ($.url.isServer) {
+                var searchBillboard = "/agency/law?sid="+fakeId+"&r=s25";
+            } else {
+                var searchBillboard = "http://" + window.location.host + $.url.getContextPath() + "/templates/user/searchBillboard.html?sid="+fakeId+"&r=s25";
+            }
+            return searchBillboard;
         }
     });
     

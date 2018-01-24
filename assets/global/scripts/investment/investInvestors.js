@@ -113,7 +113,11 @@ var InvestInvestors = function(){
 	        	tr += "<div class='col-md-6 pdl10 pdr'>";
 	        	tr += "<div class='col-md-12 whiteBg'>";
 	        	tr += "<div class='investorsCon'>"
-	        	tr += "<img src='"+ list[i].logo +"'/>";
+	        	if(!isNullOrEmpty(list[i].logo)){
+	        		tr += "<img src='"+ list[i].logo +"'/>";
+	        	}else{
+	        		tr += "<img src='../../assets/admin/layout/img/rentou.png'/>";
+	        	}
 	        	tr += "<div class='companyCon'>";
 	        	tr += "<h1><a href='"+ $.url.investorDetailsUrl() + "id=" + list[i].id +"'>"+ list[i].name +"</a></h1>";
 	        	if(isNullOrEmpty(list[i].companyId)){

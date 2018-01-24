@@ -6208,6 +6208,87 @@ textarea:disabled{
     right: -8px;
     top: 2px;
 }
+.search-cxl{
+	color: #F57D4B;
+	padding:0 3px;
+}
+/*search十大结果排名*/
+.search-noData{
+	text-align: center;
+}
+.search-wu{
+	display: inline-block;
+	padding:40px 105px;
+	background: url(../img/wujieguo.png) 0 20px no-repeat;
+	font-size: 16px;
+	color: #333;
+	margin-top: 20px;
+}
+.search-wu p{
+	text-align: left;
+	line-height: 30px;
+}
+.search-datapage{
+	border:1px solid #eee;
+	background: #f3f7ff;
+	width:98%;
+	margin:0 auto;
+	margin-top: 30px;
+	padding:20px 0;
+}
+.search-datapage table td{
+	color: #333;
+	text-align: right;
+	padding:10px;
+	font-size: 14px;
+}
+.search-datapage table td.tolfetSearch{
+	text-align: left;
+}
+.search-datapage table td a{
+	color: #f57d4b;
+	padding:5px 13px;
+	display: inline-block;
+}
+.comManyUrl{
+	position: absolute;
+	z-index: 33;
+	right:0px;
+	width:160px;
+	background: rgba(0,0,0,.8);
+	top:100%;
+	min-height: 80px;
+	border-radius: 5px;
+	text-align: left;
+	padding:7px 10px;
+	display: none;
+}
+.comManyUrl a{
+	display: block;
+	color: white;
+	white-space: normal;
+}
+.comManyUrl > div{
+	position: absolute;
+	z-index: 33;
+	right:28px;
+	top:-20px;
+	border:10px solid #333;
+	border-left:10px solid transparent;
+	border-right:10px solid transparent;
+	border-top:10px solid transparent;
+	
+}
+.comManyUrlPar:hover .comManyUrl{
+	display: block;
+}
+
+
+
+
+
+
+
 @media only screen and (min-width:1921px ) {
 	#__echarts_download_wrap__{
 		text-align: center;

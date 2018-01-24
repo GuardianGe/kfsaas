@@ -39,11 +39,16 @@ var DetailDwon = function(){
         $("#english").text(list.english);
         $("#registeredCity").text(list.registeredCity);
         if(!isNullOrEmpty(list.businessScope)){
-        	$("#businessCcope").text(list.businessScope.substring(0,278)+'...');
+        	if(list.businessScope.length<278){
+        		$(".businessCcope-detail").hide();
+        		$("#businessScope").text(list.businessScope);
+        	}else{
+        		$("#businessScope").text(list.businessScope.substring(0,278)+'...');
+        	}
         }else{
         	$(".businessCcope-detail").hide();
         }
-        $("#businessCcope").attr("title",list.businessScope)
+        $("#businessCcope").attr("title",list.businessScope);
     };
     //变更记录
     var changeTable = function(){

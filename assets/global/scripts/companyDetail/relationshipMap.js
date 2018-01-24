@@ -772,15 +772,15 @@ var foreignInvestment = function () {
                     var tr = "";
                     $("#foreignList").html("");
                     if (list != "") {
-                    	if(!isNullOrEmpty(list[0].investmentDate)){
-                    		$("#foreignDate").text(list[0].investmentDate);
+                    	if(!isNullOrEmpty(list[0].date)){
+                    		$("#foreignDate").text(list[0].date);
                     	}else{
                         	$("#foreignDate").text("--");
                     	}
                         $(list).each(function (i) {
                             tr += "<tr>";
-                            tr += "<td>" + list[i].investmentDate + "</td>";
-                            tr += "<td><a href='" + $.url.industryUrl() + "id=" + list[i].investedId + "'>" + list[i].investedName + "</a></td>";
+                            tr += "<td>" + list[i].date + "</td>";
+                            tr += "<td><a href='" + $.url.industryUrl() + "id=" + list[i].id + "'>" + list[i].companyName + "</a></td>";
                             tr += "<td>" + list[i].legalPerson + "</td>";
                             tr += "<td>" + list[i].capital + "</td>";
                             tr += "<td style='text-align:right'>" + list[i].investmentAmount + "</td>";
@@ -799,7 +799,7 @@ var foreignInvestment = function () {
 
 
 				var lastPage = Query.getHash("page");
-                _url = $.kf.GRAPHSERVICEEVENTSINVESTMENT + "?" + "id=" + id + "&page=" + 1;
+                _url = $.kf.INVESTHING + "?" + "id=" + id + "&page=" + 1;
                 //new GetTable(_url, $("#pageToolShareholder"), "", shareholderList, "get", $("#shareholderList2")).init();
                 $.getTable({
 		        	url:_url,//url

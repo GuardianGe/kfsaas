@@ -173,7 +173,7 @@ var InvestDetail = function(){
 				$(".investT-left").html("<img src='"+ list.logo +"' />");
 			}
 			$("#inName").text(list.shortname);
-			$("#investType").text(list.investType);
+			$("#investTypeO").text(list.investType);
 			$("#startYear").text(list.startYear);
 			if(!isNullOrEmpty(list.website)){
 				$("#website").show();
@@ -743,9 +743,9 @@ var InvestDetail = function(){
                     $(list).each(function (i) {
                         tr += "<tr>";
                         if(list[i].fileExt == "pdf"){
-                        	tr += "<td><a href='"+ list[i].fileUrl +"'>" + list[i].title + "</a></td>";
+                        	tr += "<td style='text-align:left;'><a href='"+ list[i].fileUrl +"'>" + list[i].title + "</a></td>";
                         }else{
-                        tr += "<td><a target='_blank' href='"+ $.url.newsInfoUrl() +"id=" + list[i].id + "&name=news'>" + list[i].title + "</a></td>";
+                        tr += "<td style='text-align:left;'><a target='_blank' href='"+ $.url.newsInfoUrl() +"id=" + list[i].id + "&name=news'>" + list[i].title + "</a></td>";
                         }
                         tr += "<td>" + list[i].source + "</td>";
                         tr += "<td>" + list[i].date + "</td>";

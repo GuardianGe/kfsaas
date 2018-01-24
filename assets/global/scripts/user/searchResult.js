@@ -14,6 +14,7 @@ var searchResult = function () {
 		    	pageId:$("#pageTool"),//分页id
 		    	callback:companyCodeList,//callback
 		    	loadId:".maskInTable1",
+		    	topPageNum:false,
 		    	tbodyId:$("#companyCodeList")//tbody的id,
 	        })
 	
@@ -119,6 +120,7 @@ var searchResult = function () {
         	url:_url,//url
 	    	pageId:$("#pageTool2"),//分页id
 	    	loadId:".maskInTable3",
+	    	topPageNum:false,
 	    	callback:noteList,//callback
 	    	tbodyId:$("#Gnote")//tbody的id,
         })
@@ -153,6 +155,7 @@ var searchResult = function () {
 	    	pageId:$("#pageTool3"),//分页id
 	    	callback:newsList,//callback
 	    	loadId:".maskInTable4",
+	    	topPageNum:false,
 	    	tbodyId:$("#newsTable")//tbody的id,
         })
         /***table***/
@@ -183,6 +186,7 @@ var searchResult = function () {
 	    	pageId:$("#pageTool4"),//分页id
 	    	callback:getList,//callback
 	    	loadId:".maskInTable5",
+	    	topPageNum:false,
 	    	tbodyId:$("#tableOne")//tbody的id,
         })
         /***table***/
@@ -214,6 +218,7 @@ var searchResult = function () {
 	    	pageId:$("#lawPage"),//分页id
 	    	callback:lawList,//callback
 	    	loadId:".maskInTable6",
+	    	topPageNum:false,
 	    	tbodyId:$("#lawList")//tbody的id,
         })
         function lawList(data) {
@@ -248,6 +253,7 @@ var searchResult = function () {
 	    	pageId:$("#pageThing"),//分页id
 	    	callback:investList,//callback
 	    	loadId:".maskInTable7",
+	    	topPageNum:false,
 	    	tbodyId:$("#investList")//tbody的id,
         })
         /***table***/

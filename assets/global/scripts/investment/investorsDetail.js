@@ -50,7 +50,12 @@ var InvestorsDetail = function () {
 		            	}
 	            	}
 	            	
-	            	$(".IuserImg").append("<img src='"+ list.logo +"'>");
+	            	
+	            	if(isNullOrEmpty(list.logo)){
+	            		$(".IuserImg").append("<img src='../../assets/admin/layout/img/rentou.png'>");
+	            	}else{
+	            		$(".IuserImg").append("<img src='"+ list.logo +"'>");
+	            	}
 	            	$(".IuserDetail h1 span").text(list.name);
 	            	$(".IuserDetail h2 span").text(list.job);
 	            	$(".IuserDetail h2 b").text(list.investment);
@@ -84,7 +89,12 @@ var InvestorsDetail = function () {
 			        $("#conList").html("");
 			        $(list.case).each(function (i) {
 			        	tr += "<div class='investCase'>";
-						tr += "<img src='"+ list.case[i].logo +"'>";
+			        	if(!isNullOrEmpty(list.case[i].logo)){
+			        		tr += "<img src='"+ list.case[i].logo +"'>";
+			        	}else{
+			        		tr += "<img src='../../assets/admin/layout/img/rentou.png'>";
+			        	}
+						
 						tr += "<div>";
 						tr += "<h1>"+ list.case[i].name +"</h1>";
 						tr += "<h2>公司阶段："+ list.case[i].stage +"</h2>";
